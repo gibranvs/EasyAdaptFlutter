@@ -1,4 +1,5 @@
 import 'package:easy_adapt/i18n/strings.g.dart';
+import 'package:easy_adapt/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -15,13 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       locale: TranslationProvider.of(context).flutterLocale,
+      debugShowCheckedModeBanner: false,
       supportedLocales: LocaleSettings.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'EasyAdapt'),
+      initialRoute: '/login',
+      routes: getRoutes(),
     );
   }
 }
