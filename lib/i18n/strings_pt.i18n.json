@@ -1,5 +1,6 @@
 {
-    "hello": "Hallo $name",
+    "calculatorTitleHomeScreen": "Calculadora portugues",
+
     "save": "Speichern",
     "login": {
       "success": "Login erfolgreich",

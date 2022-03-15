@@ -1,0 +1,9 @@
+{
+    "calculatorTitleHomeScreen": "Calculadora",
+
+    "save": "Speichern",
+    "login": {
+      "success": "Login erfolgreich",
+      "fail": "Login fehlgeschlagen"
+    }
+  }

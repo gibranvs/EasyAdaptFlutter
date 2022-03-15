@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import '../../i18n/strings.g.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -9,8 +12,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String value = '1';
+
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -51,9 +57,9 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(129, 181, 178, 1.0),
                           borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          "Calculadora",
+                          t.calculatorTitleHomeScreen,
                           style: TextStyle(color: Colors.white, fontSize: 17),
                         ),
                       ),
@@ -82,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Center(
                     child: RichText(
-                        text: const TextSpan(children: [
+                        text: TextSpan(children: [
                       TextSpan(
                           text: '¿No tienes cuenta?',
                           style: TextStyle(
@@ -93,6 +99,10 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color.fromRGBO(126, 143, 158, 1.0))),
                       TextSpan(
                           text: ' aquí',
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushNamed(context, '/register');
+                            },
                           style: TextStyle(
                               color: Color.fromRGBO(90, 116, 134, 1.0),
                               fontWeight: FontWeight.bold))
@@ -108,13 +118,22 @@ class _LoginPageState extends State<LoginPage> {
                         DropdownMenuItem<String>(
                             value: '1', child: Text('Español')),
                         DropdownMenuItem<String>(
-                            value: '3', child: Text('Portugués')),
+                            value: '2', child: Text('Portugués')),
                         DropdownMenuItem<String>(
-                            value: '2', child: Text('English'))
+                            value: '3', child: Text('English'))
                       ],
                       onChanged: (v) {
                         setState(() {
                           value = v!;
+                          if (value == '1') {
+                            LocaleSettings.setLocaleRaw('es');
+                          }
+                          if (value == '2') {
+                            LocaleSettings.setLocaleRaw('pt');
+                          }
+                          if (value == '3') {
+                            LocaleSettings.setLocaleRaw('en');
+                          }
                         });
                       },
                     ),

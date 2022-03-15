@@ -1,5 +1,5 @@
 {
-    "hello": "Hello $name",
+    "calculatorTitleHomeScreen": "Calculator",
     "save": "Save",
     "login": {
       "success": "Logged in successfully",
