@@ -50,7 +50,7 @@ class _InitialPage extends State<InitialPage> {
                           borderRadius: BorderRadius.all(Radius.circular(25))),
                       child: Center(
                         child: Text(
-                          widget.t.calculatorTitleHomeScreen,
+                          t.calculatorTitleHomeScreen,
                           style: TextStyle(color: Colors.white, fontSize: 17),
                         ),
                       ),
