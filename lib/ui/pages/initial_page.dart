@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 
 import '../../i18n/strings.g.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+class InitialPage extends StatefulWidget {
+  var t;
+  InitialPage({Key? key, required this.t}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<InitialPage> createState() => _InitialPage();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _InitialPage extends State<InitialPage> {
   String value = '1';
 
   @override
   Widget build(BuildContext context) {
-    final t = Translations.of(context);
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -59,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.all(Radius.circular(25))),
                       child: Center(
                         child: Text(
-                          t.calculatorTitleHomeScreen,
+                          widget.t.calculatorTitleHomeScreen,
                           style: TextStyle(color: Colors.white, fontSize: 17),
                         ),
                       ),
@@ -75,10 +74,11 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(69, 130, 178, 1.0),
                           borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          "Iniciar sesión",
-                          style: TextStyle(color: Colors.white, fontSize: 17),
+                          t.loginTitleHomeScreen,
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 17),
                         ),
                       ),
                     ),
@@ -90,15 +90,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: RichText(
                         text: TextSpan(children: [
                       TextSpan(
-                          text: '¿No tienes cuenta?',
+                          text: t.dontHaveAccountTitleHomeScreen,
                           style: TextStyle(
                               color: Color.fromRGBO(126, 143, 158, 1.0))),
                       TextSpan(
-                          text: ' crea una',
-                          style: TextStyle(
-                              color: Color.fromRGBO(126, 143, 158, 1.0))),
-                      TextSpan(
-                          text: ' aquí',
+                          text: ' ${t.dontHaveAccountSubtitleHomeScreen} ',
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               Navigator.pushNamed(context, '/register');
@@ -116,23 +112,23 @@ class _LoginPageState extends State<LoginPage> {
                       value: value,
                       items: const [
                         DropdownMenuItem<String>(
-                            value: '1', child: Text('Español')),
+                            value: '1', child: Text('English')),
                         DropdownMenuItem<String>(
-                            value: '2', child: Text('Portugués')),
+                            value: '2', child: Text('Español')),
                         DropdownMenuItem<String>(
-                            value: '3', child: Text('English'))
+                            value: '3', child: Text('Portugués')),
                       ],
                       onChanged: (v) {
                         setState(() {
                           value = v!;
                           if (value == '1') {
-                            LocaleSettings.setLocaleRaw('es');
+                            LocaleSettings.setLocaleRaw('en');
                           }
                           if (value == '2') {
-                            LocaleSettings.setLocaleRaw('pt');
+                            LocaleSettings.setLocaleRaw('es');
                           }
                           if (value == '3') {
-                            LocaleSettings.setLocaleRaw('en');
+                            LocaleSettings.setLocaleRaw('pt');
                           }
                         });
                       },
@@ -156,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       Text(
-                        "Aviso de privacidad",
+                        t.alertBottomTitleHomeScreen,
                         style: TextStyle(
                             color: Color.fromRGBO(102, 133, 153, 1.0),
                             fontSize: 15,
@@ -164,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "No. de Aviso de Publicidad : 213300202C5437",
+                        "${t.alertBottomSubtitleHomeScreen} 213300202C5437",
                         style: TextStyle(
                             color: Color.fromARGB(255, 153, 138, 153),
                             fontSize: 14,

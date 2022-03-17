@@ -1,9 +1,24 @@
 {
-    "calculatorTitleHomeScreen": "Calculadora portugues",
-
-    "save": "Speichern",
-    "login": {
-      "success": "Login erfolgreich",
-      "fail": "Login fehlgeschlagen"
-    }
-  }
+  "TitleTermsScreen": "Termos e Condições",
+  "alertBottomSubtitleHomeScreen": "Nº do Aviso de Privacidade:",
+  "alertBottomTitleHomeScreen": "Aviso de privacidade",
+  "buttonRegisterScreen": "Criar uma ",
+  "calculatorTitleHomeScreen": "Calculadora",
+  "dontHaveAccountSubtitleHomeScreen": "aqui",
+  "dontHaveAccountTitleHomeScreen": "Não possui uma conta? Crie um",
+  "hintTextConfirmPasswordRegisterScreen": "Confirmar senha",
+  "hintTextCountryRegisterScreen": "País",
+  "hintTextEmailRegisterScreen": "Correio eletrônico",
+  "hintTextNameRegisterScreen": "Nome completo",
+  "hintTextPasswordRegisterScreen": "Senha",
+  "login": {
+    "fail": "Login fehlgeschlagen",
+    "success": "Login erfolgreich"
+  },
+  "loginTitleHomeScreen": "Iniciar sessão",
+  "subtitleAcceptRegisterScreen": "termos e Condições",
+  "subtitleWelcomeRegisterScreen": "Crie sua conta com uma única etapa, insira seus dados",
+  "titleAcceptRegisterScreen": "Eu concordo",
+  "titleAppBarRegisterScreen": "Criar uma conta",
+  "titleWelcomeRegisterScreen": "BEM-VINDO!"
+}

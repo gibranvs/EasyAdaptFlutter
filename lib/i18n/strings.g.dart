@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 12 (4.0 per locale)
+ * Strings: 60 (20.0 per locale)
  *
- * Built on 2022-03-15 at 21:00 UTC
+ * Built on 2022-03-17 at 15:41 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -318,9 +318,25 @@ class _StringsEn {
 	late final _StringsEn _root = this;
 
 	// Translations
+	String get TitleTermsScreen => 'Terms and Conditions';
+	String get alertBottomSubtitleHomeScreen => 'Privacy notice number:';
+	String get alertBottomTitleHomeScreen => 'Notice of Privacy';
+	String get buttonRegisterScreen => 'Create Account';
 	String get calculatorTitleHomeScreen => 'Calculator';
-	String get save => 'Save';
+	String get dontHaveAccountSubtitleHomeScreen => 'here';
+	String get dontHaveAccountTitleHomeScreen => 'Don\'t have an account? Create one ';
+	String get hintTextConfirmPasswordRegisterScreen => 'confirm password';
+	String get hintTextCountryRegisterScreen => 'Parents';
+	String get hintTextEmailRegisterScreen => 'E-mail';
+	String get hintTextNameRegisterScreen => 'Full name';
+	String get hintTextPasswordRegisterScreen => 'Password';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
+	String get loginTitleHomeScreen => 'Log in';
+	String get subtitleAcceptRegisterScreen => 'terms and Conditions';
+	String get subtitleWelcomeRegisterScreen => 'Create your account in one step, enter your data';
+	String get titleAcceptRegisterScreen => 'I agree';
+	String get titleAppBarRegisterScreen => 'Create an account';
+	String get titleWelcomeRegisterScreen => 'WELCOME!';
 }
 
 // Path: login
@@ -331,8 +347,8 @@ class _StringsLoginEn {
 	final _StringsEn _root;
 
 	// Translations
-	String get success => 'Logged in successfully';
 	String get fail => 'Logged in failed';
+	String get success => 'Logged in successfully';
 }
 
 // Path: <root>
@@ -352,9 +368,25 @@ class _StringsEs implements _StringsEn {
 	@override late final _StringsEs _root = this;
 
 	// Translations
+	@override String get TitleTermsScreen => 'Términos y condiciones';
+	@override String get alertBottomSubtitleHomeScreen => 'No. de Aviso de privacidad:';
+	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidad';
+	@override String get buttonRegisterScreen => 'Crear cuenta';
 	@override String get calculatorTitleHomeScreen => 'Calculadora';
-	@override String get save => 'Speichern';
+	@override String get dontHaveAccountSubtitleHomeScreen => 'aquí';
+	@override String get dontHaveAccountTitleHomeScreen => '¿No tienes cuenta? crea una';
+	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar contraseña';
+	@override String get hintTextCountryRegisterScreen => 'País';
+	@override String get hintTextEmailRegisterScreen => 'Correo electrónico';
+	@override String get hintTextNameRegisterScreen => 'Nombre completo';
+	@override String get hintTextPasswordRegisterScreen => 'Contraseña';
 	@override late final _StringsLoginEs login = _StringsLoginEs._(_root);
+	@override String get loginTitleHomeScreen => 'Iniciar sesión';
+	@override String get subtitleAcceptRegisterScreen => 'términos y condiciones';
+	@override String get subtitleWelcomeRegisterScreen => 'Crea tu cuenta con un solo paso, introduce tus datos';
+	@override String get titleAcceptRegisterScreen => 'Acepto';
+	@override String get titleAppBarRegisterScreen => 'Crear cuenta';
+	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
 }
 
 // Path: login
@@ -365,8 +397,8 @@ class _StringsLoginEs implements _StringsLoginEn {
 	@override final _StringsEs _root;
 
 	// Translations
-	@override String get success => 'Login erfolgreich';
 	@override String get fail => 'Login fehlgeschlagen';
+	@override String get success => 'Login erfolgreich';
 }
 
 // Path: <root>
@@ -386,9 +418,25 @@ class _StringsPt implements _StringsEn {
 	@override late final _StringsPt _root = this;
 
 	// Translations
-	@override String get calculatorTitleHomeScreen => 'Calculadora portugues';
-	@override String get save => 'Speichern';
+	@override String get TitleTermsScreen => 'Termos e Condições';
+	@override String get alertBottomSubtitleHomeScreen => 'Nº do Aviso de Privacidade:';
+	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidade';
+	@override String get buttonRegisterScreen => 'Criar uma ';
+	@override String get calculatorTitleHomeScreen => 'Calculadora';
+	@override String get dontHaveAccountSubtitleHomeScreen => 'aqui';
+	@override String get dontHaveAccountTitleHomeScreen => 'Não possui uma conta? Crie um';
+	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar senha';
+	@override String get hintTextCountryRegisterScreen => 'País';
+	@override String get hintTextEmailRegisterScreen => 'Correio eletrônico';
+	@override String get hintTextNameRegisterScreen => 'Nome completo';
+	@override String get hintTextPasswordRegisterScreen => 'Senha';
 	@override late final _StringsLoginPt login = _StringsLoginPt._(_root);
+	@override String get loginTitleHomeScreen => 'Iniciar sessão';
+	@override String get subtitleAcceptRegisterScreen => 'termos e Condições';
+	@override String get subtitleWelcomeRegisterScreen => 'Crie sua conta com uma única etapa, insira seus dados';
+	@override String get titleAcceptRegisterScreen => 'Eu concordo';
+	@override String get titleAppBarRegisterScreen => 'Criar uma conta';
+	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
 }
 
 // Path: login
@@ -399,8 +447,8 @@ class _StringsLoginPt implements _StringsLoginEn {
 	@override final _StringsPt _root;
 
 	// Translations
-	@override String get success => 'Login erfolgreich';
 	@override String get fail => 'Login fehlgeschlagen';
+	@override String get success => 'Login erfolgreich';
 }
 
 /// Flat map(s) containing all translations.
@@ -409,10 +457,26 @@ class _StringsLoginPt implements _StringsLoginEn {
 extension on _StringsEn {
 	Map<String, dynamic> _buildFlatMap() {
 		return {
+			'TitleTermsScreen': 'Terms and Conditions',
+			'alertBottomSubtitleHomeScreen': 'Privacy notice number:',
+			'alertBottomTitleHomeScreen': 'Notice of Privacy',
+			'buttonRegisterScreen': 'Create Account',
 			'calculatorTitleHomeScreen': 'Calculator',
-			'save': 'Save',
-			'login.success': 'Logged in successfully',
+			'dontHaveAccountSubtitleHomeScreen': 'here',
+			'dontHaveAccountTitleHomeScreen': 'Don\'t have an account? Create one ',
+			'hintTextConfirmPasswordRegisterScreen': 'confirm password',
+			'hintTextCountryRegisterScreen': 'Parents',
+			'hintTextEmailRegisterScreen': 'E-mail',
+			'hintTextNameRegisterScreen': 'Full name',
+			'hintTextPasswordRegisterScreen': 'Password',
 			'login.fail': 'Logged in failed',
+			'login.success': 'Logged in successfully',
+			'loginTitleHomeScreen': 'Log in',
+			'subtitleAcceptRegisterScreen': 'terms and Conditions',
+			'subtitleWelcomeRegisterScreen': 'Create your account in one step, enter your data',
+			'titleAcceptRegisterScreen': 'I agree',
+			'titleAppBarRegisterScreen': 'Create an account',
+			'titleWelcomeRegisterScreen': 'WELCOME!',
 		};
 	}
 }
@@ -420,10 +484,26 @@ extension on _StringsEn {
 extension on _StringsEs {
 	Map<String, dynamic> _buildFlatMap() {
 		return {
+			'TitleTermsScreen': 'Términos y condiciones',
+			'alertBottomSubtitleHomeScreen': 'No. de Aviso de privacidad:',
+			'alertBottomTitleHomeScreen': 'Aviso de privacidad',
+			'buttonRegisterScreen': 'Crear cuenta',
 			'calculatorTitleHomeScreen': 'Calculadora',
-			'save': 'Speichern',
-			'login.success': 'Login erfolgreich',
+			'dontHaveAccountSubtitleHomeScreen': 'aquí',
+			'dontHaveAccountTitleHomeScreen': '¿No tienes cuenta? crea una',
+			'hintTextConfirmPasswordRegisterScreen': 'Confirmar contraseña',
+			'hintTextCountryRegisterScreen': 'País',
+			'hintTextEmailRegisterScreen': 'Correo electrónico',
+			'hintTextNameRegisterScreen': 'Nombre completo',
+			'hintTextPasswordRegisterScreen': 'Contraseña',
 			'login.fail': 'Login fehlgeschlagen',
+			'login.success': 'Login erfolgreich',
+			'loginTitleHomeScreen': 'Iniciar sesión',
+			'subtitleAcceptRegisterScreen': 'términos y condiciones',
+			'subtitleWelcomeRegisterScreen': 'Crea tu cuenta con un solo paso, introduce tus datos',
+			'titleAcceptRegisterScreen': 'Acepto',
+			'titleAppBarRegisterScreen': 'Crear cuenta',
+			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
 		};
 	}
 }
@@ -431,10 +511,26 @@ extension on _StringsEs {
 extension on _StringsPt {
 	Map<String, dynamic> _buildFlatMap() {
 		return {
-			'calculatorTitleHomeScreen': 'Calculadora portugues',
-			'save': 'Speichern',
-			'login.success': 'Login erfolgreich',
+			'TitleTermsScreen': 'Termos e Condições',
+			'alertBottomSubtitleHomeScreen': 'Nº do Aviso de Privacidade:',
+			'alertBottomTitleHomeScreen': 'Aviso de privacidade',
+			'buttonRegisterScreen': 'Criar uma ',
+			'calculatorTitleHomeScreen': 'Calculadora',
+			'dontHaveAccountSubtitleHomeScreen': 'aqui',
+			'dontHaveAccountTitleHomeScreen': 'Não possui uma conta? Crie um',
+			'hintTextConfirmPasswordRegisterScreen': 'Confirmar senha',
+			'hintTextCountryRegisterScreen': 'País',
+			'hintTextEmailRegisterScreen': 'Correio eletrônico',
+			'hintTextNameRegisterScreen': 'Nome completo',
+			'hintTextPasswordRegisterScreen': 'Senha',
 			'login.fail': 'Login fehlgeschlagen',
+			'login.success': 'Login erfolgreich',
+			'loginTitleHomeScreen': 'Iniciar sessão',
+			'subtitleAcceptRegisterScreen': 'termos e Condições',
+			'subtitleWelcomeRegisterScreen': 'Crie sua conta com uma única etapa, insira seus dados',
+			'titleAcceptRegisterScreen': 'Eu concordo',
+			'titleAppBarRegisterScreen': 'Criar uma conta',
+			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
 		};
 	}
 }

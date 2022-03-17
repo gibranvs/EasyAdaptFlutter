@@ -1,8 +1,24 @@
 {
-    "calculatorTitleHomeScreen": "Calculator",
-    "save": "Save",
-    "login": {
-      "success": "Logged in successfully",
-      "fail": "Logged in failed"
-    }
-  }
+  "TitleTermsScreen": "Terms and Conditions",
+  "alertBottomSubtitleHomeScreen": "Privacy notice number:",
+  "alertBottomTitleHomeScreen": "Notice of Privacy",
+  "buttonRegisterScreen": "Create Account",
+  "calculatorTitleHomeScreen": "Calculator",
+  "dontHaveAccountSubtitleHomeScreen": "here",
+  "dontHaveAccountTitleHomeScreen": "Don't have an account? Create one ",
+  "hintTextConfirmPasswordRegisterScreen": "confirm password",
+  "hintTextCountryRegisterScreen": "Parents",
+  "hintTextEmailRegisterScreen": "E-mail",
+  "hintTextNameRegisterScreen": "Full name",
+  "hintTextPasswordRegisterScreen": "Password",
+  "login": {
+    "fail": "Logged in failed",
+    "success": "Logged in successfully"
+  },
+  "loginTitleHomeScreen": "Log in",
+  "subtitleAcceptRegisterScreen": "terms and Conditions",
+  "subtitleWelcomeRegisterScreen": "Create your account in one step, enter your data",
+  "titleAcceptRegisterScreen": "I agree",
+  "titleAppBarRegisterScreen": "Create an account",
+  "titleWelcomeRegisterScreen": "WELCOME!"
+}

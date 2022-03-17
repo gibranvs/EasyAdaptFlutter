@@ -1,11 +1,17 @@
-import 'package:easy_adapt/ui/pages/login_page.dart';
+import 'package:easy_adapt/ui/pages/initial_page.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
 import 'package:easy_adapt/ui/pages/terms.dart';
 
-getRoutes() {
+getRoutes(t) {
   return {
-    '/initial': (context) => LoginPage(),
-    '/register': (context) => RegisterPage(),
-    '/terms': (context) => TermsPage()
+    '/initial': (context) => InitialPage(
+          t: t,
+        ),
+    '/register': (context) => RegisterPage(
+          t: t,
+        ),
+    '/terms': (context) => TermsPage(
+          t: t,
+        )
   };
 }

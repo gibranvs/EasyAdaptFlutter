@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TermsPage extends StatelessWidget {
-  const TermsPage({Key? key}) : super(key: key);
+  var t;
+
+  TermsPage({Key? key, required this.t}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class TermsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: false,
         title: Text(
-          "Términos y condiciones",
+          t.TitleTermsScreen,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Color.fromRGBO(56, 118, 159, 1.0),
