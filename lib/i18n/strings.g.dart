@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 72 (24.0 per locale)
+ * Strings: 87 (29.0 per locale)
  *
- * Built on 2022-03-17 at 16:25 UTC
+ * Built on 2022-03-17 at 17:48 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -323,6 +323,9 @@ class _StringsEn {
 	String get alertBottomTitleHomeScreen => 'Notice of Privacy';
 	String get buttonRegisterScreen => 'Create Account';
 	String get calculatorTitleHomeScreen => 'Calculator';
+	String get card1HomeScreen => 'CALCULATORS';
+	String get card2HomeScreen => 'CATALOGS';
+	String get card3HomeScreen => 'TUTORIALS';
 	String get dontHaveAccountSubtitleHomeScreen => 'here';
 	String get dontHaveAccountTitleHomeScreen => 'Don\'t have an account? Create one ';
 	String get hintTextConfirmPasswordRegisterScreen => 'confirm password';
@@ -334,11 +337,13 @@ class _StringsEn {
 	String get loginTitleHomeScreen => 'Log in';
 	String get savePasswordLoginScreen => 'Remember password';
 	String get subtitleAcceptRegisterScreen => 'terms and Conditions';
+	String get subtitleHomeScreen => 'Welcome to the tool that optimizes your adaptation';
 	String get subtitleLoginScreen => 'Hello, enter your information';
 	String get subtitleWelcomeRegisterScreen => 'Create your account in one step, enter your data';
 	String get titleAcceptRegisterScreen => 'I agree';
 	String get titleAppBarRegisterScreen => 'Create an account';
 	String get titleButtonLoginScreen => 'Start';
+	String get titleHomeScreen => 'Hello,';
 	String get titleLoginScreen => 'Log in';
 	String get titleWelcomeRegisterScreen => 'WELCOME!';
 }
@@ -377,6 +382,9 @@ class _StringsEs implements _StringsEn {
 	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidad';
 	@override String get buttonRegisterScreen => 'Crear cuenta';
 	@override String get calculatorTitleHomeScreen => 'Calculadora';
+	@override String get card1HomeScreen => 'CALCULADORAS';
+	@override String get card2HomeScreen => 'CATÁLOGOS';
+	@override String get card3HomeScreen => 'TUTORIALES';
 	@override String get dontHaveAccountSubtitleHomeScreen => 'aquí';
 	@override String get dontHaveAccountTitleHomeScreen => '¿No tienes cuenta? crea una';
 	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar contraseña';
@@ -388,11 +396,13 @@ class _StringsEs implements _StringsEn {
 	@override String get loginTitleHomeScreen => 'Iniciar sesión';
 	@override String get savePasswordLoginScreen => 'Recordar contraseña';
 	@override String get subtitleAcceptRegisterScreen => 'términos y condiciones';
+	@override String get subtitleHomeScreen => 'Bienvenido a la herramienta que optimiza tu adapdación';
 	@override String get subtitleLoginScreen => 'Hola, introduce tus datos';
 	@override String get subtitleWelcomeRegisterScreen => 'Crea tu cuenta con un solo paso, introduce tus datos';
 	@override String get titleAcceptRegisterScreen => 'Acepto';
 	@override String get titleAppBarRegisterScreen => 'Crear cuenta';
 	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleHomeScreen => 'Hola,';
 	@override String get titleLoginScreen => 'Iniciar sesión';
 	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
 }
@@ -431,6 +441,9 @@ class _StringsPt implements _StringsEn {
 	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidade';
 	@override String get buttonRegisterScreen => 'Criar uma ';
 	@override String get calculatorTitleHomeScreen => 'Calculadora';
+	@override String get card1HomeScreen => 'CALCULADORAS';
+	@override String get card2HomeScreen => 'CATÁLOGOS';
+	@override String get card3HomeScreen => 'TUTORIAIS';
 	@override String get dontHaveAccountSubtitleHomeScreen => 'aqui';
 	@override String get dontHaveAccountTitleHomeScreen => 'Não possui uma conta? Crie um';
 	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar senha';
@@ -442,11 +455,13 @@ class _StringsPt implements _StringsEn {
 	@override String get loginTitleHomeScreen => 'Iniciar sessão';
 	@override String get savePasswordLoginScreen => 'Lembrar senha';
 	@override String get subtitleAcceptRegisterScreen => 'termos e Condições';
+	@override String get subtitleHomeScreen => 'Bem-vindo à ferramenta que otimiza sua adaptação';
 	@override String get subtitleLoginScreen => 'Olá, insira suas informações';
 	@override String get subtitleWelcomeRegisterScreen => 'Crie sua conta com uma única etapa, insira seus dados';
 	@override String get titleAcceptRegisterScreen => 'Eu concordo';
 	@override String get titleAppBarRegisterScreen => 'Criar uma conta';
 	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleHomeScreen => 'Olá,';
 	@override String get titleLoginScreen => 'Iniciar sessão';
 	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
 }
@@ -474,6 +489,9 @@ extension on _StringsEn {
 			'alertBottomTitleHomeScreen': 'Notice of Privacy',
 			'buttonRegisterScreen': 'Create Account',
 			'calculatorTitleHomeScreen': 'Calculator',
+			'card1HomeScreen': 'CALCULATORS',
+			'card2HomeScreen': 'CATALOGS',
+			'card3HomeScreen': 'TUTORIALS',
 			'dontHaveAccountSubtitleHomeScreen': 'here',
 			'dontHaveAccountTitleHomeScreen': 'Don\'t have an account? Create one ',
 			'hintTextConfirmPasswordRegisterScreen': 'confirm password',
@@ -486,11 +504,13 @@ extension on _StringsEn {
 			'loginTitleHomeScreen': 'Log in',
 			'savePasswordLoginScreen': 'Remember password',
 			'subtitleAcceptRegisterScreen': 'terms and Conditions',
+			'subtitleHomeScreen': 'Welcome to the tool that optimizes your adaptation',
 			'subtitleLoginScreen': 'Hello, enter your information',
 			'subtitleWelcomeRegisterScreen': 'Create your account in one step, enter your data',
 			'titleAcceptRegisterScreen': 'I agree',
 			'titleAppBarRegisterScreen': 'Create an account',
 			'titleButtonLoginScreen': 'Start',
+			'titleHomeScreen': 'Hello,',
 			'titleLoginScreen': 'Log in',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
 		};
@@ -505,6 +525,9 @@ extension on _StringsEs {
 			'alertBottomTitleHomeScreen': 'Aviso de privacidad',
 			'buttonRegisterScreen': 'Crear cuenta',
 			'calculatorTitleHomeScreen': 'Calculadora',
+			'card1HomeScreen': 'CALCULADORAS',
+			'card2HomeScreen': 'CATÁLOGOS',
+			'card3HomeScreen': 'TUTORIALES',
 			'dontHaveAccountSubtitleHomeScreen': 'aquí',
 			'dontHaveAccountTitleHomeScreen': '¿No tienes cuenta? crea una',
 			'hintTextConfirmPasswordRegisterScreen': 'Confirmar contraseña',
@@ -517,11 +540,13 @@ extension on _StringsEs {
 			'loginTitleHomeScreen': 'Iniciar sesión',
 			'savePasswordLoginScreen': 'Recordar contraseña',
 			'subtitleAcceptRegisterScreen': 'términos y condiciones',
+			'subtitleHomeScreen': 'Bienvenido a la herramienta que optimiza tu adapdación',
 			'subtitleLoginScreen': 'Hola, introduce tus datos',
 			'subtitleWelcomeRegisterScreen': 'Crea tu cuenta con un solo paso, introduce tus datos',
 			'titleAcceptRegisterScreen': 'Acepto',
 			'titleAppBarRegisterScreen': 'Crear cuenta',
 			'titleButtonLoginScreen': 'Iniciar',
+			'titleHomeScreen': 'Hola,',
 			'titleLoginScreen': 'Iniciar sesión',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
 		};
@@ -536,6 +561,9 @@ extension on _StringsPt {
 			'alertBottomTitleHomeScreen': 'Aviso de privacidade',
 			'buttonRegisterScreen': 'Criar uma ',
 			'calculatorTitleHomeScreen': 'Calculadora',
+			'card1HomeScreen': 'CALCULADORAS',
+			'card2HomeScreen': 'CATÁLOGOS',
+			'card3HomeScreen': 'TUTORIAIS',
 			'dontHaveAccountSubtitleHomeScreen': 'aqui',
 			'dontHaveAccountTitleHomeScreen': 'Não possui uma conta? Crie um',
 			'hintTextConfirmPasswordRegisterScreen': 'Confirmar senha',
@@ -548,11 +576,13 @@ extension on _StringsPt {
 			'loginTitleHomeScreen': 'Iniciar sessão',
 			'savePasswordLoginScreen': 'Lembrar senha',
 			'subtitleAcceptRegisterScreen': 'termos e Condições',
+			'subtitleHomeScreen': 'Bem-vindo à ferramenta que otimiza sua adaptação',
 			'subtitleLoginScreen': 'Olá, insira suas informações',
 			'subtitleWelcomeRegisterScreen': 'Crie sua conta com uma única etapa, insira seus dados',
 			'titleAcceptRegisterScreen': 'Eu concordo',
 			'titleAppBarRegisterScreen': 'Criar uma conta',
 			'titleButtonLoginScreen': 'Iniciar',
+			'titleHomeScreen': 'Olá,',
 			'titleLoginScreen': 'Iniciar sessão',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
 		};

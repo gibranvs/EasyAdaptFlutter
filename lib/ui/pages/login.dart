@@ -90,17 +90,23 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Center(
-                      child: Container(
-                        width: double.infinity,
-                        height: 50,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(129, 181, 178, 1.0),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(25))),
-                        child: Center(
-                          child: Text(
-                            t.titleButtonLoginScreen,
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          decoration: const BoxDecoration(
+                              color: Color.fromRGBO(129, 181, 178, 1.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(25))),
+                          child: Center(
+                            child: Text(
+                              t.titleButtonLoginScreen,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 17),
+                            ),
                           ),
                         ),
                       ),

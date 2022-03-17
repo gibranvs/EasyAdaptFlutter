@@ -1,3 +1,4 @@
+import 'package:easy_adapt/ui/pages/home.dart';
 import 'package:easy_adapt/ui/pages/initial_page.dart';
 import 'package:easy_adapt/ui/pages/login.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
@@ -15,6 +16,9 @@ getRoutes(t) {
           t: t,
         ),
     '/login': (context) => LoginPage(
+          t: t,
+        ),
+    '/home': (context) => HomePage(
           t: t,
         )
   };

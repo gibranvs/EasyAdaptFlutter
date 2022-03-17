@@ -4,6 +4,9 @@
   "alertBottomTitleHomeScreen": "Notice of Privacy",
   "buttonRegisterScreen": "Create Account",
   "calculatorTitleHomeScreen": "Calculator",
+  "card1HomeScreen": "CALCULATORS",
+  "card2HomeScreen": "CATALOGS",
+  "card3HomeScreen": "TUTORIALS",
   "dontHaveAccountSubtitleHomeScreen": "here",
   "dontHaveAccountTitleHomeScreen": "Don't have an account? Create one ",
   "hintTextConfirmPasswordRegisterScreen": "confirm password",
@@ -18,11 +21,13 @@
   "loginTitleHomeScreen": "Log in",
   "savePasswordLoginScreen": "Remember password",
   "subtitleAcceptRegisterScreen": "terms and Conditions",
+  "subtitleHomeScreen": "Welcome to the tool that optimizes your adaptation",
   "subtitleLoginScreen": "Hello, enter your information",
   "subtitleWelcomeRegisterScreen": "Create your account in one step, enter your data",
   "titleAcceptRegisterScreen": "I agree",
   "titleAppBarRegisterScreen": "Create an account",
   "titleButtonLoginScreen": "Start",
+  "titleHomeScreen": "Hello,",
   "titleLoginScreen": "Log in",
   "titleWelcomeRegisterScreen": "WELCOME!"
 }
