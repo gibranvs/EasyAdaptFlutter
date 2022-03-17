@@ -1,3 +1,4 @@
+import 'package:easy_adapt/ui/widgets/appBar_with_logo.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -29,16 +30,7 @@ class _InitialPage extends State<InitialPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "BAUSCH + LOMB",
-                      style: TextStyle(
-                          color: Color.fromRGBO(102, 133, 153, 1.0),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900),
-                    ),
-                  ),
+                  getAppBarWithLogo(),
                   Center(
                     child: Image.asset(
                       './assets/logo.png',

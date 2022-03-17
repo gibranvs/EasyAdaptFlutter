@@ -1,3 +1,5 @@
+import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
+
 import '../../i18n/strings.g.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -63,75 +65,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 25,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: widget.t.hintTextNameRegisterScreen,
-                      labelStyle: const TextStyle(fontSize: 18),
-                      border: const OutlineInputBorder(),
-                      errorBorder: const OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare(widget.t.hintTextNameRegisterScreen),
                 const SizedBox(
                   height: 18,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: widget.t.hintTextEmailRegisterScreen,
-                      labelStyle: const TextStyle(fontSize: 18),
-                      border: const OutlineInputBorder(),
-                      errorBorder: const OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare(widget.t.hintTextEmailRegisterScreen),
                 const SizedBox(
                   height: 18,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: widget.t.hintTextPasswordRegisterScreen,
-                      labelStyle: const TextStyle(fontSize: 18),
-                      border: const OutlineInputBorder(),
-                      errorBorder: const OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare(
+                    widget.t.hintTextPasswordRegisterScreen),
                 const SizedBox(
                   height: 18,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: widget.t.hintTextConfirmPasswordRegisterScreen,
-                      labelStyle: const TextStyle(fontSize: 18),
-                      border: const OutlineInputBorder(),
-                      errorBorder: const OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare(
+                    widget.t.hintTextConfirmPasswordRegisterScreen),
                 const SizedBox(
                   height: 18,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: widget.t.hintTextCountryRegisterScreen,
-                      labelStyle: const TextStyle(fontSize: 18),
-                      border: const OutlineInputBorder(),
-                      errorBorder: const OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare(widget.t.hintTextCountryRegisterScreen),
                 const SizedBox(
                   height: 18,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
-                      labelText: 'CURP/DNI',
-                      labelStyle: TextStyle(fontSize: 18),
-                      border: OutlineInputBorder(),
-                      errorBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 5))),
-                ),
+                getTextFieldModelSquare('CURP/DNI'),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
