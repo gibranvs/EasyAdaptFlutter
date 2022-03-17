@@ -145,7 +145,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           text: ' términos y condiciones',
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Navigator.pushNamed(context, '/login');
+                              Navigator.pushNamed(context, '/terms');
                             },
                           style: TextStyle(
                               color: Color.fromRGBO(56, 118, 159, 1.0),
