@@ -16,9 +16,13 @@
     "success": "Logged in successfully"
   },
   "loginTitleHomeScreen": "Log in",
+  "savePasswordLoginScreen": "Remember password",
   "subtitleAcceptRegisterScreen": "terms and Conditions",
+  "subtitleLoginScreen": "Hello, enter your information",
   "subtitleWelcomeRegisterScreen": "Create your account in one step, enter your data",
   "titleAcceptRegisterScreen": "I agree",
   "titleAppBarRegisterScreen": "Create an account",
+  "titleButtonLoginScreen": "Start",
+  "titleLoginScreen": "Log in",
   "titleWelcomeRegisterScreen": "WELCOME!"
 }

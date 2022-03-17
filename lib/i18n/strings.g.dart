@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 60 (20.0 per locale)
+ * Strings: 72 (24.0 per locale)
  *
- * Built on 2022-03-17 at 15:41 UTC
+ * Built on 2022-03-17 at 16:25 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -332,10 +332,14 @@ class _StringsEn {
 	String get hintTextPasswordRegisterScreen => 'Password';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
 	String get loginTitleHomeScreen => 'Log in';
+	String get savePasswordLoginScreen => 'Remember password';
 	String get subtitleAcceptRegisterScreen => 'terms and Conditions';
+	String get subtitleLoginScreen => 'Hello, enter your information';
 	String get subtitleWelcomeRegisterScreen => 'Create your account in one step, enter your data';
 	String get titleAcceptRegisterScreen => 'I agree';
 	String get titleAppBarRegisterScreen => 'Create an account';
+	String get titleButtonLoginScreen => 'Start';
+	String get titleLoginScreen => 'Log in';
 	String get titleWelcomeRegisterScreen => 'WELCOME!';
 }
 
@@ -382,10 +386,14 @@ class _StringsEs implements _StringsEn {
 	@override String get hintTextPasswordRegisterScreen => 'Contraseña';
 	@override late final _StringsLoginEs login = _StringsLoginEs._(_root);
 	@override String get loginTitleHomeScreen => 'Iniciar sesión';
+	@override String get savePasswordLoginScreen => 'Recordar contraseña';
 	@override String get subtitleAcceptRegisterScreen => 'términos y condiciones';
+	@override String get subtitleLoginScreen => 'Hola, introduce tus datos';
 	@override String get subtitleWelcomeRegisterScreen => 'Crea tu cuenta con un solo paso, introduce tus datos';
 	@override String get titleAcceptRegisterScreen => 'Acepto';
 	@override String get titleAppBarRegisterScreen => 'Crear cuenta';
+	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleLoginScreen => 'Iniciar sesión';
 	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
 }
 
@@ -432,10 +440,14 @@ class _StringsPt implements _StringsEn {
 	@override String get hintTextPasswordRegisterScreen => 'Senha';
 	@override late final _StringsLoginPt login = _StringsLoginPt._(_root);
 	@override String get loginTitleHomeScreen => 'Iniciar sessão';
+	@override String get savePasswordLoginScreen => 'Lembrar senha';
 	@override String get subtitleAcceptRegisterScreen => 'termos e Condições';
+	@override String get subtitleLoginScreen => 'Olá, insira suas informações';
 	@override String get subtitleWelcomeRegisterScreen => 'Crie sua conta com uma única etapa, insira seus dados';
 	@override String get titleAcceptRegisterScreen => 'Eu concordo';
 	@override String get titleAppBarRegisterScreen => 'Criar uma conta';
+	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleLoginScreen => 'Iniciar sessão';
 	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
 }
 
@@ -472,10 +484,14 @@ extension on _StringsEn {
 			'login.fail': 'Logged in failed',
 			'login.success': 'Logged in successfully',
 			'loginTitleHomeScreen': 'Log in',
+			'savePasswordLoginScreen': 'Remember password',
 			'subtitleAcceptRegisterScreen': 'terms and Conditions',
+			'subtitleLoginScreen': 'Hello, enter your information',
 			'subtitleWelcomeRegisterScreen': 'Create your account in one step, enter your data',
 			'titleAcceptRegisterScreen': 'I agree',
 			'titleAppBarRegisterScreen': 'Create an account',
+			'titleButtonLoginScreen': 'Start',
+			'titleLoginScreen': 'Log in',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
 		};
 	}
@@ -499,10 +515,14 @@ extension on _StringsEs {
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
 			'loginTitleHomeScreen': 'Iniciar sesión',
+			'savePasswordLoginScreen': 'Recordar contraseña',
 			'subtitleAcceptRegisterScreen': 'términos y condiciones',
+			'subtitleLoginScreen': 'Hola, introduce tus datos',
 			'subtitleWelcomeRegisterScreen': 'Crea tu cuenta con un solo paso, introduce tus datos',
 			'titleAcceptRegisterScreen': 'Acepto',
 			'titleAppBarRegisterScreen': 'Crear cuenta',
+			'titleButtonLoginScreen': 'Iniciar',
+			'titleLoginScreen': 'Iniciar sesión',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
 		};
 	}
@@ -526,10 +546,14 @@ extension on _StringsPt {
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
 			'loginTitleHomeScreen': 'Iniciar sessão',
+			'savePasswordLoginScreen': 'Lembrar senha',
 			'subtitleAcceptRegisterScreen': 'termos e Condições',
+			'subtitleLoginScreen': 'Olá, insira suas informações',
 			'subtitleWelcomeRegisterScreen': 'Crie sua conta com uma única etapa, insira seus dados',
 			'titleAcceptRegisterScreen': 'Eu concordo',
 			'titleAppBarRegisterScreen': 'Criar uma conta',
+			'titleButtonLoginScreen': 'Iniciar',
+			'titleLoginScreen': 'Iniciar sessão',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
 		};
 	}

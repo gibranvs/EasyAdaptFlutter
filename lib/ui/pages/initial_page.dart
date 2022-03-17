@@ -60,17 +60,23 @@ class _InitialPage extends State<InitialPage> {
                     height: 30,
                   ),
                   Center(
-                    child: Container(
-                      width: 320,
-                      height: 50,
-                      decoration: const BoxDecoration(
-                          color: Color.fromRGBO(69, 130, 178, 1.0),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: Center(
-                        child: Text(
-                          t.loginTitleHomeScreen,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 17),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
+                      child: Container(
+                        width: 320,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(69, 130, 178, 1.0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(25))),
+                        child: Center(
+                          child: Text(
+                            t.loginTitleHomeScreen,
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 17),
+                          ),
                         ),
                       ),
                     ),
