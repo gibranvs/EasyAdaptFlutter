@@ -135,6 +135,9 @@ class _HomePageState extends State<HomePage> {
                             child: Card(
                                 elevation: 2.0,
                                 child: ListTile(
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/layout');
+                                  },
                                   title: Center(
                                     child: Text(
                                       t.card3HomeScreen,
