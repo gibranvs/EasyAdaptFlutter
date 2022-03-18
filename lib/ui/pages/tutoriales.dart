@@ -62,7 +62,7 @@ class _TutorialesPageState extends State<TutorialesPage> {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(0, 129, 171, 1.0)),
+                color: Color.fromRGBO(25, 180, 201, 1.0)),
           )))
         ],
       ),
