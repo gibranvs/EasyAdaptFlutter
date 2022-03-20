@@ -1,3 +1,4 @@
+import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
 
 class TutorialesPage extends StatefulWidget {
@@ -17,12 +18,13 @@ class _TutorialesPageState extends State<TutorialesPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            getAppBarWithLogos(),
             Padding(
               padding: const EdgeInsets.only(left: 30),
               child: Text(
                 "Tutoriales",
                 style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 29,
                     fontWeight: FontWeight.bold,
                     color: Color.fromRGBO(0, 129, 171, 1.0)),
               ),

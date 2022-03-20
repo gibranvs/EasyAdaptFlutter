@@ -10,3 +10,20 @@ getTextFieldModelSquare(text) {
             borderSide: const BorderSide(color: Colors.black, width: 5))),
   );
 }
+
+getTextFieldModelSquareWhite(text) {
+  return TextField(
+    style: TextStyle(color: Colors.white),
+    decoration: InputDecoration(
+        labelText: text,
+        labelStyle: const TextStyle(fontSize: 18, color: Colors.white),
+        enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white)),
+        focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white)),
+        border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white)),
+        errorBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.white, width: 5))),
+  );
+}

@@ -1,3 +1,7 @@
+import 'package:easy_adapt/ui/pages/calculadora/calculadora.dart';
+import 'package:easy_adapt/ui/pages/catalogo/catalog.dart';
+import 'package:easy_adapt/ui/pages/pacientes/patients_layout_page.dart';
+import 'package:easy_adapt/ui/pages/perfil/perfil.dart';
 import 'package:easy_adapt/ui/pages/tutoriales.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,23 +20,11 @@ class _LayoutState extends State<Layout> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: ',
-      style: optionStyle,
-    ),
+    CalcInitialPage(),
+    CatalogPage(),
     TutorialesPage(),
-    Text(
-      'Index 2: ',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 4: ',
-      style: optionStyle,
-    ),
+    PatientsLayoutPage(),
+    PerfilPage()
   ];
 
   @override
@@ -42,22 +34,48 @@ class _LayoutState extends State<Layout> {
       body: SafeArea(
           child: Stack(
         children: [
-          Center(
-            child: Column(
-              children: [
-                Flexible(
-                    child: SingleChildScrollView(
-                  child: Column(children: [
-                    getAppBarWithLogos(),
-                    _widgetOptions.elementAt(_selectedIndex),
-                    SizedBox(
-                      height: 65,
-                    )
-                  ]),
-                ))
-              ],
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: SingleChildScrollView(
+              child: Column(children: [
+                _widgetOptions.elementAt(_selectedIndex),
+                SizedBox(
+                  height: 65,
+                ),
+                _selectedIndex == 3
+                    ? SizedBox(
+                        height: 100,
+                      )
+                    : Container()
+              ]),
             ),
           ),
+          _selectedIndex == 3
+              ? Positioned(
+                  bottom: 75,
+                  left: 0,
+                  right: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/patients/add-patient');
+                    },
+                    child: Container(
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromRGBO(129, 181, 178, 1.0)),
+                      child: Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ))
+              : Container(),
           Positioned(
               bottom: 0,
               left: 0,
