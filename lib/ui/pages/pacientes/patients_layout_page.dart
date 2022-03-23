@@ -1,6 +1,7 @@
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class PatientsLayoutPage extends StatefulWidget {
   PatientsLayoutPage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                 child: Container(
                   width: 250,
                   height: 40,
-                  child: getTextFieldModelSquare('Buscar por nombre....'),
+                  child: getTextFieldModelSquare(t.hintTextPatientsPage),
                 ),
               ),
               SizedBox(

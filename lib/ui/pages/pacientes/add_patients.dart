@@ -1,5 +1,6 @@
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class AddPatientsPage extends StatefulWidget {
   var t;
@@ -51,7 +52,7 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Nuevo paciente",
+                            t.titleAddPatient,
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -62,14 +63,8 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                           ),
                           Container(
                             height: 50,
-                            child: getTextFieldModelSquareWhite('Nombre'),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            height: 50,
-                            child: getTextFieldModelSquareWhite('Apellidos'),
+                            child: getTextFieldModelSquareWhite(
+                                t.hintNameAddPatient),
                           ),
                           SizedBox(
                             height: 20,
@@ -77,14 +72,23 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                           Container(
                             height: 50,
                             child: getTextFieldModelSquareWhite(
-                                'Correo electrónico'),
+                                t.hintLastNameAddPatient),
                           ),
                           SizedBox(
                             height: 20,
                           ),
                           Container(
                             height: 50,
-                            child: getTextFieldModelSquareWhite('Teléfono'),
+                            child: getTextFieldModelSquareWhite(
+                                t.hintLastEmailAddPatient),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            height: 50,
+                            child: getTextFieldModelSquareWhite(
+                                t.hintPhoneAddPatient),
                           ),
                           SizedBox(
                             height: 20,
@@ -94,7 +98,7 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Text(
-                                "Agregar",
+                                t.buttonAddPatient,
                                 style: TextStyle(
                                     fontSize: 17,
                                     color: Color.fromARGB(255, 69, 214, 178),

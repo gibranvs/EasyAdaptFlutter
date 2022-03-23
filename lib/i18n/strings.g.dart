@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 87 (29.0 per locale)
+ * Strings: 144 (48.0 per locale)
  *
- * Built on 2022-03-17 at 19:41 UTC
+ * Built on 2022-03-23 at 17:00 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -321,30 +321,49 @@ class _StringsEn {
 	String get TitleTermsScreen => 'Terms and Conditions';
 	String get alertBottomSubtitleHomeScreen => 'Privacy notice number:';
 	String get alertBottomTitleHomeScreen => 'Notice of Privacy';
+	String get buttonAddPatient => 'Add';
 	String get buttonRegisterScreen => 'Create Account';
+	String get buttonTitleProfilePage => 'Change';
 	String get calculatorTitleHomeScreen => 'Calculator';
 	String get card1HomeScreen => 'CALCULATORS';
 	String get card2HomeScreen => 'CATALOGS';
 	String get card3HomeScreen => 'TUTORIALS';
 	String get dontHaveAccountSubtitleHomeScreen => 'here';
 	String get dontHaveAccountTitleHomeScreen => 'Don\'t have an account? Create one ';
+	String get hintLastEmailAddPatient => 'Email';
+	String get hintLastNameAddPatient => 'Surnames';
+	String get hintNameAddPatient => 'Name';
+	String get hintPhoneAddPatient => 'Telephone';
+	String get hintTextConfirmPasswordProfilePage => 'Confirm Password';
 	String get hintTextConfirmPasswordRegisterScreen => 'confirm password';
+	String get hintTextCountryProfilePage => 'Parents';
 	String get hintTextCountryRegisterScreen => 'Parents';
+	String get hintTextEmailProfilePage => 'Mail';
 	String get hintTextEmailRegisterScreen => 'E-mail';
+	String get hintTextNameProfilePage => 'Name';
 	String get hintTextNameRegisterScreen => 'Full name';
+	String get hintTextNewPasswordProfilePage => 'New Password';
+	String get hintTextPasswordProfilePage => 'Current password';
 	String get hintTextPasswordRegisterScreen => 'Password';
+	String get hintTextPatientsPage => 'Search by name';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
 	String get loginTitleHomeScreen => 'Log in';
 	String get savePasswordLoginScreen => 'Remember password';
+	String get singOffTitleProfilePage => 'Sign off';
 	String get subtitleAcceptRegisterScreen => 'terms and Conditions';
 	String get subtitleHomeScreen => 'Welcome to the tool that optimizes your adaptation';
 	String get subtitleLoginScreen => 'Hello, enter your information';
 	String get subtitleWelcomeRegisterScreen => 'Create your account in one step, enter your data';
 	String get titleAcceptRegisterScreen => 'I agree';
+	String get titleAddPatient => 'New patient';
 	String get titleAppBarRegisterScreen => 'Create an account';
 	String get titleButtonLoginScreen => 'Start';
+	String get titleCatalogPage => 'Catalog';
 	String get titleHomeScreen => 'Hello,';
 	String get titleLoginScreen => 'Log in';
+	String get titlePatientsPage => 'Patients';
+	String get titleProfilePage => 'Profile';
+	String get titleTutorialesPage => 'Tutorials';
 	String get titleWelcomeRegisterScreen => 'WELCOME!';
 }
 
@@ -380,30 +399,49 @@ class _StringsEs implements _StringsEn {
 	@override String get TitleTermsScreen => 'Términos y condiciones';
 	@override String get alertBottomSubtitleHomeScreen => 'No. de Aviso de privacidad:';
 	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidad';
+	@override String get buttonAddPatient => 'Agregar';
 	@override String get buttonRegisterScreen => 'Crear cuenta';
+	@override String get buttonTitleProfilePage => 'Cambiar';
 	@override String get calculatorTitleHomeScreen => 'Calculadora';
 	@override String get card1HomeScreen => 'CALCULADORAS';
 	@override String get card2HomeScreen => 'CATÁLOGOS';
 	@override String get card3HomeScreen => 'TUTORIALES';
 	@override String get dontHaveAccountSubtitleHomeScreen => 'aquí';
 	@override String get dontHaveAccountTitleHomeScreen => '¿No tienes cuenta? crea una';
+	@override String get hintLastEmailAddPatient => 'Correo electrónico';
+	@override String get hintLastNameAddPatient => 'Apellidos';
+	@override String get hintNameAddPatient => 'Nombre';
+	@override String get hintPhoneAddPatient => 'Teléfono';
+	@override String get hintTextConfirmPasswordProfilePage => 'Confirmar contraseña';
 	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar contraseña';
+	@override String get hintTextCountryProfilePage => 'País';
 	@override String get hintTextCountryRegisterScreen => 'País';
+	@override String get hintTextEmailProfilePage => 'Correo';
 	@override String get hintTextEmailRegisterScreen => 'Correo electrónico';
+	@override String get hintTextNameProfilePage => 'Nombre';
 	@override String get hintTextNameRegisterScreen => 'Nombre completo';
+	@override String get hintTextNewPasswordProfilePage => 'Nueva contraseña';
+	@override String get hintTextPasswordProfilePage => 'Contraseña actual';
 	@override String get hintTextPasswordRegisterScreen => 'Contraseña';
+	@override String get hintTextPatientsPage => 'Buscar por nombre';
 	@override late final _StringsLoginEs login = _StringsLoginEs._(_root);
 	@override String get loginTitleHomeScreen => 'Iniciar sesión';
 	@override String get savePasswordLoginScreen => 'Recordar contraseña';
+	@override String get singOffTitleProfilePage => 'Cerrar sesión';
 	@override String get subtitleAcceptRegisterScreen => 'términos y condiciones';
 	@override String get subtitleHomeScreen => 'Bienvenido a la herramienta que optimiza tu adapdación';
 	@override String get subtitleLoginScreen => 'Hola, introduce tus datos';
 	@override String get subtitleWelcomeRegisterScreen => 'Crea tu cuenta con un solo paso, introduce tus datos';
 	@override String get titleAcceptRegisterScreen => 'Acepto';
+	@override String get titleAddPatient => 'Nuevo paciente';
 	@override String get titleAppBarRegisterScreen => 'Crear cuenta';
 	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleCatalogPage => 'Catálogo';
 	@override String get titleHomeScreen => 'Hola,';
 	@override String get titleLoginScreen => 'Iniciar sesión';
+	@override String get titlePatientsPage => 'Pacientes';
+	@override String get titleProfilePage => 'Perfil';
+	@override String get titleTutorialesPage => 'Tutoriales';
 	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
 }
 
@@ -439,30 +477,49 @@ class _StringsPt implements _StringsEn {
 	@override String get TitleTermsScreen => 'Termos e Condições';
 	@override String get alertBottomSubtitleHomeScreen => 'Nº do Aviso de Privacidade:';
 	@override String get alertBottomTitleHomeScreen => 'Aviso de privacidade';
+	@override String get buttonAddPatient => 'Adicionar';
 	@override String get buttonRegisterScreen => 'Criar uma ';
+	@override String get buttonTitleProfilePage => 'Mudar';
 	@override String get calculatorTitleHomeScreen => 'Calculadora';
 	@override String get card1HomeScreen => 'CALCULADORAS';
 	@override String get card2HomeScreen => 'CATÁLOGOS';
 	@override String get card3HomeScreen => 'TUTORIAIS';
 	@override String get dontHaveAccountSubtitleHomeScreen => 'aqui';
 	@override String get dontHaveAccountTitleHomeScreen => 'Não possui uma conta? Crie um';
+	@override String get hintLastEmailAddPatient => 'Correio eletrônico';
+	@override String get hintLastNameAddPatient => 'Sobrenomes';
+	@override String get hintNameAddPatient => 'Nome';
+	@override String get hintPhoneAddPatient => 'Telefone';
+	@override String get hintTextConfirmPasswordProfilePage => 'Confirmar senha';
 	@override String get hintTextConfirmPasswordRegisterScreen => 'Confirmar senha';
+	@override String get hintTextCountryProfilePage => 'País';
 	@override String get hintTextCountryRegisterScreen => 'País';
+	@override String get hintTextEmailProfilePage => 'Correspondência';
 	@override String get hintTextEmailRegisterScreen => 'Correio eletrônico';
+	@override String get hintTextNameProfilePage => 'Nome';
 	@override String get hintTextNameRegisterScreen => 'Nome completo';
+	@override String get hintTextNewPasswordProfilePage => 'Nova senha';
+	@override String get hintTextPasswordProfilePage => 'Senha atual';
 	@override String get hintTextPasswordRegisterScreen => 'Senha';
+	@override String get hintTextPatientsPage => 'Procura por nome';
 	@override late final _StringsLoginPt login = _StringsLoginPt._(_root);
 	@override String get loginTitleHomeScreen => 'Iniciar sessão';
 	@override String get savePasswordLoginScreen => 'Lembrar senha';
+	@override String get singOffTitleProfilePage => 'Fechar Sessão';
 	@override String get subtitleAcceptRegisterScreen => 'termos e Condições';
 	@override String get subtitleHomeScreen => 'Bem-vindo à ferramenta que otimiza sua adaptação';
 	@override String get subtitleLoginScreen => 'Olá, insira suas informações';
 	@override String get subtitleWelcomeRegisterScreen => 'Crie sua conta com uma única etapa, insira seus dados';
 	@override String get titleAcceptRegisterScreen => 'Eu concordo';
+	@override String get titleAddPatient => 'Novo paciente';
 	@override String get titleAppBarRegisterScreen => 'Criar uma conta';
 	@override String get titleButtonLoginScreen => 'Iniciar';
+	@override String get titleCatalogPage => 'Catálogo';
 	@override String get titleHomeScreen => 'Olá,';
 	@override String get titleLoginScreen => 'Iniciar sessão';
+	@override String get titlePatientsPage => 'Pacientes';
+	@override String get titleProfilePage => 'Perfil';
+	@override String get titleTutorialesPage => 'Tutoriais';
 	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
 }
 
@@ -487,31 +544,50 @@ extension on _StringsEn {
 			'TitleTermsScreen': 'Terms and Conditions',
 			'alertBottomSubtitleHomeScreen': 'Privacy notice number:',
 			'alertBottomTitleHomeScreen': 'Notice of Privacy',
+			'buttonAddPatient': 'Add',
 			'buttonRegisterScreen': 'Create Account',
+			'buttonTitleProfilePage': 'Change',
 			'calculatorTitleHomeScreen': 'Calculator',
 			'card1HomeScreen': 'CALCULATORS',
 			'card2HomeScreen': 'CATALOGS',
 			'card3HomeScreen': 'TUTORIALS',
 			'dontHaveAccountSubtitleHomeScreen': 'here',
 			'dontHaveAccountTitleHomeScreen': 'Don\'t have an account? Create one ',
+			'hintLastEmailAddPatient': 'Email',
+			'hintLastNameAddPatient': 'Surnames',
+			'hintNameAddPatient': 'Name',
+			'hintPhoneAddPatient': 'Telephone',
+			'hintTextConfirmPasswordProfilePage': 'Confirm Password',
 			'hintTextConfirmPasswordRegisterScreen': 'confirm password',
+			'hintTextCountryProfilePage': 'Parents',
 			'hintTextCountryRegisterScreen': 'Parents',
+			'hintTextEmailProfilePage': 'Mail',
 			'hintTextEmailRegisterScreen': 'E-mail',
+			'hintTextNameProfilePage': 'Name',
 			'hintTextNameRegisterScreen': 'Full name',
+			'hintTextNewPasswordProfilePage': 'New Password',
+			'hintTextPasswordProfilePage': 'Current password',
 			'hintTextPasswordRegisterScreen': 'Password',
+			'hintTextPatientsPage': 'Search by name',
 			'login.fail': 'Logged in failed',
 			'login.success': 'Logged in successfully',
 			'loginTitleHomeScreen': 'Log in',
 			'savePasswordLoginScreen': 'Remember password',
+			'singOffTitleProfilePage': 'Sign off',
 			'subtitleAcceptRegisterScreen': 'terms and Conditions',
 			'subtitleHomeScreen': 'Welcome to the tool that optimizes your adaptation',
 			'subtitleLoginScreen': 'Hello, enter your information',
 			'subtitleWelcomeRegisterScreen': 'Create your account in one step, enter your data',
 			'titleAcceptRegisterScreen': 'I agree',
+			'titleAddPatient': 'New patient',
 			'titleAppBarRegisterScreen': 'Create an account',
 			'titleButtonLoginScreen': 'Start',
+			'titleCatalogPage': 'Catalog',
 			'titleHomeScreen': 'Hello,',
 			'titleLoginScreen': 'Log in',
+			'titlePatientsPage': 'Patients',
+			'titleProfilePage': 'Profile',
+			'titleTutorialesPage': 'Tutorials',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
 		};
 	}
@@ -523,31 +599,50 @@ extension on _StringsEs {
 			'TitleTermsScreen': 'Términos y condiciones',
 			'alertBottomSubtitleHomeScreen': 'No. de Aviso de privacidad:',
 			'alertBottomTitleHomeScreen': 'Aviso de privacidad',
+			'buttonAddPatient': 'Agregar',
 			'buttonRegisterScreen': 'Crear cuenta',
+			'buttonTitleProfilePage': 'Cambiar',
 			'calculatorTitleHomeScreen': 'Calculadora',
 			'card1HomeScreen': 'CALCULADORAS',
 			'card2HomeScreen': 'CATÁLOGOS',
 			'card3HomeScreen': 'TUTORIALES',
 			'dontHaveAccountSubtitleHomeScreen': 'aquí',
 			'dontHaveAccountTitleHomeScreen': '¿No tienes cuenta? crea una',
+			'hintLastEmailAddPatient': 'Correo electrónico',
+			'hintLastNameAddPatient': 'Apellidos',
+			'hintNameAddPatient': 'Nombre',
+			'hintPhoneAddPatient': 'Teléfono',
+			'hintTextConfirmPasswordProfilePage': 'Confirmar contraseña',
 			'hintTextConfirmPasswordRegisterScreen': 'Confirmar contraseña',
+			'hintTextCountryProfilePage': 'País',
 			'hintTextCountryRegisterScreen': 'País',
+			'hintTextEmailProfilePage': 'Correo',
 			'hintTextEmailRegisterScreen': 'Correo electrónico',
+			'hintTextNameProfilePage': 'Nombre',
 			'hintTextNameRegisterScreen': 'Nombre completo',
+			'hintTextNewPasswordProfilePage': 'Nueva contraseña',
+			'hintTextPasswordProfilePage': 'Contraseña actual',
 			'hintTextPasswordRegisterScreen': 'Contraseña',
+			'hintTextPatientsPage': 'Buscar por nombre',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
 			'loginTitleHomeScreen': 'Iniciar sesión',
 			'savePasswordLoginScreen': 'Recordar contraseña',
+			'singOffTitleProfilePage': 'Cerrar sesión',
 			'subtitleAcceptRegisterScreen': 'términos y condiciones',
 			'subtitleHomeScreen': 'Bienvenido a la herramienta que optimiza tu adapdación',
 			'subtitleLoginScreen': 'Hola, introduce tus datos',
 			'subtitleWelcomeRegisterScreen': 'Crea tu cuenta con un solo paso, introduce tus datos',
 			'titleAcceptRegisterScreen': 'Acepto',
+			'titleAddPatient': 'Nuevo paciente',
 			'titleAppBarRegisterScreen': 'Crear cuenta',
 			'titleButtonLoginScreen': 'Iniciar',
+			'titleCatalogPage': 'Catálogo',
 			'titleHomeScreen': 'Hola,',
 			'titleLoginScreen': 'Iniciar sesión',
+			'titlePatientsPage': 'Pacientes',
+			'titleProfilePage': 'Perfil',
+			'titleTutorialesPage': 'Tutoriales',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
 		};
 	}
@@ -559,31 +654,50 @@ extension on _StringsPt {
 			'TitleTermsScreen': 'Termos e Condições',
 			'alertBottomSubtitleHomeScreen': 'Nº do Aviso de Privacidade:',
 			'alertBottomTitleHomeScreen': 'Aviso de privacidade',
+			'buttonAddPatient': 'Adicionar',
 			'buttonRegisterScreen': 'Criar uma ',
+			'buttonTitleProfilePage': 'Mudar',
 			'calculatorTitleHomeScreen': 'Calculadora',
 			'card1HomeScreen': 'CALCULADORAS',
 			'card2HomeScreen': 'CATÁLOGOS',
 			'card3HomeScreen': 'TUTORIAIS',
 			'dontHaveAccountSubtitleHomeScreen': 'aqui',
 			'dontHaveAccountTitleHomeScreen': 'Não possui uma conta? Crie um',
+			'hintLastEmailAddPatient': 'Correio eletrônico',
+			'hintLastNameAddPatient': 'Sobrenomes',
+			'hintNameAddPatient': 'Nome',
+			'hintPhoneAddPatient': 'Telefone',
+			'hintTextConfirmPasswordProfilePage': 'Confirmar senha',
 			'hintTextConfirmPasswordRegisterScreen': 'Confirmar senha',
+			'hintTextCountryProfilePage': 'País',
 			'hintTextCountryRegisterScreen': 'País',
+			'hintTextEmailProfilePage': 'Correspondência',
 			'hintTextEmailRegisterScreen': 'Correio eletrônico',
+			'hintTextNameProfilePage': 'Nome',
 			'hintTextNameRegisterScreen': 'Nome completo',
+			'hintTextNewPasswordProfilePage': 'Nova senha',
+			'hintTextPasswordProfilePage': 'Senha atual',
 			'hintTextPasswordRegisterScreen': 'Senha',
+			'hintTextPatientsPage': 'Procura por nome',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
 			'loginTitleHomeScreen': 'Iniciar sessão',
 			'savePasswordLoginScreen': 'Lembrar senha',
+			'singOffTitleProfilePage': 'Fechar Sessão',
 			'subtitleAcceptRegisterScreen': 'termos e Condições',
 			'subtitleHomeScreen': 'Bem-vindo à ferramenta que otimiza sua adaptação',
 			'subtitleLoginScreen': 'Olá, insira suas informações',
 			'subtitleWelcomeRegisterScreen': 'Crie sua conta com uma única etapa, insira seus dados',
 			'titleAcceptRegisterScreen': 'Eu concordo',
+			'titleAddPatient': 'Novo paciente',
 			'titleAppBarRegisterScreen': 'Criar uma conta',
 			'titleButtonLoginScreen': 'Iniciar',
+			'titleCatalogPage': 'Catálogo',
 			'titleHomeScreen': 'Olá,',
 			'titleLoginScreen': 'Iniciar sessão',
+			'titlePatientsPage': 'Pacientes',
+			'titleProfilePage': 'Perfil',
+			'titleTutorialesPage': 'Tutoriais',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
 		};
 	}

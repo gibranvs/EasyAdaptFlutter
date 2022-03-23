@@ -6,6 +6,7 @@ import 'package:easy_adapt/ui/pages/tutoriales.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class Layout extends StatefulWidget {
   var t;
@@ -19,7 +20,7 @@ class _LayoutState extends State<Layout> {
   int _selectedIndex = 2;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
     CalcInitialPage(),
     CatalogPage(),
     TutorialesPage(),
@@ -29,6 +30,8 @@ class _LayoutState extends State<Layout> {
 
   @override
   Widget build(BuildContext context) {
+    final translation = Translations.of(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -90,12 +93,14 @@ class _LayoutState extends State<Layout> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      model_bottom(0, 'Calculadora', Icons.calculate_rounded),
-                      model_bottom(1, 'Catalogo', Icons.menu_book_sharp),
+                      model_bottom(0, t.calculatorTitleHomeScreen,
+                          Icons.calculate_rounded),
                       model_bottom(
-                          2, 'Tutoriales', Icons.remove_red_eye_rounded),
-                      model_bottom(3, 'Pacientes', Icons.list),
-                      model_bottom(4, 'Perfil', Icons.person)
+                          1, t.titleCatalogPage, Icons.menu_book_sharp),
+                      model_bottom(2, t.titleTutorialesPage,
+                          Icons.remove_red_eye_rounded),
+                      model_bottom(3, t.titlePatientsPage, Icons.list),
+                      model_bottom(4, t.titleProfilePage, Icons.person)
                     ],
                   ),
                 ),

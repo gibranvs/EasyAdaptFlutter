@@ -1,6 +1,7 @@
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_text_and_logos.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class CatalogPage extends StatefulWidget {
   CatalogPage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _CatalogPageState extends State<CatalogPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          getAppBarWithTextAndLogos('Catálogos'),
+          getAppBarWithTextAndLogos(t.titleCatalogPage),
           SizedBox(
             height: 15,
           ),

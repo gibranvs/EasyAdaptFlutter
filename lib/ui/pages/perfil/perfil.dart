@@ -1,6 +1,7 @@
 import 'package:easy_adapt/ui/widgets/appbar_with_logo.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class PerfilPage extends StatefulWidget {
   PerfilPage({Key? key}) : super(key: key);
@@ -52,7 +53,7 @@ class _PerfilPageState extends State<PerfilPage> {
                           Navigator.pushNamed(context, '/initial');
                         },
                         child: Text(
-                          "Cerrar sesión",
+                          t.singOffTitleProfilePage,
                           style: TextStyle(
                               fontSize: 19,
                               fontWeight: FontWeight.bold,
@@ -67,27 +68,27 @@ class _PerfilPageState extends State<PerfilPage> {
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('Nombre'),
+            getTextFieldModelSquare(t.hintTextNameProfilePage),
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('Correo'),
+            getTextFieldModelSquare(t.hintTextEmailProfilePage),
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('País'),
+            getTextFieldModelSquare(t.hintTextCountryProfilePage),
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('Contraseña actual'),
+            getTextFieldModelSquare(t.hintTextPasswordProfilePage),
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('Nueva contraseña'),
+            getTextFieldModelSquare(t.hintTextNewPasswordProfilePage),
             SizedBox(
               height: 20,
             ),
-            getTextFieldModelSquare('Confirmar contraseña'),
+            getTextFieldModelSquare(t.hintTextConfirmPasswordProfilePage),
             SizedBox(
               height: 20,
             ),
@@ -104,7 +105,7 @@ class _PerfilPageState extends State<PerfilPage> {
                         borderRadius: BorderRadius.all(Radius.circular(25))),
                     child: Center(
                       child: Text(
-                        'Cambiar',
+                        t.buttonTitleProfilePage,
                         style: TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),
