@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 144 (48.0 per locale)
+ * Strings: 216 (72.0 per locale)
  *
- * Built on 2022-03-23 at 17:00 UTC
+ * Built on 2022-03-23 at 17:34 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -365,6 +365,16 @@ class _StringsEn {
 	String get titleProfilePage => 'Profile';
 	String get titleTutorialesPage => 'Tutorials';
 	String get titleWelcomeRegisterScreen => 'WELCOME!';
+	List<dynamic> get tutoriales => [
+		_Strings0i0En._(_root),
+		_Strings0i1En._(_root),
+		_Strings0i2En._(_root),
+		_Strings0i3En._(_root),
+		_Strings0i4En._(_root),
+		_Strings0i5En._(_root),
+		_Strings0i6En._(_root),
+		_Strings0i7En._(_root),
+	];
 }
 
 // Path: login
@@ -377,6 +387,110 @@ class _StringsLoginEn {
 	// Translations
 	String get fail => 'Logged in failed';
 	String get success => 'Logged in successfully';
+}
+
+// Path: tutoriales.0
+class _Strings0i0En {
+	_Strings0i0En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Patient selection';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.1
+class _Strings0i1En {
+	_Strings0i1En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Choice of contact lens';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.2
+class _Strings0i2En {
+	_Strings0i2En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Spherical adaptation';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.3
+class _Strings0i3En {
+	_Strings0i3En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Toric adaptation';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.4
+class _Strings0i4En {
+	_Strings0i4En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Multifocal adaptation';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.5
+class _Strings0i5En {
+	_Strings0i5En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Monovision adaptation';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.6
+class _Strings0i6En {
+	_Strings0i6En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Insertion and removal in the cabinet';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	String get image => '';
+}
+
+// Path: tutoriales.7
+class _Strings0i7En {
+	_Strings0i7En._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get title => 'Insertion, removal and maintenance at home';
+	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	String get image => '';
 }
 
 // Path: <root>
@@ -443,6 +557,16 @@ class _StringsEs implements _StringsEn {
 	@override String get titleProfilePage => 'Perfil';
 	@override String get titleTutorialesPage => 'Tutoriales';
 	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
+	@override List<dynamic> get tutoriales => [
+		_Strings0i0Es._(_root),
+		_Strings0i1Es._(_root),
+		_Strings0i2Es._(_root),
+		_Strings0i3Es._(_root),
+		_Strings0i4Es._(_root),
+		_Strings0i5Es._(_root),
+		_Strings0i6Es._(_root),
+		_Strings0i7Es._(_root),
+	];
 }
 
 // Path: login
@@ -455,6 +579,110 @@ class _StringsLoginEs implements _StringsLoginEn {
 	// Translations
 	@override String get fail => 'Login fehlgeschlagen';
 	@override String get success => 'Login erfolgreich';
+}
+
+// Path: tutoriales.0
+class _Strings0i0Es implements _Strings0i0En {
+	_Strings0i0Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Selección del paciente';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.1
+class _Strings0i1Es implements _Strings0i1En {
+	_Strings0i1Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Elección del lente de contacto';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.2
+class _Strings0i2Es implements _Strings0i2En {
+	_Strings0i2Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Adaptación esféricos';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.3
+class _Strings0i3Es implements _Strings0i3En {
+	_Strings0i3Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Adaptación tóricos';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.4
+class _Strings0i4Es implements _Strings0i4En {
+	_Strings0i4Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Adaptación multifocal';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.5
+class _Strings0i5Es implements _Strings0i5En {
+	_Strings0i5Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Adaptación monovisión';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.6
+class _Strings0i6Es implements _Strings0i6En {
+	_Strings0i6Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Inserción y remoción en el gabinete';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.7
+class _Strings0i7Es implements _Strings0i7En {
+	_Strings0i7Es._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get title => 'Inserción, remoción y mantenimiento en casa';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	@override String get image => '';
 }
 
 // Path: <root>
@@ -521,6 +749,16 @@ class _StringsPt implements _StringsEn {
 	@override String get titleProfilePage => 'Perfil';
 	@override String get titleTutorialesPage => 'Tutoriais';
 	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
+	@override List<dynamic> get tutoriales => [
+		_Strings0i0Pt._(_root),
+		_Strings0i1Pt._(_root),
+		_Strings0i2Pt._(_root),
+		_Strings0i3Pt._(_root),
+		_Strings0i4Pt._(_root),
+		_Strings0i5Pt._(_root),
+		_Strings0i6Pt._(_root),
+		_Strings0i7Pt._(_root),
+	];
 }
 
 // Path: login
@@ -533,6 +771,110 @@ class _StringsLoginPt implements _StringsLoginEn {
 	// Translations
 	@override String get fail => 'Login fehlgeschlagen';
 	@override String get success => 'Login erfolgreich';
+}
+
+// Path: tutoriales.0
+class _Strings0i0Pt implements _Strings0i0En {
+	_Strings0i0Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Seleção de pacientes';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.1
+class _Strings0i1Pt implements _Strings0i1En {
+	_Strings0i1Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Escolha da lente de contato';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.2
+class _Strings0i2Pt implements _Strings0i2En {
+	_Strings0i2Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Adaptação esférica';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.3
+class _Strings0i3Pt implements _Strings0i3En {
+	_Strings0i3Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Adaptação tórica';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.4
+class _Strings0i4Pt implements _Strings0i4En {
+	_Strings0i4Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Adaptação multifocal';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.5
+class _Strings0i5Pt implements _Strings0i5En {
+	_Strings0i5Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Adaptação à monovisão';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.6
+class _Strings0i6Pt implements _Strings0i6En {
+	_Strings0i6Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Inserção e remoção no gabinete';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	@override String get image => '';
+}
+
+// Path: tutoriales.7
+class _Strings0i7Pt implements _Strings0i7En {
+	_Strings0i7Pt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get title => 'Inserção, remoção e manutenção em casa';
+	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	@override String get image => '';
 }
 
 /// Flat map(s) containing all translations.
@@ -589,6 +931,30 @@ extension on _StringsEn {
 			'titleProfilePage': 'Profile',
 			'titleTutorialesPage': 'Tutorials',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
+			'tutoriales.0.title': 'Patient selection',
+			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.image': '',
+			'tutoriales.1.title': 'Choice of contact lens',
+			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.image': '',
+			'tutoriales.2.title': 'Spherical adaptation',
+			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.image': '',
+			'tutoriales.3.title': 'Toric adaptation',
+			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.image': '',
+			'tutoriales.4.title': 'Multifocal adaptation',
+			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.image': '',
+			'tutoriales.5.title': 'Monovision adaptation',
+			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.image': '',
+			'tutoriales.6.title': 'Insertion and removal in the cabinet',
+			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.image': '',
+			'tutoriales.7.title': 'Insertion, removal and maintenance at home',
+			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.image': '',
 		};
 	}
 }
@@ -644,6 +1010,30 @@ extension on _StringsEs {
 			'titleProfilePage': 'Perfil',
 			'titleTutorialesPage': 'Tutoriales',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
+			'tutoriales.0.title': 'Selección del paciente',
+			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.image': '',
+			'tutoriales.1.title': 'Elección del lente de contacto',
+			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.image': '',
+			'tutoriales.2.title': 'Adaptación esféricos',
+			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.image': '',
+			'tutoriales.3.title': 'Adaptación tóricos',
+			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.image': '',
+			'tutoriales.4.title': 'Adaptación multifocal',
+			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.image': '',
+			'tutoriales.5.title': 'Adaptación monovisión',
+			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.image': '',
+			'tutoriales.6.title': 'Inserción y remoción en el gabinete',
+			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.image': '',
+			'tutoriales.7.title': 'Inserción, remoción y mantenimiento en casa',
+			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.image': '',
 		};
 	}
 }
@@ -699,6 +1089,30 @@ extension on _StringsPt {
 			'titleProfilePage': 'Perfil',
 			'titleTutorialesPage': 'Tutoriais',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
+			'tutoriales.0.title': 'Seleção de pacientes',
+			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.image': '',
+			'tutoriales.1.title': 'Escolha da lente de contato',
+			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.image': '',
+			'tutoriales.2.title': 'Adaptação esférica',
+			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.image': '',
+			'tutoriales.3.title': 'Adaptação tórica',
+			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.image': '',
+			'tutoriales.4.title': 'Adaptação multifocal',
+			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.image': '',
+			'tutoriales.5.title': 'Adaptação à monovisão',
+			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.image': '',
+			'tutoriales.6.title': 'Inserção e remoção no gabinete',
+			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.image': '',
+			'tutoriales.7.title': 'Inserção, remoção e manutenção em casa',
+			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.image': '',
 		};
 	}
 }

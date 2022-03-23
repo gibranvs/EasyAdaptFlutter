@@ -1,5 +1,7 @@
+import 'package:easy_adapt/state/player_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../i18n/strings.g.dart';
 
 class TutorialesPage extends StatefulWidget {
@@ -35,41 +37,41 @@ class _TutorialesPageState extends State<TutorialesPage> {
             SizedBox(
               height: 20,
             ),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet(),
-            _model_tarjet()
+            ...List.generate(
+                t.tutoriales.length,
+                (index) => _model_tarjet(
+                    t.tutoriales[index].title, t.tutoriales[index].link))
           ],
         ),
       ),
     );
   }
 
-  Padding _model_tarjet() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Container(
-            width: 90,
-            height: 60,
-            color: Colors.blueGrey,
-          ),
-          Flexible(
-              child: Center(
-                  child: Text(
-            "Eleccion del lente de contacto",
-            style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(25, 180, 201, 1.0)),
-          )))
-        ],
+  _model_tarjet(text, video) {
+    return GestureDetector(
+      onTap: () {
+        Provider.of<PlayerState>(context, listen: false).changeUrl(video);
+        Navigator.pushNamed(context, '/tutorials/video');
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Container(
+              width: 90,
+              height: 60,
+              color: Colors.blueGrey,
+            ),
+            Flexible(
+                child: Center(
+                    child: Text(text,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromRGBO(25, 180, 201, 1.0)),
+                        textAlign: TextAlign.center)))
+          ],
+        ),
       ),
     );
   }

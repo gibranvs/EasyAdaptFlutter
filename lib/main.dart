@@ -1,11 +1,20 @@
 import 'package:easy_adapt/i18n/strings.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
+import 'package:easy_adapt/state/player_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(TranslationProvider(child: MyApp()));
+  runApp(MultiProvider(
+    providers: [
+      ListenableProvider<PlayerState>(
+        create: (_) => PlayerState(),
+      )
+    ],
+    child: TranslationProvider(child: MyApp()),
+  ));
 }
 
 class MyApp extends StatelessWidget {

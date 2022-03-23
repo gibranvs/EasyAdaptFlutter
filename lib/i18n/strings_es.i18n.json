@@ -48,5 +48,41 @@
   "titlePatientsPage": "Pacientes",
   "titleProfilePage": "Perfil",
   "titleTutorialesPage": "Tutoriales",
-  "titleWelcomeRegisterScreen": "BIENVENIDO!"
+  "titleWelcomeRegisterScreen": "BIENVENIDO!",
+  "tutoriales":[
+    {
+      "title":"Selección del paciente",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4",
+      "image":""
+    }, {
+      "title":"Elección del lente de contacto",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4",
+      "image":""
+    },{
+      "title":"Adaptación esféricos",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4",
+      "image":""
+    },{
+      "title":"Adaptación tóricos",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4",
+      "image":""
+    },{
+      "title":"Adaptación multifocal",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4",
+      "image":""
+    },{
+      "title":"Adaptación monovisión",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4",
+      "image":""
+    },{
+      "title":"Inserción y remoción en el gabinete",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4",
+      "image":""
+    },{
+      "title":"Inserción, remoción y mantenimiento en casa",
+      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4",
+      "image":""
+    }
+
+  ]
 }
