@@ -86,12 +86,13 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Icon(
-                                        Icons.calculate_rounded,
+                                      ImageIcon(
+                                        AssetImage(
+                                            './assets/icons/calculadora.png'),
                                         size: 40,
                                         color:
                                             Color.fromRGBO(240, 162, 51, 1.0),
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ))),
@@ -117,12 +118,13 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Icon(
-                                        Icons.menu_book_sharp,
+                                      ImageIcon(
+                                        AssetImage(
+                                            './assets/icons/catalogos_inicio.png'),
                                         size: 40,
                                         color:
                                             Color.fromRGBO(240, 162, 51, 1.0),
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ))),

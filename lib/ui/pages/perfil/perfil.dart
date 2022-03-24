@@ -23,11 +23,12 @@ class _PerfilPageState extends State<PerfilPage> {
             getAppBarWithLogo(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Icon(
-                  Icons.person_pin,
-                  size: 80,
+                Image(
+                  image: AssetImage('./assets/icons/img_usuario.png'),
+                  width: 100,
+                  height: 100,
                 ),
                 Flexible(
                   child: Column(

@@ -7,12 +7,9 @@ getAppBarWithWidgetAndLogos(widget) {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "BAUSCH + LOMB",
-          style: TextStyle(
-              color: Color.fromRGBO(102, 133, 153, 1.0),
-              fontSize: 16,
-              fontWeight: FontWeight.w900),
+        Image(
+          image: AssetImage('./assets/icons/bausch_lomb.png'),
+          width: 144,
         ),
         Container(
           width: double.infinity,

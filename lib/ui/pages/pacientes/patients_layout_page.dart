@@ -69,7 +69,7 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
               title: Text(
                 "Paciente prueba",
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Color.fromRGBO(0, 129, 171, 1.0)),
               ),
@@ -81,14 +81,14 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                     height: 5,
                   ),
                   Text(
-                    "Probando doc",
+                    "correo",
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
-                    "Probando doc",
+                    "0999865354",
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],
@@ -97,8 +97,8 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.person,
+                  ImageIcon(
+                    AssetImage('./assets/icons/usuario.png'),
                     size: 52,
                     color: Color.fromRGBO(240, 162, 51, 1.0),
                   ),

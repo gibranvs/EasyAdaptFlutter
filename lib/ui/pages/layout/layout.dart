@@ -93,14 +93,32 @@ class _LayoutState extends State<Layout> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      model_bottom(0, t.calculatorTitleHomeScreen,
-                          Icons.calculate_rounded),
                       model_bottom(
-                          1, t.titleCatalogPage, Icons.menu_book_sharp),
-                      model_bottom(2, t.titleTutorialesPage,
-                          Icons.remove_red_eye_rounded),
-                      model_bottom(3, t.titlePatientsPage, Icons.list),
-                      model_bottom(4, t.titleProfilePage, Icons.person)
+                          0,
+                          t.calculatorTitleHomeScreen,
+                          './assets/icons/calculadora_on.png',
+                          './assets/icons/calculadora_off.png',
+                          false),
+                      model_bottom(
+                          1,
+                          t.titleCatalogPage,
+                          './assets/icons/catalogos_inicio.png',
+                          './assets/icons/catalogos_off.png',
+                          false),
+                      model_bottom(
+                          2,
+                          t.titleTutorialesPage,
+                          Icons.remove_red_eye_rounded,
+                          Icons.remove_red_eye_rounded,
+                          true),
+                      model_bottom(
+                          3, t.titlePatientsPage, Icons.list, Icons.list, true),
+                      model_bottom(
+                          4,
+                          t.titleProfilePage,
+                          './assets/icons/perfil_on.png',
+                          './assets/icons/perfil_off.png',
+                          false)
                     ],
                   ),
                 ),
@@ -145,7 +163,7 @@ class _LayoutState extends State<Layout> {
     );
   }
 
-  GestureDetector model_bottom(index, text, IconData icon) {
+  GestureDetector model_bottom(index, text, icon, icon_un_select, isIcon) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -154,13 +172,21 @@ class _LayoutState extends State<Layout> {
       },
       child: Column(
         children: [
-          Icon(
-            icon,
-            size: 35,
-            color: _selectedIndex == index
-                ? Color.fromRGBO(240, 162, 51, 1.0)
-                : Color.fromRGBO(52, 129, 187, 1.0),
-          ),
+          !isIcon!
+              ? Image(
+                  image: AssetImage(
+                    index == _selectedIndex ? icon : icon_un_select,
+                  ),
+                  width: 35,
+                  height: 35,
+                )
+              : Icon(
+                  icon,
+                  size: 35,
+                  color: _selectedIndex == index
+                      ? Color.fromRGBO(240, 162, 51, 1.0)
+                      : Color.fromRGBO(52, 129, 187, 1.0),
+                ),
           Text(
             text,
             style: TextStyle(

@@ -52,11 +52,11 @@ class _CalcInitialPageState extends State<CalcInitialPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.calculate_rounded,
-                      size: 52,
+                    ImageIcon(
+                      AssetImage('./assets/icons/calculadora.png'),
+                      size: 40,
                       color: Color.fromRGBO(240, 162, 51, 1.0),
-                    ),
+                    )
                   ],
                 ),
               ))),
