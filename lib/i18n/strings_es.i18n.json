@@ -46,6 +46,7 @@
   "titleHomeScreen": "Hola,",
   "titleLoginScreen": "Iniciar sesión",
   "titlePatientsPage": "Pacientes",
+  "subtitlePatientsPage":"Para realizar cualquier cálculo debes seleccionar un paciente o crear uno nuevo para guardar los resultados.",
   "titleProfilePage": "Perfil",
   "titleTutorialesPage": "Tutoriales",
   "titleWelcomeRegisterScreen": "BIENVENIDO!",

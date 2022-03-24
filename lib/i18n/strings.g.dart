@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 231 (77.0 per locale)
+ * Strings: 234 (78.0 per locale)
  *
- * Built on 2022-03-24 at 03:06 UTC
+ * Built on 2022-03-24 at 15:05 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -362,6 +362,7 @@ class _StringsEn {
 	String get titleHomeScreen => 'Hello,';
 	String get titleLoginScreen => 'Log in';
 	String get titlePatientsPage => 'Patients';
+	String get subtitlePatientsPage => 'To perform any calculation, you must select a patient or create a new one to save the results.';
 	String get titleProfilePage => 'Profile';
 	String get titleTutorialesPage => 'Tutorials';
 	String get titleWelcomeRegisterScreen => 'WELCOME!';
@@ -559,6 +560,7 @@ class _StringsEs implements _StringsEn {
 	@override String get titleHomeScreen => 'Hola,';
 	@override String get titleLoginScreen => 'Iniciar sesión';
 	@override String get titlePatientsPage => 'Pacientes';
+	@override String get subtitlePatientsPage => 'Para realizar cualquier cálculo debes seleccionar un paciente o crear uno nuevo para guardar los resultados.';
 	@override String get titleProfilePage => 'Perfil';
 	@override String get titleTutorialesPage => 'Tutoriales';
 	@override String get titleWelcomeRegisterScreen => 'BIENVENIDO!';
@@ -756,6 +758,7 @@ class _StringsPt implements _StringsEn {
 	@override String get titleHomeScreen => 'Olá,';
 	@override String get titleLoginScreen => 'Iniciar sessão';
 	@override String get titlePatientsPage => 'Pacientes';
+	@override String get subtitlePatientsPage => 'Para realizar qualquer cálculo, você deve selecionar um paciente ou criar um novo para salvar os resultados.';
 	@override String get titleProfilePage => 'Perfil';
 	@override String get titleTutorialesPage => 'Tutoriais';
 	@override String get titleWelcomeRegisterScreen => 'BEM-VINDO!';
@@ -943,6 +946,7 @@ extension on _StringsEn {
 			'titleHomeScreen': 'Hello,',
 			'titleLoginScreen': 'Log in',
 			'titlePatientsPage': 'Patients',
+			'subtitlePatientsPage': 'To perform any calculation, you must select a patient or create a new one to save the results.',
 			'titleProfilePage': 'Profile',
 			'titleTutorialesPage': 'Tutorials',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
@@ -1027,6 +1031,7 @@ extension on _StringsEs {
 			'titleHomeScreen': 'Hola,',
 			'titleLoginScreen': 'Iniciar sesión',
 			'titlePatientsPage': 'Pacientes',
+			'subtitlePatientsPage': 'Para realizar cualquier cálculo debes seleccionar un paciente o crear uno nuevo para guardar los resultados.',
 			'titleProfilePage': 'Perfil',
 			'titleTutorialesPage': 'Tutoriales',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
@@ -1111,6 +1116,7 @@ extension on _StringsPt {
 			'titleHomeScreen': 'Olá,',
 			'titleLoginScreen': 'Iniciar sessão',
 			'titlePatientsPage': 'Pacientes',
+			'subtitlePatientsPage': 'Para realizar qualquer cálculo, você deve selecionar um paciente ou criar um novo para salvar os resultados.',
 			'titleProfilePage': 'Perfil',
 			'titleTutorialesPage': 'Tutoriais',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',

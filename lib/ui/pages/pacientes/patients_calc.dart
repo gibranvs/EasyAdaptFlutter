@@ -2,6 +2,7 @@ import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class PatientsCalc extends StatefulWidget {
   var t;
@@ -40,7 +41,7 @@ class _PatientsCalcState extends State<PatientsCalc> {
                       child: Container(
                         width: 250,
                         height: 40,
-                        child: getTextFieldModelSquare('Buscar por nombre....'),
+                        child: getTextFieldModelSquare(t.hintTextPatientsPage),
                       ),
                     ),
                     SizedBox(
@@ -49,7 +50,7 @@ class _PatientsCalcState extends State<PatientsCalc> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'Para realizar cualquier cálculo debes seleccionar un paciente o crear uno nuevo para guardar los resultados.',
+                        t.subtitlePatientsPage,
                         style: TextStyle(
                             fontSize: 15,
                             fontStyle: FontStyle.italic,
