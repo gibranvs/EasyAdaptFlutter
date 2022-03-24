@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 219 (73.0 per locale)
+ * Strings: 231 (77.0 per locale)
  *
- * Built on 2022-03-24 at 02:42 UTC
+ * Built on 2022-03-24 at 03:06 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -376,6 +376,10 @@ class _StringsEn {
 		_Strings0i7En._(_root),
 	];
 	String get unselectTextCatalogPage => 'Select a country from the list to see its corresponding catalog';
+	String get calc1Title => 'Spherical calculator';
+	String get calc2Title => 'Toric calculator';
+	String get calc3Title => 'Multifocal calculator';
+	String get calc4Title => 'Monovision Calculator';
 }
 
 // Path: login
@@ -569,6 +573,10 @@ class _StringsEs implements _StringsEn {
 		_Strings0i7Es._(_root),
 	];
 	@override String get unselectTextCatalogPage => 'Selecciona de la lista un país para ver su catálogo correspondiente';
+	@override String get calc1Title => 'Calculadora esféricos';
+	@override String get calc2Title => 'Calculadora tóricos';
+	@override String get calc3Title => 'Calculadora multifocales';
+	@override String get calc4Title => 'Calculadora monovisión';
 }
 
 // Path: login
@@ -762,6 +770,10 @@ class _StringsPt implements _StringsEn {
 		_Strings0i7Pt._(_root),
 	];
 	@override String get unselectTextCatalogPage => 'Selecione um país da lista para ver seu catálogo correspondente';
+	@override String get calc1Title => 'Calculadora esférica';
+	@override String get calc2Title => 'Calculadora tórica';
+	@override String get calc3Title => 'Calculadora multifocal';
+	@override String get calc4Title => 'Calculadora Monovisão';
 }
 
 // Path: login
@@ -959,6 +971,10 @@ extension on _StringsEn {
 			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Insertion, removal and maintenance at home',
 			'unselectTextCatalogPage': 'Select a country from the list to see its corresponding catalog',
+			'calc1Title': 'Spherical calculator',
+			'calc2Title': 'Toric calculator',
+			'calc3Title': 'Multifocal calculator',
+			'calc4Title': 'Monovision Calculator',
 		};
 	}
 }
@@ -1039,6 +1055,10 @@ extension on _StringsEs {
 			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Inserción, remoción y mantenimiento en casa',
 			'unselectTextCatalogPage': 'Selecciona de la lista un país para ver su catálogo correspondiente',
+			'calc1Title': 'Calculadora esféricos',
+			'calc2Title': 'Calculadora tóricos',
+			'calc3Title': 'Calculadora multifocales',
+			'calc4Title': 'Calculadora monovisión',
 		};
 	}
 }
@@ -1119,6 +1139,10 @@ extension on _StringsPt {
 			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Inserção, remoção e manutenção em casa',
 			'unselectTextCatalogPage': 'Selecione um país da lista para ver seu catálogo correspondente',
+			'calc1Title': 'Calculadora esférica',
+			'calc2Title': 'Calculadora tórica',
+			'calc3Title': 'Calculadora multifocal',
+			'calc4Title': 'Calculadora Monovisão',
 		};
 	}
 }

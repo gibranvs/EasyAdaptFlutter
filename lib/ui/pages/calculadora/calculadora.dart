@@ -1,5 +1,6 @@
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
+import '/../i18n/strings.g.dart';
 
 class CalcInitialPage extends StatefulWidget {
   CalcInitialPage({Key? key}) : super(key: key);
@@ -17,17 +18,17 @@ class _CalcInitialPageState extends State<CalcInitialPage> {
         child: Column(
           children: [
             getAppBarWithLogos(),
-            calc_card_model(),
-            calc_card_model(),
-            calc_card_model(),
-            calc_card_model(),
+            calc_card_model(t.calc1Title),
+            calc_card_model(t.calc2Title),
+            calc_card_model(t.calc3Title),
+            calc_card_model(t.calc4Title),
           ],
         ),
       ),
     );
   }
 
-  calc_card_model() {
+  calc_card_model(text) {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, '/calc/patients');
@@ -40,7 +41,7 @@ class _CalcInitialPageState extends State<CalcInitialPage> {
               child: ListTile(
                 title: Center(
                   child: Text(
-                    'Example',
+                    text,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,

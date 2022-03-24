@@ -92,4 +92,9 @@
     }
   ],
   "unselectTextCatalogPage": "Select a country from the list to see its corresponding catalog"
+
+  ,"calc1Title":"Spherical calculator",
+  "calc2Title":"Toric calculator"
+  ,"calc3Title":"Multifocal calculator"
+  ,"calc4Title":"Monovision Calculator"
 }
