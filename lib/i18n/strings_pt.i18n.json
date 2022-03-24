@@ -49,40 +49,47 @@
   "titleProfilePage": "Perfil",
   "titleTutorialesPage": "Tutoriais",
   "titleWelcomeRegisterScreen": "BEM-VINDO!",
-  "tutoriales":[
+  "tutoriales": [ 
+   {
+      "image": "./assets/tutorials/seleccion_pacientes.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4",
+      "title": "Seleção de pacientes"
+    },
+   {
+      "image": "./assets/tutorials/eleccion_lente.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4",
+      "title": "Escolha da lente de contato"
+    },
+  {
+      "image": "./assets/tutorials/adaptacion_esfericos.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4",
+      "title": "Adaptação esférica"
+    },
+     {
+      "image": "./assets/tutorials/adaptacion_toricos.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4",
+      "title": "Adaptação tórica"
+    },
+  {
+      "image": "./assets/tutorials/adaptacion_multifocal.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4",
+      "title": "Adaptação multifocal"
+    },
+   {
+      "image": "./assets/tutorials/adaptacion_monovision.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4",
+      "title": "Adaptação à monovisão"
+    },
+   {
+      "image": "./assets/tutorials/insercion_gabinete.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4",
+      "title": "Inserção e remoção no gabinete"
+    },
     {
-      "title":"Seleção de pacientes",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4",
-      "image":"./assets/tutorials/seleccion_pacientes.png"
-    }, {
-      "title":"Escolha da lente de contato",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4",
-      "image":"./assets/tutorials/eleccion_lente.png"
-    },{
-      "title":"Adaptação esférica",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4",
-      "image":"./assets/tutorials/adaptacion_esfericos.png"
-    },{
-      "title":"Adaptação tórica",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4",
-      "image":"./assets/tutorials/adaptacion_toricos.png"
-    },{
-      "title":"Adaptação multifocal",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4",
-      "image":"./assets/tutorials/adaptacion_multifocal.png"
-    },{
-      "title":"Adaptação à monovisão",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4",
-      "image":"./assets/tutorials/adaptacion_monovision.png"
-    },{
-      "title":"Inserção e remoção no gabinete",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4",
-      "image":"./assets/tutorials/insercion_gabinete.png"
-    },{
-      "title":"Inserção, remoção e manutenção em casa",
-      "link":"http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4",
-      "image":"./assets/tutorials/insercion_casa.png"
+      "image": "./assets/tutorials/insercion_casa.png",
+      "link": "http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4",
+      "title": "Inserção, remoção e manutenção em casa"
     }
-
-  ]
+  ],
+  "unselectTextCatalogPage": "Selecione um país da lista para ver seu catálogo correspondente"
 }
