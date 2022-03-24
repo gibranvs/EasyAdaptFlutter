@@ -39,15 +39,15 @@ class _TutorialesPageState extends State<TutorialesPage> {
             ),
             ...List.generate(
                 t.tutoriales.length,
-                (index) => _model_tarjet(
-                    t.tutoriales[index].title, t.tutoriales[index].link))
+                (index) => _model_tarjet(t.tutoriales[index].title,
+                    t.tutoriales[index].link, t.tutoriales[index].image))
           ],
         ),
       ),
     );
   }
 
-  _model_tarjet(text, video) {
+  _model_tarjet(text, video, image) {
     return GestureDetector(
       onTap: () {
         Provider.of<PlayerState>(context, listen: false).changeUrl(video);
@@ -61,6 +61,7 @@ class _TutorialesPageState extends State<TutorialesPage> {
               width: 90,
               height: 60,
               color: Colors.blueGrey,
+              child: Image.asset(image),
             ),
             Flexible(
                 child: Center(

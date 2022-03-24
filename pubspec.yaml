@@ -75,7 +75,9 @@ flutter:
   assets:
     - assets/fondo_cuadrado.png
     - assets/logo.png
-
+    - assets/parents/
+    - assets/tutorials/
+    - assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
