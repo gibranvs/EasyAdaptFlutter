@@ -1,5 +1,7 @@
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalcInitialPage extends StatefulWidget {
@@ -18,19 +20,20 @@ class _CalcInitialPageState extends State<CalcInitialPage> {
         child: Column(
           children: [
             getAppBarWithLogos(),
-            calc_card_model(t.calc1Title),
-            calc_card_model(t.calc2Title),
-            calc_card_model(t.calc3Title),
-            calc_card_model(t.calc4Title),
+            calc_card_model(t.calc1Title, 1),
+            calc_card_model(t.calc2Title, 2),
+            calc_card_model(t.calc3Title, 3),
+            calc_card_model(t.calc4Title, 4),
           ],
         ),
       ),
     );
   }
 
-  calc_card_model(text) {
+  calc_card_model(text, index) {
     return GestureDetector(
       onTap: () {
+        Provider.of<CalculatorState>(context, listen: false).changeIndex(index);
         Navigator.pushNamed(context, '/calc/patients');
       },
       child: Container(

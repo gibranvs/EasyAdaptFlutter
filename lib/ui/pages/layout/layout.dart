@@ -1,3 +1,4 @@
+import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/calculadora.dart';
 import 'package:easy_adapt/ui/pages/catalogo/catalog.dart';
 import 'package:easy_adapt/ui/pages/pacientes/patients_layout_page.dart';
@@ -6,6 +7,7 @@ import 'package:easy_adapt/ui/pages/tutoriales.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class Layout extends StatefulWidget {
@@ -17,7 +19,6 @@ class Layout extends StatefulWidget {
 }
 
 class _LayoutState extends State<Layout> {
-  int _selectedIndex = 2;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
@@ -42,11 +43,11 @@ class _LayoutState extends State<Layout> {
             height: double.infinity,
             child: SingleChildScrollView(
               child: Column(children: [
-                _widgetOptions.elementAt(_selectedIndex),
+                _widgetOptions.elementAt(Provider.of<MenuState>(context).index),
                 SizedBox(
                   height: 65,
                 ),
-                _selectedIndex == 3
+                Provider.of<MenuState>(context).index == 3
                     ? SizedBox(
                         height: 100,
                       )
@@ -54,7 +55,7 @@ class _LayoutState extends State<Layout> {
               ]),
             ),
           ),
-          _selectedIndex == 3
+          Provider.of<MenuState>(context).index == 3
               ? Positioned(
                   bottom: 75,
                   left: 0,
@@ -167,7 +168,7 @@ class _LayoutState extends State<Layout> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedIndex = index;
+          Provider.of<MenuState>(context, listen: false).changeIndex(index);
         });
       },
       child: Column(
@@ -175,7 +176,9 @@ class _LayoutState extends State<Layout> {
           !isIcon!
               ? Image(
                   image: AssetImage(
-                    index == _selectedIndex ? icon : icon_un_select,
+                    index == Provider.of<MenuState>(context).index
+                        ? icon
+                        : icon_un_select,
                   ),
                   width: 35,
                   height: 35,
@@ -183,7 +186,7 @@ class _LayoutState extends State<Layout> {
               : Icon(
                   icon,
                   size: 35,
-                  color: _selectedIndex == index
+                  color: Provider.of<MenuState>(context).index == index
                       ? Color.fromRGBO(240, 162, 51, 1.0)
                       : Color.fromRGBO(52, 129, 187, 1.0),
                 ),
@@ -191,7 +194,7 @@ class _LayoutState extends State<Layout> {
             text,
             style: TextStyle(
                 fontSize: 13,
-                color: _selectedIndex == index
+                color: Provider.of<MenuState>(context).index == index
                     ? Color.fromRGBO(240, 162, 51, 1.0)
                     : Color.fromRGBO(52, 129, 187, 1.0),
                 fontWeight: FontWeight.bold),

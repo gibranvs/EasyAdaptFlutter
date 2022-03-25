@@ -98,5 +98,36 @@
   ,"calc1Title":"Spherical calculator",
   "calc2Title":"Toric calculator"
   ,"calc3Title":"Multifocal calculator"
-  ,"calc4Title":"Monovision Calculator"
+  ,"calc4Title":"Monovision Calculator", 
+   "calculatorEsfericos":{
+    "text":"To calculate \n \n1. Choose the type of lens \n2. Enter the corresponding data for each eye (right and/or left).",
+    "eyeRight":"RIGHT",
+    "eyeLeft":"LEFT",
+    "type":"Lens type",
+    "esphere":"Sphere",
+    "distance":"Distance",
+
+    "button":"Calculate"
+  },
+  "calculatorToricos":{
+    "eyeRight":"RIGHT",
+    "eyeLeft":"LEFT",
+    "type":"Lens type",
+    "esphere":"Sphere",
+    "distance":"Distance",
+    "cylinder":"Cylinder",
+    "axis":"Axis",
+  
+    "button":"Calcular"
+  },"calculatorMultifocal":{
+    "eyeRight":"RIGHT",
+    "eyeLeft":"LEFT",
+    "type":"Lens type",
+    "esphere":"Sphere",
+    "distance":"Distance",
+    "cylinder":"Cylinder",
+    "dominant":"Dominant",
+  
+    "button":"Calcular"
+  }
 }

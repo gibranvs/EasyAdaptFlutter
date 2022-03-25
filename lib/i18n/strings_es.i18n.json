@@ -96,6 +96,37 @@
 ,"calc1Title":"Calculadora esféricos",
 "calc2Title":"Calculadora tóricos"
 ,"calc3Title":"Calculadora multifocales"
-,"calc4Title":"Calculadora monovisión"
+,"calc4Title":"Calculadora monovisión",
+"calculatorEsfericos":{
+  "text":"Para calcular \n \n1. Elige el tipo de lente \n2. Introduce los datos correspondientes para cada ojo (derecho y/o izquierdo).",
+  "eyeRight":"DERECHO",
+  "eyeLeft":"IZQUIERDO",
+  "type":"Tipo de lente",
+  "esphere":"Esfera",
+  "distance":"Distancia",
+  "button":"Calcular"
+},
+"calculatorToricos":{
+  "eyeRight":"DERECHO",
+  "eyeLeft":"IZQUIERDO",
+  "type":"Tipo de lente",
+  "esphere":"Esfera",
+  "distance":"Distancia",
+  "cylinder":"Cilindro",
+  "axis":"Eje",
+
+  "button":"Calcular"
+},"calculatorMultifocal":{
+  "eyeRight":"DERECHO",
+  "eyeLeft":"IZQUIERDO",
+  "type":"Tipo de lente",
+  "esphere":"Esfera",
+  "distance":"Distancia",
+  "cylinder":"Cilindro",
+  "dominant":"Dominante",
+
+  "button":"Calcular"
+}
+
 
 }

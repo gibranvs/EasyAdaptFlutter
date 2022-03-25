@@ -1,5 +1,7 @@
 import 'package:easy_adapt/i18n/strings.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/state/player_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -11,6 +13,12 @@ void main() {
     providers: [
       ListenableProvider<PlayerState>(
         create: (_) => PlayerState(),
+      ),
+      ListenableProvider<CalculatorState>(
+        create: (_) => CalculatorState(),
+      ),
+      ListenableProvider<MenuState>(
+        create: (_) => MenuState(),
       )
     ],
     child: TranslationProvider(child: MyApp()),

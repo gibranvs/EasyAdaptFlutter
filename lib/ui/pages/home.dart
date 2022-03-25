@@ -1,5 +1,7 @@
+import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   var t;
@@ -73,6 +75,13 @@ class _HomePageState extends State<HomePage> {
                             child: Card(
                                 elevation: 2.0,
                                 child: ListTile(
+                                  onTap: () {
+                                    Provider.of<MenuState>(context,
+                                            listen: false)
+                                        .changeIndex(0);
+
+                                    Navigator.pushNamed(context, '/layout');
+                                  },
                                   title: Center(
                                     child: Text(
                                       t.card1HomeScreen,
@@ -105,6 +114,13 @@ class _HomePageState extends State<HomePage> {
                             child: Card(
                                 elevation: 2.0,
                                 child: ListTile(
+                                  onTap: () {
+                                    Provider.of<MenuState>(context,
+                                            listen: false)
+                                        .changeIndex(1);
+
+                                    Navigator.pushNamed(context, '/layout');
+                                  },
                                   title: Center(
                                     child: Text(
                                       t.card2HomeScreen,
@@ -138,6 +154,10 @@ class _HomePageState extends State<HomePage> {
                                 elevation: 2.0,
                                 child: ListTile(
                                   onTap: () {
+                                    Provider.of<MenuState>(context,
+                                            listen: false)
+                                        .changeIndex(2);
+
                                     Navigator.pushNamed(context, '/layout');
                                   },
                                   title: Center(

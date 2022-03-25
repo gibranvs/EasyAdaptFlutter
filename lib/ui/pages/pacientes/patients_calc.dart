@@ -1,7 +1,9 @@
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class PatientsCalc extends StatefulWidget {
@@ -122,50 +124,69 @@ class _PatientsCalcState extends State<PatientsCalc> {
     );
   }
 
-  Container patients_card_model() {
-    return Container(
-        width: double.infinity,
-        child: Card(
-            elevation: 2.0,
-            child: ListTile(
-              title: Text(
-                "Paciente prueba",
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(0, 129, 171, 1.0)),
-              ),
-              subtitle: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "Probando doc",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "Probando doc",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                ],
-              ),
-              leading: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.person,
-                    size: 52,
-                    color: Color.fromRGBO(240, 162, 51, 1.0),
-                  ),
-                ],
-              ),
-            )));
+  patients_card_model() {
+    return GestureDetector(
+      onTap: () {
+        switch (Provider.of<CalculatorState>(context, listen: false).index) {
+          case 1:
+            Navigator.pushNamed(context, '/calc/calculator-esfericos');
+            break;
+          case 2:
+            Navigator.pushNamed(context, '/calc/calculator-toricos');
+            break;
+          case 3:
+            Navigator.pushNamed(context, '/calc/calculator-multifocal');
+            break;
+          case 4:
+            Navigator.pushNamed(context, '/calc/calculator-monovision');
+            break;
+          default:
+        }
+      },
+      child: Container(
+          width: double.infinity,
+          child: Card(
+              elevation: 2.0,
+              child: ListTile(
+                title: Text(
+                  "Paciente prueba",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(0, 129, 171, 1.0)),
+                ),
+                subtitle: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "Probando doc",
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "Probando doc",
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                leading: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ImageIcon(
+                      AssetImage('./assets/icons/usuario.png'),
+                      size: 52,
+                      color: Color.fromRGBO(240, 162, 51, 1.0),
+                    ),
+                  ],
+                ),
+              ))),
+    );
   }
 }

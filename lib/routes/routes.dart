@@ -1,3 +1,7 @@
+import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_esfericos.dart';
+import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_monovision.dart';
+import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_multifocal.dart';
+import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_toricos.dart';
 import 'package:easy_adapt/ui/pages/home.dart';
 import 'package:easy_adapt/ui/pages/initial_page.dart';
 import 'package:easy_adapt/ui/pages/layout/layout.dart';
@@ -31,6 +35,10 @@ getRoutes(t) {
     '/calc/patients': (context) => PatientsCalc(
           t: t,
         ),
+    '/calc/calculator-esfericos': (context) => CalculatorEsfericos(),
+    '/calc/calculator-toricos': (context) => CalculatorToricos(),
+    '/calc/calculator-multifocal': (context) => CalculatorMultifocal(),
+    '/calc/calculator-monovision': (context) => CalculatorMonovision(),
     '/patients/add-patient': (context) => AddPatientsPage(
           t: t,
         ),

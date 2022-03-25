@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 234 (78.0 per locale)
+ * Strings: 303 (101.0 per locale)
  *
- * Built on 2022-03-24 at 15:05 UTC
+ * Built on 2022-03-25 at 17:46 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -381,6 +381,9 @@ class _StringsEn {
 	String get calc2Title => 'Toric calculator';
 	String get calc3Title => 'Multifocal calculator';
 	String get calc4Title => 'Monovision Calculator';
+	late final _StringsCalculatorEsfericosEn calculatorEsfericos = _StringsCalculatorEsfericosEn._(_root);
+	late final _StringsCalculatorToricosEn calculatorToricos = _StringsCalculatorToricosEn._(_root);
+	late final _StringsCalculatorMultifocalEn calculatorMultifocal = _StringsCalculatorMultifocalEn._(_root);
 }
 
 // Path: login
@@ -499,6 +502,59 @@ class _Strings0i7En {
 	String get title => 'Insertion, removal and maintenance at home';
 }
 
+// Path: calculatorEsfericos
+class _StringsCalculatorEsfericosEn {
+	_StringsCalculatorEsfericosEn._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get text => 'To calculate \n \n1. Choose the type of lens \n2. Enter the corresponding data for each eye (right and/or left).';
+	String get eyeRight => 'RIGHT';
+	String get eyeLeft => 'LEFT';
+	String get type => 'Lens type';
+	String get esphere => 'Sphere';
+	String get distance => 'Distance';
+	String get button => 'Calculate';
+}
+
+// Path: calculatorToricos
+class _StringsCalculatorToricosEn {
+	_StringsCalculatorToricosEn._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get eyeRight => 'RIGHT';
+	String get eyeLeft => 'LEFT';
+	String get type => 'Lens type';
+	String get esphere => 'Sphere';
+	String get distance => 'Distance';
+	String get cylinder => 'Cylinder';
+	String get axis => 'Axis';
+	String get button => 'Calcular';
+}
+
+// Path: calculatorMultifocal
+class _StringsCalculatorMultifocalEn {
+	_StringsCalculatorMultifocalEn._(this._root);
+
+	// ignore: unused_field
+	final _StringsEn _root;
+
+	// Translations
+	String get eyeRight => 'RIGHT';
+	String get eyeLeft => 'LEFT';
+	String get type => 'Lens type';
+	String get esphere => 'Sphere';
+	String get distance => 'Distance';
+	String get cylinder => 'Cylinder';
+	String get dominant => 'Dominant';
+	String get button => 'Calcular';
+}
+
 // Path: <root>
 class _StringsEs implements _StringsEn {
 
@@ -579,6 +635,9 @@ class _StringsEs implements _StringsEn {
 	@override String get calc2Title => 'Calculadora tóricos';
 	@override String get calc3Title => 'Calculadora multifocales';
 	@override String get calc4Title => 'Calculadora monovisión';
+	@override late final _StringsCalculatorEsfericosEs calculatorEsfericos = _StringsCalculatorEsfericosEs._(_root);
+	@override late final _StringsCalculatorToricosEs calculatorToricos = _StringsCalculatorToricosEs._(_root);
+	@override late final _StringsCalculatorMultifocalEs calculatorMultifocal = _StringsCalculatorMultifocalEs._(_root);
 }
 
 // Path: login
@@ -697,6 +756,59 @@ class _Strings0i7Es implements _Strings0i7En {
 	@override String get title => 'Inserción, remoción y mantenimiento en casa';
 }
 
+// Path: calculatorEsfericos
+class _StringsCalculatorEsfericosEs implements _StringsCalculatorEsfericosEn {
+	_StringsCalculatorEsfericosEs._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get text => 'Para calcular \n \n1. Elige el tipo de lente \n2. Introduce los datos correspondientes para cada ojo (derecho y/o izquierdo).';
+	@override String get eyeRight => 'DERECHO';
+	@override String get eyeLeft => 'IZQUIERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distancia';
+	@override String get button => 'Calcular';
+}
+
+// Path: calculatorToricos
+class _StringsCalculatorToricosEs implements _StringsCalculatorToricosEn {
+	_StringsCalculatorToricosEs._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get eyeRight => 'DERECHO';
+	@override String get eyeLeft => 'IZQUIERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distancia';
+	@override String get cylinder => 'Cilindro';
+	@override String get axis => 'Eje';
+	@override String get button => 'Calcular';
+}
+
+// Path: calculatorMultifocal
+class _StringsCalculatorMultifocalEs implements _StringsCalculatorMultifocalEn {
+	_StringsCalculatorMultifocalEs._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsEs _root;
+
+	// Translations
+	@override String get eyeRight => 'DERECHO';
+	@override String get eyeLeft => 'IZQUIERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distancia';
+	@override String get cylinder => 'Cilindro';
+	@override String get dominant => 'Dominante';
+	@override String get button => 'Calcular';
+}
+
 // Path: <root>
 class _StringsPt implements _StringsEn {
 
@@ -777,6 +889,9 @@ class _StringsPt implements _StringsEn {
 	@override String get calc2Title => 'Calculadora tórica';
 	@override String get calc3Title => 'Calculadora multifocal';
 	@override String get calc4Title => 'Calculadora Monovisão';
+	@override late final _StringsCalculatorEsfericosPt calculatorEsfericos = _StringsCalculatorEsfericosPt._(_root);
+	@override late final _StringsCalculatorToricosPt calculatorToricos = _StringsCalculatorToricosPt._(_root);
+	@override late final _StringsCalculatorMultifocalPt calculatorMultifocal = _StringsCalculatorMultifocalPt._(_root);
 }
 
 // Path: login
@@ -895,6 +1010,59 @@ class _Strings0i7Pt implements _Strings0i7En {
 	@override String get title => 'Inserção, remoção e manutenção em casa';
 }
 
+// Path: calculatorEsfericos
+class _StringsCalculatorEsfericosPt implements _StringsCalculatorEsfericosEn {
+	_StringsCalculatorEsfericosPt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get text => 'Para calcular \n \n1. Escolha o tipo de lente \n2. Insira os dados correspondentes para cada olho (direito e/ou esquerdo).';
+	@override String get eyeRight => 'CERTO';
+	@override String get eyeLeft => 'ESQUERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distância';
+	@override String get button => 'Calcular';
+}
+
+// Path: calculatorToricos
+class _StringsCalculatorToricosPt implements _StringsCalculatorToricosEn {
+	_StringsCalculatorToricosPt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get eyeRight => 'CERTO';
+	@override String get eyeLeft => 'ESQUERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distância';
+	@override String get cylinder => 'Cilindro';
+	@override String get axis => 'Eixo';
+	@override String get button => 'Calcular';
+}
+
+// Path: calculatorMultifocal
+class _StringsCalculatorMultifocalPt implements _StringsCalculatorMultifocalEn {
+	_StringsCalculatorMultifocalPt._(this._root);
+
+	// ignore: unused_field
+	@override final _StringsPt _root;
+
+	// Translations
+	@override String get eyeRight => 'CERTO';
+	@override String get eyeLeft => 'ESQUERDO';
+	@override String get type => 'Tipo de lente';
+	@override String get esphere => 'Esfera';
+	@override String get distance => 'Distância';
+	@override String get cylinder => 'Cilindro';
+	@override String get dominant => 'Dominante';
+	@override String get button => 'Calcular';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -979,6 +1147,29 @@ extension on _StringsEn {
 			'calc2Title': 'Toric calculator',
 			'calc3Title': 'Multifocal calculator',
 			'calc4Title': 'Monovision Calculator',
+			'calculatorEsfericos.text': 'To calculate \n \n1. Choose the type of lens \n2. Enter the corresponding data for each eye (right and/or left).',
+			'calculatorEsfericos.eyeRight': 'RIGHT',
+			'calculatorEsfericos.eyeLeft': 'LEFT',
+			'calculatorEsfericos.type': 'Lens type',
+			'calculatorEsfericos.esphere': 'Sphere',
+			'calculatorEsfericos.distance': 'Distance',
+			'calculatorEsfericos.button': 'Calculate',
+			'calculatorToricos.eyeRight': 'RIGHT',
+			'calculatorToricos.eyeLeft': 'LEFT',
+			'calculatorToricos.type': 'Lens type',
+			'calculatorToricos.esphere': 'Sphere',
+			'calculatorToricos.distance': 'Distance',
+			'calculatorToricos.cylinder': 'Cylinder',
+			'calculatorToricos.axis': 'Axis',
+			'calculatorToricos.button': 'Calcular',
+			'calculatorMultifocal.eyeRight': 'RIGHT',
+			'calculatorMultifocal.eyeLeft': 'LEFT',
+			'calculatorMultifocal.type': 'Lens type',
+			'calculatorMultifocal.esphere': 'Sphere',
+			'calculatorMultifocal.distance': 'Distance',
+			'calculatorMultifocal.cylinder': 'Cylinder',
+			'calculatorMultifocal.dominant': 'Dominant',
+			'calculatorMultifocal.button': 'Calcular',
 		};
 	}
 }
@@ -1064,6 +1255,29 @@ extension on _StringsEs {
 			'calc2Title': 'Calculadora tóricos',
 			'calc3Title': 'Calculadora multifocales',
 			'calc4Title': 'Calculadora monovisión',
+			'calculatorEsfericos.text': 'Para calcular \n \n1. Elige el tipo de lente \n2. Introduce los datos correspondientes para cada ojo (derecho y/o izquierdo).',
+			'calculatorEsfericos.eyeRight': 'DERECHO',
+			'calculatorEsfericos.eyeLeft': 'IZQUIERDO',
+			'calculatorEsfericos.type': 'Tipo de lente',
+			'calculatorEsfericos.esphere': 'Esfera',
+			'calculatorEsfericos.distance': 'Distancia',
+			'calculatorEsfericos.button': 'Calcular',
+			'calculatorToricos.eyeRight': 'DERECHO',
+			'calculatorToricos.eyeLeft': 'IZQUIERDO',
+			'calculatorToricos.type': 'Tipo de lente',
+			'calculatorToricos.esphere': 'Esfera',
+			'calculatorToricos.distance': 'Distancia',
+			'calculatorToricos.cylinder': 'Cilindro',
+			'calculatorToricos.axis': 'Eje',
+			'calculatorToricos.button': 'Calcular',
+			'calculatorMultifocal.eyeRight': 'DERECHO',
+			'calculatorMultifocal.eyeLeft': 'IZQUIERDO',
+			'calculatorMultifocal.type': 'Tipo de lente',
+			'calculatorMultifocal.esphere': 'Esfera',
+			'calculatorMultifocal.distance': 'Distancia',
+			'calculatorMultifocal.cylinder': 'Cilindro',
+			'calculatorMultifocal.dominant': 'Dominante',
+			'calculatorMultifocal.button': 'Calcular',
 		};
 	}
 }
@@ -1149,6 +1363,29 @@ extension on _StringsPt {
 			'calc2Title': 'Calculadora tórica',
 			'calc3Title': 'Calculadora multifocal',
 			'calc4Title': 'Calculadora Monovisão',
+			'calculatorEsfericos.text': 'Para calcular \n \n1. Escolha o tipo de lente \n2. Insira os dados correspondentes para cada olho (direito e/ou esquerdo).',
+			'calculatorEsfericos.eyeRight': 'CERTO',
+			'calculatorEsfericos.eyeLeft': 'ESQUERDO',
+			'calculatorEsfericos.type': 'Tipo de lente',
+			'calculatorEsfericos.esphere': 'Esfera',
+			'calculatorEsfericos.distance': 'Distância',
+			'calculatorEsfericos.button': 'Calcular',
+			'calculatorToricos.eyeRight': 'CERTO',
+			'calculatorToricos.eyeLeft': 'ESQUERDO',
+			'calculatorToricos.type': 'Tipo de lente',
+			'calculatorToricos.esphere': 'Esfera',
+			'calculatorToricos.distance': 'Distância',
+			'calculatorToricos.cylinder': 'Cilindro',
+			'calculatorToricos.axis': 'Eixo',
+			'calculatorToricos.button': 'Calcular',
+			'calculatorMultifocal.eyeRight': 'CERTO',
+			'calculatorMultifocal.eyeLeft': 'ESQUERDO',
+			'calculatorMultifocal.type': 'Tipo de lente',
+			'calculatorMultifocal.esphere': 'Esfera',
+			'calculatorMultifocal.distance': 'Distância',
+			'calculatorMultifocal.cylinder': 'Cilindro',
+			'calculatorMultifocal.dominant': 'Dominante',
+			'calculatorMultifocal.button': 'Calcular',
 		};
 	}
 }
