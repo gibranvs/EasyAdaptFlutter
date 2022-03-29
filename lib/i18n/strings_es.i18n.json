@@ -126,7 +126,12 @@
   "dominant":"Dominante",
 
   "button":"Calcular"
-}
+},
+"calculatorResultsTitle1":"Datos calculados",
+"calculatorResultsTitle2":"Prescripción final para lente de contacto",
+"calculatorResultsTitle3":"Productos recomendados"
+
+
 
 
 }

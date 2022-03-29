@@ -130,6 +130,9 @@
   "dominant":"Dominante",
 
   "button":"Calcular"
-}
+},
+"calculatorResultsTitle1":"Dados calculados",
+"calculatorResultsTitle2":"Prescrição final para lentes de contato",
+"calculatorResultsTitle3":"Produtos recomendados"
 
 }

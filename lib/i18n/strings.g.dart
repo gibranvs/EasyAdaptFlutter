@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 303 (101.0 per locale)
+ * Strings: 312 (104.0 per locale)
  *
- * Built on 2022-03-25 at 17:46 UTC
+ * Built on 2022-03-29 at 15:22 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -384,6 +384,9 @@ class _StringsEn {
 	late final _StringsCalculatorEsfericosEn calculatorEsfericos = _StringsCalculatorEsfericosEn._(_root);
 	late final _StringsCalculatorToricosEn calculatorToricos = _StringsCalculatorToricosEn._(_root);
 	late final _StringsCalculatorMultifocalEn calculatorMultifocal = _StringsCalculatorMultifocalEn._(_root);
+	String get calculatorResultsTitle1 => 'Calculated data';
+	String get calculatorResultsTitle2 => 'Final prescription for contact lens';
+	String get calculatorResultsTitle3 => 'Recommended products';
 }
 
 // Path: login
@@ -638,6 +641,9 @@ class _StringsEs implements _StringsEn {
 	@override late final _StringsCalculatorEsfericosEs calculatorEsfericos = _StringsCalculatorEsfericosEs._(_root);
 	@override late final _StringsCalculatorToricosEs calculatorToricos = _StringsCalculatorToricosEs._(_root);
 	@override late final _StringsCalculatorMultifocalEs calculatorMultifocal = _StringsCalculatorMultifocalEs._(_root);
+	@override String get calculatorResultsTitle1 => 'Datos calculados';
+	@override String get calculatorResultsTitle2 => 'Prescripción final para lente de contacto';
+	@override String get calculatorResultsTitle3 => 'Productos recomendados';
 }
 
 // Path: login
@@ -892,6 +898,9 @@ class _StringsPt implements _StringsEn {
 	@override late final _StringsCalculatorEsfericosPt calculatorEsfericos = _StringsCalculatorEsfericosPt._(_root);
 	@override late final _StringsCalculatorToricosPt calculatorToricos = _StringsCalculatorToricosPt._(_root);
 	@override late final _StringsCalculatorMultifocalPt calculatorMultifocal = _StringsCalculatorMultifocalPt._(_root);
+	@override String get calculatorResultsTitle1 => 'Dados calculados';
+	@override String get calculatorResultsTitle2 => 'Prescrição final para lentes de contato';
+	@override String get calculatorResultsTitle3 => 'Produtos recomendados';
 }
 
 // Path: login
@@ -1170,6 +1179,9 @@ extension on _StringsEn {
 			'calculatorMultifocal.cylinder': 'Cylinder',
 			'calculatorMultifocal.dominant': 'Dominant',
 			'calculatorMultifocal.button': 'Calcular',
+			'calculatorResultsTitle1': 'Calculated data',
+			'calculatorResultsTitle2': 'Final prescription for contact lens',
+			'calculatorResultsTitle3': 'Recommended products',
 		};
 	}
 }
@@ -1278,6 +1290,9 @@ extension on _StringsEs {
 			'calculatorMultifocal.cylinder': 'Cilindro',
 			'calculatorMultifocal.dominant': 'Dominante',
 			'calculatorMultifocal.button': 'Calcular',
+			'calculatorResultsTitle1': 'Datos calculados',
+			'calculatorResultsTitle2': 'Prescripción final para lente de contacto',
+			'calculatorResultsTitle3': 'Productos recomendados',
 		};
 	}
 }
@@ -1386,6 +1401,9 @@ extension on _StringsPt {
 			'calculatorMultifocal.cylinder': 'Cilindro',
 			'calculatorMultifocal.dominant': 'Dominante',
 			'calculatorMultifocal.button': 'Calcular',
+			'calculatorResultsTitle1': 'Dados calculados',
+			'calculatorResultsTitle2': 'Prescrição final para lentes de contato',
+			'calculatorResultsTitle3': 'Produtos recomendados',
 		};
 	}
 }

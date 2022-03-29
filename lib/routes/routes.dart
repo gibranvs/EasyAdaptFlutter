@@ -1,3 +1,6 @@
+import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_esfericos.dart';
+import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_multifocal_monovision.dart';
+import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_toricos.dart';
 import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_esfericos.dart';
 import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_monovision.dart';
 import 'package:easy_adapt/ui/pages/calculadora/sections/calculadora_multifocal.dart';
@@ -39,6 +42,10 @@ getRoutes(t) {
     '/calc/calculator-toricos': (context) => CalculatorToricos(),
     '/calc/calculator-multifocal': (context) => CalculatorMultifocal(),
     '/calc/calculator-monovision': (context) => CalculatorMonovision(),
+    '/calc/results/esferico': (context) => ResultsAndProductsPageEsferico(),
+    '/calc/results/toricos': (context) => ResultsAndProductsPageToricos(),
+    '/calc/results/multifocal-monovision': (context) =>
+        ResultsAndProductsPageMultifocalMonovision(),
     '/patients/add-patient': (context) => AddPatientsPage(
           t: t,
         ),

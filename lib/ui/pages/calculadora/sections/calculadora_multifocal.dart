@@ -62,16 +62,22 @@ class _CalculatorMultifocal extends State<CalculatorMultifocal> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 33, right: 33),
-              child: Container(
-                width: double.infinity,
-                height: 50,
-                decoration: const BoxDecoration(
-                    color: Color.fromRGBO(129, 181, 178, 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(25))),
-                child: Center(
-                  child: Text(
-                    t.calculatorEsfericos.button,
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, '/calc/results/multifocal-monovision');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  decoration: const BoxDecoration(
+                      color: Color.fromRGBO(129, 181, 178, 1.0),
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  child: Center(
+                    child: Text(
+                      t.calculatorEsfericos.button,
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
                   ),
                 ),
               ),
