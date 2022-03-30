@@ -157,7 +157,7 @@ class _ResultsAndProductsPageEsferico
               SizedBox(
                 height: 10,
               ),
-              productModel()
+              productModel(1, context)
             ],
           ),
         ),
