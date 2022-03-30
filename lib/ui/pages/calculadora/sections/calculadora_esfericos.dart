@@ -58,7 +58,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
               padding: const EdgeInsets.only(left: 33, right: 33),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/calc/results/esfericos');
+                  Navigator.pushNamed(context, '/calc/results/esferico');
                 },
                 child: Container(
                   width: double.infinity,
