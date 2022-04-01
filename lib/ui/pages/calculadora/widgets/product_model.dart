@@ -1,4 +1,5 @@
 import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_esferico.dart';
+import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_toricos.dart';
 import 'package:flutter/material.dart';
 
 productModel(index, context) {
@@ -11,6 +12,9 @@ productModel(index, context) {
             getBottomShetEsferico().get(context);
             break;
           case 2:
+            getBottomShetToricos().get(context);
+            break;
+          case 3:
             getBottomShetEsferico().get(context);
             break;
           default:
