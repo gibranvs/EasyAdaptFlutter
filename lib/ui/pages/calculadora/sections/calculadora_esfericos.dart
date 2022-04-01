@@ -18,6 +18,46 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
   String? selectedValueDistanceR;
   String? selectedValueDistanceL;
 
+  List<String> esphereR = [
+    '-18',
+    '-17',
+    '-16',
+    '-15',
+    '-14',
+    '-13',
+    '-12',
+    '-11',
+    '-10',
+    '-9',
+    '-8',
+    '-7',
+    '-6',
+    '-5',
+    '-4',
+    '-3',
+    '-2',
+    '-1',
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12',
+    '13',
+    '14',
+    '15',
+    '16',
+    '17',
+    '18',
+  ];
+  List<String> distanceL = ['10', '11', '12', '13', '14'];
   List<String> itemsType = [
     'Item1',
     'Item2',
@@ -96,7 +136,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.distance,
-              dropdownItems: itemsType,
+              dropdownItems: distanceL,
               value: selectedValueDistanceR,
               icon: Container(),
               onChanged: (value) {
@@ -115,7 +155,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.distance,
-              dropdownItems: itemsType,
+              dropdownItems: distanceL,
               value: selectedValueDistanceL,
               icon: Container(),
               onChanged: (value) {
@@ -145,7 +185,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.esphere,
-              dropdownItems: itemsType,
+              dropdownItems: esphereR,
               value: selectedValueEsphereR,
               icon: Container(),
               onChanged: (value) {
@@ -164,7 +204,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.esphere,
-              dropdownItems: itemsType,
+              dropdownItems: esphereR,
               value: selectedValueEsphereL,
               icon: Container(),
               onChanged: (value) {
@@ -194,8 +234,8 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: itemsType,
-              value: selectedValueTypeR,
+              dropdownItems: [t.calc1Title],
+              value: t.calc1Title,
               icon: Container(),
               onChanged: (value) {
                 setState(() {
@@ -213,8 +253,8 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: itemsType,
-              value: selectedValueTypeL,
+              dropdownItems: [t.calc1Title],
+              value: t.calc1Title,
               icon: Container(),
               onChanged: (value) {
                 setState(() {
