@@ -1,7 +1,10 @@
+import 'package:easy_adapt/data/internal_data.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:flutter/material.dart';
 import '/../i18n/strings.g.dart';
+import 'package:provider/provider.dart';
 
 class ResultsAndProductsPageEsferico extends StatefulWidget {
   ResultsAndProductsPageEsferico({Key? key}) : super(key: key);
@@ -13,6 +16,82 @@ class ResultsAndProductsPageEsferico extends StatefulWidget {
 
 class _ResultsAndProductsPageEsferico
     extends State<ResultsAndProductsPageEsferico> {
+  bool right = true;
+  List dataProductsR = [];
+  List dataProductsL = [];
+
+  @override
+  void didChangeDependencies() {
+    loadData();
+    super.didChangeDependencies();
+  }
+
+  loadData() {
+    switch (LocaleSettings.currentLocale.languageTag) {
+      case "es":
+        productsSphereEs.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']) {
+            dataProductsR.add(element);
+          }
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      case "en":
+        productsSphereEn.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']) {
+            dataProductsR.add(element);
+          }
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      case "pt":
+        productsSpherePt.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']) {
+            dataProductsR.add(element);
+          }
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +102,15 @@ class _ResultsAndProductsPageEsferico
             children: [
               getAppBarCalculators(context),
               patients_card_model(),
-              eyes(context),
+              eyes(context, () {
+                setState(() {
+                  right = true;
+                });
+              }, () {
+                setState(() {
+                  right = false;
+                });
+              }),
               SizedBox(
                 height: 2,
               ),
@@ -48,7 +135,15 @@ class _ResultsAndProductsPageEsferico
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "-2.12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['esphere']
+                                    .toStringAsFixed(2)
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['esphere']
+                                    .toStringAsFixed(2),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -65,7 +160,15 @@ class _ResultsAndProductsPageEsferico
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['distance']
+                                    .toString()
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['distance']
+                                    .toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -107,7 +210,15 @@ class _ResultsAndProductsPageEsferico
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "-2.12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['esphere']
+                                    .toStringAsFixed(2)
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['esphere']
+                                    .toStringAsFixed(2),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -124,7 +235,15 @@ class _ResultsAndProductsPageEsferico
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['distance']
+                                    .toString()
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['distance']
+                                    .toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -157,7 +276,7 @@ class _ResultsAndProductsPageEsferico
               SizedBox(
                 height: 10,
               ),
-              productModel(1, context)
+              ...products()
             ],
           ),
         ),
@@ -165,35 +284,67 @@ class _ResultsAndProductsPageEsferico
     );
   }
 
-  Padding eyes(BuildContext context) {
+  products() {
+    if (right) {
+      return List.generate(
+          dataProductsR.length,
+          (index) => productModel(
+              1,
+              context,
+              dataProductsR[index]['namePS'],
+              dataProductsR[index]['descriptionPS'],
+              dataProductsR[index]['imagePS']));
+    } else {
+      return List.generate(
+          dataProductsL.length,
+          (index) => productModel(
+              1,
+              context,
+              dataProductsL[index]['namePS'],
+              dataProductsL[index]['descriptionPS'],
+              dataProductsR[index]['imagePS']));
+    }
+  }
+
+  Padding eyes(BuildContext context, ontapR, ontapL) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            width: 120,
-            height: 35,
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(129, 181, 178, 1.0),
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Center(
-              child: Text(
-                t.calculatorEsfericos.eyeRight,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+          GestureDetector(
+            onTap: () {
+              ontapR();
+            },
+            child: Container(
+              width: 120,
+              height: 35,
+              decoration: const BoxDecoration(
+                  color: Color.fromRGBO(129, 181, 178, 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Center(
+                child: Text(
+                  t.calculatorEsfericos.eyeRight,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
               ),
             ),
           ),
-          Container(
-            width: 120,
-            height: 35,
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(129, 181, 178, 1.0),
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Center(
-              child: Text(
-                t.calculatorEsfericos.eyeLeft,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+          GestureDetector(
+            onTap: () {
+              ontapL();
+            },
+            child: Container(
+              width: 120,
+              height: 35,
+              decoration: const BoxDecoration(
+                  color: Color.fromRGBO(129, 181, 178, 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Center(
+                child: Text(
+                  t.calculatorEsfericos.eyeLeft,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
               ),
             ),
           ),

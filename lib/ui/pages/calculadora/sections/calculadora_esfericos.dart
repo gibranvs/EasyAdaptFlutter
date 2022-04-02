@@ -1,6 +1,8 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorEsfericos extends StatefulWidget {
@@ -98,6 +100,26 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
               padding: const EdgeInsets.only(left: 33, right: 33),
               child: GestureDetector(
                 onTap: () {
+                  var tempEsphereR = ((int.parse(selectedValueEsphereR!)) /
+                      (1 -
+                          (int.parse(selectedValueEsphereR!) *
+                              (int.parse(selectedValueDistanceR!) / 1000))));
+                  var tempEsphereL = ((int.parse(selectedValueEsphereL!)) /
+                      (1 -
+                          (int.parse(selectedValueEsphereL!) *
+                              (int.parse(selectedValueDistanceL!) / 1000))));
+
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .addCalculateData({
+                    'right': {
+                      'esphere': tempEsphereR,
+                      'distance': selectedValueDistanceR,
+                    },
+                    'left': {
+                      'esphere': tempEsphereL,
+                      'distance': selectedValueDistanceL,
+                    },
+                  });
                   Navigator.pushNamed(context, '/calc/results/esferico');
                 },
                 child: Container(

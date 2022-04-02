@@ -2,20 +2,20 @@ import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_esferico.dar
 import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_toricos.dart';
 import 'package:flutter/material.dart';
 
-productModel(index, context) {
+productModel(index, context, name, desc, path) {
   return Container(
     margin: EdgeInsets.all(10.0),
     child: GestureDetector(
       onTap: () async {
         switch (index) {
           case 1:
-            getBottomShetEsferico().get(context);
+            getBottomShetEsferico().get(context, name, path);
             break;
           case 2:
             getBottomShetToricos().get(context);
             break;
           case 3:
-            getBottomShetEsferico().get(context);
+            getBottomShetEsferico().get(context, name, path);
             break;
           default:
         }
@@ -26,10 +26,10 @@ productModel(index, context) {
           Container(
             width: double.infinity,
             height: 150,
-            color: Colors.lightBlueAccent,
+            child: Image.asset(path),
           ),
           Text(
-            'Soflens 69',
+            name,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -39,7 +39,7 @@ productModel(index, context) {
             height: 5,
           ),
           Text(
-            'Descripcion del producto',
+            desc,
             style: TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 12, color: Colors.grey),
           ),

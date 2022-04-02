@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class getBottomShetEsferico {
-  get(context) {
+  get(context, title, path) {
     return showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -32,23 +32,23 @@ class getBottomShetEsferico {
                               Container(
                                 width: 100,
                                 height: 100,
-                                color: Colors.lightBlueAccent,
+                                child: Image.asset(path),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 15,
                               ),
                               Flexible(
                                   child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
-                                    "Lunare Tri-Color",
+                                    title,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15),
                                   ),
-                                  Text(
+                                  const Text(
                                     "-2.00 / 0.00 x 0",
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
