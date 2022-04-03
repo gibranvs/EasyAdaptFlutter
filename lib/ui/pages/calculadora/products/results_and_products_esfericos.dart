@@ -318,7 +318,7 @@ class _ResultsAndProductsPageEsferico
               context,
               dataProductsL[index]['namePS'],
               dataProductsL[index]['descriptionPS'],
-              dataProductsR[index]['imagePS'],
+              dataProductsL[index]['imagePS'],
               right == true
                   ? Provider.of<CalculatorState>(context, listen: false)
                       .calculator_data['right']['esphere']
@@ -331,8 +331,12 @@ class _ResultsAndProductsPageEsferico
                       .calculator_data['right']['distance']
                       .toStringAsFixed(2)
                   : Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['distance']
-                      .toStringAsFixed(2)));
+                              .calculator_data['left']['distance'] !=
+                          null
+                      ? Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['left']['distance']
+                          .toStringAsFixed(2)
+                      : ""));
     }
   }
 
@@ -349,7 +353,9 @@ class _ResultsAndProductsPageEsferico
             child: Container(
               width: 120,
               height: 35,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black, width: right == true ? 2 : 0),
                   color: Color.fromRGBO(129, 181, 178, 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               child: Center(
@@ -367,7 +373,9 @@ class _ResultsAndProductsPageEsferico
             child: Container(
               width: 120,
               height: 35,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black, width: right == false ? 2 : 0),
                   color: Color.fromRGBO(129, 181, 178, 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               child: Center(

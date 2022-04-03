@@ -102,12 +102,15 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                 onTap: () {
                   var tempEsphereR = ((int.parse(selectedValueEsphereR!)) /
                       (1 -
-                          (int.parse(selectedValueEsphereR!) *
-                              (int.parse(selectedValueDistanceR!) / 1000))));
-                  var tempEsphereL = ((int.parse(selectedValueEsphereL!)) /
-                      (1 -
-                          (int.parse(selectedValueEsphereL!) *
-                              (int.parse(selectedValueDistanceL!) / 1000))));
+                          (int.parse(selectedValueEsphereR ?? "0") *
+                              (int.parse(selectedValueDistanceR ?? "0") /
+                                  1000))));
+                  var tempEsphereL =
+                      ((int.parse(selectedValueEsphereL ?? "0")) /
+                          (1 -
+                              (int.parse(selectedValueEsphereL ?? "0") *
+                                  (int.parse(selectedValueDistanceL ?? "0") /
+                                      1000))));
 
                   Provider.of<CalculatorState>(context, listen: false)
                       .addCalculateData({
