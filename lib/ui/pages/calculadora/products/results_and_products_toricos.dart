@@ -225,7 +225,7 @@ class _ResultsAndProductsPageToricos
               SizedBox(
                 height: 10,
               ),
-              productModel(2, context, "", "", '')
+              productModel(2, context, "", "", '', '', '')
             ],
           ),
         ),

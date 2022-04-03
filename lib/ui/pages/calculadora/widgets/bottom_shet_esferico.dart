@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class getBottomShetEsferico {
-  get(context, title, path) {
+  get(context, title, path, sphere, distance) {
     return showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -48,8 +48,8 @@ class getBottomShetEsferico {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15),
                                   ),
-                                  const Text(
-                                    "-2.00 / 0.00 x 0",
+                                  Text(
+                                    "${double.parse(sphere).roundToDouble()} / ${distance}",
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15),

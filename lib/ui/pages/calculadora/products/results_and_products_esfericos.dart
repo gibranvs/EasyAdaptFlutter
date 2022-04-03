@@ -293,7 +293,23 @@ class _ResultsAndProductsPageEsferico
               context,
               dataProductsR[index]['namePS'],
               dataProductsR[index]['descriptionPS'],
-              dataProductsR[index]['imagePS']));
+              dataProductsR[index]['imagePS'],
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']
+                      .toStringAsFixed(2),
+              right == true
+                  ? double.parse(
+                          Provider.of<CalculatorState>(context, listen: false)
+                              .calculator_data['right']['distance'])
+                      .toStringAsFixed(2)
+                  : double.parse(
+                          Provider.of<CalculatorState>(context, listen: false)
+                              .calculator_data['left']['distance'])
+                      .toStringAsFixed(2)));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -302,7 +318,21 @@ class _ResultsAndProductsPageEsferico
               context,
               dataProductsL[index]['namePS'],
               dataProductsL[index]['descriptionPS'],
-              dataProductsR[index]['imagePS']));
+              dataProductsR[index]['imagePS'],
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']
+                      .toStringAsFixed(2),
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['distance']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['distance']
+                      .toStringAsFixed(2)));
     }
   }
 
