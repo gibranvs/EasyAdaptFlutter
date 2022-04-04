@@ -1,6 +1,8 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorToricos extends StatefulWidget {
@@ -23,55 +25,106 @@ class _CalculatorToricos extends State<CalculatorToricos> {
   String? selectedValueAxisL;
 
   List<String> esphereR = [
-    '-18',
-    '-17',
-    '-16',
-    '-15',
-    '-14',
-    '-13',
-    '-12',
-    '-11',
-    '-10',
-    '-9',
-    '-8',
-    '-7',
-    '-6',
-    '-5',
-    '-4',
-    '-3',
-    '-2',
-    '-1',
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
+    '-18.00',
+    '-17.50',
+    '-17.00',
+    '-16.50',
+    '-16.00',
+    '-15.50',
+    '-15.00',
+    '-14.50',
+    '-14.00',
+    '-13.50',
+    '-13.00',
+    '-12.50',
+    '-12.00',
+    '-11.50',
+    '-11.00',
+    '-10.50',
+    '-10.00',
+    '-9.50',
+    '-9.00',
+    '-8.50',
+    '-8.00',
+    '-7.50',
+    '-7.00',
+    '-6.50',
+    '-6.00',
+    '-5.75',
+    '-5.50',
+    '-5.25',
+    '-5.00',
+    '-4.75',
+    '-4.50',
+    '-4.25',
+    '-4.00',
+    '-3.75',
+    '-3.50',
+    '-3.25',
+    '-3.00',
+    '-2.75',
+    '-2.50',
+    '-2.25',
+    '-2.00',
+    '-1.75',
+    '-1.50',
+    '-1.25',
+    '-1.00',
+    '-0.75',
+    '-0.50',
+    '-0.25',
+    '0.00',
+    '0.25',
+    '0.50',
+    '0.75',
+    '1.00',
+    '1.25',
+    '1.50',
+    '1.75',
+    '2.00',
+    '2.25',
+    '2.50',
+    '2.75',
+    '3.00',
+    '3.25',
+    '3.50',
+    '3.75',
+    '4.00',
+    '4.25',
+    '4.50',
+    '4.75',
+    '5.00',
+    '5.25',
+    '5.50',
+    '5.75',
+    '6.00',
+    '6.50',
+    '7.00',
+    '7.50',
+    '8.00',
+    '8.50',
+    '9.00',
+    '9.50',
+    '10.00',
+    '10.50',
+    '11.00',
+    '11.50',
+    '12.00',
+    '12.50',
+    '13.00',
+    '13.50',
+    '14.00',
+    '14.50',
+    '15.00',
+    '15.50',
+    '16.00',
+    '16.50',
+    '17.00',
+    '17.50',
+    '18.00',
   ];
   List<String> distanceL = ['10', '11', '12', '13', '14'];
-  List<String> itemsType = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-  ];
+
   List<String> axisList = [
     '0',
     '5',
@@ -162,6 +215,54 @@ class _CalculatorToricos extends State<CalculatorToricos> {
               padding: const EdgeInsets.only(left: 33, right: 33),
               child: GestureDetector(
                 onTap: () {
+                  var tempEsphereR =
+                      ((double.parse(selectedValueEsphereR ?? "0")) /
+                          (1 -
+                              (double.parse(selectedValueEsphereR ?? "0") *
+                                  (int.parse(selectedValueDistanceR ?? "0") /
+                                      1000))));
+                  var tempEsphereL =
+                      ((double.parse(selectedValueEsphereL ?? "0")) /
+                          (1 -
+                              (double.parse(selectedValueEsphereL ?? "0") *
+                                  (int.parse(selectedValueDistanceL ?? "0") /
+                                      1000))));
+                  var tempcylinderL = ((double.parse(
+                                  selectedValueEsphereL ?? "0") +
+                              (double.parse(selectedValueCylinderL ?? "0"))) /
+                          ((1 -
+                              (((int.parse(selectedValueDistanceL ?? "0")) /
+                                      1000) *
+                                  (double.parse(selectedValueEsphereL ?? "0") +
+                                      double.parse(
+                                          selectedValueCylinderL ?? "0"))))) -
+                      tempEsphereL);
+                  var tempcylinderR = ((double.parse(
+                                  selectedValueEsphereR ?? "0") +
+                              (double.parse(selectedValueCylinderR ?? "0"))) /
+                          ((1 -
+                              (((int.parse(selectedValueDistanceR ?? "0")) /
+                                      1000) *
+                                  (double.parse(selectedValueEsphereR ?? "0") +
+                                      double.parse(
+                                          selectedValueCylinderR ?? "0"))))) -
+                      tempEsphereR);
+
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .addCalculateData({
+                    'right': {
+                      'esphere': tempEsphereR,
+                      'distance': selectedValueDistanceR ?? '0',
+                      'cylinder': tempcylinderR,
+                      'axis': selectedValueAxisR ?? "0"
+                    },
+                    'left': {
+                      'esphere': tempEsphereL,
+                      'distance': selectedValueDistanceL ?? '0',
+                      'cylinder': tempcylinderL,
+                      'axis': selectedValueAxisL ?? '0'
+                    },
+                  });
                   Navigator.pushNamed(context, '/calc/results/toricos');
                 },
                 child: Container(

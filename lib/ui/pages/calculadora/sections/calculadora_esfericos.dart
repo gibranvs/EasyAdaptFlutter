@@ -100,11 +100,12 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
               padding: const EdgeInsets.only(left: 33, right: 33),
               child: GestureDetector(
                 onTap: () {
-                  var tempEsphereR = ((int.parse(selectedValueEsphereR!)) /
-                      (1 -
-                          (int.parse(selectedValueEsphereR ?? "0") *
-                              (int.parse(selectedValueDistanceR ?? "0") /
-                                  1000))));
+                  var tempEsphereR =
+                      ((int.parse(selectedValueEsphereR ?? "0")) /
+                          (1 -
+                              (int.parse(selectedValueEsphereR ?? "0") *
+                                  (int.parse(selectedValueDistanceR ?? "0") /
+                                      1000))));
                   var tempEsphereL =
                       ((int.parse(selectedValueEsphereL ?? "0")) /
                           (1 -

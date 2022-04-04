@@ -1,6 +1,9 @@
+import 'package:easy_adapt/data/internal_data.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class ResultsAndProductsPageToricos extends StatefulWidget {
@@ -13,6 +16,121 @@ class ResultsAndProductsPageToricos extends StatefulWidget {
 
 class _ResultsAndProductsPageToricos
     extends State<ResultsAndProductsPageToricos> {
+  bool right = true;
+  List dataProductsR = [];
+  List dataProductsL = [];
+
+  @override
+  void didChangeDependencies() {
+    loadData();
+    super.didChangeDependencies();
+  }
+
+  loadData() {
+    switch (LocaleSettings.currentLocale.languageTag) {
+      case "es":
+        productsToricosEs.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder']) {
+            dataProductsR.add(element);
+          }
+
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      case "en":
+        productsToricosEn.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder']) {
+            dataProductsR.add(element);
+          }
+
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      case "pt":
+        productsToricosPt.forEach((element) {
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder']) {
+            dataProductsR.add(element);
+          }
+
+          if (double.parse(element['maxPS']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['minPS']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere'] &&
+              double.parse(element['cylinderMax']) >
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder'] &&
+              double.parse(element['cylinderMin']) <
+                  Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder']) {
+            dataProductsL.add(element);
+          }
+        });
+        break;
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +141,15 @@ class _ResultsAndProductsPageToricos
             children: [
               getAppBarCalculators(context),
               patients_card_model(),
-              eyes(context),
+              eyes(context, () {
+                setState(() {
+                  right = true;
+                });
+              }, () {
+                setState(() {
+                  right = false;
+                });
+              }),
               SizedBox(
                 height: 2,
               ),
@@ -48,7 +174,15 @@ class _ResultsAndProductsPageToricos
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "-2.12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['esphere']
+                                    .toStringAsFixed(2)
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['esphere']
+                                    .toStringAsFixed(2),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -65,7 +199,15 @@ class _ResultsAndProductsPageToricos
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "-2.12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['cylinder']
+                                    .toStringAsFixed(2)
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['cylinder']
+                                    .toStringAsFixed(2),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -82,7 +224,15 @@ class _ResultsAndProductsPageToricos
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "-2.12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['axis']
+                                    .toString()
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['axis']
+                                    .toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -99,7 +249,15 @@ class _ResultsAndProductsPageToricos
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "12",
+                            right == true
+                                ? Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['right']['distance']
+                                    .toString()
+                                : Provider.of<CalculatorState>(context,
+                                        listen: false)
+                                    .calculator_data['left']['distance']
+                                    .toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -225,7 +383,7 @@ class _ResultsAndProductsPageToricos
               SizedBox(
                 height: 10,
               ),
-              productModel(2, context, "", "", '', '', '')
+              ...products()
             ],
           ),
         ),
@@ -233,41 +391,130 @@ class _ResultsAndProductsPageToricos
     );
   }
 
-  Padding eyes(BuildContext context) {
+  Padding eyes(BuildContext context, ontapR, ontapL) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            width: 120,
-            height: 35,
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(129, 181, 178, 1.0),
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Center(
-              child: Text(
-                t.calculatorEsfericos.eyeRight,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+          GestureDetector(
+            onTap: () {
+              ontapR();
+            },
+            child: Container(
+              width: 120,
+              height: 35,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black, width: right == true ? 2 : 0),
+                  color: Color.fromRGBO(129, 181, 178, 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Center(
+                child: Text(
+                  t.calculatorEsfericos.eyeRight,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
               ),
             ),
           ),
-          Container(
-            width: 120,
-            height: 35,
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(129, 181, 178, 1.0),
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Center(
-              child: Text(
-                t.calculatorEsfericos.eyeLeft,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+          GestureDetector(
+            onTap: () {
+              ontapL();
+            },
+            child: Container(
+              width: 120,
+              height: 35,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black, width: right == false ? 2 : 0),
+                  color: Color.fromRGBO(129, 181, 178, 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Center(
+                child: Text(
+                  t.calculatorEsfericos.eyeLeft,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+
+  products() {
+    if (right) {
+      return List.generate(
+          dataProductsR.length,
+          (index) => productModel(
+              2,
+              context,
+              dataProductsR[index]['namePS'],
+              dataProductsR[index]['descriptionPS'],
+              dataProductsR[index]['imagePS'],
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']
+                      .toStringAsFixed(2),
+              right == true
+                  ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['distance'])
+                      .toStringAsFixed(2)
+                  : double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['distance'])
+                      .toStringAsFixed(2),
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['cylinder']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['cylinder']
+                      .toStringAsFixed(2),
+              right == true
+                  ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['axis'])
+                      .toStringAsFixed(2)
+                  : double.parse(
+                          Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
+                      .toStringAsFixed(2)));
+    } else {
+      return List.generate(
+          dataProductsL.length,
+          (index) => productModel(
+              1,
+              context,
+              dataProductsL[index]['namePS'],
+              dataProductsL[index]['descriptionPS'],
+              dataProductsL[index]['imagePS'],
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['esphere']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['left']['esphere']
+                      .toStringAsFixed(2),
+              right == true
+                  ? Provider.of<CalculatorState>(context, listen: false)
+                      .calculator_data['right']['distance']
+                      .toStringAsFixed(2)
+                  : Provider.of<CalculatorState>(context, listen: false)
+                              .calculator_data['left']['distance'] !=
+                          null
+                      ? Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['left']['distance']
+                          .toString()
+                      : "",
+              right == true
+                  ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['cylinder'])
+                      .toStringAsFixed(2)
+                  : double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['cylinder'])
+                      .toStringAsFixed(2),
+              right == true
+                  ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['axis'])
+                      .toStringAsFixed(2)
+                  : double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
+                      .toStringAsFixed(2)));
+    }
   }
 
   patients_card_model() {

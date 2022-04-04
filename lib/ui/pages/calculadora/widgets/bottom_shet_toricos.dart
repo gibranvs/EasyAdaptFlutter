@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class getBottomShetToricos {
-  get(context) {
+  get(context, name, path, esphere, cylinder, axis) {
     int grados = 0;
     return showModalBottomSheet(
         context: context,
@@ -34,8 +34,8 @@ class getBottomShetToricos {
                                 children: [
                                   Container(
                                     width: 100,
-                                    height: 90,
-                                    color: Colors.lightBlueAccent,
+                                    height: 100,
+                                    child: Image.asset(path),
                                   ),
                                   SizedBox(
                                     width: 5,
@@ -45,15 +45,15 @@ class getBottomShetToricos {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: const [
+                                    children: [
                                       Text(
-                                        "Lunare Tri-Color",
+                                        name,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 15),
                                       ),
                                       Text(
-                                        "-2.00 / 0.00 x 0",
+                                        "$esphere / $cylinder x $axis",
                                         style: TextStyle(
                                             fontWeight: FontWeight.normal,
                                             fontSize: 15),
@@ -120,7 +120,7 @@ class getBottomShetToricos {
                                 height: 5,
                               ),
                               Text(
-                                "-3.27 / -0.25 x 20",
+                                "$esphere / $cylinder x ${double.parse(axis) + grados}",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],

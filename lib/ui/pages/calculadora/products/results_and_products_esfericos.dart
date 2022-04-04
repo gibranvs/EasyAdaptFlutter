@@ -309,7 +309,9 @@ class _ResultsAndProductsPageEsferico
                   : double.parse(
                           Provider.of<CalculatorState>(context, listen: false)
                               .calculator_data['left']['distance'])
-                      .toStringAsFixed(2)));
+                      .toStringAsFixed(2),
+              '',
+              ''));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -336,7 +338,9 @@ class _ResultsAndProductsPageEsferico
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['left']['distance']
                           .toStringAsFixed(2)
-                      : ""));
+                      : "",
+              '',
+              ''));
     }
   }
 

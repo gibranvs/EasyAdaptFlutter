@@ -184,3 +184,120 @@ List productsSpherePt = [
     "imagePS": "./assets/calculators/optima38.png"
   }
 ];
+
+List productsToricosEs = [
+  {
+    "idPS": "13",
+    "namePS": "ULTRA For Astigmatism",
+    "descriptionPS":
+        "MoistureSeal Technology /Diseño OpticAlign Diseñados para brindar estabilidad y proveer una primera daptación exitosa",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_for_astigmatism.png"
+  },
+  {
+    "idPS": "5",
+    "namePS": "PureVision 2 For Astigmatism",
+    "descriptionPS":
+        "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/pv2.png"
+  },
+  {
+    "idPS": "6",
+    "namePS": "Soflens For Astigmatism",
+    "descriptionPS":
+        "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación.",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/softlens_astigmatism.png"
+  },
+];
+
+List productsToricosEn = [
+  {
+    "idPS": "13",
+    "namePS": "ULTRA For Astigmatism",
+    "descriptionPS":
+        "MoistureSeal Technology /OpticAlign Design Designed for stability and to provide a successful first fit",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_for_astigmatism.png"
+  },
+  {
+    "idPS": "5",
+    "namePS": "PureVision 2 For Astigmatism",
+    "descriptionPS":
+        "Comfort Moist / OpticAlign Design Designed for stability and a successful first fit",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/pv2.png"
+  },
+  {
+    "idPS": "6",
+    "namePS": "Soflens For Astigmatism",
+    "descriptionPS":
+        "The proven Lo-Torque® design means stability, visual acuity, comfort and easy fit.",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/softlens_astigmatism.png"
+  },
+];
+
+List productsToricosPt = [
+  {
+    "idPS": "13",
+    "namePS": "ULTRA For Astigmatism",
+    "descriptionPS":
+        "Tecnologia MoistureSeal/Design OpticAlign Projetado para estabilidade e para fornecer um primeiro ajuste bem-sucedido",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_for_astigmatism.png"
+  },
+  {
+    "idPS": "5",
+    "namePS": "PureVision 2 For Astigmatism",
+    "descriptionPS":
+        "Conforto Moist / OpticAlign Design Projetado para estabilidade e um primeiro ajuste bem-sucedido",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/pv2.png"
+  },
+  {
+    "idPS": "6",
+    "namePS": "Soflens For Astigmatism",
+    "descriptionPS":
+        "O comprovado design Lo-Torque® significa estabilidade, acuidade visual, conforto e fácil ajuste.",
+    "maxPS": "6.25",
+    "minPS": "-9.25",
+    "cylinderMax": "-0.5",
+    "cylinderMin": "-3",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/softlens_astigmatism.png"
+  },
+];
