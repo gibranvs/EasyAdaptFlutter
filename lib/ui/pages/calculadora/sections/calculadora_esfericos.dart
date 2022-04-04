@@ -117,11 +117,11 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       .addCalculateData({
                     'right': {
                       'esphere': tempEsphereR,
-                      'distance': selectedValueDistanceR,
+                      'distance': selectedValueDistanceR ?? "0",
                     },
                     'left': {
                       'esphere': tempEsphereL,
-                      'distance': selectedValueDistanceL,
+                      'distance': selectedValueDistanceL ?? "0",
                     },
                   });
                   Navigator.pushNamed(context, '/calc/results/esferico');
