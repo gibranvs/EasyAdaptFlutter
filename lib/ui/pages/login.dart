@@ -100,6 +100,23 @@ class _LoginPageState extends State<LoginPage> {
                           print(result);
                           if (result) {
                             Navigator.pushNamed(context, '/home');
+                          } else {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text(t.loginModalErrorTitle),
+                                    content: Text(t.loginModalErrorSubtitle),
+                                    actions: [
+                                      FlatButton(
+                                        child: Text('OK'),
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                      )
+                                    ],
+                                  );
+                                });
                           }
                         },
                         child: Container(

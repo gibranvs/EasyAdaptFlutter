@@ -31,6 +31,8 @@
     "fail": "Login fehlgeschlagen",
     "success": "Login erfolgreich"
   },
+  "loginModalErrorTitle":"Aviso",
+  "loginModalErrorSubtitle":"Verifique se seus dados estão corretos.",
   "loginTitleHomeScreen": "Iniciar sessão",
   "savePasswordLoginScreen": "Lembrar senha",
   "singOffTitleProfilePage": "Fechar Sessão",

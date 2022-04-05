@@ -31,6 +31,8 @@
     "fail": "Logged in failed",
     "success": "Logged in successfully"
   },
+  "loginModalErrorTitle":"Warning",
+  "loginModalErrorSubtitle":"Check that your data is correct.",
   "loginTitleHomeScreen": "Log in",
   "savePasswordLoginScreen": "Remember password",
   "singOffTitleProfilePage": "Sign off",

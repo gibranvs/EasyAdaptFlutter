@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 312 (104.0 per locale)
+ * Strings: 318 (106.0 per locale)
  *
- * Built on 2022-04-02 at 19:52 UTC
+ * Built on 2022-04-05 at 18:05 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -347,6 +347,8 @@ class _StringsEn {
 	String get hintTextPasswordRegisterScreen => 'Password';
 	String get hintTextPatientsPage => 'Search by name';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
+	String get loginModalErrorTitle => 'Warning';
+	String get loginModalErrorSubtitle => 'Check that your data is correct.';
 	String get loginTitleHomeScreen => 'Log in';
 	String get savePasswordLoginScreen => 'Remember password';
 	String get singOffTitleProfilePage => 'Sign off';
@@ -604,6 +606,8 @@ class _StringsEs implements _StringsEn {
 	@override String get hintTextPasswordRegisterScreen => 'Contraseña';
 	@override String get hintTextPatientsPage => 'Buscar por nombre';
 	@override late final _StringsLoginEs login = _StringsLoginEs._(_root);
+	@override String get loginModalErrorTitle => 'Advertencia';
+	@override String get loginModalErrorSubtitle => 'Verifica que tus datos sean correctos.';
 	@override String get loginTitleHomeScreen => 'Iniciar sesión';
 	@override String get savePasswordLoginScreen => 'Recordar contraseña';
 	@override String get singOffTitleProfilePage => 'Cerrar sesión';
@@ -861,6 +865,8 @@ class _StringsPt implements _StringsEn {
 	@override String get hintTextPasswordRegisterScreen => 'Senha';
 	@override String get hintTextPatientsPage => 'Procura por nome';
 	@override late final _StringsLoginPt login = _StringsLoginPt._(_root);
+	@override String get loginModalErrorTitle => 'Aviso';
+	@override String get loginModalErrorSubtitle => 'Verifique se seus dados estão corretos.';
 	@override String get loginTitleHomeScreen => 'Iniciar sessão';
 	@override String get savePasswordLoginScreen => 'Lembrar senha';
 	@override String get singOffTitleProfilePage => 'Fechar Sessão';
@@ -1108,6 +1114,8 @@ extension on _StringsEn {
 			'hintTextPatientsPage': 'Search by name',
 			'login.fail': 'Logged in failed',
 			'login.success': 'Logged in successfully',
+			'loginModalErrorTitle': 'Warning',
+			'loginModalErrorSubtitle': 'Check that your data is correct.',
 			'loginTitleHomeScreen': 'Log in',
 			'savePasswordLoginScreen': 'Remember password',
 			'singOffTitleProfilePage': 'Sign off',
@@ -1219,6 +1227,8 @@ extension on _StringsEs {
 			'hintTextPatientsPage': 'Buscar por nombre',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
+			'loginModalErrorTitle': 'Advertencia',
+			'loginModalErrorSubtitle': 'Verifica que tus datos sean correctos.',
 			'loginTitleHomeScreen': 'Iniciar sesión',
 			'savePasswordLoginScreen': 'Recordar contraseña',
 			'singOffTitleProfilePage': 'Cerrar sesión',
@@ -1330,6 +1340,8 @@ extension on _StringsPt {
 			'hintTextPatientsPage': 'Procura por nome',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
+			'loginModalErrorTitle': 'Aviso',
+			'loginModalErrorSubtitle': 'Verifique se seus dados estão corretos.',
 			'loginTitleHomeScreen': 'Iniciar sessão',
 			'savePasswordLoginScreen': 'Lembrar senha',
 			'singOffTitleProfilePage': 'Fechar Sessão',
