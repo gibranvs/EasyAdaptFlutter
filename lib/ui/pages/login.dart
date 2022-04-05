@@ -1,3 +1,4 @@
+import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/ui/widgets/appBar_with_logo.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/gestures.dart';
@@ -17,7 +18,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var t = widget.t;
-
+    TextEditingController _email = TextEditingController();
+    TextEditingController _password = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -75,12 +77,13 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        getTextFieldModelSquare(t.hintTextEmailRegisterScreen),
+                        getTextFieldModelSquareLoginEmail(
+                            t.hintTextEmailRegisterScreen, _email),
                         const SizedBox(
                           height: 25,
                         ),
-                        getTextFieldModelSquare(
-                            t.hintTextPasswordRegisterScreen),
+                        getTextFieldModelSquareLoginPassword(
+                            t.hintTextPasswordRegisterScreen, _password),
                         const SizedBox(
                           height: 25,
                         ),
@@ -91,8 +94,13 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Center(
                       child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/home');
+                        onTap: () async {
+                          var result =
+                              await Data().login(_email.text, _password.text);
+                          print(result);
+                          if (result) {
+                            Navigator.pushNamed(context, '/home');
+                          }
                         },
                         child: Container(
                           width: double.infinity,

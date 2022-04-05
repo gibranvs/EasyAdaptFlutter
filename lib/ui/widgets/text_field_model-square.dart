@@ -11,6 +11,31 @@ getTextFieldModelSquare(text) {
   );
 }
 
+getTextFieldModelSquareLoginEmail(text, controller) {
+  return TextField(
+    controller: controller,
+    decoration: InputDecoration(
+        labelText: text,
+        labelStyle: const TextStyle(fontSize: 18),
+        border: const OutlineInputBorder(),
+        errorBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.black, width: 5))),
+  );
+}
+
+getTextFieldModelSquareLoginPassword(text, controller) {
+  return TextField(
+    controller: controller,
+    obscureText: true,
+    decoration: InputDecoration(
+        labelText: text,
+        labelStyle: const TextStyle(fontSize: 18),
+        border: const OutlineInputBorder(),
+        errorBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.black, width: 5))),
+  );
+}
+
 getTextFieldModelSquareWhite(text) {
   return TextField(
     style: TextStyle(color: Colors.white),
