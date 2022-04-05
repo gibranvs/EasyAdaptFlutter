@@ -14,12 +14,13 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String value = '1';
-
+  bool save = false;
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var t = widget.t;
-    TextEditingController _email = TextEditingController();
-    TextEditingController _password = TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -95,9 +96,8 @@ class _LoginPageState extends State<LoginPage> {
                     child: Center(
                       child: GestureDetector(
                         onTap: () async {
-                          var result =
-                              await Data().login(_email.text, _password.text);
-                          print(result);
+                          var result = await Data()
+                              .login(_email.text, _password.text, save);
                           if (result) {
                             Navigator.pushNamed(context, '/home');
                           } else {
@@ -145,7 +145,13 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Checkbox(value: false, onChanged: (v) {}),
+                      Checkbox(
+                          value: save,
+                          onChanged: (v) {
+                            setState(() {
+                              save = v!;
+                            });
+                          }),
                       const SizedBox(
                         width: 1,
                       ),

@@ -6,9 +6,12 @@ import 'package:easy_adapt/state/player_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+
   runApp(MultiProvider(
     providers: [
       ListenableProvider<PlayerState>(
@@ -21,12 +24,16 @@ void main() {
         create: (_) => MenuState(),
       )
     ],
-    child: TranslationProvider(child: MyApp()),
+    child: TranslationProvider(
+        child: MyApp(
+      prefs: prefs,
+    )),
   ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  SharedPreferences prefs;
+  MyApp({Key? key, required this.prefs}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -42,39 +49,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/initial',
+      initialRoute: getInitialRoute(prefs),
       routes: getRoutes(translation),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(onPressed: () {
-              LocaleSettings.setLocaleRaw('es');
-            }),
-          ],
-        ),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

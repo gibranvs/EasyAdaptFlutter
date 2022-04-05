@@ -16,6 +16,14 @@ import 'package:easy_adapt/ui/pages/player/player.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
 import 'package:easy_adapt/ui/pages/terms.dart';
 
+getInitialRoute(pref) {
+  if (pref.getBool('save') == true) {
+    return '/home';
+  } else {
+    return '/initial';
+  }
+}
+
 getRoutes(t) {
   return {
     '/initial': (context) => InitialPage(

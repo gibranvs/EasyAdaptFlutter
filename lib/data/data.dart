@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class Data {
   String url = 'http://c1571423.ferozo.com';
-  login(email, password) async {
+  login(email, password, save) async {
     final prefs = await SharedPreferences.getInstance();
 
     try {
@@ -15,6 +15,9 @@ class Data {
       var data = jsonDecode(response.body);
 
       if (data['status'] == 1) {
+        if (save == true) {
+          prefs.setBool('save', true);
+        }
         return true;
       } else {
         return false;

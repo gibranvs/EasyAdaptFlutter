@@ -1,6 +1,7 @@
 import 'package:easy_adapt/ui/widgets/appbar_with_logo.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '/../i18n/strings.g.dart';
 
 class PerfilPage extends StatefulWidget {
@@ -50,7 +51,9 @@ class _PerfilPageState extends State<PerfilPage> {
                         height: 10,
                       ),
                       GestureDetector(
-                        onTap: () {
+                        onTap: () async {
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.remove('save');
                           Navigator.pushNamed(context, '/initial');
                         },
                         child: Text(
