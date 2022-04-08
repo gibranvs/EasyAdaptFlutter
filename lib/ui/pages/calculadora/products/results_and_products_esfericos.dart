@@ -337,7 +337,7 @@ class _ResultsAndProductsPageEsferico
                           null
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['left']['distance']
-                          .toStringAsFixed(2)
+                          .toString()
                       : "",
               '',
               ''));
