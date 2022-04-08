@@ -1,3 +1,4 @@
+import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/material.dart';
@@ -29,30 +30,35 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                   child: getTextFieldModelSquare(t.hintTextPatientsPage),
                 ),
               ),
-              SizedBox(
-                height: 20,
+              FutureBuilder(
+                future: Data().getPatients(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  var data = snapshot.data;
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  } else {
+                    return Column(
+                      children: List.generate(data.length, (index) {
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            patients_card_model(data[index]['nombre'],
+                                data[index]['telefono'], data[index]['correo']),
+                          ],
+                        );
+                      }),
+                    );
+                  }
+                },
               ),
-              patients_card_model(),
-              SizedBox(
-                height: 20,
-              ),
-              patients_card_model(),
-              SizedBox(
-                height: 20,
-              ),
-              patients_card_model(),
-              SizedBox(
-                height: 20,
-              ),
-              patients_card_model(),
-              SizedBox(
-                height: 20,
-              ),
-              patients_card_model(),
-              SizedBox(
-                height: 20,
-              ),
-              patients_card_model()
             ],
           ),
         ],
@@ -60,14 +66,14 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
     );
   }
 
-  Container patients_card_model() {
+  Container patients_card_model(name, phone, mail) {
     return Container(
         width: double.infinity,
         child: Card(
             elevation: 2.0,
             child: ListTile(
               title: Text(
-                "Paciente prueba",
+                name.toString(),
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -81,14 +87,14 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                     height: 5,
                   ),
                   Text(
-                    "correo",
+                    mail.toString(),
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
-                    "0999865354",
+                    phone.toString(),
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],

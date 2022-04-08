@@ -15,8 +15,10 @@ class Data {
       var data = jsonDecode(response.body);
 
       if (data['status'] == 1) {
+        print(data);
         if (save == true) {
           prefs.setBool('save', true);
+          prefs.setString('idUser', data['response'].toString());
         }
         return true;
       } else {
@@ -24,6 +26,26 @@ class Data {
       }
     } catch (e) {
       return false;
+    }
+  }
+
+  getPatients() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    try {
+      final response =
+          await http.post(Uri.parse("$url/api?tipo=get_patients"), body: {
+        'id_doctor': prefs.getString('idUser'),
+      });
+      var data = jsonDecode(response.body);
+
+      if (data['status'] == 1) {
+        return [...data['response']];
+      } else {
+        return [];
+      }
+    } catch (e) {
+      return [];
     }
   }
 }
