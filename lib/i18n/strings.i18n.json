@@ -134,6 +134,10 @@
   },
   "calculatorResultsTitle1":"Calculated data",
   "calculatorResultsTitle2":"Final prescription for contact lens",
-  "calculatorResultsTitle3":"Recommended products"
+  "calculatorResultsTitle3":"Recommended products",
+  "setPatientTitle":"Brilliant!",
+  "setPatientSubtitle":"The patient has been registered.",
+  "setPatientTitleProblem":"Caveat",
+"setPatientSubtitleProblem":"Enter all the fields."
   
 }

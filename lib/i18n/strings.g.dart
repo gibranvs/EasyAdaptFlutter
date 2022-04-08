@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 318 (106.0 per locale)
+ * Strings: 330 (110.0 per locale)
  *
- * Built on 2022-04-05 at 18:05 UTC
+ * Built on 2022-04-08 at 16:03 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -389,6 +389,10 @@ class _StringsEn {
 	String get calculatorResultsTitle1 => 'Calculated data';
 	String get calculatorResultsTitle2 => 'Final prescription for contact lens';
 	String get calculatorResultsTitle3 => 'Recommended products';
+	String get setPatientTitle => 'Brilliant!';
+	String get setPatientSubtitle => 'The patient has been registered.';
+	String get setPatientTitleProblem => 'Caveat';
+	String get setPatientSubtitleProblem => 'Enter all the fields.';
 }
 
 // Path: login
@@ -648,6 +652,10 @@ class _StringsEs implements _StringsEn {
 	@override String get calculatorResultsTitle1 => 'Datos calculados';
 	@override String get calculatorResultsTitle2 => 'Prescripción final para lente de contacto';
 	@override String get calculatorResultsTitle3 => 'Productos recomendados';
+	@override String get setPatientTitle => 'Genial!';
+	@override String get setPatientSubtitle => 'El paciente ha sido registrado.';
+	@override String get setPatientTitleProblem => 'Advertencia';
+	@override String get setPatientSubtitleProblem => 'Ingresa todos los campos.';
 }
 
 // Path: login
@@ -907,6 +915,10 @@ class _StringsPt implements _StringsEn {
 	@override String get calculatorResultsTitle1 => 'Dados calculados';
 	@override String get calculatorResultsTitle2 => 'Prescrição final para lentes de contato';
 	@override String get calculatorResultsTitle3 => 'Produtos recomendados';
+	@override String get setPatientTitle => 'Brilhante!';
+	@override String get setPatientSubtitle => 'O paciente foi cadastrado.';
+	@override String get setPatientTitleProblem => 'Embargo';
+	@override String get setPatientSubtitleProblem => 'Digite todos os campos.';
 }
 
 // Path: login
@@ -1190,6 +1202,10 @@ extension on _StringsEn {
 			'calculatorResultsTitle1': 'Calculated data',
 			'calculatorResultsTitle2': 'Final prescription for contact lens',
 			'calculatorResultsTitle3': 'Recommended products',
+			'setPatientTitle': 'Brilliant!',
+			'setPatientSubtitle': 'The patient has been registered.',
+			'setPatientTitleProblem': 'Caveat',
+			'setPatientSubtitleProblem': 'Enter all the fields.',
 		};
 	}
 }
@@ -1303,6 +1319,10 @@ extension on _StringsEs {
 			'calculatorResultsTitle1': 'Datos calculados',
 			'calculatorResultsTitle2': 'Prescripción final para lente de contacto',
 			'calculatorResultsTitle3': 'Productos recomendados',
+			'setPatientTitle': 'Genial!',
+			'setPatientSubtitle': 'El paciente ha sido registrado.',
+			'setPatientTitleProblem': 'Advertencia',
+			'setPatientSubtitleProblem': 'Ingresa todos los campos.',
 		};
 	}
 }
@@ -1416,6 +1436,10 @@ extension on _StringsPt {
 			'calculatorResultsTitle1': 'Dados calculados',
 			'calculatorResultsTitle2': 'Prescrição final para lentes de contato',
 			'calculatorResultsTitle3': 'Produtos recomendados',
+			'setPatientTitle': 'Brilhante!',
+			'setPatientSubtitle': 'O paciente foi cadastrado.',
+			'setPatientTitleProblem': 'Embargo',
+			'setPatientSubtitleProblem': 'Digite todos os campos.',
 		};
 	}
 }

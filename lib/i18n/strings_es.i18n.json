@@ -131,7 +131,11 @@
 },
 "calculatorResultsTitle1":"Datos calculados",
 "calculatorResultsTitle2":"Prescripción final para lente de contacto",
-"calculatorResultsTitle3":"Productos recomendados"
+"calculatorResultsTitle3":"Productos recomendados",
+"setPatientTitle":"Genial!",
+"setPatientSubtitle":"El paciente ha sido registrado.",
+"setPatientTitleProblem":"Advertencia",
+"setPatientSubtitleProblem":"Ingresa todos los campos."
 
 
 }
