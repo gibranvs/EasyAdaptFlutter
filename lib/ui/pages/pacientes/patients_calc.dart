@@ -1,3 +1,4 @@
+import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
@@ -63,31 +64,37 @@ class _PatientsCalcState extends State<PatientsCalc> {
                     SizedBox(
                       height: 5,
                     ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
+                    FutureBuilder(
+                      future: Data().getPatients(),
+                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                        var data = snapshot.data;
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              child: CircularProgressIndicator(),
+                            ),
+                          );
+                        } else {
+                          return Column(
+                            children: List.generate(data.length, (index) {
+                              return Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  patients_card_model(
+                                      data[index]['nombre'],
+                                      data[index]['telefono'],
+                                      data[index]['correo']),
+                                ],
+                              );
+                            }),
+                          );
+                        }
+                      },
                     ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    patients_card_model(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    patients_card_model(),
                     SizedBox(
                       height: 100,
                     ),
@@ -124,69 +131,50 @@ class _PatientsCalcState extends State<PatientsCalc> {
     );
   }
 
-  patients_card_model() {
-    return GestureDetector(
-      onTap: () {
-        switch (Provider.of<CalculatorState>(context, listen: false).index) {
-          case 1:
-            Navigator.pushNamed(context, '/calc/calculator-esfericos');
-            break;
-          case 2:
-            Navigator.pushNamed(context, '/calc/calculator-toricos');
-            break;
-          case 3:
-            Navigator.pushNamed(context, '/calc/calculator-multifocal');
-            break;
-          case 4:
-            Navigator.pushNamed(context, '/calc/calculator-monovision');
-            break;
-          default:
-        }
-      },
-      child: Container(
-          width: double.infinity,
-          child: Card(
-              elevation: 2.0,
-              child: ListTile(
-                title: Text(
-                  "Paciente prueba",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(0, 129, 171, 1.0)),
-                ),
-                subtitle: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "Probando doc",
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "Probando doc",
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                  ],
-                ),
-                leading: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ImageIcon(
-                      AssetImage('./assets/icons/usuario.png'),
-                      size: 52,
-                      color: Color.fromRGBO(240, 162, 51, 1.0),
-                    ),
-                  ],
-                ),
-              ))),
-    );
+  Container patients_card_model(name, phone, mail) {
+    return Container(
+        width: double.infinity,
+        child: Card(
+            elevation: 2.0,
+            child: ListTile(
+              title: Text(
+                name.toString(),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(0, 129, 171, 1.0)),
+              ),
+              subtitle: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    mail.toString(),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    phone.toString(),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                  ),
+                ],
+              ),
+              leading: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ImageIcon(
+                    AssetImage('./assets/icons/usuario.png'),
+                    size: 52,
+                    color: Color.fromRGBO(240, 162, 51, 1.0),
+                  ),
+                ],
+              ),
+            )));
   }
 }
