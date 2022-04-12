@@ -260,8 +260,8 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: [t.calc1Title],
-              value: t.calc1Title,
+              dropdownItems: [t.calc1TitleSpherica],
+              value: t.calc1TitleSpherica,
               icon: Container(),
               onChanged: (value) {
                 setState(() {
@@ -279,8 +279,8 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: [t.calc1Title],
-              value: t.calc1Title,
+              dropdownItems: [t.calc1TitleSpherica],
+              value: t.calc1TitleSpherica,
               icon: Container(),
               onChanged: (value) {
                 setState(() {

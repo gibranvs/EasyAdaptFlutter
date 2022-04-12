@@ -497,8 +497,8 @@ class _CalculatorToricos extends State<CalculatorToricos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: [t.calc1Title],
-              value: t.calc1Title,
+              dropdownItems: [t.calc2TitleToric],
+              value: t.calc2TitleToric,
               icon: Container(),
               onChanged: (value) {
                 setState(() {
@@ -516,8 +516,8 @@ class _CalculatorToricos extends State<CalculatorToricos> {
                       width: 0.5, color: Color.fromARGB(255, 128, 117, 117)),
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               hint: t.calculatorEsfericos.type,
-              dropdownItems: [t.calc1Title],
-              value: t.calc1Title,
+              dropdownItems: [t.calc2TitleToric],
+              value: t.calc2TitleToric,
               icon: Container(),
               onChanged: (value) {
                 setState(() {

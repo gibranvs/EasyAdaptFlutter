@@ -101,6 +101,8 @@
   "calc2Title":"Toric calculator"
   ,"calc3Title":"Multifocal calculator"
   ,"calc4Title":"Monovision Calculator", 
+  "calc1TitleSpherica":"Spherical",
+  "calc2TitleToric":"Toric",
    "calculatorEsfericos":{
     "text":"To calculate \n \n1. Choose the type of lens \n2. Enter the corresponding data for each eye (right and/or left).",
     "eyeRight":"RIGHT",

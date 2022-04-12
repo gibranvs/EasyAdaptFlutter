@@ -167,6 +167,27 @@ class _PatientsCalcState extends State<PatientsCalc> {
         child: Card(
             elevation: 2.0,
             child: ListTile(
+              onTap: () {
+                switch (Provider.of<CalculatorState>(context, listen: false)
+                    .index) {
+                  case 1:
+                    Navigator.pushNamed(context, '/calc/calculator-esfericos');
+                    break;
+                  case 2:
+                    Navigator.pushNamed(context, '/calc/calculator-toricos');
+
+                    break;
+                  case 3:
+                    Navigator.pushNamed(context, '/calc/calculator-multifocal');
+
+                    break;
+                  case 4:
+                    Navigator.pushNamed(context, '/calc/calculator-monovision');
+
+                    break;
+                  default:
+                }
+              },
               title: Text(
                 name.toString(),
                 style: TextStyle(
