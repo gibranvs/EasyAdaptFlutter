@@ -102,8 +102,9 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              InkWell(
+                              GestureDetector(
                                 onTap: () async {
+                                  print("Hola");
                                   if (_name.text.isNotEmpty &&
                                       _surname.text.isNotEmpty &&
                                       _phone.text.isNotEmpty &&

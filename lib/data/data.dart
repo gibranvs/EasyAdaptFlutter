@@ -15,9 +15,10 @@ class Data {
       var data = jsonDecode(response.body);
 
       if (data['status'] == 1) {
-        print(data);
         if (save == true) {
           prefs.setBool('save', true);
+          prefs.setString('idUser', data['response'].toString());
+        } else {
           prefs.setString('idUser', data['response'].toString());
         }
         return true;
@@ -51,7 +52,6 @@ class Data {
 
   postPatients(nombre, surname, telefono, correo) async {
     final prefs = await SharedPreferences.getInstance();
-
     try {
       final response =
           await http.post(Uri.parse("$url/api?tipo=set_patient"), body: {
@@ -61,7 +61,6 @@ class Data {
         'id_doctor': prefs.getString('idUser'),
       });
       var data = jsonDecode(response.body);
-
       if (data['status'] == 1) {
         return true;
       } else {

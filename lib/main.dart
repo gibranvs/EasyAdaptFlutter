@@ -39,7 +39,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final translation = Translations.of(context);
-    var test;
 
     return MaterialApp(
       locale: TranslationProvider.of(context).flutterLocale,
