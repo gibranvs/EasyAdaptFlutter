@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 336 (112.0 per locale)
+ * Strings: 348 (116.0 per locale)
  *
- * Built on 2022-04-12 at 21:01 UTC
+ * Built on 2022-04-14 at 18:55 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -395,6 +395,10 @@ class _StringsEn {
 	String get setPatientSubtitle => 'The patient has been registered.';
 	String get setPatientTitleProblem => 'Caveat';
 	String get setPatientSubtitleProblem => 'Enter all the fields.';
+	String get backModalBottom => 'BEHIND';
+	String get saveModalBottom => 'SAVE';
+	String get saveModalBottomRight => 'Keep just the right eye prescription?';
+	String get saveModalBottomLeft => 'Keep only the left eye prescription?';
 }
 
 // Path: login
@@ -660,6 +664,10 @@ class _StringsEs implements _StringsEn {
 	@override String get setPatientSubtitle => 'El paciente ha sido registrado.';
 	@override String get setPatientTitleProblem => 'Advertencia';
 	@override String get setPatientSubtitleProblem => 'Ingresa todos los campos.';
+	@override String get backModalBottom => 'ATRÁS';
+	@override String get saveModalBottom => 'GUARDAR';
+	@override String get saveModalBottomRight => '¿Guardar solo la prescripción del ojo derecho?';
+	@override String get saveModalBottomLeft => '¿Guardar solo la prescripción del ojo izquierdo?';
 }
 
 // Path: login
@@ -925,6 +933,10 @@ class _StringsPt implements _StringsEn {
 	@override String get setPatientSubtitle => 'O paciente foi cadastrado.';
 	@override String get setPatientTitleProblem => 'Embargo';
 	@override String get setPatientSubtitleProblem => 'Digite todos os campos.';
+	@override String get backModalBottom => 'COSTAS';
+	@override String get saveModalBottom => 'SALVE ';
+	@override String get saveModalBottomRight => 'Manter apenas a prescrição do olho direito?';
+	@override String get saveModalBottomLeft => 'Manter apenas a prescrição do olho esquerdo?';
 }
 
 // Path: login
@@ -1214,6 +1226,10 @@ extension on _StringsEn {
 			'setPatientSubtitle': 'The patient has been registered.',
 			'setPatientTitleProblem': 'Caveat',
 			'setPatientSubtitleProblem': 'Enter all the fields.',
+			'backModalBottom': 'BEHIND',
+			'saveModalBottom': 'SAVE',
+			'saveModalBottomRight': 'Keep just the right eye prescription?',
+			'saveModalBottomLeft': 'Keep only the left eye prescription?',
 		};
 	}
 }
@@ -1333,6 +1349,10 @@ extension on _StringsEs {
 			'setPatientSubtitle': 'El paciente ha sido registrado.',
 			'setPatientTitleProblem': 'Advertencia',
 			'setPatientSubtitleProblem': 'Ingresa todos los campos.',
+			'backModalBottom': 'ATRÁS',
+			'saveModalBottom': 'GUARDAR',
+			'saveModalBottomRight': '¿Guardar solo la prescripción del ojo derecho?',
+			'saveModalBottomLeft': '¿Guardar solo la prescripción del ojo izquierdo?',
 		};
 	}
 }
@@ -1452,6 +1472,10 @@ extension on _StringsPt {
 			'setPatientSubtitle': 'O paciente foi cadastrado.',
 			'setPatientTitleProblem': 'Embargo',
 			'setPatientSubtitleProblem': 'Digite todos os campos.',
+			'backModalBottom': 'COSTAS',
+			'saveModalBottom': 'SALVE ',
+			'saveModalBottomRight': 'Manter apenas a prescrição do olho direito?',
+			'saveModalBottomLeft': 'Manter apenas a prescrição do olho esquerdo?',
 		};
 	}
 }

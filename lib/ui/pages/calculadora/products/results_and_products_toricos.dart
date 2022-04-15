@@ -476,11 +476,12 @@ class _ResultsAndProductsPageToricos
                       .toStringAsFixed(2)
                   : double.parse(
                           Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
-                      .toStringAsFixed(2)));
+                      .toStringAsFixed(2),true,(){}));
     } else {
       return List.generate(
           dataProductsL.length,
           (index) => productModel(
+       
               1,
               context,
               dataProductsL[index]['namePS'],
@@ -513,7 +514,7 @@ class _ResultsAndProductsPageToricos
                   ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['axis'])
                       .toStringAsFixed(2)
                   : double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
-                      .toStringAsFixed(2)));
+                      .toStringAsFixed(2),false,(){}));
     }
   }
 

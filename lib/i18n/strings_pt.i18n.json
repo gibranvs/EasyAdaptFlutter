@@ -142,7 +142,11 @@
 "setPatientTitle":"Brilhante!",
 "setPatientSubtitle":"O paciente foi cadastrado.",
 "setPatientTitleProblem":"Embargo",
-"setPatientSubtitleProblem":"Digite todos os campos."
+"setPatientSubtitleProblem":"Digite todos os campos.",
+"backModalBottom":"COSTAS",
+"saveModalBottom":"SALVE ",
+"saveModalBottomRight":"Manter apenas a prescrição do olho direito?",
+"saveModalBottomLeft":"Manter apenas a prescrição do olho esquerdo?"
 
 
 

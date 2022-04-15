@@ -138,7 +138,13 @@
 "setPatientTitle":"Genial!",
 "setPatientSubtitle":"El paciente ha sido registrado.",
 "setPatientTitleProblem":"Advertencia",
-"setPatientSubtitleProblem":"Ingresa todos los campos."
+"setPatientSubtitleProblem":"Ingresa todos los campos.",
+"backModalBottom":"ATRÁS",
+"saveModalBottom":"GUARDAR",
+"saveModalBottomRight":"¿Guardar solo la prescripción del ojo derecho?",
+"saveModalBottomLeft":"¿Guardar solo la prescripción del ojo izquierdo?"
+
+
 
 
 }

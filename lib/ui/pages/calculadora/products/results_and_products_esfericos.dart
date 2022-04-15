@@ -32,18 +32,18 @@ class _ResultsAndProductsPageEsferico
         productsSphereEs.forEach((element) {
           if (double.parse(element['maxPS']) >
                   Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere'] &&
+                      .calculator_data['right']['esphereRound'] &&
               double.parse(element['minPS']) <
                   Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere']) {
+                      .calculator_data['right']['esphereRound']) {
             dataProductsR.add(element);
           }
           if (double.parse(element['maxPS']) >
                   Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere'] &&
+                      .calculator_data['left']['esphereRound'] &&
               double.parse(element['minPS']) <
                   Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere']) {
+                      .calculator_data['left']['esphereRound']) {
             dataProductsL.add(element);
           }
         });
@@ -213,11 +213,11 @@ class _ResultsAndProductsPageEsferico
                             right == true
                                 ? Provider.of<CalculatorState>(context,
                                         listen: false)
-                                    .calculator_data['right']['esphere']
+                                    .calculator_data['right']['esphereRound']
                                     .toStringAsFixed(2)
                                 : Provider.of<CalculatorState>(context,
                                         listen: false)
-                                    .calculator_data['left']['esphere']
+                                    .calculator_data['left']['esphereRound']
                                     .toStringAsFixed(2),
                             style: TextStyle(
                                 color: Colors.white,
@@ -289,58 +289,76 @@ class _ResultsAndProductsPageEsferico
       return List.generate(
           dataProductsR.length,
           (index) => productModel(
-              1,
-              context,
-              dataProductsR[index]['namePS'],
-              dataProductsR[index]['descriptionPS'],
-              dataProductsR[index]['imagePS'],
-              right == true
-                  ? Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere']
-                      .toStringAsFixed(2)
-                  : Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere']
-                      .toStringAsFixed(2),
-              right == true
-                  ? double.parse(
-                          Provider.of<CalculatorState>(context, listen: false)
+                  1,
+                  context,
+                  dataProductsR[index]['namePS'],
+                  dataProductsR[index]['descriptionPS'],
+                  dataProductsR[index]['imagePS'],
+                  right == true
+                      ? Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['right']['esphereRound']
+                          .toStringAsFixed(2)
+                      : Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['left']['esphereRound']
+                          .toStringAsFixed(2),
+                  right == true
+                      ? double.parse(Provider.of<CalculatorState>(context,
+                                  listen: false)
                               .calculator_data['right']['distance'])
-                      .toStringAsFixed(2)
-                  : double.parse(
-                          Provider.of<CalculatorState>(context, listen: false)
+                          .toStringAsFixed(2)
+                      : double.parse(Provider.of<CalculatorState>(context,
+                                  listen: false)
                               .calculator_data['left']['distance'])
-                      .toStringAsFixed(2),
-              '',
-              ''));
+                          .toStringAsFixed(2),
+                  '',
+                  '',
+                  true, () {
+                setState(() {
+                  if (right) {
+                    right = false;
+                  } else {
+                    right = true;
+                  }
+                });
+              }));
     } else {
       return List.generate(
           dataProductsL.length,
           (index) => productModel(
-              1,
-              context,
-              dataProductsL[index]['namePS'],
-              dataProductsL[index]['descriptionPS'],
-              dataProductsL[index]['imagePS'],
-              right == true
-                  ? Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere']
-                      .toStringAsFixed(2)
-                  : Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere']
-                      .toStringAsFixed(2),
-              right == true
-                  ? Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['distance']
-                      .toStringAsFixed(2)
-                  : Provider.of<CalculatorState>(context, listen: false)
-                              .calculator_data['left']['distance'] !=
-                          null
+                  1,
+                  context,
+                  dataProductsL[index]['namePS'],
+                  dataProductsL[index]['descriptionPS'],
+                  dataProductsL[index]['imagePS'],
+                  right == true
                       ? Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['left']['distance']
-                          .toString()
-                      : "",
-              '',
-              ''));
+                          .calculator_data['right']['esphereRound']
+                          .toStringAsFixed(2)
+                      : Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['left']['esphereRound']
+                          .toStringAsFixed(2),
+                  right == true
+                      ? Provider.of<CalculatorState>(context, listen: false)
+                          .calculator_data['right']['distance']
+                          .toStringAsFixed(2)
+                      : Provider.of<CalculatorState>(context, listen: false)
+                                  .calculator_data['left']['distance'] !=
+                              null
+                          ? Provider.of<CalculatorState>(context, listen: false)
+                              .calculator_data['left']['distance']
+                              .toString()
+                          : "",
+                  '',
+                  '',
+                  false, () {
+                setState(() {
+                  if (right) {
+                    right = false;
+                  } else {
+                    right = true;
+                  }
+                });
+              }));
     }
   }
 

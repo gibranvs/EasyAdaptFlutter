@@ -140,6 +140,10 @@
   "setPatientTitle":"Brilliant!",
   "setPatientSubtitle":"The patient has been registered.",
   "setPatientTitleProblem":"Caveat",
-"setPatientSubtitleProblem":"Enter all the fields."
+"setPatientSubtitleProblem":"Enter all the fields.",
+"backModalBottom":"BEHIND",
+"saveModalBottom":"SAVE",
+"saveModalBottomRight":"Keep just the right eye prescription?",
+"saveModalBottomLeft":"Keep only the left eye prescription?"
   
 }

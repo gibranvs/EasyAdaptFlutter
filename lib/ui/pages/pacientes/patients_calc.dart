@@ -1,5 +1,6 @@
 import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
 import 'package:flutter/material.dart';
@@ -99,8 +100,9 @@ class _PatientsCalcState extends State<PatientsCalc> {
                                     ),
                                     patients_card_model(
                                         dataSearch[index]['nombre'],
-                                        data[index]['telefono'],
-                                        data[index]['correo']),
+                                        dataSearch[index]['telefono'],
+                                        dataSearch[index]['correo'],
+                                        dataSearch[index]),
                                   ],
                                 );
                               }),
@@ -116,7 +118,8 @@ class _PatientsCalcState extends State<PatientsCalc> {
                                     patients_card_model(
                                         data[index]['nombre'],
                                         data[index]['telefono'],
-                                        data[index]['correo']),
+                                        data[index]['correo'],
+                                        data[index]),
                                   ],
                                 );
                               }),
@@ -161,13 +164,15 @@ class _PatientsCalcState extends State<PatientsCalc> {
     );
   }
 
-  Container patients_card_model(name, phone, mail) {
+  Container patients_card_model(name, phone, mail, user) {
     return Container(
         width: double.infinity,
         child: Card(
             elevation: 2.0,
             child: ListTile(
               onTap: () {
+                Provider.of<ResultState>(context, listen: false)
+                    .changeData({'user': user, 'presc': []});
                 switch (Provider.of<CalculatorState>(context, listen: false)
                     .index) {
                   case 1:

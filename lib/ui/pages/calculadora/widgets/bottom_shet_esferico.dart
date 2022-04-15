@@ -1,7 +1,10 @@
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '/../i18n/strings.g.dart';
 
 class getBottomShetEsferico {
-  get(context, title, path, sphere, distance) {
+  get(context, title, path, sphere, distance, onNo, right) {
     return showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -49,7 +52,7 @@ class getBottomShetEsferico {
                                         fontSize: 15),
                                   ),
                                   Text(
-                                    "${double.parse(sphere).roundToDouble()} / ${distance}",
+                                    "$sphere / ${distance}",
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15),
@@ -80,7 +83,7 @@ class getBottomShetEsferico {
                                       BorderRadius.all(Radius.circular(25))),
                               child: Center(
                                 child: Text(
-                                  'ATRÁS',
+                                  t.backModalBottom,
                                   style: TextStyle(
                                       color: Colors.orange, fontSize: 17),
                                 ),
@@ -89,30 +92,53 @@ class getBottomShetEsferico {
                           ),
                           GestureDetector(
                             onTap: () async {
-                              await showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      content: Text(
-                                          '¿Guardar solo la prescripción del ojo derecho?'),
-                                      actions: [
-                                        FlatButton(
-                                          child: Text('No'),
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                            Navigator.pop(context);
-                                          },
-                                        ),
-                                        FlatButton(
-                                          child: Text('Si'),
-                                          onPressed: () {
-                                            Navigator.pushNamed(context,
-                                                '/calc/results/confirm');
-                                          },
-                                        ),
-                                      ],
-                                    );
-                                  });
+                              //        Provider.of<ResultState>(context, listen: false)
+                              //     .changeData({
+                              //   'user': Provider.of<ResultState>(context,
+                              //           listen: false)
+                              //       .data['user'],
+                              //   "presc": [
+                              //     ...Provider.of<ResultState>(context,
+                              //             listen: false)
+                              //         .data['presc'],
+                              //     {}
+                              //   ]
+                              // });
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length <
+                                  2) {
+                                await showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text(right
+                                            ? t.saveModalBottomRight
+                                            : t.saveModalBottomLeft),
+                                        actions: [
+                                          FlatButton(
+                                            child: Text('No'),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              onNo();
+                                            },
+                                          ),
+                                          FlatButton(
+                                            child: Text('Si'),
+                                            onPressed: () {
+                                              Navigator.pushNamed(context,
+                                                  '/calc/results/confirm');
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
+                              } else {
+                                Navigator.pushNamed(
+                                    context, '/calc/results/confirm');
+                              }
                             },
                             child: Container(
                               width: 130,
@@ -123,7 +149,7 @@ class getBottomShetEsferico {
                                       BorderRadius.all(Radius.circular(25))),
                               child: Center(
                                 child: Text(
-                                  'GUARDAR',
+                                  t.saveModalBottom,
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 17),
                                 ),
