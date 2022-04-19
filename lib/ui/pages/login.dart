@@ -27,10 +27,18 @@ class _LoginPageState extends State<LoginPage> {
           child: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [Image.asset('./assets/fondo_cuadrado.png')],
+                ),
+              ),
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -160,15 +168,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-            ),
-            Container(
-              child: Positioned(
-                  right: 0,
-                  left: 0,
-                  bottom: 0,
-                  child: Image.asset('./assets/fondo_cuadrado.png')),
-            ),
-          ],
+            ],
+          ),
         ),
       )),
     );

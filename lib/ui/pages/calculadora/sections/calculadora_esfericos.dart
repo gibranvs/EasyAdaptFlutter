@@ -213,6 +213,9 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       )),

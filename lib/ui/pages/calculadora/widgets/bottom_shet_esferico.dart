@@ -104,10 +104,29 @@ class getBottomShetEsferico {
                               //     {}
                               //   ]
                               // });
+                              var data = Provider.of<ResultState>(context,
+                                      listen: false)
+                                  .data['presc']
+                                  .forEach((element) {
+                                if (element['right']) {
+                                  if (element['right'] == right) {
+                                    element = {};
+                                  } else {
+                                    element = {};
+                                  }
+                                }
+                              });
+                              Provider.of<ResultState>(context, listen: false)
+                                  .changeData({
+                                'user': Provider.of<ResultState>(context,
+                                        listen: false)
+                                    .data['user'],
+                                "presc": data
+                              });
                               if (Provider.of<ResultState>(context,
                                           listen: false)
                                       .data['presc']
-                                      .length <
+                                      .length <=
                                   2) {
                                 await showDialog(
                                     context: context,

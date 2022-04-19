@@ -280,6 +280,9 @@ class _CalculatorToricos extends State<CalculatorToricos> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       )),

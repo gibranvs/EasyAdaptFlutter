@@ -82,6 +82,9 @@ class _CalculatorMultifocal extends State<CalculatorMultifocal> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       )),

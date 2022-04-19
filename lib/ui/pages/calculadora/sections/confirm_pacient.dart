@@ -89,6 +89,9 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 50,
             )
           ],
         ),

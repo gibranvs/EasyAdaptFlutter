@@ -350,7 +350,7 @@ class _ResultsAndProductsPageEsferico
                           : "",
                   '',
                   '',
-                  false, () {
+                  right, () {
                 setState(() {
                   if (right) {
                     right = false;

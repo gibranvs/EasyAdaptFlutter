@@ -82,6 +82,9 @@ class _CalculatorMonovision extends State<CalculatorMonovision> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       )),
