@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class getBottomShetEsferico {
-  get(context, title, path, sphere, distance, onNo, right) {
+  get(context, title, path, sphere, distance, onNo, rightV, product) {
     return showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -37,7 +37,7 @@ class getBottomShetEsferico {
                                 height: 100,
                                 child: Image.asset(path),
                               ),
-                              SizedBox(
+                            const  SizedBox(
                                 width: 15,
                               ),
                               Flexible(
@@ -47,13 +47,13 @@ class getBottomShetEsferico {
                                 children: [
                                   Text(
                                     title,
-                                    style: TextStyle(
+                                    style:const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15),
                                   ),
                                   Text(
                                     "$sphere / ${distance}",
-                                    style: TextStyle(
+                                    style:const TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15),
                                   )
@@ -63,7 +63,7 @@ class getBottomShetEsferico {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const      SizedBox(
                         height: 20,
                       ),
                       Row(
@@ -84,7 +84,7 @@ class getBottomShetEsferico {
                               child: Center(
                                 child: Text(
                                   t.backModalBottom,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.orange, fontSize: 17),
                                 ),
                               ),
@@ -92,6 +92,7 @@ class getBottomShetEsferico {
                           ),
                           GestureDetector(
                             onTap: () async {
+                              var list = [];
                               //        Provider.of<ResultState>(context, listen: false)
                               //     .changeData({
                               //   'user': Provider.of<ResultState>(context,
@@ -104,35 +105,89 @@ class getBottomShetEsferico {
                               //     {}
                               //   ]
                               // });
-                              var data = Provider.of<ResultState>(context,
-                                      listen: false)
+                              if(Provider.of<ResultState>(context,
+                                  listen: false)
                                   .data['presc']
-                                  .forEach((element) {
-                                if (element['right']) {
-                                  if (element['right'] == right) {
-                                    element = {};
-                                  } else {
-                                    element = {};
-                                  }
-                                }
-                              });
-                              Provider.of<ResultState>(context, listen: false)
-                                  .changeData({
-                                'user': Provider.of<ResultState>(context,
+                                  .length >0){
+                               Provider.of<ResultState>(context,
+                                    listen: false)
+                                    .data['presc']
+                                    .forEach((element) {
+
+
+                                    if (element['right'] == Provider.of<ResultState>(context, listen: false).rightValue) {
+                                      // element =  {
+                                      //   'right':right,
+                                      //   "name":"10"
+                                      // };
+                                      print(element['right']);
+                                      Provider.of<ResultState>(context, listen: false).editData(Provider.of<ResultState>(context, listen: false).rightValue, {
+                                        'right':Provider.of<ResultState>(context, listen: false).rightValue,
+                                        'product':product
+                                      } );
+                                    }
+                                    if(Provider.of<ResultState>(context,
                                         listen: false)
-                                    .data['user'],
-                                "presc": data
-                              });
+                                        .data['presc']
+                                        .length <2){
+                                      Provider.of<ResultState>(context, listen: false)
+                                          .changeData({
+                                        'user': Provider.of<ResultState>(context,
+                                            listen: false)
+                                            .data['user'],
+                                        "presc": [
+                                          ...Provider.of<ResultState>(context,
+                                              listen: false)
+                                              .data['presc'],
+                                          { 'right':Provider.of<ResultState>(context, listen: false).rightValue,
+                                            'product':product
+                                          }
+                                        ]
+                                      });
+                                    }
+
+                                });
+                              }
+                              if(Provider.of<ResultState>(context,
+                                  listen: false)
+                                  .data['presc']
+                                  .length ==0){
+                                Provider.of<ResultState>(context, listen: false)
+                                    .changeData({
+                                  'user': Provider.of<ResultState>(context,
+                                      listen: false)
+                                      .data['user'],
+                                  "presc": [
+                                   {
+                                     'right':Provider.of<ResultState>(context, listen: false).rightValue,
+                                     'product':product
+
+                                   }
+                                  ]
+                                });
+                              }
+                              print(Provider.of<ResultState>(context,
+                                  listen: false)
+                                  .data);
+
+
+                              // Provider.of<ResultState>(context, listen: false)
+                              //     .changeData({
+                              //   'user': Provider.of<ResultState>(context,
+                              //           listen: false)
+                              //       .data['user'],
+                              //   "presc": data
+                              // });
                               if (Provider.of<ResultState>(context,
                                           listen: false)
                                       .data['presc']
-                                      .length <=
+                                      .length <
                                   2) {
                                 await showDialog(
                                     context: context,
                                     builder: (context) {
                                       return AlertDialog(
-                                        content: Text(right
+                                        content: Text(Provider.of<ResultState>(context, listen: false).rightValue
                                             ? t.saveModalBottomRight
                                             : t.saveModalBottomLeft),
                                         actions: [

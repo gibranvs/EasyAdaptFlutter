@@ -1,5 +1,6 @@
 import 'package:easy_adapt/data/internal_data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:flutter/material.dart';
@@ -16,17 +17,22 @@ class ResultsAndProductsPageEsferico extends StatefulWidget {
 
 class _ResultsAndProductsPageEsferico
     extends State<ResultsAndProductsPageEsferico> {
-  bool right = true;
+  late bool right;
   List dataProductsR = [];
   List dataProductsL = [];
 
   @override
   void didChangeDependencies() {
     loadData();
+    right = Provider.of<ResultState>(context).rightValue;
+
     super.didChangeDependencies();
   }
 
   loadData() {
+    dataProductsL.clear();
+    dataProductsR.clear();
+
     switch (LocaleSettings.currentLocale.languageTag) {
       case "es":
         productsSphereEs.forEach((element) {
@@ -104,11 +110,11 @@ class _ResultsAndProductsPageEsferico
               patients_card_model(),
               eyes(context, () {
                 setState(() {
-                  right = true;
+                  Provider.of<ResultState>(context,listen: false).changeRightValue(true);
                 });
               }, () {
                 setState(() {
-                  right = false;
+                  Provider.of<ResultState>(context,listen: false).changeRightValue(false);
                 });
               }),
               SizedBox(
@@ -315,12 +321,13 @@ class _ResultsAndProductsPageEsferico
                   true, () {
                 setState(() {
                   if (right) {
-                    right = false;
+                    Provider.of<ResultState>(context,listen: false).changeRightValue(false);
+
                   } else {
-                    right = true;
+                    Provider.of<ResultState>(context,listen: false).changeRightValue(true);
                   }
                 });
-              }));
+              },dataProductsL.isNotEmpty ? dataProductsL[index] : {} ));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -353,12 +360,14 @@ class _ResultsAndProductsPageEsferico
                   right, () {
                 setState(() {
                   if (right) {
-                    right = false;
+                    Provider.of<ResultState>(context,listen: false).changeRightValue(false);
+
                   } else {
-                    right = true;
+                    Provider.of<ResultState>(context,listen: false).changeRightValue(true);
+
                   }
                 });
-              }));
+              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {} ));
     }
   }
 

@@ -476,7 +476,7 @@ class _ResultsAndProductsPageToricos
                       .toStringAsFixed(2)
                   : double.parse(
                           Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
-                      .toStringAsFixed(2),true,(){}));
+                      .toStringAsFixed(2),true,(){},dataProductsL[index]));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -514,7 +514,7 @@ class _ResultsAndProductsPageToricos
                   ? double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['right']['axis'])
                       .toStringAsFixed(2)
                   : double.parse(Provider.of<CalculatorState>(context, listen: false).calculator_data['left']['axis'])
-                      .toStringAsFixed(2),false,(){}));
+                      .toStringAsFixed(2),false,(){},dataProductsL[index]));
     }
   }
 

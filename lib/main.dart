@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue
       ),
       initialRoute: getInitialRoute(prefs),
       routes: getRoutes(translation),
