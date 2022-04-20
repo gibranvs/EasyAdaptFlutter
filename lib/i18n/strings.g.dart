@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 348 (116.0 per locale)
+ * Strings: 360 (120.0 per locale)
  *
- * Built on 2022-04-14 at 18:55 UTC
+ * Built on 2022-04-20 at 02:00 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -399,6 +399,10 @@ class _StringsEn {
 	String get saveModalBottom => 'SAVE';
 	String get saveModalBottomRight => 'Keep just the right eye prescription?';
 	String get saveModalBottomLeft => 'Keep only the left eye prescription?';
+	String get savePresTitle => 'Confirm';
+	String get savePresTitle1 => 'Right eye prescription';
+	String get savePresTitle2 => 'Left eye prescription';
+	String get savePresSave => 'Save';
 }
 
 // Path: login
@@ -668,6 +672,10 @@ class _StringsEs implements _StringsEn {
 	@override String get saveModalBottom => 'GUARDAR';
 	@override String get saveModalBottomRight => '¿Guardar solo la prescripción del ojo derecho?';
 	@override String get saveModalBottomLeft => '¿Guardar solo la prescripción del ojo izquierdo?';
+	@override String get savePresTitle => 'Confirmar';
+	@override String get savePresTitle1 => 'Prescripción ojo derecho';
+	@override String get savePresTitle2 => 'Prescripción ojo izquierdo';
+	@override String get savePresSave => 'Guardar';
 }
 
 // Path: login
@@ -937,6 +945,10 @@ class _StringsPt implements _StringsEn {
 	@override String get saveModalBottom => 'SALVE ';
 	@override String get saveModalBottomRight => 'Manter apenas a prescrição do olho direito?';
 	@override String get saveModalBottomLeft => 'Manter apenas a prescrição do olho esquerdo?';
+	@override String get savePresTitle => 'Confirme';
+	@override String get savePresTitle1 => 'Prescrição do olho direito';
+	@override String get savePresTitle2 => 'Prescrição do olho esquerdo';
+	@override String get savePresSave => 'Salve';
 }
 
 // Path: login
@@ -1230,6 +1242,10 @@ extension on _StringsEn {
 			'saveModalBottom': 'SAVE',
 			'saveModalBottomRight': 'Keep just the right eye prescription?',
 			'saveModalBottomLeft': 'Keep only the left eye prescription?',
+			'savePresTitle': 'Confirm',
+			'savePresTitle1': 'Right eye prescription',
+			'savePresTitle2': 'Left eye prescription',
+			'savePresSave': 'Save',
 		};
 	}
 }
@@ -1353,6 +1369,10 @@ extension on _StringsEs {
 			'saveModalBottom': 'GUARDAR',
 			'saveModalBottomRight': '¿Guardar solo la prescripción del ojo derecho?',
 			'saveModalBottomLeft': '¿Guardar solo la prescripción del ojo izquierdo?',
+			'savePresTitle': 'Confirmar',
+			'savePresTitle1': 'Prescripción ojo derecho',
+			'savePresTitle2': 'Prescripción ojo izquierdo',
+			'savePresSave': 'Guardar',
 		};
 	}
 }
@@ -1476,6 +1496,10 @@ extension on _StringsPt {
 			'saveModalBottom': 'SALVE ',
 			'saveModalBottomRight': 'Manter apenas a prescrição do olho direito?',
 			'saveModalBottomLeft': 'Manter apenas a prescrição do olho esquerdo?',
+			'savePresTitle': 'Confirme',
+			'savePresTitle1': 'Prescrição do olho direito',
+			'savePresTitle2': 'Prescrição do olho esquerdo',
+			'savePresSave': 'Salve',
 		};
 	}
 }

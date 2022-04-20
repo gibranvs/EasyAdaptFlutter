@@ -146,7 +146,12 @@
 "backModalBottom":"COSTAS",
 "saveModalBottom":"SALVE ",
 "saveModalBottomRight":"Manter apenas a prescrição do olho direito?",
-"saveModalBottomLeft":"Manter apenas a prescrição do olho esquerdo?"
+"saveModalBottomLeft":"Manter apenas a prescrição do olho esquerdo?",
+
+  "savePresTitle": "Confirme",
+  "savePresTitle1": "Prescrição do olho direito",
+  "savePresTitle2": "Prescrição do olho esquerdo",
+  "savePresSave": "Salve"
 
 
 

@@ -144,6 +144,11 @@
 "backModalBottom":"BEHIND",
 "saveModalBottom":"SAVE",
 "saveModalBottomRight":"Keep just the right eye prescription?",
-"saveModalBottomLeft":"Keep only the left eye prescription?"
+"saveModalBottomLeft":"Keep only the left eye prescription?",
+  "savePresTitle": "Confirm",
+  "savePresTitle1": "Right eye prescription",
+  "savePresTitle2": "Left eye prescription",
+  "savePresSave": "Save"
+
   
 }

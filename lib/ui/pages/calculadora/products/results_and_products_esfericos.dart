@@ -20,13 +20,18 @@ class _ResultsAndProductsPageEsferico
   late bool right;
   List dataProductsR = [];
   List dataProductsL = [];
-
+final ScrollController _controller = ScrollController();
   @override
   void didChangeDependencies() {
     loadData();
     right = Provider.of<ResultState>(context).rightValue;
 
     super.didChangeDependencies();
+  }
+  @override
+  void dispose() {
+    _controller.dispose(); // dispose the controller
+    super.dispose();
   }
 
   loadData() {
@@ -101,8 +106,10 @@ class _ResultsAndProductsPageEsferico
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
         child: SingleChildScrollView(
+          controller: _controller,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -320,6 +327,8 @@ class _ResultsAndProductsPageEsferico
                   '',
                   true, () {
                 setState(() {
+                  _controller.animateTo(0,
+                      duration: const Duration(milliseconds: 500), curve: Curves.linear);
                   if (right) {
                     Provider.of<ResultState>(context,listen: false).changeRightValue(false);
 
@@ -327,7 +336,7 @@ class _ResultsAndProductsPageEsferico
                     Provider.of<ResultState>(context,listen: false).changeRightValue(true);
                   }
                 });
-              },dataProductsL.isNotEmpty ? dataProductsL[index] : {} ));
+              },dataProductsR.isNotEmpty ? dataProductsR[index] : {} ));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -358,7 +367,8 @@ class _ResultsAndProductsPageEsferico
                   '',
                   '',
                   right, () {
-                setState(() {
+                setState(() { _controller.animateTo(0,
+                    duration: const Duration(milliseconds: 500), curve: Curves.linear);
                   if (right) {
                     Provider.of<ResultState>(context,listen: false).changeRightValue(false);
 

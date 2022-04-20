@@ -1,7 +1,7 @@
 import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_esferico.dart';
 import 'package:flutter/material.dart';
 
-productModelConfirm() {
+productModelConfirm(title, desc, path) {
   return Container(
     width: double.infinity,
     margin: EdgeInsets.all(10.0),
@@ -12,8 +12,8 @@ productModelConfirm() {
           Container(
             width: 130,
             height: 100,
-            color: Colors.lightBlueAccent,
-          ),
+child:               Image.asset(path)
+            ,          ),
           SizedBox(
             width: 10,
           ),
@@ -23,7 +23,7 @@ productModelConfirm() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Soflens 69',
+                title,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -33,7 +33,7 @@ productModelConfirm() {
                 height: 5,
               ),
               Text(
-                'Descripcion del producto',
+                desc,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
