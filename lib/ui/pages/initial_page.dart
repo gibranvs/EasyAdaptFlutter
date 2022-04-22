@@ -25,6 +25,38 @@ class _InitialPage extends State<InitialPage> {
         height: double.infinity,
         child: Stack(
           children: [
+            Container(
+              child: Positioned(
+                  right: 0,
+                  left: 0,
+                  bottom: 0,
+                  child: Image.asset('./assets/fondo_cuadrado.png')),
+            ),
+            Container(
+              child: Positioned(
+                  right: 0,
+                  left: 0,
+                  bottom: 33,
+                  child: Column(
+                    children: [
+                      Text(
+                        t.alertBottomTitleHomeScreen,
+                        style: TextStyle(
+                            color: Color.fromRGBO(102, 133, 153, 1.0),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "${t.alertBottomSubtitleHomeScreen} 213300202C5437",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 153, 138, 153),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  )),
+            ),
             SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -134,38 +166,6 @@ class _InitialPage extends State<InitialPage> {
                   ),
                 ],
               ),
-            ),
-            Container(
-              child: Positioned(
-                  right: 0,
-                  left: 0,
-                  bottom: 0,
-                  child: Image.asset('./assets/fondo_cuadrado.png')),
-            ),
-            Container(
-              child: Positioned(
-                  right: 0,
-                  left: 0,
-                  bottom: 33,
-                  child: Column(
-                    children: [
-                      Text(
-                        t.alertBottomTitleHomeScreen,
-                        style: TextStyle(
-                            color: Color.fromRGBO(102, 133, 153, 1.0),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "${t.alertBottomSubtitleHomeScreen} 213300202C5437",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 153, 138, 153),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  )),
             ),
           ],
         ),

@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 360 (120.0 per locale)
+ * Strings: 375 (125.0 per locale)
  *
- * Built on 2022-04-20 at 02:00 UTC
+ * Built on 2022-04-21 at 20:46 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -345,6 +345,11 @@ class _StringsEn {
 	String get hintTextNewPasswordProfilePage => 'New Password';
 	String get hintTextPasswordProfilePage => 'Current password';
 	String get hintTextPasswordRegisterScreen => 'Password';
+	String get modalText1TitleRegisterScreen => 'Brilliant!';
+	String get modalText1RegisterScreen => 'Account created successfully';
+	String get modalText2RegisterScreen => 'Make sure all fields are filled';
+	String get modalText3RegisterScreen => 'Passwords do not match';
+	String get modalText4RegisterScreen => 'It is necessary to accept the terms and conditions';
 	String get hintTextPatientsPage => 'Search by name';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
 	String get loginModalErrorTitle => 'Warning';
@@ -618,6 +623,11 @@ class _StringsEs implements _StringsEn {
 	@override String get hintTextNewPasswordProfilePage => 'Nueva contraseña';
 	@override String get hintTextPasswordProfilePage => 'Contraseña actual';
 	@override String get hintTextPasswordRegisterScreen => 'Contraseña';
+	@override String get modalText1TitleRegisterScreen => 'Genial!';
+	@override String get modalText1RegisterScreen => 'Cuenta creada exitosamente';
+	@override String get modalText2RegisterScreen => 'Asegurate que todos los campos esten llenos';
+	@override String get modalText3RegisterScreen => 'Las contraseñas no coinciden';
+	@override String get modalText4RegisterScreen => 'Es necesario aceptar los términos y condiciones';
 	@override String get hintTextPatientsPage => 'Buscar por nombre';
 	@override late final _StringsLoginEs login = _StringsLoginEs._(_root);
 	@override String get loginModalErrorTitle => 'Advertencia';
@@ -891,6 +901,11 @@ class _StringsPt implements _StringsEn {
 	@override String get hintTextNewPasswordProfilePage => 'Nova senha';
 	@override String get hintTextPasswordProfilePage => 'Senha atual';
 	@override String get hintTextPasswordRegisterScreen => 'Senha';
+	@override String get modalText1TitleRegisterScreen => 'Brilhante!';
+	@override String get modalText1RegisterScreen => 'Conta criada com sucesso';
+	@override String get modalText2RegisterScreen => 'Verifique se todos os campos estão preenchidos';
+	@override String get modalText3RegisterScreen => 'As senhas não coincidem';
+	@override String get modalText4RegisterScreen => 'É necessário aceitar os termos e condições';
 	@override String get hintTextPatientsPage => 'Procura por nome';
 	@override late final _StringsLoginPt login = _StringsLoginPt._(_root);
 	@override String get loginModalErrorTitle => 'Aviso';
@@ -1153,6 +1168,11 @@ extension on _StringsEn {
 			'hintTextNewPasswordProfilePage': 'New Password',
 			'hintTextPasswordProfilePage': 'Current password',
 			'hintTextPasswordRegisterScreen': 'Password',
+			'modalText1TitleRegisterScreen': 'Brilliant!',
+			'modalText1RegisterScreen': 'Account created successfully',
+			'modalText2RegisterScreen': 'Make sure all fields are filled',
+			'modalText3RegisterScreen': 'Passwords do not match',
+			'modalText4RegisterScreen': 'It is necessary to accept the terms and conditions',
 			'hintTextPatientsPage': 'Search by name',
 			'login.fail': 'Logged in failed',
 			'login.success': 'Logged in successfully',
@@ -1280,6 +1300,11 @@ extension on _StringsEs {
 			'hintTextNewPasswordProfilePage': 'Nueva contraseña',
 			'hintTextPasswordProfilePage': 'Contraseña actual',
 			'hintTextPasswordRegisterScreen': 'Contraseña',
+			'modalText1TitleRegisterScreen': 'Genial!',
+			'modalText1RegisterScreen': 'Cuenta creada exitosamente',
+			'modalText2RegisterScreen': 'Asegurate que todos los campos esten llenos',
+			'modalText3RegisterScreen': 'Las contraseñas no coinciden',
+			'modalText4RegisterScreen': 'Es necesario aceptar los términos y condiciones',
 			'hintTextPatientsPage': 'Buscar por nombre',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',
@@ -1407,6 +1432,11 @@ extension on _StringsPt {
 			'hintTextNewPasswordProfilePage': 'Nova senha',
 			'hintTextPasswordProfilePage': 'Senha atual',
 			'hintTextPasswordRegisterScreen': 'Senha',
+			'modalText1TitleRegisterScreen': 'Brilhante!',
+			'modalText1RegisterScreen': 'Conta criada com sucesso',
+			'modalText2RegisterScreen': 'Verifique se todos os campos estão preenchidos',
+			'modalText3RegisterScreen': 'As senhas não coincidem',
+			'modalText4RegisterScreen': 'É necessário aceitar os termos e condições',
 			'hintTextPatientsPage': 'Procura por nome',
 			'login.fail': 'Login fehlgeschlagen',
 			'login.success': 'Login erfolgreich',

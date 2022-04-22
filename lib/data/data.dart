@@ -70,4 +70,52 @@ class Data {
       return false;
     }
   }
+  register(name,mail, password, pais) async {
+    try {
+      final response =
+      await http.post(Uri.parse("$url/api?tipo=set_doctor"), body: {
+        "id_doctor": 0,
+        "nombre": name,
+        "correo": mail,
+        'pass': password,
+        'pais':pais
+      });
+      var data = jsonDecode(response.body);
+      print(data);
+      if (data['status'] == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+
+
+  updateDoctor(name,mail, passwordR,passwordN, pais) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    try {
+      final response =
+      await http.post(Uri.parse("$url/api?tipo=update_doctor"), body: {
+        "id_doctor": prefs.getString('idUser'),
+        "nombre": name,
+        "correo": mail,
+        'contrasenaActual': passwordR,
+        "contrasenaNueva":passwordN,
+        'pais':pais
+      });
+      var data = jsonDecode(response.body);
+      print(data);
+      if (data['status'] == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
 }

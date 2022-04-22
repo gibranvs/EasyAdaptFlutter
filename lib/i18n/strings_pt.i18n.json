@@ -26,6 +26,12 @@
   "hintTextNewPasswordProfilePage": "Nova senha",
   "hintTextPasswordProfilePage": "Senha atual",
   "hintTextPasswordRegisterScreen": "Senha",
+  "modalText1TitleRegisterScreen":"Brilhante!",
+
+  "modalText1RegisterScreen":"Conta criada com sucesso",
+  "modalText2RegisterScreen":"Verifique se todos os campos estão preenchidos",
+  "modalText3RegisterScreen":"As senhas não coincidem",
+  "modalText4RegisterScreen":"É necessário aceitar os termos e condições",
   "hintTextPatientsPage": "Procura por nome",
   "login": {
     "fail": "Login fehlgeschlagen",

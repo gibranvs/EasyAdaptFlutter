@@ -26,6 +26,15 @@
   "hintTextNewPasswordProfilePage": "Nueva contraseña",
   "hintTextPasswordProfilePage": "Contraseña actual",
   "hintTextPasswordRegisterScreen": "Contraseña",
+  "modalText1TitleRegisterScreen":"Genial!",
+
+  "modalText1RegisterScreen":"Cuenta creada exitosamente",
+  "modalText2RegisterScreen":"Asegurate que todos los campos esten llenos",
+  "modalText3RegisterScreen":"Las contraseñas no coinciden",
+  "modalText4RegisterScreen":"Es necesario aceptar los términos y condiciones",
+
+
+
   "hintTextPatientsPage": "Buscar por nombre",
   "login": {
     "fail": "Login fehlgeschlagen",
@@ -147,4 +156,15 @@
   "savePresTitle1": "Prescripción ojo derecho",
   "savePresTitle2": "Prescripción ojo izquierdo",
   "savePresSave": "Guardar"
+
+
+
+
+
+
+
+
+
+
+
 }

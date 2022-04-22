@@ -26,6 +26,12 @@
   "hintTextNewPasswordProfilePage": "New Password",
   "hintTextPasswordProfilePage": "Current password",
   "hintTextPasswordRegisterScreen": "Password",
+  "modalText1TitleRegisterScreen":"Brilliant!",
+
+  "modalText1RegisterScreen":"Account created successfully",
+  "modalText2RegisterScreen":"Make sure all fields are filled",
+  "modalText3RegisterScreen":"Passwords do not match",
+  "modalText4RegisterScreen":"It is necessary to accept the terms and conditions",
   "hintTextPatientsPage": "Search by name",
   "login": {
     "fail": "Logged in failed",
