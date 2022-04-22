@@ -185,6 +185,7 @@ class _CalculatorEsfericosState extends State<CalculatorEsfericos> {
 
                   Provider.of<CalculatorState>(context, listen: false)
                       .addCalculateData({
+                    "type": "esfericos",
                     'right': {
                       'esphere': tempEsphereR,
                       'distance': selectedValueDistanceR ?? "0",

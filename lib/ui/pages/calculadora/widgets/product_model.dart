@@ -10,12 +10,12 @@ productModel(index, context, name, desc, path, sphere, distance, cylinder, axis,
       onTap: () async {
         switch (index) {
           case 1:
-            getBottomShetEsferico()
-                .get(context, name, path, sphere, distance, onNo, right, product);
+            getBottomShetEsferico().get(
+                context, name, path, sphere, distance, onNo, right, product);
             break;
           case 2:
-            getBottomShetToricos()
-                .get(context, name, path, sphere, cylinder, axis);
+            getBottomShetToricos().get(context, name, path, sphere, cylinder,
+                axis, onNo, right, product);
             break;
           case 3:
             getBottomShetEsferico()

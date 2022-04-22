@@ -13,6 +13,8 @@ import 'package:easy_adapt/ui/pages/login.dart';
 import 'package:easy_adapt/ui/pages/pacientes/add_patients.dart';
 import 'package:easy_adapt/ui/pages/pacientes/patients_calc.dart';
 import 'package:easy_adapt/ui/pages/player/player.dart';
+import 'package:easy_adapt/ui/pages/prescripcion/historial.dart';
+import 'package:easy_adapt/ui/pages/prescripcion/prescripcion.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
 import 'package:easy_adapt/ui/pages/terms.dart';
 
@@ -44,6 +46,8 @@ getRoutes(t) {
     '/layout': (context) => Layout(
           t: t,
         ),
+    '/prescripcion': (context) => PrescripcionPage(),
+    '/historial': (context) => HistorialPage(),
     '/calc/patients': (context) => PatientsCalc(
           t: t,
         ),

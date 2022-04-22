@@ -37,7 +37,7 @@ class getBottomShetEsferico {
                                 height: 100,
                                 child: Image.asset(path),
                               ),
-                            const  SizedBox(
+                              const SizedBox(
                                 width: 15,
                               ),
                               Flexible(
@@ -47,13 +47,13 @@ class getBottomShetEsferico {
                                 children: [
                                   Text(
                                     title,
-                                    style:const TextStyle(
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15),
                                   ),
                                   Text(
                                     "$sphere / ${distance}",
-                                    style:const TextStyle(
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15),
                                   )
@@ -63,7 +63,7 @@ class getBottomShetEsferico {
                           ),
                         ),
                       ),
-                      const      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
@@ -105,71 +105,87 @@ class getBottomShetEsferico {
                               //     {}
                               //   ]
                               // });
-                              if(Provider.of<ResultState>(context,
-                                  listen: false)
-                                  .data['presc']
-                                  .length >0){
-                               Provider.of<ResultState>(context,
-                                    listen: false)
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length >
+                                  0) {
+                                Provider.of<ResultState>(context, listen: false)
                                     .data['presc']
                                     .forEach((element) {
-
-
-                                    if (element['right'] == Provider.of<ResultState>(context, listen: false).rightValue) {
-                                      // element =  {
-                                      //   'right':right,
-                                      //   "name":"10"
-                                      // };
-                                      print(element['right']);
-                                      Provider.of<ResultState>(context, listen: false).editData(Provider.of<ResultState>(context, listen: false).rightValue, {
-                                        'right':Provider.of<ResultState>(context, listen: false).rightValue,
-                                        'product':product
-                                      } );
-                                    }
-                                    if(Provider.of<ResultState>(context,
-                                        listen: false)
-                                        .data['presc']
-                                        .length <2){
-                                      Provider.of<ResultState>(context, listen: false)
-                                          .changeData({
-                                        'user': Provider.of<ResultState>(context,
-                                            listen: false)
-                                            .data['user'],
-                                        "presc": [
-                                          ...Provider.of<ResultState>(context,
+                                  if (element['right'] ==
+                                      Provider.of<ResultState>(context,
                                               listen: false)
-                                              .data['presc'],
-                                          { 'right':Provider.of<ResultState>(context, listen: false).rightValue,
-                                            'product':product
-                                          }
-                                        ]
-                                      });
-                                    }
-
+                                          .rightValue) {
+                                    // element =  {
+                                    //   'right':right,
+                                    //   "name":"10"
+                                    // };
+                                    print(element['right']);
+                                    Provider.of<ResultState>(context,
+                                            listen: false)
+                                        .editData(
+                                            Provider.of<ResultState>(context,
+                                                    listen: false)
+                                                .rightValue,
+                                            {
+                                          'right': Provider.of<ResultState>(
+                                                  context,
+                                                  listen: false)
+                                              .rightValue,
+                                          'product': product
+                                        });
+                                  }
+                                  if (Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .data['presc']
+                                          .length <
+                                      2) {
+                                    Provider.of<ResultState>(context,
+                                            listen: false)
+                                        .changeData({
+                                      'user': Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .data['user'],
+                                      "presc": [
+                                        ...Provider.of<ResultState>(context,
+                                                listen: false)
+                                            .data['presc'],
+                                        {
+                                          'right': Provider.of<ResultState>(
+                                                  context,
+                                                  listen: false)
+                                              .rightValue,
+                                          'product': product
+                                        }
+                                      ]
+                                    });
+                                  }
                                 });
                               }
-                              if(Provider.of<ResultState>(context,
-                                  listen: false)
-                                  .data['presc']
-                                  .length ==0){
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length ==
+                                  0) {
                                 Provider.of<ResultState>(context, listen: false)
                                     .changeData({
                                   'user': Provider.of<ResultState>(context,
-                                      listen: false)
+                                          listen: false)
                                       .data['user'],
                                   "presc": [
-                                   {
-                                     'right':Provider.of<ResultState>(context, listen: false).rightValue,
-                                     'product':product
-
-                                   }
+                                    {
+                                      'right': Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .rightValue,
+                                      'product': product
+                                    }
                                   ]
                                 });
                               }
                               print(Provider.of<ResultState>(context,
-                                  listen: false)
+                                      listen: false)
                                   .data);
-
 
                               // Provider.of<ResultState>(context, listen: false)
                               //     .changeData({
@@ -187,7 +203,10 @@ class getBottomShetEsferico {
                                     context: context,
                                     builder: (context) {
                                       return AlertDialog(
-                                        content: Text(Provider.of<ResultState>(context, listen: false).rightValue
+                                        content: Text(Provider.of<ResultState>(
+                                                    context,
+                                                    listen: false)
+                                                .rightValue
                                             ? t.saveModalBottomRight
                                             : t.saveModalBottomLeft),
                                         actions: [

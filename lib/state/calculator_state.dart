@@ -12,4 +12,13 @@ class CalculatorState extends ChangeNotifier {
     calculator_data = newData;
     notifyListeners();
   }
+
+  addAxisF(grados, right) {
+    if (right) {
+      calculator_data['right']['axisF'] = grados;
+    } else {
+      calculator_data['left']['axisF'] = grados;
+    }
+    notifyListeners();
+  }
 }

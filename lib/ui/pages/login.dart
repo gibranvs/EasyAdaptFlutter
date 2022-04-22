@@ -107,7 +107,8 @@ class _LoginPageState extends State<LoginPage> {
                           var result = await Data()
                               .login(_email.text, _password.text, save);
                           if (result) {
-                            Navigator.pushNamed(context, '/home');
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, '/home', (route) => false);
                           } else {
                             showDialog(
                                 context: context,

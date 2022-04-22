@@ -1,4 +1,5 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
+import 'package:easy_adapt/helpers/func.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:flutter/material.dart';
@@ -215,6 +216,11 @@ class _CalculatorToricos extends State<CalculatorToricos> {
               padding: const EdgeInsets.only(left: 33, right: 33),
               child: GestureDetector(
                 onTap: () {
+                  var resultRoundR = 0.0;
+                  var resultRoundL = 0.0;
+                  var resultRoundCIR = 0.0;
+                  var resultRoundCIL = 0.0;
+
                   var tempEsphereR =
                       ((double.parse(selectedValueEsphereR ?? "0")) /
                           (1 -
@@ -248,19 +254,41 @@ class _CalculatorToricos extends State<CalculatorToricos> {
                                           selectedValueCylinderR ?? "0"))))) -
                       tempEsphereR);
 
+                  if (tempEsphereR > 6) {
+                    resultRoundR =
+                        FuncCalculators().round25(tempEsphereR.toDouble());
+                  } else {
+                    resultRoundR =
+                        FuncCalculators().round50(tempEsphereR.toDouble());
+                  }
+                  if (tempEsphereL > 6) {
+                    resultRoundL =
+                        FuncCalculators().round25(tempEsphereL.toDouble());
+                  } else {
+                    resultRoundL =
+                        FuncCalculators().round50(tempEsphereL.toDouble());
+                  }
+                  resultRoundCIR = FuncCalculators().roundCI(tempcylinderR);
+                  resultRoundCIL = FuncCalculators().roundCI(tempcylinderL);
+
                   Provider.of<CalculatorState>(context, listen: false)
                       .addCalculateData({
+                    "type": "torico",
                     'right': {
                       'esphere': tempEsphereR,
                       'distance': selectedValueDistanceR ?? '0',
                       'cylinder': tempcylinderR,
-                      'axis': selectedValueAxisR ?? "0"
+                      'axis': selectedValueAxisR ?? "0",
+                      'esphereRound': resultRoundR,
+                      'cylinderRound': resultRoundCIR
                     },
                     'left': {
                       'esphere': tempEsphereL,
                       'distance': selectedValueDistanceL ?? '0',
                       'cylinder': tempcylinderL,
-                      'axis': selectedValueAxisL ?? '0'
+                      'axis': selectedValueAxisL ?? '0',
+                      'esphereRound': resultRoundL,
+                      'cylinderRound': resultRoundCIL
                     },
                   });
                   Navigator.pushNamed(context, '/calc/results/toricos');

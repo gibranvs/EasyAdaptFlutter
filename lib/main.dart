@@ -2,6 +2,7 @@ import 'package:easy_adapt/i18n/strings.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/state/menu_state.dart';
+import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/state/player_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ void main() async {
       ),
       ListenableProvider<ResultState>(
         create: (_) => ResultState(),
+      ),
+      ListenableProvider<PatientState>(
+        create: (_) => PatientState(),
       )
     ],
     child: TranslationProvider(
@@ -34,7 +38,6 @@ void main() async {
     )),
   ));
 }
-
 
 class MyApp extends StatelessWidget {
   SharedPreferences prefs;
@@ -51,9 +54,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: LocaleSettings.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: getInitialRoute(prefs),
       routes: getRoutes(translation),
     );

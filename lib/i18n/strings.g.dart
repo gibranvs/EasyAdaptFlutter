@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 375 (125.0 per locale)
+ * Strings: 390 (130.0 per locale)
  *
- * Built on 2022-04-21 at 20:46 UTC
+ * Built on 2022-04-22 at 06:32 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -408,6 +408,11 @@ class _StringsEn {
 	String get savePresTitle1 => 'Right eye prescription';
 	String get savePresTitle2 => 'Left eye prescription';
 	String get savePresSave => 'Save';
+	String get prescriptionBack => 'Resume';
+	String get prescriptionButton1 => 'PRESCRIPTION HISTORY';
+	String get prescriptionTitle1 => 'Prescription history';
+	String get toricModalTitle => 'Shaft adjustment';
+	String get toricModalSubTitle => 'New adapted result';
 }
 
 // Path: login
@@ -686,6 +691,11 @@ class _StringsEs implements _StringsEn {
 	@override String get savePresTitle1 => 'Prescripción ojo derecho';
 	@override String get savePresTitle2 => 'Prescripción ojo izquierdo';
 	@override String get savePresSave => 'Guardar';
+	@override String get prescriptionBack => 'Resumen';
+	@override String get prescriptionButton1 => 'HISTORIAL DE PRESCRIPCIONES';
+	@override String get prescriptionTitle1 => 'Historial de prescripciones';
+	@override String get toricModalTitle => 'Ajuste del eje';
+	@override String get toricModalSubTitle => 'Nuevo resultado adaptado';
 }
 
 // Path: login
@@ -964,6 +974,11 @@ class _StringsPt implements _StringsEn {
 	@override String get savePresTitle1 => 'Prescrição do olho direito';
 	@override String get savePresTitle2 => 'Prescrição do olho esquerdo';
 	@override String get savePresSave => 'Salve';
+	@override String get prescriptionBack => 'Retomar';
+	@override String get prescriptionButton1 => 'HISTÓRICO DE PRESCRIÇÃO';
+	@override String get prescriptionTitle1 => 'Histórico de prescrição';
+	@override String get toricModalTitle => 'Ajuste do eixo';
+	@override String get toricModalSubTitle => 'Novo resultado adaptado';
 }
 
 // Path: login
@@ -1266,6 +1281,11 @@ extension on _StringsEn {
 			'savePresTitle1': 'Right eye prescription',
 			'savePresTitle2': 'Left eye prescription',
 			'savePresSave': 'Save',
+			'prescriptionBack': 'Resume',
+			'prescriptionButton1': 'PRESCRIPTION HISTORY',
+			'prescriptionTitle1': 'Prescription history',
+			'toricModalTitle': 'Shaft adjustment',
+			'toricModalSubTitle': 'New adapted result',
 		};
 	}
 }
@@ -1398,6 +1418,11 @@ extension on _StringsEs {
 			'savePresTitle1': 'Prescripción ojo derecho',
 			'savePresTitle2': 'Prescripción ojo izquierdo',
 			'savePresSave': 'Guardar',
+			'prescriptionBack': 'Resumen',
+			'prescriptionButton1': 'HISTORIAL DE PRESCRIPCIONES',
+			'prescriptionTitle1': 'Historial de prescripciones',
+			'toricModalTitle': 'Ajuste del eje',
+			'toricModalSubTitle': 'Nuevo resultado adaptado',
 		};
 	}
 }
@@ -1530,6 +1555,11 @@ extension on _StringsPt {
 			'savePresTitle1': 'Prescrição do olho direito',
 			'savePresTitle2': 'Prescrição do olho esquerdo',
 			'savePresSave': 'Salve',
+			'prescriptionBack': 'Retomar',
+			'prescriptionButton1': 'HISTÓRICO DE PRESCRIÇÃO',
+			'prescriptionTitle1': 'Histórico de prescrição',
+			'toricModalTitle': 'Ajuste do eixo',
+			'toricModalSubTitle': 'Novo resultado adaptado',
 		};
 	}
 }

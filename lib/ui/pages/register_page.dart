@@ -141,8 +141,8 @@ class _RegisterPageState extends State<RegisterPage> {
               onTap: () async {
                 if (checkTerms) {
                   if (_password.text == _passwordConfirm.text) {
-                    var resp = await Data().register(
-                        _name.text, _mail.text, _password.text, _country.text);
+                    var resp = await Data().register(_name.text, _mail.text,
+                        _password.text, _country.text, _dNI.text);
                     if (resp) {
                       showDialog(
                           context: context,

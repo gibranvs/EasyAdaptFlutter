@@ -1,7 +1,11 @@
+import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '/../i18n/strings.g.dart';
 
 class getBottomShetToricos {
-  get(context, name, path, esphere, cylinder, axis) {
+  get(context, name, path, esphere, cylinder, axis, onNo, rightV, product) {
     int grados = 0;
     return showModalBottomSheet(
         context: context,
@@ -76,7 +80,7 @@ class getBottomShetToricos {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("Ajuste del eje"),
+                              Text(t.toricModalTitle),
                               SizedBox(
                                 height: 5,
                               ),
@@ -114,7 +118,7 @@ class getBottomShetToricos {
                                       )),
                                 ],
                               ),
-                              Text("Nuevo resultado adaptado",
+                              Text(t.toricModalSubTitle,
                                   style: TextStyle(color: Colors.grey)),
                               SizedBox(
                                 height: 5,
@@ -156,7 +160,7 @@ class getBottomShetToricos {
                                       BorderRadius.all(Radius.circular(25))),
                               child: Center(
                                 child: Text(
-                                  'ATRÁS',
+                                  t.backModalBottom,
                                   style: TextStyle(
                                       color: Colors.orange, fontSize: 17),
                                 ),
@@ -165,30 +169,153 @@ class getBottomShetToricos {
                           ),
                           GestureDetector(
                             onTap: () async {
-                              await showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      content: Text(
-                                          '¿Guardar solo la prescripción del ojo derecho?'),
-                                      actions: [
-                                        FlatButton(
-                                          child: Text('No'),
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                            Navigator.pop(context);
-                                          },
-                                        ),
-                                        FlatButton(
-                                          child: Text('Si'),
-                                          onPressed: () {
-                                            Navigator.pushNamed(context,
-                                                '/calc/results/confirm');
-                                          },
-                                        ),
-                                      ],
-                                    );
-                                  });
+                              Provider.of<CalculatorState>(context,
+                                      listen: false)
+                                  .addAxisF(
+                                      double.parse(axis) + grados,
+                                      Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .rightValue);
+                              var list = [];
+                              //        Provider.of<ResultState>(context, listen: false)
+                              //     .changeData({
+                              //   'user': Provider.of<ResultState>(context,
+                              //           listen: false)
+                              //       .data['user'],
+                              //   "presc": [
+                              //     ...Provider.of<ResultState>(context,
+                              //             listen: false)
+                              //         .data['presc'],
+                              //     {}
+                              //   ]
+                              // });
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length >
+                                  0) {
+                                Provider.of<ResultState>(context, listen: false)
+                                    .data['presc']
+                                    .forEach((element) {
+                                  if (element['right'] ==
+                                      Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .rightValue) {
+                                    // element =  {
+                                    //   'right':right,
+                                    //   "name":"10"
+                                    // };
+                                    print(element['right']);
+                                    Provider.of<ResultState>(context,
+                                            listen: false)
+                                        .editData(
+                                            Provider.of<ResultState>(context,
+                                                    listen: false)
+                                                .rightValue,
+                                            {
+                                          'right': Provider.of<ResultState>(
+                                                  context,
+                                                  listen: false)
+                                              .rightValue,
+                                          'product': product
+                                        });
+                                  }
+                                  if (Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .data['presc']
+                                          .length <
+                                      2) {
+                                    Provider.of<ResultState>(context,
+                                            listen: false)
+                                        .changeData({
+                                      'user': Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .data['user'],
+                                      "presc": [
+                                        ...Provider.of<ResultState>(context,
+                                                listen: false)
+                                            .data['presc'],
+                                        {
+                                          'right': Provider.of<ResultState>(
+                                                  context,
+                                                  listen: false)
+                                              .rightValue,
+                                          'product': product
+                                        }
+                                      ]
+                                    });
+                                  }
+                                });
+                              }
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length ==
+                                  0) {
+                                Provider.of<ResultState>(context, listen: false)
+                                    .changeData({
+                                  'user': Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['user'],
+                                  "presc": [
+                                    {
+                                      'right': Provider.of<ResultState>(context,
+                                              listen: false)
+                                          .rightValue,
+                                      'product': product
+                                    }
+                                  ]
+                                });
+                              }
+                              print(Provider.of<ResultState>(context,
+                                      listen: false)
+                                  .data);
+
+                              // Provider.of<ResultState>(context, listen: false)
+                              //     .changeData({
+                              //   'user': Provider.of<ResultState>(context,
+                              //           listen: false)
+                              //       .data['user'],
+                              //   "presc": data
+                              // });
+                              if (Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .length <
+                                  2) {
+                                await showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text(Provider.of<ResultState>(
+                                                    context,
+                                                    listen: false)
+                                                .rightValue
+                                            ? t.saveModalBottomRight
+                                            : t.saveModalBottomLeft),
+                                        actions: [
+                                          FlatButton(
+                                            child: Text('No'),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
+                                              onNo();
+                                            },
+                                          ),
+                                          FlatButton(
+                                            child: Text('Si'),
+                                            onPressed: () {
+                                              Navigator.pushNamed(context,
+                                                  '/calc/results/confirm');
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
+                              } else {
+                                Navigator.pushNamed(
+                                    context, '/calc/results/confirm');
+                              }
                             },
                             child: Container(
                               width: 130,
@@ -199,7 +326,7 @@ class getBottomShetToricos {
                                       BorderRadius.all(Radius.circular(25))),
                               child: Center(
                                 child: Text(
-                                  'GUARDAR',
+                                  t.saveModalBottom,
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 17),
                                 ),

@@ -1,6 +1,8 @@
 import 'package:easy_adapt/data/data.dart';
+import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class PatientsLayoutPage extends StatefulWidget {
@@ -65,7 +67,8 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                               patients_card_model(
                                   dataSearch[index]['nombre'],
                                   data[index]['telefono'],
-                                  data[index]['correo']),
+                                  data[index]['correo'],
+                                  data[index]),
                             ],
                           );
                         }),
@@ -81,7 +84,8 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
                               patients_card_model(
                                   data[index]['nombre'],
                                   data[index]['telefono'],
-                                  data[index]['correo']),
+                                  data[index]['correo'],
+                                  data[index])
                             ],
                           );
                         }),
@@ -97,51 +101,59 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
     );
   }
 
-  Container patients_card_model(name, phone, mail) {
-    return Container(
-        width: double.infinity,
-        child: Card(
-            elevation: 2.0,
-            child: ListTile(
-              title: Text(
-                name.toString(),
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(0, 129, 171, 1.0)),
-              ),
-              subtitle: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    mail.toString(),
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    phone.toString(),
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                ],
-              ),
-              leading: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ImageIcon(
-                    AssetImage('./assets/icons/usuario.png'),
-                    size: 52,
-                    color: Color.fromRGBO(240, 162, 51, 1.0),
-                  ),
-                ],
-              ),
-            )));
+  patients_card_model(name, phone, mail, patient) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/prescripcion');
+        Provider.of<PatientState>(context, listen: false)
+            .changePatient(patient);
+        print(patient);
+      },
+      child: Container(
+          width: double.infinity,
+          child: Card(
+              elevation: 2.0,
+              child: ListTile(
+                title: Text(
+                  name.toString(),
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(0, 129, 171, 1.0)),
+                ),
+                subtitle: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      mail.toString(),
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      phone.toString(),
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                leading: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ImageIcon(
+                      AssetImage('./assets/icons/usuario.png'),
+                      size: 52,
+                      color: Color.fromRGBO(240, 162, 51, 1.0),
+                    ),
+                  ],
+                ),
+              ))),
+    );
   }
 
   getTextFieldModelSquare(text, controller) {

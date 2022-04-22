@@ -1,4 +1,4 @@
-
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model_confir.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
@@ -16,27 +16,30 @@ class ConfirmPacientResult extends StatefulWidget {
 }
 
 class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
-   var dataF = [];
+  var dataF = [];
 
-   @override
-   void didChangeDependencies() {
-     shortData();
-     super.didChangeDependencies();
-   }
-  shortData(){
-     var tempR = {};
-     var tempL = {};
+  @override
+  void didChangeDependencies() {
+    shortData();
+    super.didChangeDependencies();
+  }
 
-     Provider.of<ResultState>(context).data['presc'].forEach((e){
-      if(e['right']==true){
+  shortData() {
+    var tempR = {};
+    var tempL = {};
+
+    Provider.of<ResultState>(context).data['presc'].forEach((e) {
+      if (e['right'] == true) {
         tempR = e;
-      }else{
-        tempL = e??{};      }
+      } else {
+        tempL = e ?? {};
+      }
     });
     setState(() {
-    dataF = [tempR, tempL];
+      dataF = [tempR, tempL];
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,10 +62,10 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                     size: 40,
                   ),
                 ),
-                const    SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                    Text(
+                Text(
                   t.savePresTitle,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -72,26 +75,72 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                 )
               ],
             )),
-            patients_card_model(Provider.of<ResultState>(context).data['user']['nombre'],Provider.of<ResultState>(context).data['user']['correo']),
-            const    SizedBox(
+            patients_card_model(
+                Provider.of<ResultState>(context).data['user']['nombre'],
+                Provider.of<ResultState>(context).data['user']['correo']),
+            const SizedBox(
               height: 20,
             ),
-
-                Text(
+            Text(
               t.savePresTitle1,
-              style:const  TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            dataF[0]['right'] == true?
-            productModelConfirm(dataF[0]['product']['namePS'],dataF[0]['product']['descriptionPS'],dataF[0]['product']['imagePS']):Container(),
-            const    SizedBox(
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              Provider.of<CalculatorState>(context).calculator_data['type'] ==
+                      'esfericos'
+                  ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
+                  : Provider.of<CalculatorState>(context)
+                              .calculator_data['type'] ==
+                          'torico'
+                      ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
+                      : "",
+              style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
+            ),
+            dataF[0]['right'] == true
+                ? productModelConfirm(
+                    dataF[0]['product']['namePS'],
+                    dataF[0]['product']['descriptionPS'],
+                    dataF[0]['product']['imagePS'])
+                : Container(),
+            const SizedBox(
               height: 20,
             ),
-                  Text(
+            Text(
               t.savePresTitle2,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ), dataF[0]['right'] == false ||  dataF[1]['right'] == false?
-            dataF[1]!= {} ? productModelConfirm(dataF[1]['product']['namePS'],dataF[1]['product']['descriptionPS'],dataF[1]['product']['imagePS']): Container():Container(),
-            const     SizedBox(
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              Provider.of<CalculatorState>(context).calculator_data['type'] ==
+                      'esfericos'
+                  ? '${Provider.of<CalculatorState>(context).calculator_data['left']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['left']['distance']} '
+                  : Provider.of<CalculatorState>(context)
+                              .calculator_data['type'] ==
+                          'torico'
+                      ? '${Provider.of<CalculatorState>(context).calculator_data['left']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['left']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['left']['axisF']}  '
+                      : "",
+              style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
+            ),
+            dataF[0]['right'] == false || dataF[1]['right'] == false
+                ? dataF[1] != {}
+                    ? productModelConfirm(
+                        dataF[1]['product']['namePS'],
+                        dataF[1]['product']['descriptionPS'],
+                        dataF[1]['product']['imagePS'])
+                    : Container()
+                : Container(),
+            const SizedBox(
               height: 20,
             ),
             Center(
@@ -106,10 +155,10 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                   decoration: const BoxDecoration(
                       color: Color.fromRGBO(129, 181, 178, 1.0),
                       borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child:  Center(
+                  child: Center(
                     child: Text(
                       t.savePresSave,
-                      style:const TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 17,
                           fontWeight: FontWeight.bold),
@@ -118,7 +167,7 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                 ),
               ),
             ),
-            const   SizedBox(
+            const SizedBox(
               height: 50,
             )
           ],
@@ -134,9 +183,9 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
           elevation: 0.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const    Image(
+              const Image(
                 image: AssetImage('./assets/icons/img_usuario.png'),
                 width: 80,
                 height: 80,

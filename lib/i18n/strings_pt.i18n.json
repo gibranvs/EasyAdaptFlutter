@@ -157,7 +157,13 @@
   "savePresTitle": "Confirme",
   "savePresTitle1": "Prescrição do olho direito",
   "savePresTitle2": "Prescrição do olho esquerdo",
-  "savePresSave": "Salve"
+  "savePresSave": "Salve",
+  "prescriptionBack": "Retomar",
+  "prescriptionButton1": "HISTÓRICO DE PRESCRIÇÃO",
+  "prescriptionTitle1": "Histórico de prescrição",
+
+  "toricModalTitle":"Ajuste do eixo"
+  ,"toricModalSubTitle":"Novo resultado adaptado"
 
 
 

@@ -10,7 +10,7 @@
 	<string>de</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>Easy Adapt</string>
+	<string>EasyAdapt</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

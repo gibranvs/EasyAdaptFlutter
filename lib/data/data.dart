@@ -13,7 +13,7 @@ class Data {
       final response = await http.post(Uri.parse("$url/api?tipo=login"),
           body: {'correo': email, 'pass': password});
       var data = jsonDecode(response.body);
-
+      print(data);
       if (data['status'] == 1) {
         if (save == true) {
           prefs.setBool('save', true);
@@ -70,16 +70,46 @@ class Data {
       return false;
     }
   }
-  register(name,mail, password, pais) async {
+
+  register(name, mail, password, pais, dni) async {
+    final response =
+        await http.post(Uri.parse("$url/api?tipo=set_doctor"), body: {
+      "id_doctor": 0,
+      "nombre": name,
+      "correo": mail,
+      'pass': password,
+      'pais': pais,
+      'dni': dni
+    });
+    var data = await jsonDecode(response.body);
+    print(data);
+    if (data['status'] == 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  updateDoctor(name, mail, passwordR, passwordN, pais, condition) async {
+    final prefs = await SharedPreferences.getInstance();
+
     try {
-      final response =
-      await http.post(Uri.parse("$url/api?tipo=set_doctor"), body: {
-        "id_doctor": 0,
-        "nombre": name,
-        "correo": mail,
-        'pass': password,
-        'pais':pais
-      });
+      final response = await http.post(Uri.parse("$url/api?tipo=update_doctor"),
+          body: condition
+              ? {
+                  "id_doctor": prefs.getString('idUser'),
+                  "nombre": name,
+                  "correo": mail,
+                  'contrasenaActual': passwordR,
+                  "contrasenaNueva": passwordN,
+                  'pais': pais
+                }
+              : {
+                  "id_doctor": prefs.getString('idUser'),
+                  "nombre": name,
+                  "correo": mail,
+                  'pais': pais
+                });
       var data = jsonDecode(response.body);
       print(data);
       if (data['status'] == 1) {
@@ -92,30 +122,23 @@ class Data {
     }
   }
 
-
-
-  updateDoctor(name,mail, passwordR,passwordN, pais) async {
+  getDoctorById() async {
     final prefs = await SharedPreferences.getInstance();
 
     try {
       final response =
-      await http.post(Uri.parse("$url/api?tipo=update_doctor"), body: {
-        "id_doctor": prefs.getString('idUser'),
-        "nombre": name,
-        "correo": mail,
-        'contrasenaActual': passwordR,
-        "contrasenaNueva":passwordN,
-        'pais':pais
+          await http.post(Uri.parse("$url/api?tipo=get_doctor"), body: {
+        'id_doctor': prefs.getString('idUser'),
       });
       var data = jsonDecode(response.body);
       print(data);
       if (data['status'] == 1) {
-        return true;
+        return data['response'];
       } else {
-        return false;
+        return {};
       }
     } catch (e) {
-      return false;
+      return {};
     }
   }
 }

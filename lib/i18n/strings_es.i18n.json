@@ -155,8 +155,13 @@
   "savePresTitle": "Confirmar",
   "savePresTitle1": "Prescripción ojo derecho",
   "savePresTitle2": "Prescripción ojo izquierdo",
-  "savePresSave": "Guardar"
+  "savePresSave": "Guardar",
+  "prescriptionBack": "Resumen",
+  "prescriptionButton1": "HISTORIAL DE PRESCRIPCIONES",
+  "prescriptionTitle1": "Historial de prescripciones",
 
+"toricModalTitle":"Ajuste del eje"
+,"toricModalSubTitle":"Nuevo resultado adaptado"
 
 
 

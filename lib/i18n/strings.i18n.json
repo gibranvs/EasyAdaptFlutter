@@ -154,7 +154,13 @@
   "savePresTitle": "Confirm",
   "savePresTitle1": "Right eye prescription",
   "savePresTitle2": "Left eye prescription",
-  "savePresSave": "Save"
+  "savePresSave": "Save",
+  "prescriptionBack": "Resume",
+  "prescriptionButton1": "PRESCRIPTION HISTORY",
+  "prescriptionTitle1": "Prescription history",
+
+  "toricModalTitle":"Shaft adjustment"
+  ,"toricModalSubTitle":"New adapted result"
 
   
 }
