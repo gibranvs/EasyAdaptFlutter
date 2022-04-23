@@ -74,20 +74,23 @@ class Data {
   register(name, mail, password, pais, dni) async {
     final response =
         await http.post(Uri.parse("$url/api?tipo=set_doctor"), body: {
-      "id_doctor": 0,
-      "nombre": name,
-      "correo": mail,
-      'pass': password,
-      'pais': pais,
-      'dni': dni
+      "id_doctor": "0",
+      "nombre": "name",
+      "correo": "mail@gmail.com",
+      'pass': 'password',
+      'pais': '4',
+      'dni': 'dni'
     });
-    var data = await jsonDecode(response.body);
-    print(data);
-    if (data['status'] == 1) {
-      return true;
-    } else {
-      return false;
-    }
+    // var data = await jsonDecode(response.body);
+    print(response.body);
+    print(response.statusCode);
+
+    // if (data['status'] == 1) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    return false;
   }
 
   updateDoctor(name, mail, passwordR, passwordN, pais, condition) async {
