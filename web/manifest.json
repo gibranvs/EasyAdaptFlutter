@@ -1,6 +1,6 @@
 {
-    "name": "easy_adapt",
-    "short_name": "easy_adapt",
+    "name": "easy",
+    "short_name": "easy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

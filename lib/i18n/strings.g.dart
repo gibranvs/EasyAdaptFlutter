@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 390 (130.0 per locale)
+ * Strings: 396 (132.0 per locale)
  *
- * Built on 2022-04-22 at 06:32 UTC
+ * Built on 2022-05-05 at 03:29 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -390,6 +390,8 @@ class _StringsEn {
 	String get calc4Title => 'Monovision Calculator';
 	String get calc1TitleSpherica => 'Spherical';
 	String get calc2TitleToric => 'Toric';
+	String get calc3TitleMultifocal => 'Multifocal';
+	String get calc4TitleMonovision => 'Monovision';
 	late final _StringsCalculatorEsfericosEn calculatorEsfericos = _StringsCalculatorEsfericosEn._(_root);
 	late final _StringsCalculatorToricosEn calculatorToricos = _StringsCalculatorToricosEn._(_root);
 	late final _StringsCalculatorMultifocalEn calculatorMultifocal = _StringsCalculatorMultifocalEn._(_root);
@@ -673,6 +675,8 @@ class _StringsEs implements _StringsEn {
 	@override String get calc4Title => 'Calculadora monovisión';
 	@override String get calc1TitleSpherica => 'Esféricos';
 	@override String get calc2TitleToric => 'Tóricos';
+	@override String get calc3TitleMultifocal => 'Multifocal';
+	@override String get calc4TitleMonovision => 'Monovisión';
 	@override late final _StringsCalculatorEsfericosEs calculatorEsfericos = _StringsCalculatorEsfericosEs._(_root);
 	@override late final _StringsCalculatorToricosEs calculatorToricos = _StringsCalculatorToricosEs._(_root);
 	@override late final _StringsCalculatorMultifocalEs calculatorMultifocal = _StringsCalculatorMultifocalEs._(_root);
@@ -956,6 +960,8 @@ class _StringsPt implements _StringsEn {
 	@override String get calc4Title => 'Calculadora Monovisão';
 	@override String get calc1TitleSpherica => 'Esférica';
 	@override String get calc2TitleToric => 'Tórica';
+	@override String get calc3TitleMultifocal => 'Multifocal';
+	@override String get calc4TitleMonovision => 'Monovisão';
 	@override late final _StringsCalculatorEsfericosPt calculatorEsfericos = _StringsCalculatorEsfericosPt._(_root);
 	@override late final _StringsCalculatorToricosPt calculatorToricos = _StringsCalculatorToricosPt._(_root);
 	@override late final _StringsCalculatorMultifocalPt calculatorMultifocal = _StringsCalculatorMultifocalPt._(_root);
@@ -1243,6 +1249,8 @@ extension on _StringsEn {
 			'calc4Title': 'Monovision Calculator',
 			'calc1TitleSpherica': 'Spherical',
 			'calc2TitleToric': 'Toric',
+			'calc3TitleMultifocal': 'Multifocal',
+			'calc4TitleMonovision': 'Monovision',
 			'calculatorEsfericos.text': 'To calculate \n \n1. Choose the type of lens \n2. Enter the corresponding data for each eye (right and/or left).',
 			'calculatorEsfericos.eyeRight': 'RIGHT',
 			'calculatorEsfericos.eyeLeft': 'LEFT',
@@ -1380,6 +1388,8 @@ extension on _StringsEs {
 			'calc4Title': 'Calculadora monovisión',
 			'calc1TitleSpherica': 'Esféricos',
 			'calc2TitleToric': 'Tóricos',
+			'calc3TitleMultifocal': 'Multifocal',
+			'calc4TitleMonovision': 'Monovisión',
 			'calculatorEsfericos.text': 'Para calcular \n \n1. Elige el tipo de lente \n2. Introduce los datos correspondientes para cada ojo (derecho y/o izquierdo).',
 			'calculatorEsfericos.eyeRight': 'DERECHO',
 			'calculatorEsfericos.eyeLeft': 'IZQUIERDO',
@@ -1517,6 +1527,8 @@ extension on _StringsPt {
 			'calc4Title': 'Calculadora Monovisão',
 			'calc1TitleSpherica': 'Esférica',
 			'calc2TitleToric': 'Tórica',
+			'calc3TitleMultifocal': 'Multifocal',
+			'calc4TitleMonovision': 'Monovisão',
 			'calculatorEsfericos.text': 'Para calcular \n \n1. Escolha o tipo de lente \n2. Insira os dados correspondentes para cada olho (direito e/ou esquerdo).',
 			'calculatorEsfericos.eyeRight': 'CERTO',
 			'calculatorEsfericos.eyeLeft': 'ESQUERDO',

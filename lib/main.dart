@@ -5,6 +5,7 @@ import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/state/player_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
+import 'package:easy_adapt/ui/widgets/calculadora_total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: getInitialRoute(prefs),
+      // initialRoute: getInitialRoute(prefs),
+      home: CalculadoraTotal(),
       routes: getRoutes(translation),
     );
   }

@@ -108,7 +108,8 @@
   ,"calc4Title":"Calculadora Monovisão",
   "calc1TitleSpherica":"Esférica",
   "calc2TitleToric":"Tórica",
-
+  "calc3TitleMultifocal":"Multifocal",
+  "calc4TitleMonovision":"Monovisão",
   "calculatorEsfericos":{
     "text":"Para calcular \n \n1. Escolha o tipo de lente \n2. Insira os dados correspondentes para cada olho (direito e/ou esquerdo).",
     "eyeRight":"CERTO",
