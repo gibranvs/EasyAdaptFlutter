@@ -1,10 +1,13 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
+import 'package:easy_adapt/ui/widgets/calculates/spherical_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_form_spherical.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_monovision.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_multifocal.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_toric.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculadoraTotal extends StatefulWidget {
@@ -50,7 +53,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                         ),
                         Builder(builder: (context) {
                           if (t.calc1TitleSpherica == selectedValueTypeR) {
-                            return CalculatorFormSpherical();
+                            return CalculatorFormSpherical(
+                              eye: 'R',
+                            );
                           }
                           if (t.calc2TitleToric == selectedValueTypeR) {
                             return CalculatorFormToric();
@@ -73,7 +78,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                         ),
                         Builder(builder: (context) {
                           if (t.calc1TitleSpherica == selectedValueTypeL) {
-                            return CalculatorFormSpherical();
+                            return CalculatorFormSpherical(eye: "L");
                           }
                           if (t.calc2TitleToric == selectedValueTypeL) {
                             return CalculatorFormToric();
@@ -115,7 +120,24 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
         Padding(
           padding: const EdgeInsets.only(left: 33, right: 33),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () async {
+              // ignore: unrelated_type_equality_checks
+              //RIGHT
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataRight['type'] ==
+                  'Spherical') {
+                await sphericalCalculatorRight(context);
+              }
+
+              //LEFT
+
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['type'] ==
+                  'Spherical') {
+                await sphericalCalculatorLeft(context);
+              }
+              Navigator.pushNamed(context, '/results');
+            },
             child: Container(
               width: double.infinity,
               height: 50,
@@ -157,6 +179,8 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
         value: selectedValueTypeL,
         icon: Container(),
         onChanged: (value) {
+          Provider.of<CalculatorTotalState>(context, listen: false)
+              .deleteDataLeft();
           setState(() {
             if (value == t.calc3TitleMultifocal) {
               selectedValueTypeL = t.calc3TitleMultifocal;
@@ -196,6 +220,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
         value: selectedValueTypeR,
         icon: Container(),
         onChanged: (value) {
+          Provider.of<CalculatorTotalState>(context, listen: false)
+              .deleteDataRight();
+
           setState(() {
             if (value == t.calc3TitleMultifocal) {
               selectedValueTypeL = t.calc3TitleMultifocal;

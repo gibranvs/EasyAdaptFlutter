@@ -1,10 +1,13 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorFormSpherical extends StatefulWidget {
-  CalculatorFormSpherical({Key? key}) : super(key: key);
+  final String eye;
+  CalculatorFormSpherical({Key? key, required this.eye}) : super(key: key);
 
   @override
   State<CalculatorFormSpherical> createState() =>
@@ -37,6 +40,14 @@ class _CalculatorFormSphericalState extends State<CalculatorFormSpherical> {
         onChanged: (value) {
           setState(() {
             selectedValueEsphereR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Spherical', 'Sphere', selectedValueEsphereR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft('Spherical', 'Sphere', selectedValueEsphereR);
+            }
           });
         },
       ),
@@ -59,6 +70,15 @@ class _CalculatorFormSphericalState extends State<CalculatorFormSpherical> {
         onChanged: (value) {
           setState(() {
             selectedValueDistanceR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Spherical', 'Distance', selectedValueDistanceR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Spherical', 'Distance', selectedValueDistanceR);
+            }
           });
         },
       ),

@@ -17,6 +17,7 @@ import 'package:easy_adapt/ui/pages/prescripcion/historial.dart';
 import 'package:easy_adapt/ui/pages/prescripcion/prescripcion.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
 import 'package:easy_adapt/ui/pages/terms.dart';
+import 'package:easy_adapt/ui/widgets/results/result.dart';
 
 getInitialRoute(pref) {
   if (pref.getBool('save') == true) {
@@ -63,6 +64,7 @@ getRoutes(t) {
     '/patients/add-patient': (context) => AddPatientsPage(
           t: t,
         ),
-    '/tutorials/video': (context) => VideoApp()
+    '/tutorials/video': (context) => VideoApp(),
+    '/results': (context) => ResultsAndProducts()
   };
 }

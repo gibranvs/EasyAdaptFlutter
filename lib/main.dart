@@ -1,6 +1,7 @@
 import 'package:easy_adapt/i18n/strings.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/state/player_state.dart';
@@ -31,6 +32,9 @@ void main() async {
       ),
       ListenableProvider<PatientState>(
         create: (_) => PatientState(),
+      ),
+      ListenableProvider<CalculatorTotalState>(
+        create: (_) => CalculatorTotalState(),
       )
     ],
     child: TranslationProvider(
