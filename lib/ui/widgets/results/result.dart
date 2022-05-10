@@ -1,8 +1,10 @@
 import 'package:easy_adapt/data/internal_data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
+import 'package:easy_adapt/ui/widgets/results/load_data_sphere.dart';
 import 'package:flutter/material.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
@@ -39,64 +41,90 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
 
     switch (LocaleSettings.currentLocale.languageTag) {
       case "es":
-        productsSphereEs.forEach((element) {
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphereRound'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphereRound']) {
-            dataProductsR.add(element);
-          }
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphereRound'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphereRound']) {
-            dataProductsL.add(element);
-          }
-        });
+        //SHPERICAL PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+
         break;
       case "en":
-        productsSphereEn.forEach((element) {
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere']) {
-            dataProductsR.add(element);
-          }
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere']) {
-            dataProductsL.add(element);
-          }
-        });
+        //SHPERICAL PRODUCTS
+
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+
         break;
       case "pt":
-        productsSpherePt.forEach((element) {
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['right']['esphere']) {
-            dataProductsR.add(element);
-          }
-          if (double.parse(element['maxPS']) >
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere'] &&
-              double.parse(element['minPS']) <
-                  Provider.of<CalculatorState>(context, listen: false)
-                      .calculator_data['left']['esphere']) {
-            dataProductsL.add(element);
-          }
-        });
+        //SHPERICAL PRODUCTS
+
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Spherical') {
+          var finalData = loadProductsSphere(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+
         break;
       default:
     }
@@ -148,15 +176,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            right == true
-                                ? Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['right']['esphere']
-                                    .toStringAsFixed(2)
-                                : Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['left']['esphere']
-                                    .toStringAsFixed(2),
+                            '',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -173,15 +193,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            right == true
-                                ? Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['right']['distance']
-                                    .toString()
-                                : Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['left']['distance']
-                                    .toString(),
+                            '',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -223,15 +235,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            right == true
-                                ? Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['right']['esphereRound']
-                                    .toStringAsFixed(2)
-                                : Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['left']['esphereRound']
-                                    .toStringAsFixed(2),
+                            '',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -248,15 +252,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            right == true
-                                ? Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['right']['distance']
-                                    .toString()
-                                : Provider.of<CalculatorState>(context,
-                                        listen: false)
-                                    .calculator_data['left']['distance']
-                                    .toString(),
+                            '',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -308,16 +304,16 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                   dataProductsR[index]['descriptionPS'],
                   dataProductsR[index]['imagePS'],
                   right == true
-                      ? Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['right']['esphereRound']
+                      ? Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataRight['response']['esphereRound']
                           .toStringAsFixed(2)
                       : Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['left']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? double.parse(Provider.of<CalculatorState>(context,
+                      ? double.parse(Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .calculator_data['right']['distance'])
+                              .dataRight['data']['Distance'])
                           .toStringAsFixed(2)
                       : double.parse(Provider.of<CalculatorState>(context,
                                   listen: false)
@@ -352,18 +348,21 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['right']['esphereRound']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['left']['esphereRound']
+                      : Provider.of<CalculatorTotalState>(context,
+                              listen: false)
+                          .dataLeft['response']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['right']['distance']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorState>(context, listen: false)
-                                  .calculator_data['left']['distance'] !=
+                      : Provider.of<CalculatorTotalState>(context,
+                                      listen: false)
+                                  .dataLeft['data']['Distance'] !=
                               null
-                          ? Provider.of<CalculatorState>(context, listen: false)
-                              .calculator_data['left']['distance']
+                          ? Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['data']['Distance']
                               .toString()
                           : "",
                   '',
