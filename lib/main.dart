@@ -60,8 +60,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
       theme: ThemeData(primarySwatch: Colors.blue),
-      // initialRoute: getInitialRoute(prefs),
-      home: CalculadoraTotal(),
+      initialRoute: getInitialRoute(prefs),
+      // home: CalculadoraTotal(),
       routes: getRoutes(translation),
     );
   }

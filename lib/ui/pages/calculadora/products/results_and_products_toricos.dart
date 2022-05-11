@@ -531,7 +531,7 @@ class _ResultsAndProductsPageToricos
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsR[index]));
+              }, dataProductsR[index], 'calculator'));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -582,7 +582,7 @@ class _ResultsAndProductsPageToricos
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsL[index]));
+              }, dataProductsL[index], 'calculator'));
     }
   }
 

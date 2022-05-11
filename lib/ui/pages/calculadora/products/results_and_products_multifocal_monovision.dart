@@ -191,7 +191,8 @@ class _ResultsAndProductsPageMultifocalMonovision
               SizedBox(
                 height: 10,
               ),
-              productModel(3, context, "", "", '', '', '', '', '', false, () {},{})
+              productModel(3, context, "", "", '', '', '', '', '', false, () {},
+                  {}, 'calculator')
             ],
           ),
         ),

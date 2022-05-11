@@ -17,6 +17,7 @@ import 'package:easy_adapt/ui/pages/prescripcion/historial.dart';
 import 'package:easy_adapt/ui/pages/prescripcion/prescripcion.dart';
 import 'package:easy_adapt/ui/pages/register_page.dart';
 import 'package:easy_adapt/ui/pages/terms.dart';
+import 'package:easy_adapt/ui/widgets/calculadora_total.dart';
 import 'package:easy_adapt/ui/widgets/results/result.dart';
 
 getInitialRoute(pref) {
@@ -65,6 +66,7 @@ getRoutes(t) {
           t: t,
         ),
     '/tutorials/video': (context) => VideoApp(),
+    '/calculator-total': (context) => CalculadoraTotal(),
     '/results': (context) => ResultsAndProducts()
   };
 }

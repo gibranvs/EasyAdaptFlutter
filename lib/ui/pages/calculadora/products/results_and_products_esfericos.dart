@@ -20,7 +20,7 @@ class _ResultsAndProductsPageEsferico
   late bool right;
   List dataProductsR = [];
   List dataProductsL = [];
-final ScrollController _controller = ScrollController();
+  final ScrollController _controller = ScrollController();
   @override
   void didChangeDependencies() {
     loadData();
@@ -28,6 +28,7 @@ final ScrollController _controller = ScrollController();
 
     super.didChangeDependencies();
   }
+
   @override
   void dispose() {
     _controller.dispose(); // dispose the controller
@@ -106,7 +107,6 @@ final ScrollController _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _controller,
@@ -117,11 +117,13 @@ final ScrollController _controller = ScrollController();
               patients_card_model(),
               eyes(context, () {
                 setState(() {
-                  Provider.of<ResultState>(context,listen: false).changeRightValue(true);
+                  Provider.of<ResultState>(context, listen: false)
+                      .changeRightValue(true);
                 });
               }, () {
                 setState(() {
-                  Provider.of<ResultState>(context,listen: false).changeRightValue(false);
+                  Provider.of<ResultState>(context, listen: false)
+                      .changeRightValue(false);
                 });
               }),
               SizedBox(
@@ -319,24 +321,26 @@ final ScrollController _controller = ScrollController();
                                   listen: false)
                               .calculator_data['right']['distance'])
                           .toStringAsFixed(2)
-                      : double.parse(Provider.of<CalculatorState>(context,
-                                  listen: false)
-                              .calculator_data['left']['distance'])
+                      : double.parse(
+                              Provider.of<CalculatorState>(context, listen: false)
+                                  .calculator_data['left']['distance'])
                           .toStringAsFixed(2),
                   '',
                   '',
                   true, () {
                 setState(() {
                   _controller.animateTo(0,
-                      duration: const Duration(milliseconds: 500), curve: Curves.linear);
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.linear);
                   if (right) {
-                    Provider.of<ResultState>(context,listen: false).changeRightValue(false);
-
+                    Provider.of<ResultState>(context, listen: false)
+                        .changeRightValue(false);
                   } else {
-                    Provider.of<ResultState>(context,listen: false).changeRightValue(true);
+                    Provider.of<ResultState>(context, listen: false)
+                        .changeRightValue(true);
                   }
                 });
-              },dataProductsR.isNotEmpty ? dataProductsR[index] : {} ));
+              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}, 'calculator'));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -367,17 +371,20 @@ final ScrollController _controller = ScrollController();
                   '',
                   '',
                   right, () {
-                setState(() { _controller.animateTo(0,
-                    duration: const Duration(milliseconds: 500), curve: Curves.linear);
+                setState(() {
+                  _controller.animateTo(0,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.linear);
                   if (right) {
-                    Provider.of<ResultState>(context,listen: false).changeRightValue(false);
-
+                    Provider.of<ResultState>(context, listen: false)
+                        .changeRightValue(false);
                   } else {
-                    Provider.of<ResultState>(context,listen: false).changeRightValue(true);
-
+                    Provider.of<ResultState>(context, listen: false)
+                        .changeRightValue(true);
                   }
                 });
-              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {} ));
+              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
+                  'calculator'));
     }
   }
 

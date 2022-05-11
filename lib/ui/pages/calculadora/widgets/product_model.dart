@@ -3,25 +3,27 @@ import 'package:easy_adapt/ui/pages/calculadora/widgets/bottom_shet_toricos.dart
 import 'package:flutter/material.dart';
 
 productModel(index, context, name, desc, path, sphere, distance, cylinder, axis,
-    right, onNo, product) {
+    right, onNo, product, screen) {
   return Container(
     margin: EdgeInsets.all(10.0),
     child: GestureDetector(
       onTap: () async {
-        switch (index) {
-          case 1:
-            getBottomShetEsferico().get(
-                context, name, path, sphere, distance, onNo, right, product);
-            break;
-          case 2:
-            getBottomShetToricos().get(context, name, path, sphere, cylinder,
-                axis, onNo, right, product);
-            break;
-          case 3:
-            getBottomShetEsferico()
-                .get(context, name, path, '', '', onNo, right, product);
-            break;
-          default:
+        if (screen != 'inicial') {
+          switch (index) {
+            case 1:
+              getBottomShetEsferico().get(
+                  context, name, path, sphere, distance, onNo, right, product);
+              break;
+            case 2:
+              getBottomShetToricos().get(context, name, path, sphere, cylinder,
+                  axis, onNo, right, product);
+              break;
+            case 3:
+              getBottomShetEsferico()
+                  .get(context, name, path, '', '', onNo, right, product);
+              break;
+            default:
+          }
         }
       },
       child: Column(

@@ -74,16 +74,22 @@ class _InitialPage extends State<InitialPage> {
                     height: 20,
                   ),
                   Center(
-                    child: Container(
-                      width: 320,
-                      height: 50,
-                      decoration: const BoxDecoration(
-                          color: Color.fromRGBO(129, 181, 178, 1.0),
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: Center(
-                        child: Text(
-                          t.calculatorTitleHomeScreen,
-                          style: TextStyle(color: Colors.white, fontSize: 17),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/calculator-total');
+                      },
+                      child: Container(
+                        width: 320,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(129, 181, 178, 1.0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(25))),
+                        child: Center(
+                          child: Text(
+                            t.calculatorTitleHomeScreen,
+                            style: TextStyle(color: Colors.white, fontSize: 17),
+                          ),
                         ),
                       ),
                     ),

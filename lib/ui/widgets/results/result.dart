@@ -5,6 +5,7 @@ import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:easy_adapt/ui/widgets/results/load_data_sphere.dart';
+import 'package:easy_adapt/ui/widgets/results/spherical_result_text.dart';
 import 'package:flutter/material.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
@@ -140,7 +141,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               getAppBarCalculators(context),
-              patients_card_model(),
+              // patients_card_model(),
               eyes(context, () {
                 setState(() {
                   Provider.of<ResultState>(context, listen: false)
@@ -152,123 +153,47 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       .changeRightValue(false);
                 });
               }),
-              SizedBox(
-                height: 2,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  t.calculatorResultsTitle1,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 80,
-                  color: Color.fromRGBO(129, 181, 178, 1.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            t.calculatorEsfericos.esphere.toLowerCase(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            t.calculatorEsfericos.distance.toLowerCase(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  t.calculatorResultsTitle2,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 80,
-                  color: Color.fromARGB(255, 7, 69, 163),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            t.calculatorEsfericos.esphere.toLowerCase(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            t.calculatorEsfericos.distance.toLowerCase(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              Builder(builder: (context) {
+                if (right) {
+                  switch (
+                      Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataRight['type']) {
+                    case 'Spherical':
+                      return getSphericalTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphere'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphereRound']);
+
+                    default:
+                      return Container();
+                  }
+                } else {
+                  switch (
+                      Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataLeft['type']) {
+                    case 'Spherical':
+                      return getSphericalTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphere'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphereRound']);
+
+                    default:
+                      return Container();
+                  }
+                }
+              }),
               SizedBox(
                 height: 10,
               ),
@@ -315,9 +240,9 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                                   listen: false)
                               .dataRight['data']['Distance'])
                           .toStringAsFixed(2)
-                      : double.parse(Provider.of<CalculatorState>(context,
-                                  listen: false)
-                              .calculator_data['left']['distance'])
+                      : double.parse(
+                              Provider.of<CalculatorState>(context, listen: false)
+                                  .calculator_data['left']['distance'])
                           .toStringAsFixed(2),
                   '',
                   '',
@@ -334,7 +259,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}));
+              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}, 'inicial'));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -380,7 +305,8 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {}));
+              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
+                  'inicial'));
     }
   }
 
