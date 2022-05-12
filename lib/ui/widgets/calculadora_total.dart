@@ -38,8 +38,8 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
           height: double.infinity,
           child: ListView(
             children: [
-              _text(),
               Padding(padding: const EdgeInsets.all(8.0), child: eyes(context)),
+              _text(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(

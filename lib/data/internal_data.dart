@@ -76,7 +76,7 @@ List productsSphereEs = [
     "namePS": "Biotrue ONEday",
     "descriptionPS":
         "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas.",
-    "max": "6.25",
+    "maxPS": "6.25",
     "minPS": "-9.25",
     "daysPS": "180",
     "imagePS": "./assets/calculators/biotrue_one_day.png"

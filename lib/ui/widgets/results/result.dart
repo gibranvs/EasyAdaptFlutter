@@ -6,6 +6,7 @@ import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart'
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:easy_adapt/ui/widgets/results/load_data_sphere.dart';
 import 'package:easy_adapt/ui/widgets/results/spherical_result_text.dart';
+import 'package:easy_adapt/ui/widgets/results/toric_result_text.dart';
 import 'package:flutter/material.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
@@ -257,6 +258,24 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataRight['response']['esphereRound']);
+                    case 'Toric':
+                      return getToricTextResult(
+                          Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataRight['response']['esphere'],
+                          Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataRight['response']['distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['axis'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['cylinder'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['cylinderRound']);
 
                     default:
                       return Container();
@@ -276,6 +295,24 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataLeft['response']['esphereRound']);
+                    case 'Toric':
+                      return getToricTextResult(
+                          Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataLeft['response']['esphere'],
+                          Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataLeft['response']['distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['axis'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['cylinder'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['cylinderRound']);
 
                     default:
                       return Container();

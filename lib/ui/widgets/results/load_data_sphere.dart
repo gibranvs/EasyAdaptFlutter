@@ -6,12 +6,15 @@ loadProductsSphere(context, code, condition) {
   List dataProducts = [];
   switch (code) {
     case 'es':
-      productsSphereEs.forEach((element) {
-        if (double.parse(element['maxPS']) > condition &&
-            double.parse(element['minPS']) < condition) {
-          dataProducts.add(element);
-        }
-      });
+      if (condition != null) {
+        productsSphereEs.forEach((element) {
+          if (double.parse(element['maxPS']) > condition &&
+              double.parse(element['minPS']) < condition) {
+            dataProducts.add(element);
+          }
+        });
+      }
+
       break;
     case 'en':
       if (condition != null) {
