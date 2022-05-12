@@ -61,7 +61,7 @@ getMultifocalTextResult(sphera, distancia, spheraRound, add) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "12",
+                    distancia.toString() == 'null' ? "0" : distancia.toString(),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -100,7 +100,7 @@ getMultifocalTextResult(sphera, distancia, spheraRound, add) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "-2.12",
+                    spheraRound.toStringAsFixed(2),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -130,7 +130,7 @@ getMultifocalTextResult(sphera, distancia, spheraRound, add) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "12",
+                    distancia.toString() == 'null' ? "0" : distancia.toString(),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),

@@ -107,7 +107,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataRight['response']['esphereFinal'],
+                .dataRight['response']['esphereRound'],
           );
           setState(() {
             dataProductsR = finalData;
@@ -120,7 +120,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataLeft['response']['esphereFinal'],
+                .dataLeft['response']['esphereRound'],
           );
           setState(() {
             dataProductsL = finalData;
@@ -193,7 +193,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataRight['response']['esphereFinal'],
+                .dataRight['response']['esphereRound'],
           );
           setState(() {
             dataProductsR = finalData;
@@ -206,7 +206,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataLeft['response']['esphereFinal'],
+                .dataLeft['response']['esphereRound'],
           );
           setState(() {
             dataProductsL = finalData;
@@ -277,7 +277,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataRight['response']['esphereFinal'],
+                .dataRight['response']['esphereRound'],
           );
           setState(() {
             dataProductsR = finalData;
@@ -290,7 +290,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataLeft['response']['esphereFinal'],
+                .dataLeft['response']['esphereRound'],
           );
           setState(() {
             dataProductsL = finalData;
@@ -363,7 +363,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       return getMultifocalTextResult(
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataRight['response']['esphereRound'],
+                              .dataRight['response']['sphere'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataRight['data']['Distance'],
@@ -415,7 +415,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       return getMultifocalTextResult(
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataLeft['response']['esphereRound'],
+                              .dataLeft['response']['sphere'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataLeft['data']['Distance'],

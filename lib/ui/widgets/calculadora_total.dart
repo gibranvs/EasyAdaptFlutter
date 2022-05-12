@@ -164,49 +164,53 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   'Multifocal') {
                 await multifocalCalculatorLeft(context);
               }
-              // Navigator.pushNamed(context, '/results');
+
+              /////////////////////////////Navigator Multifocal
+
               if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataRight['type'] ==
-                  'Multifocal') {
-                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Cylinder'] ?? "0.0") < 0 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                            .dataRight['data']['Cylinder']) >
+                          .dataRight['type'] ==
+                      'Multifocal' &&
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataLeft['type'] ==
+                      'Multifocal') {
+                if (double.parse(
+                            Provider.of<CalculatorTotalState>(context, listen: false)
+                                    .dataRight['data']['Cylinder'] ??
+                                "0.0") <=
+                        0 &&
+                    double.parse(
+                            Provider.of<CalculatorTotalState>(context, listen: false)
+                                .dataRight['data']['Cylinder']) >=
                         -1 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                                .dataRight['data']['Sphere'])
-                            .toInt()
-                            .abs() >=
-                        (3 *
-                            (double.parse(
-                                    Provider.of<CalculatorTotalState>(context, listen: false)
-                                        .dataRight['data']['Cylinder'])
-                                .toInt()
-                                .abs()))) {
-                  Navigator.pushNamed(context, '/results');
-                } else {
-                  print('no se puede');
-                }
-              } else if (Provider.of<CalculatorTotalState>(context,
-                          listen: false)
-                      .dataLeft['type'] ==
-                  'Multifocal') {
-                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder']) < 0 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                            .dataLeft['data']['Sphere']) >
-                        -1 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                                .dataLeft['data']['Cylinder'])
-                            .toInt()
-                            .abs() >=
-                        (3 *
-                            (double.parse(
-                                    Provider.of<CalculatorTotalState>(context, listen: false)
-                                        .dataLeft['data']['Cylinder'])
-                                .toInt()
-                                .abs()))) {
-                  Navigator.pushNamed(context, '/results');
-                } else {
-                  print('no se puede');
+                    double.parse(
+                            Provider.of<CalculatorTotalState>(context, listen: false)
+                                    .dataLeft['data']['Cylinder'] ??
+                                "0.0") <=
+                        0 &&
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder']) >= -1) {
+                  //////////////////////////////////////////// revisar validacion
+                  if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Sphere'])
+                              .toInt()
+                              .abs() >=
+                          (3 *
+                              (double.parse(Provider.of<CalculatorTotalState>(
+                                          context,
+                                          listen: false)
+                                      .dataRight['data']['Cylinder'])
+                                  .toInt()
+                                  .abs())) &&
+                      double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Sphere'])
+                              .toInt()
+                              .abs() >=
+                          (3 *
+                              (double.parse(
+                                      Provider.of<CalculatorTotalState>(context, listen: false)
+                                          .dataLeft['data']['Cylinder'])
+                                  .toInt()
+                                  .abs()))) {
+                    Navigator.pushNamed(context, '/results');
+                  }
+                  // Navigator.pushNamed(context, '/results');
                 }
               } else {
                 Navigator.pushNamed(context, '/results');

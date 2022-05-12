@@ -20,6 +20,8 @@ multifocalCalculatorRight(context) {
     sphereFinal = tempEsphereR;
   }
   Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseRight('sphere', sphereEquivalent);
+  Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('esphereRound', sphereFinal);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('dominante', dataProvider['Dominante']);
@@ -52,6 +54,8 @@ multifocalCalculatorLeft(context) {
       sphereFinal = resultRoundR;
     }
   }
+  Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseLeft('sphere', sphereEquivalent);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('esphereRound', sphereFinal);
   Provider.of<CalculatorTotalState>(context, listen: false)
