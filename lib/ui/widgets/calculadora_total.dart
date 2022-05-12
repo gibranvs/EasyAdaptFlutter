@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
+import 'package:easy_adapt/ui/widgets/calculates/multifocal_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/spherical_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/toric_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_form_spherical.dart';
@@ -64,7 +65,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             );
                           }
                           if (t.calc3TitleMultifocal == selectedValueTypeR) {
-                            return CalculatorFormMultifocal();
+                            return CalculatorFormMultifocal(
+                              eye: 'R',
+                            );
                           }
                           if (t.calc4TitleMonovision == selectedValueTypeR) {
                             return CalculatorFormMonovision();
@@ -87,7 +90,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             return CalculatorFormToric(eye: "L");
                           }
                           if (t.calc3TitleMultifocal == selectedValueTypeL) {
-                            return CalculatorFormMultifocal();
+                            return CalculatorFormMultifocal(
+                              eye: 'L',
+                            );
                           }
                           if (t.calc4TitleMonovision == selectedValueTypeL) {
                             return CalculatorFormMonovision();
@@ -136,6 +141,11 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   'Toric') {
                 await toricCalculatorRight(context);
               }
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataRight['type'] ==
+                  'Multifocal') {
+                await multifocalCalculatorRight(context);
+              }
 
               //LEFT
 
@@ -149,7 +159,58 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   'Toric') {
                 await toricCalculatorLeft(context);
               }
-              Navigator.pushNamed(context, '/results');
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['type'] ==
+                  'Multifocal') {
+                await multifocalCalculatorLeft(context);
+              }
+              // Navigator.pushNamed(context, '/results');
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataRight['type'] ==
+                  'Multifocal') {
+                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Cylinder'] ?? "0.0") < 0 &&
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
+                            .dataRight['data']['Cylinder']) >
+                        -1 &&
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
+                                .dataRight['data']['Sphere'])
+                            .toInt()
+                            .abs() >=
+                        (3 *
+                            (double.parse(
+                                    Provider.of<CalculatorTotalState>(context, listen: false)
+                                        .dataRight['data']['Cylinder'])
+                                .toInt()
+                                .abs()))) {
+                  Navigator.pushNamed(context, '/results');
+                } else {
+                  print('no se puede');
+                }
+              } else if (Provider.of<CalculatorTotalState>(context,
+                          listen: false)
+                      .dataLeft['type'] ==
+                  'Multifocal') {
+                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder']) < 0 &&
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
+                            .dataLeft['data']['Sphere']) >
+                        -1 &&
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
+                                .dataLeft['data']['Cylinder'])
+                            .toInt()
+                            .abs() >=
+                        (3 *
+                            (double.parse(
+                                    Provider.of<CalculatorTotalState>(context, listen: false)
+                                        .dataLeft['data']['Cylinder'])
+                                .toInt()
+                                .abs()))) {
+                  Navigator.pushNamed(context, '/results');
+                } else {
+                  print('no se puede');
+                }
+              } else {
+                Navigator.pushNamed(context, '/results');
+              }
             },
             child: Container(
               width: double.infinity,
@@ -345,6 +406,13 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               onChanged: (value) {
                 setState(() {
                   selectedValueD = value;
+
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .changeDataRight(
+                          'Multifocal', 'Dominante', selectedValueD);
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .changeDataLeft(
+                          'Multifocal', 'Dominante', selectedValueD);
                 });
               },
             ),
@@ -367,6 +435,10 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               onChanged: (value) {
                 setState(() {
                   selectedValueAdd = value;
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .changeDataRight('Multifocal', 'Add', selectedValueAdd);
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .changeDataLeft('Multifocal', 'Add', selectedValueAdd);
                 });
               },
             ),

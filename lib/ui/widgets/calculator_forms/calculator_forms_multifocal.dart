@@ -1,10 +1,14 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorFormMultifocal extends StatefulWidget {
-  CalculatorFormMultifocal({Key? key}) : super(key: key);
+  final String eye;
+
+  CalculatorFormMultifocal({Key? key, required this.eye}) : super(key: key);
 
   @override
   State<CalculatorFormMultifocal> createState() => _CalculatorFormMultifocal();
@@ -42,6 +46,15 @@ class _CalculatorFormMultifocal extends State<CalculatorFormMultifocal> {
         onChanged: (value) {
           setState(() {
             selectedValueEsphereR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Multifocal', 'Sphere', selectedValueEsphereR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Multifocal', 'Sphere', selectedValueEsphereR);
+            }
           });
         },
       ),
@@ -64,6 +77,15 @@ class _CalculatorFormMultifocal extends State<CalculatorFormMultifocal> {
         onChanged: (value) {
           setState(() {
             selectedValueDistanceR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Multifocal', 'Distance', selectedValueDistanceR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Multifocal', 'Distance', selectedValueDistanceR);
+            }
           });
         },
       ),
@@ -86,6 +108,15 @@ class _CalculatorFormMultifocal extends State<CalculatorFormMultifocal> {
         onChanged: (value) {
           setState(() {
             selectedValueCylinderR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Multifocal', 'Cylinder', selectedValueCylinderR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Multifocal', 'Cylinder', selectedValueCylinderR);
+            }
           });
         },
       ),

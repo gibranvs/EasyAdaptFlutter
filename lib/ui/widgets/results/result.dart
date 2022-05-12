@@ -5,6 +5,7 @@ import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:easy_adapt/ui/widgets/results/load_data_sphere.dart';
+import 'package:easy_adapt/ui/widgets/results/multifocal_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/spherical_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/toric_result_text.dart';
 import 'package:flutter/material.dart';
@@ -98,6 +99,34 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           });
         }
 
+        //Multifocal PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'es',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['response']['esphereFinal'],
+          );
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'es',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['response']['esphereFinal'],
+          );
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+
         break;
       case "en":
         //SHPERICAL PRODUCTS
@@ -156,6 +185,33 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             dataProductsL = finalData;
           });
         }
+        //Multifocal PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'en',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['response']['esphereFinal'],
+          );
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'en',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['response']['esphereFinal'],
+          );
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
 
         break;
       case "pt":
@@ -210,6 +266,32 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                   .dataLeft['response']['esphereRound'],
               Provider.of<CalculatorTotalState>(context, listen: false)
                   .dataLeft['response']['cylinderRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        } //Multifocal PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'pt',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['response']['esphereFinal'],
+          );
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Multifocal') {
+          var finalData = loadProductsSphere(
+            context,
+            'pt',
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['response']['esphereFinal'],
+          );
           setState(() {
             dataProductsL = finalData;
           });
@@ -277,6 +359,21 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                                   listen: false)
                               .dataRight['response']['cylinderRound']);
 
+                    case 'Multifocal':
+                      return getMultifocalTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['data']['Distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['data']['Add']);
+
                     default:
                       return Container();
                   }
@@ -313,6 +410,21 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataLeft['response']['cylinderRound']);
+
+                    case 'Multifocal':
+                      return getMultifocalTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['data']['Distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['add']);
 
                     default:
                       return Container();
