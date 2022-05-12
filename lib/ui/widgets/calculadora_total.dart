@@ -2,6 +2,7 @@ import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/ui/widgets/calculates/spherical_calculator.dart';
+import 'package:easy_adapt/ui/widgets/calculates/toric_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_form_spherical.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_monovision.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_multifocal.dart';
@@ -58,7 +59,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             );
                           }
                           if (t.calc2TitleToric == selectedValueTypeR) {
-                            return CalculatorFormToric();
+                            return CalculatorFormToric(
+                              eye: 'R',
+                            );
                           }
                           if (t.calc3TitleMultifocal == selectedValueTypeR) {
                             return CalculatorFormMultifocal();
@@ -81,7 +84,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             return CalculatorFormSpherical(eye: "L");
                           }
                           if (t.calc2TitleToric == selectedValueTypeL) {
-                            return CalculatorFormToric();
+                            return CalculatorFormToric(eye: "L");
                           }
                           if (t.calc3TitleMultifocal == selectedValueTypeL) {
                             return CalculatorFormMultifocal();
@@ -128,6 +131,11 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   'Spherical') {
                 await sphericalCalculatorRight(context);
               }
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataRight['type'] ==
+                  'Toric') {
+                await toricCalculatorRight(context);
+              }
 
               //LEFT
 
@@ -135,6 +143,11 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                       .dataLeft['type'] ==
                   'Spherical') {
                 await sphericalCalculatorLeft(context);
+              }
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['type'] ==
+                  'Toric') {
+                await toricCalculatorLeft(context);
               }
               Navigator.pushNamed(context, '/results');
             },

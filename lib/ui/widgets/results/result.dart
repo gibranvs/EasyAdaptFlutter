@@ -67,6 +67,35 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             dataProductsL = finalData;
           });
         }
+        //Toric PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['cylinderRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['cylinderRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
 
         break;
       case "en":
@@ -97,6 +126,36 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           });
         }
 
+        //Toric PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['cylinderRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['cylinderRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+
         break;
       case "pt":
         //SHPERICAL PRODUCTS
@@ -121,6 +180,35 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
               'pt',
               Provider.of<CalculatorTotalState>(context, listen: false)
                   .dataLeft['response']['esphereRound']);
+          setState(() {
+            dataProductsL = finalData;
+          });
+        }
+        //Toric PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['cylinderRound']);
+          setState(() {
+            dataProductsR = finalData;
+          });
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Toric') {
+          var finalData = loadProductsToric(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['cylinderRound']);
           setState(() {
             dataProductsL = finalData;
           });

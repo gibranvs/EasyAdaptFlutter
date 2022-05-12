@@ -1,10 +1,14 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorFormToric extends StatefulWidget {
-  CalculatorFormToric({Key? key}) : super(key: key);
+  final String eye;
+
+  CalculatorFormToric({Key? key, required this.eye}) : super(key: key);
 
   @override
   State<CalculatorFormToric> createState() => _CalculatorFormToric();
@@ -43,6 +47,13 @@ class _CalculatorFormToric extends State<CalculatorFormToric> {
         onChanged: (value) {
           setState(() {
             selectedValueEsphereR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight('Toric', 'Sphere', selectedValueEsphereR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft('Toric', 'Sphere', selectedValueEsphereR);
+            }
           });
         },
       ),
@@ -65,6 +76,13 @@ class _CalculatorFormToric extends State<CalculatorFormToric> {
         onChanged: (value) {
           setState(() {
             selectedValueDistanceR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight('Toric', 'Distance', selectedValueDistanceR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft('Toric', 'Distance', selectedValueDistanceR);
+            }
           });
         },
       ),
@@ -87,6 +105,13 @@ class _CalculatorFormToric extends State<CalculatorFormToric> {
         onChanged: (value) {
           setState(() {
             selectedValueAxisR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight('Toric', 'Axis', selectedValueAxisR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft('Toric', 'Axis', selectedValueAxisR);
+            }
           });
         },
       ),
@@ -109,6 +134,13 @@ class _CalculatorFormToric extends State<CalculatorFormToric> {
         onChanged: (value) {
           setState(() {
             selectedValueCylinderR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight('Toric', 'Cylinder', selectedValueCylinderR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft('Toric', 'Cylinder', selectedValueCylinderR);
+            }
           });
         },
       ),

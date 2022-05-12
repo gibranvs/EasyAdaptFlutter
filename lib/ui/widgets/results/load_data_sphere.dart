@@ -35,3 +35,42 @@ loadProductsSphere(context, code, condition) {
   }
   return dataProducts;
 }
+
+loadProductsToric(context, code, condition, condition2) {
+  List dataProducts = [];
+
+  switch (code) {
+    case 'es':
+      productsToricosEs.forEach((element) {
+        if (double.parse(element['maxPS']) > condition &&
+            double.parse(element['minPS']) < condition &&
+            double.parse(element['cylinderMax']) > condition2 &&
+            double.parse(element['cylinderMin']) < condition2) {
+          dataProducts.add(element);
+        }
+      });
+      break;
+    case 'en':
+      productsToricosEn.forEach((element) {
+        if (double.parse(element['maxPS']) > condition &&
+            double.parse(element['minPS']) < condition &&
+            double.parse(element['cylinderMax']) > condition2 &&
+            double.parse(element['cylinderMin']) < condition2) {
+          dataProducts.add(element);
+        }
+      });
+      break;
+    case 'pt':
+      productsToricosPt.forEach((element) {
+        if (double.parse(element['maxPS']) > condition &&
+            double.parse(element['minPS']) < condition &&
+            double.parse(element['cylinderMax']) > condition2 &&
+            double.parse(element['cylinderMin']) < condition2) {
+          dataProducts.add(element);
+        }
+      });
+      break;
+    default:
+  }
+  return dataProducts;
+}
