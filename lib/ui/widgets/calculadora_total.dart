@@ -9,6 +9,7 @@ import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_monovisi
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_multifocal.dart';
 import 'package:easy_adapt/ui/widgets/calculator_forms/calculator_forms_toric.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
@@ -70,7 +71,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             );
                           }
                           if (t.calc4TitleMonovision == selectedValueTypeR) {
-                            return CalculatorFormMonovision();
+                            return CalculatorFormMonovision(
+                              eye: 'R',
+                            );
                           }
                           return Container();
                         })
@@ -95,7 +98,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             );
                           }
                           if (t.calc4TitleMonovision == selectedValueTypeL) {
-                            return CalculatorFormMonovision();
+                            return CalculatorFormMonovision(eye: 'L',);
                           }
                           return Container();
                         })
@@ -173,11 +176,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataLeft['type'] ==
                       'Multifocal') {
-                if (double.parse(
-                            Provider.of<CalculatorTotalState>(context, listen: false)
-                                    .dataRight['data']['Cylinder'] ??
-                                "0.0") <=
-                        0 &&
+                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Cylinder'] ?? "0.0") <= 0 &&
                     double.parse(
                             Provider.of<CalculatorTotalState>(context, listen: false)
                                 .dataRight['data']['Cylinder']) >=
@@ -187,30 +186,61 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                                     .dataLeft['data']['Cylinder'] ??
                                 "0.0") <=
                         0 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder']) >= -1) {
+                    double.parse(
+                            Provider.of<CalculatorTotalState>(context, listen: false)
+                                    .dataLeft['data']['Cylinder'] ??
+                                "0.0") >=
+                        -1) {
                   //////////////////////////////////////////// revisar validacion
                   if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Sphere'])
                               .toInt()
                               .abs() >=
                           (3 *
-                              (double.parse(Provider.of<CalculatorTotalState>(
-                                          context,
-                                          listen: false)
+                              (double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
                                       .dataRight['data']['Cylinder'])
                                   .toInt()
                                   .abs())) &&
-                      double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Sphere'])
+                      double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Sphere'] ?? "0.0")
                               .toInt()
                               .abs() >=
                           (3 *
-                              (double.parse(
-                                      Provider.of<CalculatorTotalState>(context, listen: false)
-                                          .dataLeft['data']['Cylinder'])
+                              (double.parse(Provider.of<CalculatorTotalState>(context,
+                                              listen: false)
+                                          .dataLeft['data']['Cylinder'] ??
+                                      "0.0")
                                   .toInt()
                                   .abs()))) {
                     Navigator.pushNamed(context, '/results');
                   }
                   // Navigator.pushNamed(context, '/results');
+                } else {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                            actions: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "OK",
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 241, 118, 118)),
+                                      ))
+                                ],
+                              )
+                            ],
+                            title: Text(
+                              t.calculatorTotalModalTitle,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            content: Text(t.calculatorTotalModalSubTitle));
+                      });
                 }
               } else {
                 Navigator.pushNamed(context, '/results');

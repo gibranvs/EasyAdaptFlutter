@@ -164,7 +164,10 @@
   "prescriptionTitle1": "Histórico de prescrição",
 
   "toricModalTitle":"Ajuste do eixo"
-  ,"toricModalSubTitle":"Novo resultado adaptado"
+  ,"toricModalSubTitle":"Novo resultado adaptado",
+  "calculatorTotalToast":"Não há produtos recomendados com esses parâmetros",
+"calculatorTotalModalTitle":"Parâmetros inválidos",
+"calculatorTotalModalSubTitle":"Não é possível adaptar multifocais com esses parâmetros, tente Monovision"
 
 
 

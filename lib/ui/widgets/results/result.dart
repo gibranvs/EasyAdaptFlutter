@@ -9,6 +9,7 @@ import 'package:easy_adapt/ui/widgets/results/multifocal_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/spherical_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/toric_result_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
@@ -556,6 +557,16 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           GestureDetector(
             onTap: () {
               ontapR();
+              if (dataProductsR.isEmpty) {
+                Fluttertoast.showToast(
+                    msg: t.calculatorTotalToast,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Color.fromARGB(255, 221, 216, 216),
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+              }
             },
             child: Container(
               width: 120,
@@ -576,6 +587,16 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           GestureDetector(
             onTap: () {
               ontapL();
+              if (dataProductsL.isEmpty) {
+                Fluttertoast.showToast(
+                    msg: t.calculatorTotalToast,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Color.fromARGB(255, 221, 216, 216),
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+              }
             },
             child: Container(
               width: 120,

@@ -17,7 +17,11 @@ multifocalCalculatorRight(context) {
         (1 -
             (sphereEquivalent *
                 (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
-    sphereFinal = tempEsphereR;
+    if (tempEsphereR > 6) {
+      sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
+    } else {
+      sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
+    }
   }
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('sphere', sphereEquivalent);

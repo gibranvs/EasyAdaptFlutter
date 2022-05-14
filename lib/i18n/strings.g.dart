@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 396 (132.0 per locale)
+ * Strings: 405 (135.0 per locale)
  *
- * Built on 2022-05-05 at 03:29 UTC
+ * Built on 2022-05-12 at 20:10 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -415,6 +415,9 @@ class _StringsEn {
 	String get prescriptionTitle1 => 'Prescription history';
 	String get toricModalTitle => 'Shaft adjustment';
 	String get toricModalSubTitle => 'New adapted result';
+	String get calculatorTotalToast => 'There are no recommended products with these parameters';
+	String get calculatorTotalModalTitle => 'Invalid Parameters';
+	String get calculatorTotalModalSubTitle => 'It is not possible to adapt multifocals with these parameters, try Monovision';
 }
 
 // Path: login
@@ -700,6 +703,9 @@ class _StringsEs implements _StringsEn {
 	@override String get prescriptionTitle1 => 'Historial de prescripciones';
 	@override String get toricModalTitle => 'Ajuste del eje';
 	@override String get toricModalSubTitle => 'Nuevo resultado adaptado';
+	@override String get calculatorTotalToast => 'No hay productos recomendados con estos parámetros';
+	@override String get calculatorTotalModalTitle => 'Parámetros no válidos';
+	@override String get calculatorTotalModalSubTitle => 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión';
 }
 
 // Path: login
@@ -985,6 +991,9 @@ class _StringsPt implements _StringsEn {
 	@override String get prescriptionTitle1 => 'Histórico de prescrição';
 	@override String get toricModalTitle => 'Ajuste do eixo';
 	@override String get toricModalSubTitle => 'Novo resultado adaptado';
+	@override String get calculatorTotalToast => 'Não há produtos recomendados com esses parâmetros';
+	@override String get calculatorTotalModalTitle => 'Parâmetros inválidos';
+	@override String get calculatorTotalModalSubTitle => 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision';
 }
 
 // Path: login
@@ -1294,6 +1303,9 @@ extension on _StringsEn {
 			'prescriptionTitle1': 'Prescription history',
 			'toricModalTitle': 'Shaft adjustment',
 			'toricModalSubTitle': 'New adapted result',
+			'calculatorTotalToast': 'There are no recommended products with these parameters',
+			'calculatorTotalModalTitle': 'Invalid Parameters',
+			'calculatorTotalModalSubTitle': 'It is not possible to adapt multifocals with these parameters, try Monovision',
 		};
 	}
 }
@@ -1433,6 +1445,9 @@ extension on _StringsEs {
 			'prescriptionTitle1': 'Historial de prescripciones',
 			'toricModalTitle': 'Ajuste del eje',
 			'toricModalSubTitle': 'Nuevo resultado adaptado',
+			'calculatorTotalToast': 'No hay productos recomendados con estos parámetros',
+			'calculatorTotalModalTitle': 'Parámetros no válidos',
+			'calculatorTotalModalSubTitle': 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión',
 		};
 	}
 }
@@ -1572,6 +1587,9 @@ extension on _StringsPt {
 			'prescriptionTitle1': 'Histórico de prescrição',
 			'toricModalTitle': 'Ajuste do eixo',
 			'toricModalSubTitle': 'Novo resultado adaptado',
+			'calculatorTotalToast': 'Não há produtos recomendados com esses parâmetros',
+			'calculatorTotalModalTitle': 'Parâmetros inválidos',
+			'calculatorTotalModalSubTitle': 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision',
 		};
 	}
 }

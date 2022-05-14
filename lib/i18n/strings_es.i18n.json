@@ -163,7 +163,11 @@
   "prescriptionTitle1": "Historial de prescripciones",
 
 "toricModalTitle":"Ajuste del eje"
-,"toricModalSubTitle":"Nuevo resultado adaptado"
+,"toricModalSubTitle":"Nuevo resultado adaptado",
+
+"calculatorTotalToast":"No hay productos recomendados con estos parámetros",
+"calculatorTotalModalTitle":"Parámetros no válidos",
+"calculatorTotalModalSubTitle":"No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión"
 
 
 
