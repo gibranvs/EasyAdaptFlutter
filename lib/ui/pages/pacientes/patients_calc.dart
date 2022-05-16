@@ -173,25 +173,7 @@ class _PatientsCalcState extends State<PatientsCalc> {
               onTap: () {
                 Provider.of<ResultState>(context, listen: false)
                     .changeData({'user': user, 'presc': []});
-                switch (Provider.of<CalculatorState>(context, listen: false)
-                    .index) {
-                  case 1:
-                    Navigator.pushNamed(context, '/calc/calculator-esfericos');
-                    break;
-                  case 2:
-                    Navigator.pushNamed(context, '/calc/calculator-toricos');
-
-                    break;
-                  case 3:
-                    Navigator.pushNamed(context, '/calc/calculator-multifocal');
-
-                    break;
-                  case 4:
-                    Navigator.pushNamed(context, '/calc/calculator-monovision');
-
-                    break;
-                  default:
-                }
+                Navigator.pushNamed(context, '/calculator-total-into');
               },
               title: Text(
                 name.toString(),

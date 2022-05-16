@@ -1,3 +1,4 @@
+import 'package:easy_adapt/ui/pages/calc_into/calc_into.dart';
 import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_esfericos.dart';
 import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_multifocal_monovision.dart';
 import 'package:easy_adapt/ui/pages/calculadora/products/results_and_products_toricos.dart';
@@ -67,6 +68,7 @@ getRoutes(t) {
         ),
     '/tutorials/video': (context) => VideoApp(),
     '/calculator-total': (context) => CalculadoraTotal(),
-    '/results': (context) => ResultsAndProducts()
+    '/results': (context) => ResultsAndProducts(),
+    '/calculator-total-into': (context) => CalculadoraTotalInto(),
   };
 }

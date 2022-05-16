@@ -5,50 +5,56 @@ import 'package:provider/provider.dart';
 monovisionlCalculatorRight(context) {
   var resultRoundCIR = 0.0;
   var tempcylinderR = 0.0;
-  var sphereFinal = 0.0;
+  var spherePrevia = 0.0;
+  var resultRoundR = 0.0;
+
   var dataProvider = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataRight['data'] as Map;
 
-  var sphereEquivalent = (double.parse(dataProvider['Sphere'] ?? "0") +
-      ((double.parse(dataProvider['Cylinder'] ?? "0") / 2)));
+  if (double.parse(dataProvider['Cylinder']) == 0) {
+    var dataProvider = Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataRight['data'] as Map;
+    var sphereEquivalent = (double.parse(dataProvider['Sphere'] ?? "0") +
+        ((double.parse(dataProvider['Cylinder'] ?? "0") / 2)));
 
-  if (double.parse(dataProvider['Cylinder']).toInt() == 0) {
-    var tempEsphereR = (sphereEquivalent /
-        (1 -
-            (sphereEquivalent *
-                (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
-    if (tempEsphereR > 6) {
-      sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
+    if (sphereEquivalent < 4 && sphereEquivalent > -4) {
     } else {
-      sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
+      var tempEsphereR = (sphereEquivalent / (1 - (sphereEquivalent * 0.012)));
+      spherePrevia = tempEsphereR;
+
+      if (tempEsphereR > 6) {
+        resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(tempEsphereR.toDouble());
+      }
     }
-    Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('typeCalc', 'Spherical');
   } else {
-    var tempEsphereR = (sphereEquivalent /
-        (1 -
-            (sphereEquivalent *
-                (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
-    if (tempEsphereR > 6) {
-      sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
-    } else {
-      sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
-    }
-    tempcylinderR = ((double.parse(dataProvider['Sphere'] ?? "0") +
-                (double.parse(dataProvider['Cylinder'] ?? "0"))) /
-            ((1 -
-                (((int.parse(dataProvider['Distance'] ?? "0")) / 1000) *
-                    (double.parse(dataProvider['Sphere'] ?? "0") +
-                        double.parse(dataProvider['Cylinder'] ?? "0"))))) -
-        tempEsphereR);
-    Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('typeCalc', 'Toric');
-    resultRoundCIR = FuncCalculators().roundCI(tempcylinderR);
+    // var tempEsphereR = (sphereEquivalent /
+    //     (1 -
+    //         (sphereEquivalent *
+    //             (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
+    // sphereTempFinal = tempEsphereR;
+
+    // if (tempEsphereR > 6) {
+    //   sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
+    // } else {
+    //   sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
+    // }
+    // tempcylinderR = ((double.parse(dataProvider['Sphere'] ?? "0") +
+    //             (double.parse(dataProvider['Cylinder'] ?? "0"))) /
+    //         ((1 -
+    //             (((int.parse(dataProvider['Distance'] ?? "0")) / 1000) *
+    //                 (double.parse(dataProvider['Sphere'] ?? "0") +
+    //                     double.parse(dataProvider['Cylinder'] ?? "0"))))) -
+    //     tempEsphereR);
+    // Provider.of<CalculatorTotalState>(context, listen: false)
+    //     .changeResponseRight('typeCalc', 'Toric');
+    // resultRoundCIR = FuncCalculators().roundCI(tempcylinderR);
   }
   Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseRight('sphere', sphereEquivalent);
+      .changeResponseRight('sphere', spherePrevia);
   Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseRight('esphereRound', sphereFinal);
+      .changeResponseRight('esphereRound', resultRoundR);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('cylinderRound', resultRoundCIR);
   Provider.of<CalculatorTotalState>(context, listen: false)
@@ -57,6 +63,8 @@ monovisionlCalculatorRight(context) {
       .changeResponseRight('add', dataProvider['Add']);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('cylinder', tempcylinderR);
+  Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseRight('distance', dataProvider['Distance'] ?? '0');
 }
 
 monovisionCalculatorLeft(context) {
@@ -114,4 +122,6 @@ monovisionCalculatorLeft(context) {
       .changeResponseLeft('add', dataProvider['Add']);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('cylinder', tempcylinderR);
+  Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseLeft('distance', dataProvider['Distance'] ?? '0');
 }

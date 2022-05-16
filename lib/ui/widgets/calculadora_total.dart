@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
+import 'package:easy_adapt/ui/widgets/calculates/monovision_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/multifocal_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/spherical_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/toric_calculator.dart';
@@ -98,7 +99,9 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                             );
                           }
                           if (t.calc4TitleMonovision == selectedValueTypeL) {
-                            return CalculatorFormMonovision(eye: 'L',);
+                            return CalculatorFormMonovision(
+                              eye: 'L',
+                            );
                           }
                           return Container();
                         })
@@ -149,6 +152,11 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   'Multifocal') {
                 await multifocalCalculatorRight(context);
               }
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataRight['type'] ==
+                  'Monovision') {
+                await monovisionlCalculatorRight(context);
+              }
 
               //LEFT
 
@@ -166,6 +174,11 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                       .dataLeft['type'] ==
                   'Multifocal') {
                 await multifocalCalculatorLeft(context);
+              }
+              if (Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['type'] ==
+                  'Monovision') {
+                await monovisionCalculatorLeft(context);
               }
 
               /////////////////////////////Navigator Multifocal
@@ -440,13 +453,26 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               onChanged: (value) {
                 setState(() {
                   selectedValueD = value;
-
-                  Provider.of<CalculatorTotalState>(context, listen: false)
-                      .changeDataRight(
-                          'Multifocal', 'Dominante', selectedValueD);
-                  Provider.of<CalculatorTotalState>(context, listen: false)
-                      .changeDataLeft(
-                          'Multifocal', 'Dominante', selectedValueD);
+                  if (Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataRight['type'] ==
+                          'Multifocal' &&
+                      Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataLeft['type'] ==
+                          'Multifocal') {
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataRight(
+                            'Multifocal', 'Dominante', selectedValueD);
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataLeft(
+                            'Multifocal', 'Dominante', selectedValueD);
+                  } else {
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataRight(
+                            'Monovision', 'Dominante', selectedValueD);
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataLeft(
+                            'Monovision', 'Dominante', selectedValueD);
+                  }
                 });
               },
             ),
@@ -469,10 +495,23 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               onChanged: (value) {
                 setState(() {
                   selectedValueAdd = value;
-                  Provider.of<CalculatorTotalState>(context, listen: false)
-                      .changeDataRight('Multifocal', 'Add', selectedValueAdd);
-                  Provider.of<CalculatorTotalState>(context, listen: false)
-                      .changeDataLeft('Multifocal', 'Add', selectedValueAdd);
+
+                  if (Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataRight['type'] ==
+                          'Multifocal' &&
+                      Provider.of<CalculatorTotalState>(context, listen: false)
+                              .dataLeft['type'] ==
+                          'Multifocal') {
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataRight('Multifocal', 'Add', selectedValueAdd);
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataLeft('Multifocal', 'Add', selectedValueAdd);
+                  } else {
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataRight('Monovision', 'Add', selectedValueAdd);
+                    Provider.of<CalculatorTotalState>(context, listen: false)
+                        .changeDataLeft('Monovision', 'Add', selectedValueAdd);
+                  }
                 });
               },
             ),
