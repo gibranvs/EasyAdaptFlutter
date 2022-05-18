@@ -1,5 +1,6 @@
 import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
@@ -174,6 +175,10 @@ class _PatientsCalcState extends State<PatientsCalc> {
                 Provider.of<ResultState>(context, listen: false)
                     .changeData({'user': user, 'presc': []});
                 Navigator.pushNamed(context, '/calculator-total-into');
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .deleteDataRight();
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .deleteDataLeft();
               },
               title: Text(
                 name.toString(),

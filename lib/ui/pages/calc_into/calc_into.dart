@@ -226,7 +226,7 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                                       "0.0")
                                   .toInt()
                                   .abs()))) {
-                    Navigator.pushNamed(context, '/results');
+                    Navigator.pushNamed(context, '/results-into');
                   }
                   // Navigator.pushNamed(context, '/results');
                 } else {
@@ -259,7 +259,7 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                       });
                 }
               } else {
-                Navigator.pushNamed(context, '/results');
+                Navigator.pushNamed(context, '/results-into');
               }
             },
             child: Container(
