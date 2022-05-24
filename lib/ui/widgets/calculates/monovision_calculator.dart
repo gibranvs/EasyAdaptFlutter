@@ -4,9 +4,10 @@ import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 monovisionlCalculatorRight(context) {
+  var resultRoundCIR = 0.0;
   var dataProviderR = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataRight['data'] as Map;
-
+  var resultRoundR = 0.0;
   if (dataProviderR['Dominante'] == t.calculatorEsfericos.eyeRight) {
     var esferaDom = double.parse(dataProviderR['Sphere'] ?? "0.0") /
         (1 -
@@ -20,16 +21,28 @@ monovisionlCalculatorRight(context) {
     if (cilindroDominante != 0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
+      if (esferaDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
+      }
+
+      resultRoundCIR = FuncCalculators().roundCI(cilindroDominante);
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
+      if (esferaDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
+      }
     }
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseRight('sphere', esferaDom);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('esphereRound', esferaDom);
+        .changeResponseRight('esphereRound', resultRoundR);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('cylinderRound', cilindroDominante);
+        .changeResponseRight('cylinderRound', resultRoundCIR);
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseRight('dominante', dataProviderR['Dominante']);
     Provider.of<CalculatorTotalState>(context, listen: false)
@@ -40,7 +53,7 @@ monovisionlCalculatorRight(context) {
         .changeResponseRight('distance', dataProviderR['Distance'] ?? '0');
   } else {
     var esferaND = double.parse(dataProviderR['Sphere'] ?? "0.0") +
-        int.parse(dataProviderR['Add'] ?? "0");
+        double.parse(dataProviderR['Add'] ?? "0.0");
     var esferaNoDom = esferaND /
         (1 - (int.parse(dataProviderR['Distance'] ?? "0") / 1000) * esferaND);
 
@@ -110,7 +123,7 @@ monovisionCalculatorLeft(context) {
         .changeResponseLeft('distance', dataProviderR['Distance'] ?? '0');
   } else {
     var esferaND = double.parse(dataProviderR['Sphere'] ?? "0.0") +
-        int.parse(dataProviderR['Add'] ?? "0");
+        double.parse(dataProviderR['Add'] ?? "0.0");
     var esferaNoDom = esferaND /
         (1 - (int.parse(dataProviderR['Distance'] ?? "0") / 1000) * esferaND);
 

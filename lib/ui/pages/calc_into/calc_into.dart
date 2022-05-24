@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
@@ -32,6 +33,39 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
     t.calculatorEsfericos.eyeRight,
     t.calculatorEsfericos.eyeLeft
   ];
+  @override
+  void didChangeDependencies() {
+    loadData();
+    super.didChangeDependencies();
+  }
+
+  loadData() {
+    if (Provider.of<CalculatorState>(context).index == 1) {
+      setState(() {
+        selectedValueTypeR = t.calc1TitleSpherica;
+        selectedValueTypeL = t.calc1TitleSpherica;
+      });
+    }
+    if (Provider.of<CalculatorState>(context).index == 2) {
+      setState(() {
+        selectedValueTypeR = t.calc2TitleToric;
+        selectedValueTypeL = t.calc2TitleToric;
+      });
+    }
+    if (Provider.of<CalculatorState>(context).index == 3) {
+      setState(() {
+        selectedValueTypeR = t.calc3TitleMultifocal;
+        selectedValueTypeL = t.calc3TitleMultifocal;
+      });
+    }
+    if (Provider.of<CalculatorState>(context).index == 4) {
+      setState(() {
+        selectedValueTypeR = t.calc4TitleMonovision;
+        selectedValueTypeL = t.calc4TitleMonovision;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

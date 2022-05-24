@@ -174,7 +174,10 @@ class _PatientsCalcState extends State<PatientsCalc> {
               onTap: () {
                 Provider.of<ResultState>(context, listen: false)
                     .changeData({'user': user, 'presc': []});
-                Navigator.pushNamed(context, '/calculator-total-into');
+                Navigator.pushNamed(
+                  context,
+                  '/calculator-total-into',
+                );
                 Provider.of<CalculatorTotalState>(context, listen: false)
                     .deleteDataRight();
                 Provider.of<CalculatorTotalState>(context, listen: false)
