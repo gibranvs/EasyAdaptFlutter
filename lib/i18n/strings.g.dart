@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 405 (135.0 per locale)
+ * Strings: 426 (142.0 per locale)
  *
- * Built on 2022-05-12 at 20:10 UTC
+ * Built on 2022-05-25 at 17:17 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -418,6 +418,13 @@ class _StringsEn {
 	String get calculatorTotalToast => 'There are no recommended products with these parameters';
 	String get calculatorTotalModalTitle => 'Invalid Parameters';
 	String get calculatorTotalModalSubTitle => 'It is not possible to adapt multifocals with these parameters, try Monovision';
+	String get calculatorConfirmSendCalendar1 => 'The tratment of ';
+	String get calculatorConfirmSendCalendar2 => ' for ';
+	String get calculatorConfirmSendCalendar3 => ' It is about to end, contact him for a new prescription. ';
+	String get calculatorConfirmSendCalendarModal1 => 'This prescription was saved in your diary ';
+	String get calculatorConfirmSendCalendarModal2 => 'A notification will be created';
+	String get calculatorConfirmSendCalendarModal3 => 'to contact  ';
+	String get calculatorConfirmSendCalendarModal4 => 'to deliver your next treatment';
 }
 
 // Path: login
@@ -706,6 +713,13 @@ class _StringsEs implements _StringsEn {
 	@override String get calculatorTotalToast => 'No hay productos recomendados con estos parámetros';
 	@override String get calculatorTotalModalTitle => 'Parámetros no válidos';
 	@override String get calculatorTotalModalSubTitle => 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión';
+	@override String get calculatorConfirmSendCalendar1 => 'El tratamiento de ';
+	@override String get calculatorConfirmSendCalendar2 => ' para ';
+	@override String get calculatorConfirmSendCalendar3 => ' Esta por terminar, contactalo para nueva prescripcion. ';
+	@override String get calculatorConfirmSendCalendarModal1 => 'Esta prescripción se guardó en su agenda ';
+	@override String get calculatorConfirmSendCalendarModal2 => 'Se creará una notificación él ';
+	@override String get calculatorConfirmSendCalendarModal3 => 'para contactar a   ';
+	@override String get calculatorConfirmSendCalendarModal4 => 'para entregarle su siguiente tratamiento';
 }
 
 // Path: login
@@ -994,6 +1008,13 @@ class _StringsPt implements _StringsEn {
 	@override String get calculatorTotalToast => 'Não há produtos recomendados com esses parâmetros';
 	@override String get calculatorTotalModalTitle => 'Parâmetros inválidos';
 	@override String get calculatorTotalModalSubTitle => 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision';
+	@override String get calculatorConfirmSendCalendar1 => 'O tratamento de ';
+	@override String get calculatorConfirmSendCalendar2 => ' por ';
+	@override String get calculatorConfirmSendCalendar3 => ' Está prestes a acabar, contacte-o para uma nova receita. ';
+	@override String get calculatorConfirmSendCalendarModal1 => 'Esta receita foi salva em seu diário';
+	@override String get calculatorConfirmSendCalendarModal2 => 'Uma notificação será criada ';
+	@override String get calculatorConfirmSendCalendarModal3 => 'contactar ';
+	@override String get calculatorConfirmSendCalendarModal4 => 'para entregar seu próximo tratamento ';
 }
 
 // Path: login
@@ -1306,6 +1327,13 @@ extension on _StringsEn {
 			'calculatorTotalToast': 'There are no recommended products with these parameters',
 			'calculatorTotalModalTitle': 'Invalid Parameters',
 			'calculatorTotalModalSubTitle': 'It is not possible to adapt multifocals with these parameters, try Monovision',
+			'calculatorConfirmSendCalendar1': 'The tratment of ',
+			'calculatorConfirmSendCalendar2': ' for ',
+			'calculatorConfirmSendCalendar3': ' It is about to end, contact him for a new prescription. ',
+			'calculatorConfirmSendCalendarModal1': 'This prescription was saved in your diary ',
+			'calculatorConfirmSendCalendarModal2': 'A notification will be created',
+			'calculatorConfirmSendCalendarModal3': 'to contact  ',
+			'calculatorConfirmSendCalendarModal4': 'to deliver your next treatment',
 		};
 	}
 }
@@ -1448,6 +1476,13 @@ extension on _StringsEs {
 			'calculatorTotalToast': 'No hay productos recomendados con estos parámetros',
 			'calculatorTotalModalTitle': 'Parámetros no válidos',
 			'calculatorTotalModalSubTitle': 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión',
+			'calculatorConfirmSendCalendar1': 'El tratamiento de ',
+			'calculatorConfirmSendCalendar2': ' para ',
+			'calculatorConfirmSendCalendar3': ' Esta por terminar, contactalo para nueva prescripcion. ',
+			'calculatorConfirmSendCalendarModal1': 'Esta prescripción se guardó en su agenda ',
+			'calculatorConfirmSendCalendarModal2': 'Se creará una notificación él ',
+			'calculatorConfirmSendCalendarModal3': 'para contactar a   ',
+			'calculatorConfirmSendCalendarModal4': 'para entregarle su siguiente tratamiento',
 		};
 	}
 }
@@ -1590,6 +1625,13 @@ extension on _StringsPt {
 			'calculatorTotalToast': 'Não há produtos recomendados com esses parâmetros',
 			'calculatorTotalModalTitle': 'Parâmetros inválidos',
 			'calculatorTotalModalSubTitle': 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision',
+			'calculatorConfirmSendCalendar1': 'O tratamento de ',
+			'calculatorConfirmSendCalendar2': ' por ',
+			'calculatorConfirmSendCalendar3': ' Está prestes a acabar, contacte-o para uma nova receita. ',
+			'calculatorConfirmSendCalendarModal1': 'Esta receita foi salva em seu diário',
+			'calculatorConfirmSendCalendarModal2': 'Uma notificação será criada ',
+			'calculatorConfirmSendCalendarModal3': 'contactar ',
+			'calculatorConfirmSendCalendarModal4': 'para entregar seu próximo tratamento ',
 		};
 	}
 }

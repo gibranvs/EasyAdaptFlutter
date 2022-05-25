@@ -134,60 +134,98 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  if (dataF[0]['product'] != null &&
-                      dataF[1]['product'] != null) {
-                    if (int.parse(dataF[0]['product']['daysPS']) >
-                        int.parse(dataF[1]['product']['daysPS'])) {
-                      final Event event = Event(
-                          title:
-                              'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                          description:
-                              'El tratamiento de ${dataF[1]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
-                          startDate: DateTime.now(),
-                          endDate: DateTime.now().add(Duration(
-                              days: int.parse(dataF[1]['product'] != null
-                                  ? dataF[1]['product']['daysPS']
-                                  : "0"))));
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          actions: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                TextButton(
+                                    onPressed: () {
+                                      if (dataF[0]['product'] != null &&
+                                          dataF[1]['product'] != null) {
+                                        if (int.parse(
+                                                dataF[0]['product']['daysPS']) >
+                                            int.parse(dataF[1]['product']
+                                                ['daysPS'])) {
+                                          final Event event = Event(
+                                              title:
+                                                  'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                              description:
+                                                  '${t.calculatorConfirmSendCalendar1}  ${dataF[0]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
+                                              startDate: DateTime.now(),
+                                              endDate: DateTime.now().add(
+                                                  Duration(
+                                                      days: int.parse(dataF[1]
+                                                                  ['product'] !=
+                                                              null
+                                                          ? dataF[1]['product']
+                                                              ['daysPS']
+                                                          : "0"))));
 
-                      Add2Calendar.addEvent2Cal(event);
-                    } else {
-                      final Event event = Event(
-                          title:
-                              'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                          description:
-                              'El tratamiento de ${dataF[0]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
-                          startDate: DateTime.now(),
-                          endDate: DateTime.now().add(Duration(
-                              days: int.parse(dataF[0]['product'] != null
-                                  ? dataF[0]['product']['daysPS']
-                                  : "0"))));
+                                          Add2Calendar.addEvent2Cal(event);
+                                        } else {
+                                          final Event event = Event(
+                                              title:
+                                                  'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                              description:
+                                                  '${t.calculatorConfirmSendCalendar1} ${dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
+                                              startDate: DateTime.now(),
+                                              endDate: DateTime.now().add(
+                                                  Duration(
+                                                      days: int.parse(dataF[0]
+                                                                  ['product'] !=
+                                                              null
+                                                          ? dataF[0]['product']
+                                                              ['daysPS']
+                                                          : "0"))));
 
-                      Add2Calendar.addEvent2Cal(event);
-                    }
-                  } else {
-                    final Event event = Event(
-                        title:
-                            'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                        description:
-                            'El tratamiento de ${dataF[0]['product'] != null ? dataF[0]['product']['namePS'] : dataF[1]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
-                        startDate: DateTime.now(),
-                        endDate: DateTime.now().add(Duration(
-                            days: int.parse(dataF[0]['product'] != null
-                                ? dataF[0]['product']['daysPS']
-                                : dataF[1]['product']['daysPS']))));
+                                          Add2Calendar.addEvent2Cal(event);
+                                        }
+                                      } else {
+                                        final Event event = Event(
+                                            title:
+                                                'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                            description:
+                                                '${t.calculatorConfirmSendCalendar1} ${dataF[0]['product'] != null ? dataF[0]['product']['namePS'] : dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3} ',
+                                            startDate: DateTime.now(),
+                                            endDate: DateTime.now().add(
+                                                Duration(
+                                                    days: int.parse(dataF[0]
+                                                                ['product'] !=
+                                                            null
+                                                        ? dataF[0]['product']
+                                                            ['daysPS']
+                                                        : dataF[1]['product']
+                                                            ['daysPS']))));
 
-                    Add2Calendar.addEvent2Cal(event);
-                  }
+                                        Add2Calendar.addEvent2Cal(event);
+                                      }
 
-                  // final Event event = Event(
-                  //   title:
-                  //       'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                  //   description: 'Event description',
-                  //   startDate: DateTime.now(),
-                  //   endDate: DateTime.now(),
-                  // );
+                                      // final Event event = Event(
+                                      //   title:
+                                      //       'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                      //   description: 'Event description',
+                                      //   startDate: DateTime.now(),
+                                      //   endDate: DateTime.now(),
+                                      // );
 
-                  // Add2Calendar.addEvent2Cal(event);
+                                      // Add2Calendar.addEvent2Cal(event);
+                                    },
+                                    child: Text("ACEPTAR"))
+                              ],
+                            )
+                          ],
+                          title: Text(
+                            t.calculatorConfirmSendCalendarModal1,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          content: Text(
+                              "${t.calculatorConfirmSendCalendarModal2} ${getDateTexModal()} ${t.calculatorConfirmSendCalendarModal3} ${Provider.of<ResultState>(context).data['user']['nombre']}, ${t.calculatorConfirmSendCalendarModal4} "),
+                        );
+                      });
                 },
                 child: Container(
                   width: 180,
@@ -318,6 +356,31 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
 
       default:
         return '';
+    }
+  }
+
+  getDateTexModal() {
+    if (dataF[0]['product'] != null && dataF[1]['product'] != null) {
+      if (int.parse(dataF[0]['product']['daysPS']) >
+          int.parse(dataF[1]['product']['daysPS'])) {
+        var time = DateTime.now().add(Duration(
+            days: int.parse(dataF[1]['product'] != null
+                ? dataF[1]['product']['daysPS']
+                : "0")));
+        return time.toLocal().toString().split(' ')[0];
+      } else {
+        var time = DateTime.now().add(Duration(
+            days: int.parse(dataF[0]['product'] != null
+                ? dataF[0]['product']['daysPS']
+                : "0")));
+        return time.toLocal().toString().split(' ')[0];
+      }
+    } else {
+      var time = DateTime.now().add(Duration(
+          days: int.parse(dataF[0]['product'] != null
+              ? dataF[0]['product']['daysPS']
+              : dataF[1]['product']['daysPS'])));
+      return time.toLocal().toString().split(' ')[0];
     }
   }
 }

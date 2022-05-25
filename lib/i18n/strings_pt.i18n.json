@@ -168,8 +168,13 @@
   "calculatorTotalToast":"Não há produtos recomendados com esses parâmetros",
 "calculatorTotalModalTitle":"Parâmetros inválidos",
 "calculatorTotalModalSubTitle":"Não é possível adaptar multifocais com esses parâmetros, tente Monovision"
-
-
+,"calculatorConfirmSendCalendar1":"O tratamento de ",
+"calculatorConfirmSendCalendar2":" por ",
+"calculatorConfirmSendCalendar3":" Está prestes a acabar, contacte-o para uma nova receita. "
+,"calculatorConfirmSendCalendarModal1":"Esta receita foi salva em seu diário",
+"calculatorConfirmSendCalendarModal2":"Uma notificação será criada ",
+"calculatorConfirmSendCalendarModal3":"contactar ",
+"calculatorConfirmSendCalendarModal4":"para entregar seu próximo tratamento "
 
 
 }

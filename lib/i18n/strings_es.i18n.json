@@ -168,11 +168,15 @@
 "calculatorTotalToast":"No hay productos recomendados con estos parámetros",
 "calculatorTotalModalTitle":"Parámetros no válidos",
 "calculatorTotalModalSubTitle":"No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión"
+,"calculatorConfirmSendCalendar1":"El tratamiento de ",
+"calculatorConfirmSendCalendar2":" para ",
+"calculatorConfirmSendCalendar3":" Esta por terminar, contactalo para nueva prescripcion. "
 
 
-
-
-
+,"calculatorConfirmSendCalendarModal1":"Esta prescripción se guardó en su agenda ",
+"calculatorConfirmSendCalendarModal2":"Se creará una notificación él ",
+"calculatorConfirmSendCalendarModal3":"para contactar a   ",
+"calculatorConfirmSendCalendarModal4":"para entregarle su siguiente tratamiento"
 
 
 
