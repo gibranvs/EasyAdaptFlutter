@@ -175,7 +175,8 @@ class getBottomShetToricos {
                                       double.parse(axis) + grados,
                                       Provider.of<ResultState>(context,
                                               listen: false)
-                                          .rightValue);
+                                          .rightValue,
+                                      context);
                               var list = [];
                               //        Provider.of<ResultState>(context, listen: false)
                               //     .changeData({

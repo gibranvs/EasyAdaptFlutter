@@ -23,6 +23,8 @@ productModel(index, context, name, desc, path, sphere, distance, cylinder, axis,
                   .get(context, name, path, '', '', onNo, right, product);
               break;
             default:
+              getBottomShetEsferico()
+                  .get(context, name, path, '', '', onNo, right, product);
           }
         }
       },

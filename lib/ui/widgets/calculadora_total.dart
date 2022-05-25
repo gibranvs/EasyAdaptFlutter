@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/calculates/monovision_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/multifocal_calculator.dart';
 import 'package:easy_adapt/ui/widgets/calculates/spherical_calculator.dart';
@@ -258,6 +259,8 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               } else {
                 Navigator.pushNamed(context, '/results');
               }
+              Provider.of<ResultState>(context, listen: false).deleteData();
+              Provider.of<ResultState>(context, listen: false).changeData({});
             },
             child: Container(
               width: double.infinity,

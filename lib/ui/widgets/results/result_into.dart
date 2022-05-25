@@ -668,7 +668,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
       return List.generate(
           dataProductsR.length,
           (index) => productModel(
-                  1,
+                  getProductRightIndex(),
                   context,
                   dataProductsR[index]['namePS'],
                   dataProductsR[index]['descriptionPS'],
@@ -677,21 +677,26 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                       ? Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataRight['response']['esphereRound']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['left']['esphereRound']
+                      : Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataLeft['response']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? double.parse(Provider.of<CalculatorTotalState>(context,
-                                  listen: false)
-                              .dataRight['data']['Distance'])
+                      ? double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Distance'])
                           .toStringAsFixed(2)
-                      : double.parse(Provider.of<CalculatorState>(context,
-                                  listen: false)
-                              .calculator_data['left']['distance'])
+                      : double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Distance'])
                           .toStringAsFixed(2),
-                  '',
-                  '',
-                  true, () {
+                  Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound'] != null
+                      ? Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataRight['response']['cylinderRound']
+                          .toStringAsFixed(2)
+                      : 0.0.toStringAsFixed(2),
+                  double.parse(
+                          Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axis'] != null
+                              ? Provider.of<CalculatorTotalState>(context, listen: false)
+                                  .dataRight['response']['axis']
+                              : '0.0')
+                      .toStringAsFixed(2),
+                  right, () {
                 setState(() {
                   _controller.animateTo(0,
                       duration: const Duration(milliseconds: 500),
@@ -709,34 +714,38 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
       return List.generate(
           dataProductsL.length,
           (index) => productModel(
-                  1,
+                  getProductLeftIndex(),
                   context,
                   dataProductsL[index]['namePS'],
                   dataProductsL[index]['descriptionPS'],
                   dataProductsL[index]['imagePS'],
                   right == true
-                      ? Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['right']['esphereRound']
+                      ? Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataRight['response']['esphereRound']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorTotalState>(context,
-                              listen: false)
+                      : Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataLeft['response']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? Provider.of<CalculatorState>(context, listen: false)
-                          .calculator_data['right']['distance']
+                      ? Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataRight['data']['Distance']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorTotalState>(context,
-                                      listen: false)
+                      : Provider.of<CalculatorTotalState>(context, listen: false)
                                   .dataLeft['data']['Distance'] !=
                               null
-                          ? Provider.of<CalculatorTotalState>(context,
-                                  listen: false)
+                          ? Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataLeft['data']['Distance']
                               .toString()
                           : "",
-                  '',
-                  '',
+                  Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound'] != null
+                      ? Provider.of<CalculatorTotalState>(context, listen: false)
+                          .dataLeft['response']['cylinderRound']
+                          .toStringAsFixed(2)
+                      : 0.0.toStringAsFixed(2),
+                  double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axis'] != null
+                          ? Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axis']
+                          : '0.0')
+                      .toStringAsFixed(2),
                   right, () {
                 setState(() {
                   _controller.animateTo(0,
@@ -750,8 +759,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
-                  'inicial'));
+              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {}, ''));
     }
   }
 
@@ -864,5 +872,49 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                 ],
               ),
             )));
+  }
+
+  getProductRightIndex() {
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataRight['type']) {
+      case 'Spherical':
+        return 1;
+      case 'Toric':
+        return 2;
+      case 'Multifocal':
+        return 1;
+      case 'Monovision':
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['response']['typeCalc'] ==
+            'Spherical') {
+          return 1;
+        } else {
+          return 2;
+        }
+
+      default:
+    }
+  }
+
+  getProductLeftIndex() {
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataLeft['type']) {
+      case 'Spherical':
+        return 1;
+      case 'Toric':
+        return 2;
+      case 'Multifocal':
+        return 1;
+      case 'Monovision':
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['response']['typeCalc'] ==
+            'Spherical') {
+          return 1;
+        } else {
+          return 2;
+        }
+
+      default:
+    }
   }
 }

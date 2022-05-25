@@ -1,4 +1,6 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model_confir.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
@@ -89,14 +91,7 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
               height: 10,
             ),
             Text(
-              Provider.of<CalculatorState>(context).calculator_data['type'] ==
-                      'esfericos'
-                  ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
-                  : Provider.of<CalculatorState>(context)
-                              .calculator_data['type'] ==
-                          'torico'
-                      ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
-                      : "",
+              getTextRight(),
               style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
@@ -119,14 +114,7 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
               height: 10,
             ),
             Text(
-              Provider.of<CalculatorState>(context).calculator_data['type'] ==
-                      'esfericos'
-                  ? '${Provider.of<CalculatorState>(context).calculator_data['left']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['left']['distance']} '
-                  : Provider.of<CalculatorState>(context)
-                              .calculator_data['type'] ==
-                          'torico'
-                      ? '${Provider.of<CalculatorState>(context).calculator_data['left']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['left']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['left']['axisF']}  '
-                      : "",
+              getTextLeft(),
               style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
@@ -146,8 +134,60 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  launch(
-                      'https://calendar.google.com/calendar/u/0/r/eventedit?dates=20220226T033000/20220226T040000&ctz=America/Calcutta&location&text=Easy adapt - paciente Nombre del paciente&details=');
+                  if (dataF[0]['product'] != null &&
+                      dataF[1]['product'] != null) {
+                    if (int.parse(dataF[0]['product']['daysPS']) >
+                        int.parse(dataF[1]['product']['daysPS'])) {
+                      final Event event = Event(
+                          title:
+                              'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                          description:
+                              'El tratamiento de ${dataF[1]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
+                          startDate: DateTime.now(),
+                          endDate: DateTime.now().add(Duration(
+                              days: int.parse(dataF[1]['product'] != null
+                                  ? dataF[1]['product']['daysPS']
+                                  : "0"))));
+
+                      Add2Calendar.addEvent2Cal(event);
+                    } else {
+                      final Event event = Event(
+                          title:
+                              'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                          description:
+                              'El tratamiento de ${dataF[0]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
+                          startDate: DateTime.now(),
+                          endDate: DateTime.now().add(Duration(
+                              days: int.parse(dataF[0]['product'] != null
+                                  ? dataF[0]['product']['daysPS']
+                                  : "0"))));
+
+                      Add2Calendar.addEvent2Cal(event);
+                    }
+                  } else {
+                    final Event event = Event(
+                        title:
+                            'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                        description:
+                            'El tratamiento de ${dataF[0]['product'] != null ? dataF[0]['product']['namePS'] : dataF[1]['product']['namePS']} para ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} Esta por terminar, contactalo para nueva prescripcion ',
+                        startDate: DateTime.now(),
+                        endDate: DateTime.now().add(Duration(
+                            days: int.parse(dataF[0]['product'] != null
+                                ? dataF[0]['product']['daysPS']
+                                : dataF[1]['product']['daysPS']))));
+
+                    Add2Calendar.addEvent2Cal(event);
+                  }
+
+                  // final Event event = Event(
+                  //   title:
+                  //       'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                  //   description: 'Event description',
+                  //   startDate: DateTime.now(),
+                  //   endDate: DateTime.now(),
+                  // );
+
+                  // Add2Calendar.addEvent2Cal(event);
                 },
                 child: Container(
                   width: 180,
@@ -215,5 +255,69 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
             ],
           ),
         ));
+  }
+
+  getTextRight() {
+    // Provider.of<CalculatorState>(context).calculator_data['type'] ==
+    //                   'esfericos'
+    //               ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
+    //               : Provider.of<CalculatorState>(context)
+    //                           .calculator_data['type'] ==
+    //                       'torico'
+    //                   ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
+    //                   : ""
+
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataRight['type']) {
+      case 'Spherical':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['distance']} ';
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
+      case 'Multifocal':
+        return '';
+      case 'Monovision':
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['response']['typeCalc'] ==
+            'Spherical') {
+          return '';
+        } else {
+          return '';
+        }
+
+      default:
+        return '';
+    }
+  }
+
+  getTextLeft() {
+    // Provider.of<CalculatorState>(context).calculator_data['type'] ==
+    //                   'esfericos'
+    //               ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
+    //               : Provider.of<CalculatorState>(context)
+    //                           .calculator_data['type'] ==
+    //                       'torico'
+    //                   ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
+    //                   : ""
+
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataLeft['type']) {
+      case 'Spherical':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['distance']} ';
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
+      case 'Multifocal':
+        return '';
+      case 'Monovision':
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['response']['typeCalc'] ==
+            'Spherical') {
+          return '';
+        } else {
+          return '';
+        }
+
+      default:
+        return '';
+    }
   }
 }

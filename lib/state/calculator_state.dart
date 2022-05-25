@@ -1,4 +1,6 @@
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CalculatorState extends ChangeNotifier {
   var index = 1;
@@ -13,11 +15,13 @@ class CalculatorState extends ChangeNotifier {
     notifyListeners();
   }
 
-  addAxisF(grados, right) {
+  addAxisF(grados, right, context) {
     if (right) {
-      calculator_data['right']['axisF'] = grados;
+      Provider.of<CalculatorTotalState>(context, listen: false)
+          .changeResponseRight('axisF', grados);
     } else {
-      calculator_data['left']['axisF'] = grados;
+      Provider.of<CalculatorTotalState>(context, listen: false)
+          .changeResponseLeft('axisF', grados);
     }
     notifyListeners();
   }
