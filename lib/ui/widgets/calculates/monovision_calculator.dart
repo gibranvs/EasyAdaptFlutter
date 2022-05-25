@@ -64,17 +64,28 @@ monovisionlCalculatorRight(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
-      print('derechi');
+      if (esferaNoDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
+      }
+
+      resultRoundCIR = FuncCalculators().roundCI(cilindroNoDominante);
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
+      if (esferaNoDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
+      }
     }
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseRight('sphere', esferaNoDom);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('esphereRound', esferaNoDom);
+        .changeResponseRight('esphereRound', resultRoundR);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseRight('cylinderRound', cilindroNoDominante);
+        .changeResponseRight('cylinderRound', resultRoundCIR);
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseRight('dominante', dataProviderR['Dominante']);
     Provider.of<CalculatorTotalState>(context, listen: false)
@@ -87,6 +98,9 @@ monovisionlCalculatorRight(context) {
 }
 
 monovisionCalculatorLeft(context) {
+  var resultRoundCIR = 0.0;
+
+  var resultRoundR = 0.0;
   var dataProviderR = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataLeft['data'] as Map;
 
@@ -102,17 +116,29 @@ monovisionCalculatorLeft(context) {
     var cilindroDominante = resDominante - esferaDom;
     if (cilindroDominante != 0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
-          .changeResponseRight('typeCalc', 'Toric');
+          .changeResponseLeft('typeCalc', 'Toric');
+      if (esferaDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
+      }
+
+      resultRoundCIR = FuncCalculators().roundCI(cilindroDominante);
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
-          .changeResponseRight('typeCalc', 'Spherical');
+          .changeResponseLeft('typeCalc', 'Spherical');
+      if (esferaDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
+      }
     }
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseLeft('sphere', esferaDom);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseLeft('esphereRound', esferaDom);
+        .changeResponseLeft('esphereRound', resultRoundR);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseLeft('cylinderRound', cilindroDominante);
+        .changeResponseLeft('cylinderRound', resultRoundCIR);
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseLeft('dominante', dataProviderR['Dominante']);
     Provider.of<CalculatorTotalState>(context, listen: false)
@@ -134,17 +160,29 @@ monovisionCalculatorLeft(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
+      if (esferaNoDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
+      }
+
+      resultRoundCIR = FuncCalculators().roundCI(cilindroNoDominante);
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
+      if (esferaNoDom > 6) {
+        resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
+      } else {
+        resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
+      }
     }
 
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseLeft('sphere', esferaNoDom);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseLeft('esphereRound', esferaNoDom);
+        .changeResponseLeft('esphereRound', resultRoundR);
     Provider.of<CalculatorTotalState>(context, listen: false)
-        .changeResponseLeft('cylinderRound', cilindroNoDominante);
+        .changeResponseLeft('cylinderRound', resultRoundCIR);
     Provider.of<CalculatorTotalState>(context, listen: false)
         .changeResponseLeft('dominante', dataProviderR['Dominante']);
     Provider.of<CalculatorTotalState>(context, listen: false)

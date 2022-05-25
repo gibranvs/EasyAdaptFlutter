@@ -170,7 +170,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
@@ -314,7 +314,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
@@ -455,7 +455,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
@@ -685,9 +685,9 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                                   listen: false)
                               .dataRight['data']['Distance'])
                           .toStringAsFixed(2)
-                      : double.parse(
-                              Provider.of<CalculatorState>(context, listen: false)
-                                  .calculator_data['left']['distance'])
+                      : double.parse(Provider.of<CalculatorState>(context,
+                                  listen: false)
+                              .calculator_data['left']['distance'])
                           .toStringAsFixed(2),
                   '',
                   '',

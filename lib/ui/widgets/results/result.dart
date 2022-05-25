@@ -170,7 +170,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
@@ -314,7 +314,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
@@ -455,7 +455,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                   .dataLeft['response']['esphereRound'],
             );
             setState(() {
-              dataProductsR = finalData;
+              dataProductsL = finalData;
             });
           } else {
             var finalData = loadProductsToric(
