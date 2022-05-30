@@ -1,4 +1,6 @@
+import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/patient_state.dart';
+import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logo_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -79,16 +81,6 @@ class _HistorialPageState extends State<HistorialPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey[600]),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'mar 2022',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(0, 129, 171, 1.0)),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -96,73 +88,106 @@ class _HistorialPageState extends State<HistorialPage> {
               Divider(
                 color: Colors.grey[700],
               ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+              FutureBuilder(
+                future: Data().getPrescription(
+                    Provider.of<PatientState>(context).patient['id']),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  var data = snapshot.data;
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  } else {
+                    return Column(
                       children: [
-                        Column(
-                          children: [
-                            Text(
-                              '8',
-                              style: TextStyle(
-                                  fontSize: 37,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(0, 129, 171, 1.0)),
-                            ),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Text(
-                              'mar 2022',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(0, 129, 171, 1.0)),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Flexible(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Ojo derecho',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[500]),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              '-4.75 / 0.00 * 0 - Lunare Tri Color',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[500]),
-                            ),
-                          ],
-                        ))
+                        ...List.generate(
+                            data.length,
+                            (index) => model(
+                                data[index]['fecha_prescripcion'],
+                                data[index]['ojo'],
+                                data[index]['valores'],
+                                data[index]['producto']))
                       ],
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.grey[700],
-                  ),
-                ],
-              )
+                    );
+                  }
+                },
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Column model(fecha, ojo, valores, producto) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Text(
+                    fecha.toString().split('-')[2],
+                    style: TextStyle(
+                        fontSize: 37,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(0, 129, 171, 1.0)),
+                  ),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    "${DateTime.parse(fecha).month.toString()} ${DateTime.parse(fecha).year.toString()} ",
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(0, 129, 171, 1.0)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    ojo == "0"
+                        ? t.hisotirlaPrescriptionsEye1
+                        : t.hisotirlaPrescriptionsEye2,
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[500]),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    '$valores - $producto',
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[500]),
+                  ),
+                ],
+              ))
+            ],
+          ),
+        ),
+        Divider(
+          color: Colors.grey[700],
+        ),
+      ],
     );
   }
 }

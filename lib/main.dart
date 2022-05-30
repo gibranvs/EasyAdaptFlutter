@@ -1,5 +1,6 @@
 import 'package:easy_adapt/i18n/strings.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
+import 'package:easy_adapt/splash_screen.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/menu_state.dart';
@@ -60,8 +61,11 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'EasyAdapt',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: getInitialRoute(prefs),
+      // initialRoute: getInitialRoute(prefs),
       // home: CalculadoraTotal(),
+      home: SplashScreen(
+        prefs: prefs,
+      ),
       routes: getRoutes(translation),
     );
   }

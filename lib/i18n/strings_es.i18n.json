@@ -176,7 +176,12 @@
 ,"calculatorConfirmSendCalendarModal1":"Esta prescripción se guardó en su agenda ",
 "calculatorConfirmSendCalendarModal2":"Se creará una notificación él ",
 "calculatorConfirmSendCalendarModal3":"para contactar a   ",
-"calculatorConfirmSendCalendarModal4":"para entregarle su siguiente tratamiento"
+"calculatorConfirmSendCalendarModal4":"para entregarle su siguiente tratamiento",
+"calculatorConfirmSendCalendarModalButton":"ACEPTAR",
+"calculatorConfirmSendCalendarModalButton2":"FINALIZAR",
+"hisotirlaPrescriptionsEye1":"Ojo derecho",
+"hisotirlaPrescriptionsEye2":"Ojo izquierdo"
+
 
 
 

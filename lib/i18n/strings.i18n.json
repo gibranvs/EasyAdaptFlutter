@@ -172,5 +172,9 @@
 ,"calculatorConfirmSendCalendarModal1":"This prescription was saved in your diary ",
 "calculatorConfirmSendCalendarModal2":"A notification will be created",
 "calculatorConfirmSendCalendarModal3":"to contact  ",
-"calculatorConfirmSendCalendarModal4":"to deliver your next treatment"
+"calculatorConfirmSendCalendarModal4":"to deliver your next treatment",
+"calculatorConfirmSendCalendarModalButton":"ACCEPT",
+"calculatorConfirmSendCalendarModalButton2":"FINALIZE",
+"hisotirlaPrescriptionsEye1":"Right eye",
+"hisotirlaPrescriptionsEye2":"Left eye"
 }

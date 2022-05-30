@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 426 (142.0 per locale)
+ * Strings: 438 (146.0 per locale)
  *
- * Built on 2022-05-25 at 17:17 UTC
+ * Built on 2022-05-30 at 17:19 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -425,6 +425,10 @@ class _StringsEn {
 	String get calculatorConfirmSendCalendarModal2 => 'A notification will be created';
 	String get calculatorConfirmSendCalendarModal3 => 'to contact  ';
 	String get calculatorConfirmSendCalendarModal4 => 'to deliver your next treatment';
+	String get calculatorConfirmSendCalendarModalButton => 'ACCEPT';
+	String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZE';
+	String get hisotirlaPrescriptionsEye1 => 'Right eye';
+	String get hisotirlaPrescriptionsEye2 => 'Left eye';
 }
 
 // Path: login
@@ -720,6 +724,10 @@ class _StringsEs implements _StringsEn {
 	@override String get calculatorConfirmSendCalendarModal2 => 'Se creará una notificación él ';
 	@override String get calculatorConfirmSendCalendarModal3 => 'para contactar a   ';
 	@override String get calculatorConfirmSendCalendarModal4 => 'para entregarle su siguiente tratamiento';
+	@override String get calculatorConfirmSendCalendarModalButton => 'ACEPTAR';
+	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
+	@override String get hisotirlaPrescriptionsEye1 => 'Ojo derecho';
+	@override String get hisotirlaPrescriptionsEye2 => 'Ojo izquierdo';
 }
 
 // Path: login
@@ -1015,6 +1023,10 @@ class _StringsPt implements _StringsEn {
 	@override String get calculatorConfirmSendCalendarModal2 => 'Uma notificação será criada ';
 	@override String get calculatorConfirmSendCalendarModal3 => 'contactar ';
 	@override String get calculatorConfirmSendCalendarModal4 => 'para entregar seu próximo tratamento ';
+	@override String get calculatorConfirmSendCalendarModalButton => 'ACEITAR';
+	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
+	@override String get hisotirlaPrescriptionsEye1 => 'Olho direito';
+	@override String get hisotirlaPrescriptionsEye2 => 'Olho esquerdo';
 }
 
 // Path: login
@@ -1334,6 +1346,10 @@ extension on _StringsEn {
 			'calculatorConfirmSendCalendarModal2': 'A notification will be created',
 			'calculatorConfirmSendCalendarModal3': 'to contact  ',
 			'calculatorConfirmSendCalendarModal4': 'to deliver your next treatment',
+			'calculatorConfirmSendCalendarModalButton': 'ACCEPT',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZE',
+			'hisotirlaPrescriptionsEye1': 'Right eye',
+			'hisotirlaPrescriptionsEye2': 'Left eye',
 		};
 	}
 }
@@ -1483,6 +1499,10 @@ extension on _StringsEs {
 			'calculatorConfirmSendCalendarModal2': 'Se creará una notificación él ',
 			'calculatorConfirmSendCalendarModal3': 'para contactar a   ',
 			'calculatorConfirmSendCalendarModal4': 'para entregarle su siguiente tratamiento',
+			'calculatorConfirmSendCalendarModalButton': 'ACEPTAR',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
+			'hisotirlaPrescriptionsEye1': 'Ojo derecho',
+			'hisotirlaPrescriptionsEye2': 'Ojo izquierdo',
 		};
 	}
 }
@@ -1632,6 +1652,10 @@ extension on _StringsPt {
 			'calculatorConfirmSendCalendarModal2': 'Uma notificação será criada ',
 			'calculatorConfirmSendCalendarModal3': 'contactar ',
 			'calculatorConfirmSendCalendarModal4': 'para entregar seu próximo tratamento ',
+			'calculatorConfirmSendCalendarModalButton': 'ACEITAR',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
+			'hisotirlaPrescriptionsEye1': 'Olho direito',
+			'hisotirlaPrescriptionsEye2': 'Olho esquerdo',
 		};
 	}
 }
