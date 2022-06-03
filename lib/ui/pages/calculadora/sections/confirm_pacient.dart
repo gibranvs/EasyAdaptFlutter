@@ -1,4 +1,5 @@
 import 'package:add_2_calendar/add_2_calendar.dart';
+import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
@@ -41,6 +42,8 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       dataF = [tempR, tempL];
     });
   }
+
+  String textModalButton = t.calculatorConfirmSendCalendarModalButton;
 
   @override
   Widget build(BuildContext context) {
@@ -134,96 +137,130 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
             Center(
               child: GestureDetector(
                 onTap: () {
+                  setState(() {
+                    textModalButton =
+                        t.calculatorConfirmSendCalendarModalButton;
+                  });
                   showDialog(
                       context: context,
                       builder: (context) {
-                        return AlertDialog(
-                          actions: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                    onPressed: () {
-                                      if (dataF[0]['product'] != null &&
-                                          dataF[1]['product'] != null) {
-                                        if (int.parse(
-                                                dataF[0]['product']['daysPS']) >
-                                            int.parse(dataF[1]['product']
-                                                ['daysPS'])) {
-                                          final Event event = Event(
-                                              title:
-                                                  'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                                              description:
-                                                  '${t.calculatorConfirmSendCalendar1}  ${dataF[0]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
-                                              startDate: DateTime.now(),
-                                              endDate: DateTime.now().add(
-                                                  Duration(
-                                                      days: int.parse(dataF[1]
-                                                                  ['product'] !=
-                                                              null
-                                                          ? dataF[1]['product']
-                                                              ['daysPS']
-                                                          : "0"))));
+                        return StatefulBuilder(
+                          builder: (BuildContext context, setState) {
+                            return AlertDialog(
+                              actions: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(
+                                        onPressed: () async {
+                                          if (textModalButton !=
+                                              t.calculatorConfirmSendCalendarModalButton) {
+                                            Navigator.pushNamed(
+                                                context, '/layout');
+                                          } else {
+                                            //////POST PRESCRIPTION
+                                            ///
+                                            ///
+                                            ///
+                                            await postPrescription();
+                                            setState(() {
+                                              textModalButton = t
+                                                  .calculatorConfirmSendCalendarModalButton2;
+                                            });
 
-                                          Add2Calendar.addEvent2Cal(event);
-                                        } else {
-                                          final Event event = Event(
-                                              title:
-                                                  'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                                              description:
-                                                  '${t.calculatorConfirmSendCalendar1} ${dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
-                                              startDate: DateTime.now(),
-                                              endDate: DateTime.now().add(
-                                                  Duration(
+                                            // print(Provider.of<ResultState>(context,
+                                            //         listen: false)
+                                            //     .data['user']);
+                                            if (dataF[0]['product'] != null &&
+                                                dataF[1]['product'] != null) {
+                                              if (int.parse(dataF[0]['product']
+                                                      ['daysPS']) >
+                                                  int.parse(dataF[1]['product']
+                                                      ['daysPS'])) {
+                                                final Event event = Event(
+                                                    title:
+                                                        'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                                    description:
+                                                        '${t.calculatorConfirmSendCalendar1}  ${dataF[0]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
+                                                    startDate: DateTime.now(),
+                                                    endDate: DateTime.now().add(
+                                                        Duration(
+                                                            days: int.parse(dataF[
+                                                                            1][
+                                                                        'product'] !=
+                                                                    null
+                                                                ? dataF[1]
+                                                                        [
+                                                                        'product']
+                                                                    ['daysPS']
+                                                                : "0"))));
+
+                                                Add2Calendar.addEvent2Cal(
+                                                    event);
+                                              } else {
+                                                final Event event = Event(
+                                                    title:
+                                                        'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                                    description:
+                                                        '${t.calculatorConfirmSendCalendar1} ${dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3}  ',
+                                                    startDate: DateTime.now(),
+                                                    endDate: DateTime.now().add(
+                                                        Duration(
+                                                            days: int.parse(dataF[
+                                                                            0][
+                                                                        'product'] !=
+                                                                    null
+                                                                ? dataF[0]
+                                                                        [
+                                                                        'product']
+                                                                    ['daysPS']
+                                                                : "0"))));
+
+                                                Add2Calendar.addEvent2Cal(
+                                                    event);
+                                              }
+                                            } else {
+                                              final Event event = Event(
+                                                  title:
+                                                      'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                                  description:
+                                                      '${t.calculatorConfirmSendCalendar1} ${dataF[0]['product'] != null ? dataF[0]['product']['namePS'] : dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3} ',
+                                                  startDate: DateTime.now(),
+                                                  endDate: DateTime.now().add(Duration(
                                                       days: int.parse(dataF[0]
                                                                   ['product'] !=
                                                               null
                                                           ? dataF[0]['product']
                                                               ['daysPS']
-                                                          : "0"))));
+                                                          : dataF[1]['product']
+                                                              ['daysPS']))));
 
-                                          Add2Calendar.addEvent2Cal(event);
-                                        }
-                                      } else {
-                                        final Event event = Event(
-                                            title:
-                                                'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                                            description:
-                                                '${t.calculatorConfirmSendCalendar1} ${dataF[0]['product'] != null ? dataF[0]['product']['namePS'] : dataF[1]['product']['namePS']} ${t.calculatorConfirmSendCalendar2} ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']} ${t.calculatorConfirmSendCalendar3} ',
-                                            startDate: DateTime.now(),
-                                            endDate: DateTime.now().add(
-                                                Duration(
-                                                    days: int.parse(dataF[0]
-                                                                ['product'] !=
-                                                            null
-                                                        ? dataF[0]['product']
-                                                            ['daysPS']
-                                                        : dataF[1]['product']
-                                                            ['daysPS']))));
+                                              Add2Calendar.addEvent2Cal(event);
+                                            }
 
-                                        Add2Calendar.addEvent2Cal(event);
-                                      }
+                                            // final Event event = Event(
+                                            //   title:
+                                            //       'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
+                                            //   description: 'Event description',
+                                            //   startDate: DateTime.now(),
+                                            //   endDate: DateTime.now(),
+                                            // );
 
-                                      // final Event event = Event(
-                                      //   title:
-                                      //       'Easy adapt - ${Provider.of<ResultState>(context, listen: false).data['user']['nombre']}',
-                                      //   description: 'Event description',
-                                      //   startDate: DateTime.now(),
-                                      //   endDate: DateTime.now(),
-                                      // );
-
-                                      // Add2Calendar.addEvent2Cal(event);
-                                    },
-                                    child: Text("ACEPTAR"))
+                                            // Add2Calendar.addEvent2Cal(event);
+                                          }
+                                        },
+                                        child: Text(textModalButton))
+                                  ],
+                                )
                               ],
-                            )
-                          ],
-                          title: Text(
-                            t.calculatorConfirmSendCalendarModal1,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          content: Text(
-                              "${t.calculatorConfirmSendCalendarModal2} ${getDateTexModal()} ${t.calculatorConfirmSendCalendarModal3} ${Provider.of<ResultState>(context).data['user']['nombre']}, ${t.calculatorConfirmSendCalendarModal4} "),
+                              title: Text(
+                                t.calculatorConfirmSendCalendarModal1,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              content: Text(
+                                  "${t.calculatorConfirmSendCalendarModal2} ${getDateTexModal()} ${t.calculatorConfirmSendCalendarModal3} ${Provider.of<ResultState>(context).data['user']['nombre']}, ${t.calculatorConfirmSendCalendarModal4} "),
+                            );
+                          },
                         );
                       });
                 },
@@ -252,6 +289,144 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
         ),
       )),
     );
+  }
+
+  calcNextDate() {
+    if (dataF[0]['product'] != null && dataF[1]['product'] != null) {
+      if (int.parse(dataF[0]['product']['daysPS']) >
+          int.parse(dataF[1]['product']['daysPS'])) {
+        if (dataF[1]['product'] != null) {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[1]['product'] != null
+                  ? dataF[1]['product']['daysPS']
+                  : "0"))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[1]['product'] != null
+                      ? dataF[1]['product']['daysPS']
+                      : "0")))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        }
+      } else {
+        if (dataF[1]['product'] != null) {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[0]['product'] != null
+                  ? dataF[0]['product']['daysPS']
+                  : "0"))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[0]['product'] != null
+                      ? dataF[0]['product']['daysPS']
+                      : "0")))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        } else {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[0]['product'] != null
+                  ? dataF[0]['product']['daysPS']
+                  : dataF[1]['product']['daysPS']))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[0]['product'] != null
+                      ? dataF[0]['product']['daysPS']
+                      : dataF[1]['product']['daysPS'])))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        }
+      }
+    }
+  }
+
+  postPrescription() async {
+    if (dataF[0]['right'] == true) {
+      switch (Provider.of<CalculatorTotalState>(context, listen: false)
+          .dataRight['type']) {
+        case 'Spherical':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(),
+              0,
+              getTextRight(),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          print('spherical');
+          break;
+        case 'Toric':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(),
+              0,
+              getTextRight(),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          break;
+        case 'Multifocal':
+          break;
+        case 'Monovision':
+          break;
+
+        default:
+          return '';
+      }
+    }
+
+    ///Izquierdo
+    if (dataF[0]['right'] == false || dataF[1]['right'] == false) {
+      if (dataF[1] != {}) {
+        switch (Provider.of<CalculatorTotalState>(context, listen: false)
+            .dataLeft['type']) {
+          case 'Spherical':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(),
+                1,
+                getTextLeft(),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+          case 'Toric':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(),
+                1,
+                getTextLeft(),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+          case 'Multifocal':
+            break;
+          case 'Monovision':
+            break;
+
+          default:
+            return '';
+        }
+      }
+    }
   }
 
   patients_card_model(title, mail) {
@@ -379,7 +554,9 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       var time = DateTime.now().add(Duration(
           days: int.parse(dataF[0]['product'] != null
               ? dataF[0]['product']['daysPS']
-              : dataF[1]['product']['daysPS'])));
+              : dataF[1]['product'] != null
+                  ? dataF[1]['product']['daysPS']
+                  : "0")));
       return time.toLocal().toString().split(' ')[0];
     }
   }

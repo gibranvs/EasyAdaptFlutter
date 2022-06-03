@@ -174,7 +174,11 @@
 ,"calculatorConfirmSendCalendarModal1":"Esta receita foi salva em seu diário",
 "calculatorConfirmSendCalendarModal2":"Uma notificação será criada ",
 "calculatorConfirmSendCalendarModal3":"contactar ",
-"calculatorConfirmSendCalendarModal4":"para entregar seu próximo tratamento "
+"calculatorConfirmSendCalendarModal4":"para entregar seu próximo tratamento ",
+"calculatorConfirmSendCalendarModalButton":"ACEITAR",
+"calculatorConfirmSendCalendarModalButton2":"FINALIZAR",
+"hisotirlaPrescriptionsEye1":"Olho direito",
+"hisotirlaPrescriptionsEye2":"Olho esquerdo"
 
 
 }
