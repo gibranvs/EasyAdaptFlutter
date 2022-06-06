@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(Duration(milliseconds: 950), () {
       _animationController.forward();
     });
+
     Future.delayed(Duration(milliseconds: 1500), () {
       Navigator.pushReplacementNamed(context, getInitialRoute(widget.prefs));
     });
@@ -50,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
                 Container(
                   child: Positioned(
                     left: -160,
-                    bottom: 150,
+                    bottom: 0,
                     child: Image.asset('./assets/fondo_cuadrado.png'),
                     width: 300,
                   ),
@@ -58,14 +59,14 @@ class _SplashScreenState extends State<SplashScreen>
                 Container(
                   child: Positioned(
                     right: -160,
-                    top: 50,
+                    top: 0,
                     child: Image.asset('./assets/fondo_cuadrado.png'),
                     width: 300,
                   ),
                 ),
                 Center(
                   child: Image(
-                    image: AssetImage('./assets/icons/bausch_lomb.png'),
+                    image: AssetImage('./assets/logo_bl.png'),
                     width: 300,
                   ),
                 ),

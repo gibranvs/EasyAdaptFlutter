@@ -176,5 +176,8 @@
 "calculatorConfirmSendCalendarModalButton":"ACCEPT",
 "calculatorConfirmSendCalendarModalButton2":"FINALIZE",
 "hisotirlaPrescriptionsEye1":"Right eye",
-"hisotirlaPrescriptionsEye2":"Left eye"
+"hisotirlaPrescriptionsEye2":"Left eye",
+"hisotirlaPrescriptionsEyeR":"Right eye prescription",
+"hisotirlaPrescriptionsEyeL":"Left eye prescription",
+"hisotirlaPrescriptionsEyeE":"Deadline"
 }

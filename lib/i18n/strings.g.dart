@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 438 (146.0 per locale)
+ * Strings: 447 (149.0 per locale)
  *
- * Built on 2022-05-30 at 17:19 UTC
+ * Built on 2022-06-06 at 15:23 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -429,6 +429,9 @@ class _StringsEn {
 	String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZE';
 	String get hisotirlaPrescriptionsEye1 => 'Right eye';
 	String get hisotirlaPrescriptionsEye2 => 'Left eye';
+	String get hisotirlaPrescriptionsEyeR => 'Right eye prescription';
+	String get hisotirlaPrescriptionsEyeL => 'Left eye prescription';
+	String get hisotirlaPrescriptionsEyeE => 'Deadline';
 }
 
 // Path: login
@@ -728,6 +731,9 @@ class _StringsEs implements _StringsEn {
 	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
 	@override String get hisotirlaPrescriptionsEye1 => 'Ojo derecho';
 	@override String get hisotirlaPrescriptionsEye2 => 'Ojo izquierdo';
+	@override String get hisotirlaPrescriptionsEyeR => 'Prescripción ojo derecho';
+	@override String get hisotirlaPrescriptionsEyeL => 'Prescripción ojo izquierdo';
+	@override String get hisotirlaPrescriptionsEyeE => 'Fecha de entrega';
 }
 
 // Path: login
@@ -1027,6 +1033,9 @@ class _StringsPt implements _StringsEn {
 	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
 	@override String get hisotirlaPrescriptionsEye1 => 'Olho direito';
 	@override String get hisotirlaPrescriptionsEye2 => 'Olho esquerdo';
+	@override String get hisotirlaPrescriptionsEyeR => 'Prescrição do olho direito';
+	@override String get hisotirlaPrescriptionsEyeL => 'Prescrição do olho esquerdo';
+	@override String get hisotirlaPrescriptionsEyeE => 'Data de entrega';
 }
 
 // Path: login
@@ -1350,6 +1359,9 @@ extension on _StringsEn {
 			'calculatorConfirmSendCalendarModalButton2': 'FINALIZE',
 			'hisotirlaPrescriptionsEye1': 'Right eye',
 			'hisotirlaPrescriptionsEye2': 'Left eye',
+			'hisotirlaPrescriptionsEyeR': 'Right eye prescription',
+			'hisotirlaPrescriptionsEyeL': 'Left eye prescription',
+			'hisotirlaPrescriptionsEyeE': 'Deadline',
 		};
 	}
 }
@@ -1503,6 +1515,9 @@ extension on _StringsEs {
 			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
 			'hisotirlaPrescriptionsEye1': 'Ojo derecho',
 			'hisotirlaPrescriptionsEye2': 'Ojo izquierdo',
+			'hisotirlaPrescriptionsEyeR': 'Prescripción ojo derecho',
+			'hisotirlaPrescriptionsEyeL': 'Prescripción ojo izquierdo',
+			'hisotirlaPrescriptionsEyeE': 'Fecha de entrega',
 		};
 	}
 }
@@ -1656,6 +1671,9 @@ extension on _StringsPt {
 			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
 			'hisotirlaPrescriptionsEye1': 'Olho direito',
 			'hisotirlaPrescriptionsEye2': 'Olho esquerdo',
+			'hisotirlaPrescriptionsEyeR': 'Prescrição do olho direito',
+			'hisotirlaPrescriptionsEyeL': 'Prescrição do olho esquerdo',
+			'hisotirlaPrescriptionsEyeE': 'Data de entrega',
 		};
 	}
 }

@@ -172,19 +172,21 @@ class Data {
     }
   }
 
-  getLastPrescription(id) async {
+  getLastPrescription(id, eye) async {
     try {
-      final response = await http
-          .post(Uri.parse("$url/api?tipo=get_last_prescription"), body: {
-        'id_paciente': id,
-      });
+      final response = await http.post(
+          Uri.parse("$url/api?tipo=get_last_prescription"),
+          body: {'id_paciente': id, 'ojo': eye.toString()});
       var data = jsonDecode(response.body);
+      print(data);
       if (data['status'] == 1) {
         return data['response'];
       } else {
         return {};
       }
     } catch (e) {
+      print(e);
+
       return {};
     }
   }

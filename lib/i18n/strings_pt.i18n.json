@@ -178,7 +178,10 @@
 "calculatorConfirmSendCalendarModalButton":"ACEITAR",
 "calculatorConfirmSendCalendarModalButton2":"FINALIZAR",
 "hisotirlaPrescriptionsEye1":"Olho direito",
-"hisotirlaPrescriptionsEye2":"Olho esquerdo"
+"hisotirlaPrescriptionsEye2":"Olho esquerdo",
+"hisotirlaPrescriptionsEyeR":"Prescrição do olho direito",
+"hisotirlaPrescriptionsEyeL":"Prescrição do olho esquerdo",
+"hisotirlaPrescriptionsEyeE":"Data de entrega"
 
 
 }
