@@ -64,7 +64,7 @@ monovisionlCalculatorRight(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
-      if (esferaNoDom > 6) {
+      if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -74,7 +74,7 @@ monovisionlCalculatorRight(context) {
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
-      if (esferaNoDom > 6) {
+      if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -104,7 +104,7 @@ monovisionCalculatorLeft(context) {
   var dataProviderR = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataLeft['data'] as Map;
 
-  if (dataProviderR['Dominante'] == t.calculatorEsfericos.eyeRight) {
+  if (dataProviderR['Dominante'] == t.calculatorEsfericos.eyeLeft) {
     var esferaDom = double.parse(dataProviderR['Sphere'] ?? "0.0") /
         (1 -
             (int.parse(dataProviderR['Distance'] ?? "0") / 1000) *
@@ -160,7 +160,7 @@ monovisionCalculatorLeft(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
-      if (esferaNoDom > 6) {
+      if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -168,9 +168,11 @@ monovisionCalculatorLeft(context) {
 
       resultRoundCIR = FuncCalculators().roundCI(cilindroNoDominante);
     } else {
+      print('esferaDom');
+
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
-      if (esferaNoDom > 6) {
+      if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());

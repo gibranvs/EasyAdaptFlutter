@@ -151,6 +151,8 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
               if (Provider.of<CalculatorTotalState>(context, listen: false)
                       .dataRight['type'] ==
                   'Multifocal') {
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .changeResponseLeft('typeCalc', 'Multifocal');
                 await multifocalCalculatorRight(context);
               }
               if (Provider.of<CalculatorTotalState>(context, listen: false)
@@ -458,7 +460,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
                   selectedValueD = value;
                   if (Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataRight['type'] ==
-                          'Multifocal' &&
+                          'Multifocal' ||
                       Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataLeft['type'] ==
                           'Multifocal') {
@@ -501,7 +503,7 @@ class _CalculadoraTotalState extends State<CalculadoraTotal> {
 
                   if (Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataRight['type'] ==
-                          'Multifocal' &&
+                          'Multifocal' ||
                       Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataLeft['type'] ==
                           'Multifocal') {

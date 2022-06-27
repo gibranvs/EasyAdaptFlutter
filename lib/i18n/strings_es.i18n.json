@@ -154,6 +154,8 @@
 "saveModalBottom":"GUARDAR",
 "saveModalBottomRight":"¿Guardar solo la prescripción del ojo derecho?",
 "saveModalBottomLeft":"¿Guardar solo la prescripción del ojo izquierdo?",
+"saveModalBottomRight2":"Selecciona ahora la prescripciòn del ojo derecho",
+"saveModalBottomLeft2":"Selecciona ahora la prescripciòn del ojo izquierdo",
   "savePresTitle": "Confirmar",
   "savePresTitle1": "Prescripción ojo derecho",
   "savePresTitle2": "Prescripción ojo izquierdo",

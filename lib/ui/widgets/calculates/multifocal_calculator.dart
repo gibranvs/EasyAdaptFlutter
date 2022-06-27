@@ -3,7 +3,10 @@ import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:provider/provider.dart';
 
 multifocalCalculatorRight(context) {
+  Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseRight('typeCalc', 'Multifocal');
   var sphereFinal = 0.0;
+  var tempEsphereR = 0.0;
   var dataProvider = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataRight['data'] as Map;
 
@@ -11,22 +14,34 @@ multifocalCalculatorRight(context) {
       ((double.parse(dataProvider['Cylinder'] ?? "0") / 2)));
 
   if (sphereEquivalent < 4 && sphereEquivalent > -4) {
+    print('si');
     sphereFinal = sphereEquivalent;
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseRight('sphere', sphereFinal);
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseRight('esphereRound', sphereFinal);
   } else {
-    var tempEsphereR = (sphereEquivalent /
+    print('no');
+
+    tempEsphereR = (sphereEquivalent /
         (1 -
             (sphereEquivalent *
                 (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
+    print(tempEsphereR);
     if (tempEsphereR > 6) {
       sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
     } else {
       sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
     }
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseRight('sphere', tempEsphereR);
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseRight('esphereRound', sphereFinal);
   }
-  Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseRight('sphere', sphereEquivalent);
-  Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseRight('esphereRound', sphereFinal);
+  // Provider.of<CalculatorTotalState>(context, listen: false)
+  //     .changeResponseRight('sphere', tempEsphereR);
+  // Provider.of<CalculatorTotalState>(context, listen: false)
+  //     .changeResponseRight('esphereRound', sphereFinal);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('dominante', dataProvider['Dominante']);
   Provider.of<CalculatorTotalState>(context, listen: false)
@@ -35,7 +50,9 @@ multifocalCalculatorRight(context) {
 
 multifocalCalculatorLeft(context) {
   var resultRoundR = 0.0;
-
+  var tempEsphereR = 0.0;
+  Provider.of<CalculatorTotalState>(context, listen: false)
+      .changeResponseLeft('typeCalc', 'Multifocal');
   var sphereFinal = 0.0;
   var dataProvider = Provider.of<CalculatorTotalState>(context, listen: false)
       .dataLeft['data'] as Map;
@@ -45,8 +62,12 @@ multifocalCalculatorLeft(context) {
 
   if (sphereEquivalent < 4 && sphereEquivalent > -4) {
     sphereFinal = sphereEquivalent;
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseLeft('sphere', sphereFinal);
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseLeft('esphereRound', sphereFinal);
   } else {
-    var tempEsphereR = (sphereEquivalent /
+    tempEsphereR = (sphereEquivalent /
         (1 -
             (sphereEquivalent *
                 (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
@@ -57,11 +78,16 @@ multifocalCalculatorLeft(context) {
       resultRoundR = FuncCalculators().round50(tempEsphereR.toDouble());
       sphereFinal = resultRoundR;
     }
+
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseLeft('sphere', tempEsphereR);
+    Provider.of<CalculatorTotalState>(context, listen: false)
+        .changeResponseLeft('esphereRound', sphereFinal);
   }
-  Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseLeft('sphere', sphereEquivalent);
-  Provider.of<CalculatorTotalState>(context, listen: false)
-      .changeResponseLeft('esphereRound', sphereFinal);
+  // Provider.of<CalculatorTotalState>(context, listen: false)
+  //     .changeResponseLeft('sphere', tempEsphereR);
+  // Provider.of<CalculatorTotalState>(context, listen: false)
+  //     .changeResponseLeft('esphereRound', sphereFinal);
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('dominante', dataProvider['Dominante']);
   Provider.of<CalculatorTotalState>(context, listen: false)

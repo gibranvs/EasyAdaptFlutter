@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/data/internal_data.dart';
+import 'package:easy_adapt/state/menu_state.dart';
 import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_text_and_logos.dart';
@@ -62,7 +63,11 @@ class _PrescripcionPageState extends State<PrescripcionPage> {
             getAppBarWithWidgetAndLogosAndText(
                 IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Provider.of<MenuState>(context, listen: false)
+                        .changeIndex(3);
+
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/layout', (route) => false);
                   },
                   icon: Icon(Icons.arrow_back),
                   iconSize: 35,
@@ -231,7 +236,24 @@ class _PrescripcionPageState extends State<PrescripcionPage> {
     List responseToric = productsToricosEn;
     responseToric.forEach((element) {
       if (element['idPS'] == id) {
+        print('no llego');
+
         if (eye == '0') {
+          setState(() {
+            imageR = element['imagePS'];
+          });
+        } else {
+          setState(() {
+            imageL = element['imagePS'];
+          });
+        }
+      }
+    });
+    List responseMulti = productsMultifocalEn;
+    responseMulti.forEach((element) {
+      if (element['idPS'] == id) {
+        if (eye == '0') {
+          print("este es el elemento mi brother $element");
           setState(() {
             imageR = element['imagePS'];
           });

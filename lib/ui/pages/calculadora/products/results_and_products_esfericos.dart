@@ -317,8 +317,7 @@ class _ResultsAndProductsPageEsferico
                           .calculator_data['left']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? double.parse(Provider.of<CalculatorState>(context,
-                                  listen: false)
+                      ? double.parse(Provider.of<CalculatorState>(context, listen: false)
                               .calculator_data['right']['distance'])
                           .toStringAsFixed(2)
                       : double.parse(
@@ -340,7 +339,8 @@ class _ResultsAndProductsPageEsferico
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}, 'calculator'));
+              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {},
+                  'calculator', ''));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -384,7 +384,7 @@ class _ResultsAndProductsPageEsferico
                   }
                 });
               }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
-                  'calculator'));
+                  'calculator', ''));
     }
   }
 

@@ -155,6 +155,11 @@
 "saveModalBottomRight":"Manter apenas a prescrição do olho direito?",
 "saveModalBottomLeft":"Manter apenas a prescrição do olho esquerdo?",
 
+"saveModalBottomRight2":"Agora selecione a prescrição do olho direito",
+"saveModalBottomLeft2":"Selecione agora a prescrição do olho esquerdo?",
+
+
+
   "savePresTitle": "Confirme",
   "savePresTitle1": "Prescrição do olho direito",
   "savePresTitle2": "Prescrição do olho esquerdo",

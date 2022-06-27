@@ -105,7 +105,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -118,7 +118,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -248,7 +248,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -261,7 +261,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -390,7 +390,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -403,7 +403,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -681,13 +681,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           .calculator_data['left']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? double.parse(Provider.of<CalculatorTotalState>(context,
-                                  listen: false)
-                              .dataRight['data']['Distance'])
+                      ? double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Distance'])
                           .toStringAsFixed(2)
-                      : double.parse(
-                              Provider.of<CalculatorState>(context, listen: false)
-                                  .calculator_data['left']['distance'])
+                      : double.parse(Provider.of<CalculatorState>(context,
+                                  listen: false)
+                              .calculator_data['left']['distance'])
                           .toStringAsFixed(2),
                   '',
                   '',
@@ -704,7 +702,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}, 'inicial'));
+              },
+                  dataProductsR.isNotEmpty ? dataProductsR[index] : {},
+                  'inicial',
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['response']['add']));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -718,8 +720,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['right']['esphereRound']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorTotalState>(context,
-                              listen: false)
+                      : Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataLeft['response']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
@@ -750,8 +751,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
-                  'inicial'));
+              },
+                  dataProductsL.isNotEmpty ? dataProductsL[index] : {},
+                  'inicial',
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['response']['add']));
     }
   }
 

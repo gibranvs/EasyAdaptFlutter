@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 447 (149.0 per locale)
+ * Strings: 453 (151.0 per locale)
  *
- * Built on 2022-06-06 at 15:23 UTC
+ * Built on 2022-06-27 at 15:20 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -406,6 +406,8 @@ class _StringsEn {
 	String get saveModalBottom => 'SAVE';
 	String get saveModalBottomRight => 'Keep just the right eye prescription?';
 	String get saveModalBottomLeft => 'Keep only the left eye prescription?';
+	String get saveModalBottomRight2 => 'Now select the prescription of the right eye';
+	String get saveModalBottomLeft2 => 'Now select the prescription for the left eye';
 	String get savePresTitle => 'Confirm';
 	String get savePresTitle1 => 'Right eye prescription';
 	String get savePresTitle2 => 'Left eye prescription';
@@ -708,6 +710,8 @@ class _StringsEs implements _StringsEn {
 	@override String get saveModalBottom => 'GUARDAR';
 	@override String get saveModalBottomRight => '¿Guardar solo la prescripción del ojo derecho?';
 	@override String get saveModalBottomLeft => '¿Guardar solo la prescripción del ojo izquierdo?';
+	@override String get saveModalBottomRight2 => 'Selecciona ahora la prescripciòn del ojo derecho';
+	@override String get saveModalBottomLeft2 => 'Selecciona ahora la prescripciòn del ojo izquierdo';
 	@override String get savePresTitle => 'Confirmar';
 	@override String get savePresTitle1 => 'Prescripción ojo derecho';
 	@override String get savePresTitle2 => 'Prescripción ojo izquierdo';
@@ -1010,6 +1014,8 @@ class _StringsPt implements _StringsEn {
 	@override String get saveModalBottom => 'SALVE ';
 	@override String get saveModalBottomRight => 'Manter apenas a prescrição do olho direito?';
 	@override String get saveModalBottomLeft => 'Manter apenas a prescrição do olho esquerdo?';
+	@override String get saveModalBottomRight2 => 'Agora selecione a prescrição do olho direito';
+	@override String get saveModalBottomLeft2 => 'Selecione agora a prescrição do olho esquerdo?';
 	@override String get savePresTitle => 'Confirme';
 	@override String get savePresTitle1 => 'Prescrição do olho direito';
 	@override String get savePresTitle2 => 'Prescrição do olho esquerdo';
@@ -1336,6 +1342,8 @@ extension on _StringsEn {
 			'saveModalBottom': 'SAVE',
 			'saveModalBottomRight': 'Keep just the right eye prescription?',
 			'saveModalBottomLeft': 'Keep only the left eye prescription?',
+			'saveModalBottomRight2': 'Now select the prescription of the right eye',
+			'saveModalBottomLeft2': 'Now select the prescription for the left eye',
 			'savePresTitle': 'Confirm',
 			'savePresTitle1': 'Right eye prescription',
 			'savePresTitle2': 'Left eye prescription',
@@ -1492,6 +1500,8 @@ extension on _StringsEs {
 			'saveModalBottom': 'GUARDAR',
 			'saveModalBottomRight': '¿Guardar solo la prescripción del ojo derecho?',
 			'saveModalBottomLeft': '¿Guardar solo la prescripción del ojo izquierdo?',
+			'saveModalBottomRight2': 'Selecciona ahora la prescripciòn del ojo derecho',
+			'saveModalBottomLeft2': 'Selecciona ahora la prescripciòn del ojo izquierdo',
 			'savePresTitle': 'Confirmar',
 			'savePresTitle1': 'Prescripción ojo derecho',
 			'savePresTitle2': 'Prescripción ojo izquierdo',
@@ -1648,6 +1658,8 @@ extension on _StringsPt {
 			'saveModalBottom': 'SALVE ',
 			'saveModalBottomRight': 'Manter apenas a prescrição do olho direito?',
 			'saveModalBottomLeft': 'Manter apenas a prescrição do olho esquerdo?',
+			'saveModalBottomRight2': 'Agora selecione a prescrição do olho direito',
+			'saveModalBottomLeft2': 'Selecione agora a prescrição do olho esquerdo?',
 			'savePresTitle': 'Confirme',
 			'savePresTitle1': 'Prescrição do olho direito',
 			'savePresTitle2': 'Prescrição do olho esquerdo',

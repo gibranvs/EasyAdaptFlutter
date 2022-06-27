@@ -184,11 +184,13 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                   'Toric') {
                 await toricCalculatorRight(context);
               }
+
               if (Provider.of<CalculatorTotalState>(context, listen: false)
                       .dataRight['type'] ==
                   'Multifocal') {
                 await multifocalCalculatorRight(context);
               }
+
               if (Provider.of<CalculatorTotalState>(context, listen: false)
                       .dataRight['type'] ==
                   'Monovision') {
@@ -226,15 +228,16 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                   Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataLeft['type'] ==
                       'Multifocal') {
-                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Cylinder'] ?? "0.0") <= 0 &&
+                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
+                                .dataRight['data']['Cylinder'] ??
+                            "0.0") <=
+                        0 &&
                     double.parse(
                             Provider.of<CalculatorTotalState>(context, listen: false)
-                                .dataRight['data']['Cylinder']) >=
+                                    .dataRight['data']['Cylinder'] ??
+                                "0.0") >=
                         -1 &&
-                    double.parse(
-                            Provider.of<CalculatorTotalState>(context, listen: false)
-                                    .dataLeft['data']['Cylinder'] ??
-                                "0.0") <=
+                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder'] ?? "0.0") <=
                         0 &&
                     double.parse(
                             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -242,12 +245,13 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                                 "0.0") >=
                         -1) {
                   //////////////////////////////////////////// revisar validacion
-                  if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Sphere'])
+                  if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Sphere'] ?? "0.0")
                               .toInt()
                               .abs() >=
                           (3 *
                               (double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                                      .dataRight['data']['Cylinder'])
+                                          .dataRight['data']['Cylinder'] ??
+                                      "0.0")
                                   .toInt()
                                   .abs())) &&
                       double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Sphere'] ?? "0.0")
@@ -492,7 +496,7 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                   selectedValueD = value;
                   if (Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataRight['type'] ==
-                          'Multifocal' &&
+                          'Multifocal' ||
                       Provider.of<CalculatorTotalState>(context, listen: false)
                               .dataLeft['type'] ==
                           'Multifocal') {
@@ -509,6 +513,7 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
                     Provider.of<CalculatorTotalState>(context, listen: false)
                         .changeDataLeft(
                             'Monovision', 'Dominante', selectedValueD);
+                    print('hey');
                   }
                 });
               },

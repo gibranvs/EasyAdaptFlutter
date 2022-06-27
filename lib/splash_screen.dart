@@ -1,3 +1,4 @@
+import 'package:easy_adapt/i18n/translations.g.dart';
 import 'package:easy_adapt/routes/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +14,21 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation _colorTween;
+  bool colorL = true;
 
   @override
   void initState() {
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
     _colorTween =
-        ColorTween(begin: Colors.white, end: Color.fromRGBO(120, 191, 188, 1.0))
+        ColorTween(begin: Color.fromRGBO(120, 191, 188, 1.0), end: Colors.white)
             .animate(_animationController);
 
     Future.delayed(Duration(milliseconds: 950), () {
       _animationController.forward();
+      setState(() {
+        colorL = false;
+      });
     });
 
     Future.delayed(Duration(milliseconds: 1500), () {
@@ -50,18 +55,68 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 Container(
                   child: Positioned(
-                    left: -160,
-                    bottom: 0,
-                    child: Image.asset('./assets/fondo_cuadrado.png'),
-                    width: 300,
+                    left: 0,
+                    bottom: 40,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
                   ),
                 ),
                 Container(
                   child: Positioned(
-                    right: -160,
-                    top: 0,
-                    child: Image.asset('./assets/fondo_cuadrado.png'),
-                    width: 300,
+                    left: 30,
+                    bottom: 120,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
+                  ),
+                ),
+                Container(
+                  child: Positioned(
+                    left: -60,
+                    bottom: 120,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
+                  ),
+                ),
+                Container(
+                  child: Positioned(
+                    right: -40,
+                    top: 38,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
+                  ),
+                ),
+                Container(
+                  child: Positioned(
+                    right: 0,
+                    top: 110,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
+                  ),
+                ),
+                Container(
+                  child: Positioned(
+                    right: 60,
+                    top: 50,
+                    child: Image.asset(
+                      './assets/gris stroke.png',
+                      color: colorL ? Color.fromARGB(255, 222, 217, 217) : null,
+                    ),
+                    width: 80,
                   ),
                 ),
                 Center(

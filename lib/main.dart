@@ -13,10 +13,26 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+late SharedPreferences prefsMain;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final prefs = await SharedPreferences.getInstance();
+  prefsMain = await SharedPreferences.getInstance();
+  switch (prefsMain.getString('idioma')) {
+    case '1':
+      var result = LocaleSettings.setLocaleRaw('en');
 
+      break;
+    case '2':
+      var result = LocaleSettings.setLocaleRaw('es');
+
+      break;
+    case '3':
+      var result = LocaleSettings.setLocaleRaw('pt');
+
+      break;
+    default:
+      var result = LocaleSettings.setLocaleRaw('en');
+  }
   runApp(MultiProvider(
     providers: [
       ListenableProvider<PlayerState>(
@@ -38,18 +54,13 @@ void main() async {
         create: (_) => CalculatorTotalState(),
       )
     ],
-    child: TranslationProvider(
-        child: MyApp(
-      prefs: prefs,
-    )),
+    child: TranslationProvider(child: MyApp()),
   ));
 }
 
 class MyApp extends StatelessWidget {
-  SharedPreferences prefs;
-  MyApp({Key? key, required this.prefs}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     final translation = Translations.of(context);
@@ -64,7 +75,7 @@ class MyApp extends StatelessWidget {
       // initialRoute: getInitialRoute(prefs),
       // home: CalculadoraTotal(),
       home: SplashScreen(
-        prefs: prefs,
+        prefs: prefsMain,
       ),
       routes: getRoutes(translation),
     );
