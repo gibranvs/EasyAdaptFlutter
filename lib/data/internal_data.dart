@@ -301,3 +301,72 @@ List productsToricosPt = [
     "imagePS": "./assets/calculators/softlens_astigmatism.png"
   },
 ];
+
+List productsMultifocalEn = [
+  {
+    "idPS": "7",
+    "namePS": "ULTRA For Presbyopia",
+    "descriptionPS":
+        "MoistureSeal Technology / 3-ZONE PROGRESSIVE Design Consistent power across near, mid and far zones delivers extraordinary focus and visual experience",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_multi.png"
+  },
+  {
+    "idPS": "8",
+    "namePS": "Pure Vision 2 For Presbyopia",
+    "descriptionPS":
+        "Comfort Moist /3-ZONE PROGRESSIVE Design Consistent power across near, mid and far zones, delivers extraordinary focus and visual experience",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/purevision_for_presbicie.png"
+  },
+];
+
+List productsMultifocalEs = [
+  {
+    "idPS": "7",
+    "namePS": "ULTRA For Presbyopia",
+    "descriptionPS":
+        "MoistureSeal Technology / Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_multi.png"
+  },
+  {
+    "idPS": "8",
+    "namePS": "Pure Vision 2 For Presbyopia",
+    "descriptionPS":
+        "Comfort Moist /Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/purevision_for_presbicie.png"
+  },
+];
+
+List productsMultifocalPt = [
+  {
+    "idPS": "7",
+    "namePS": "ULTRA For Presbyopia",
+    "descriptionPS":
+        "Tecnologia MoistureSeal / Design PROGRESSIVE 3-ZONE Potência consistente em zonas próximas, médias e distantes oferece foco e experiência visual extraordinários",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/ultra_multi.png"
+  },
+  {
+    "idPS": "8",
+    "namePS": "Pure Vision 2 For Presbyopia",
+    "descriptionPS":
+        "Conforto Úmido /3-ZONE PROGRESSIVE Design Potência consistente em zonas próximas, médias e distantes, oferece foco e experiência visual extraordinários",
+    "maxPS": "6.25",
+    "minPS": "-10.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/purevision_for_presbicie.png"
+  },
+];

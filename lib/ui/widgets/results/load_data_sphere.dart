@@ -3,6 +3,8 @@ import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:provider/provider.dart';
 
 loadProductsSphere(context, code, condition) {
+  print('load');
+
   List dataProducts = [];
   switch (code) {
     case 'es':
@@ -69,6 +71,43 @@ loadProductsToric(context, code, condition, condition2) {
             double.parse(element['minPS']) < condition &&
             double.parse(element['cylinderMax']) > condition2 &&
             double.parse(element['cylinderMin']) < condition2) {
+          dataProducts.add(element);
+        }
+      });
+      break;
+    default:
+  }
+  return dataProducts;
+}
+
+loadProductsMultifocal(context, code, condition) {
+  List dataProducts = [];
+  switch (code) {
+    case 'es':
+      if (condition != null) {
+        productsMultifocalEs.forEach((element) {
+          if (double.parse(element['maxPS']) > condition &&
+              double.parse(element['minPS']) < condition) {
+            dataProducts.add(element);
+          }
+        });
+      }
+
+      break;
+    case 'en':
+      if (condition != null) {
+        productsMultifocalEn.forEach((element) {
+          if (double.parse(element['maxPS']) > condition &&
+              double.parse(element['minPS']) < condition) {
+            dataProducts.add(element);
+          }
+        });
+      }
+      break;
+    case 'pt':
+      productsMultifocalPt.forEach((element) {
+        if (double.parse(element['maxPS']) > condition &&
+            double.parse(element['minPS']) < condition) {
           dataProducts.add(element);
         }
       });

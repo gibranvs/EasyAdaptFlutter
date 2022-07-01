@@ -1,3 +1,5 @@
+import 'package:easy_adapt/data/data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -199,38 +201,80 @@ class getBottomShetEsferico {
                                       .data['presc']
                                       .length <
                                   2) {
-                                await showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return AlertDialog(
-                                        content: Text(Provider.of<ResultState>(
+                                (Provider.of<CalculatorTotalState>(context,
+                                                    listen: false)
+                                                .dataRight['type'] ==
+                                            'Multifocal' ||
+                                        Provider.of<CalculatorTotalState>(
                                                     context,
                                                     listen: false)
-                                                .rightValue
-                                            ? t.saveModalBottomRight
-                                            : t.saveModalBottomLeft),
-                                        actions: [
-                                          FlatButton(
-                                            child: Text('No'),
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                              Navigator.pop(context);
-                                              onNo();
-                                            },
-                                          ),
-                                          FlatButton(
-                                            child: Text('Si'),
-                                            onPressed: () {
-                                              Navigator.pushNamed(context,
-                                                  '/calc/results/confirm');
-                                            },
-                                          ),
-                                        ],
-                                      );
-                                    });
+                                                .dataLeft['type'] ==
+                                            'Multifocal')
+                                    ? await showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            content: Text(
+                                                Provider.of<ResultState>(
+                                                            context,
+                                                            listen: false)
+                                                        .rightValue
+                                                    ? t.saveModalBottomLeft2
+                                                    : t.saveModalBottomRight2),
+                                            actions: [
+                                              FlatButton(
+                                                child: Text('OK'),
+                                                onPressed: () async {
+                                                  onNo();
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        })
+                                    : await showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            content: Text(
+                                                Provider.of<ResultState>(
+                                                            context,
+                                                            listen: false)
+                                                        .rightValue
+                                                    ? t.saveModalBottomRight
+                                                    : t.saveModalBottomLeft),
+                                            actions: [
+                                              FlatButton(
+                                                child: Text('No'),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                  Navigator.pop(context);
+                                                  onNo();
+                                                },
+                                              ),
+                                              FlatButton(
+                                                child: Text('Si'),
+                                                onPressed: () async {
+                                                  Navigator.pushNamed(context,
+                                                      '/calc/results/confirm');
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        });
                               } else {
-                                Navigator.pushNamed(
-                                    context, '/calc/results/confirm');
+                                if (Provider.of<CalculatorTotalState>(context,
+                                                listen: false)
+                                            .dataRight['type'] ==
+                                        'Multifocal' ||
+                                    Provider.of<CalculatorTotalState>(context,
+                                                listen: false)
+                                            .dataLeft['type'] ==
+                                        'Multifocal') {
+                                  Navigator.pushNamed(context, '/prescripcion');
+                                } else {
+                                  Navigator.pushNamed(
+                                      context, '/calc/results/confirm');
+                                }
                               }
                             },
                             child: Container(

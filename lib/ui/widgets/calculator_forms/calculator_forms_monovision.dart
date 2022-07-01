@@ -1,10 +1,14 @@
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:easy_adapt/data/calculator_data.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '/../i18n/strings.g.dart';
 
 class CalculatorFormMonovision extends StatefulWidget {
-  CalculatorFormMonovision({Key? key}) : super(key: key);
+  final String eye;
+
+  CalculatorFormMonovision({Key? key, required this.eye}) : super(key: key);
 
   @override
   State<CalculatorFormMonovision> createState() => _CalculatorFormMonovision();
@@ -42,6 +46,15 @@ class _CalculatorFormMonovision extends State<CalculatorFormMonovision> {
         onChanged: (value) {
           setState(() {
             selectedValueEsphereR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Monovision', 'Sphere', selectedValueEsphereR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Monovision', 'Sphere', selectedValueEsphereR);
+            }
           });
         },
       ),
@@ -64,6 +77,15 @@ class _CalculatorFormMonovision extends State<CalculatorFormMonovision> {
         onChanged: (value) {
           setState(() {
             selectedValueDistanceR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Monovision', 'Distance', selectedValueDistanceR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Monovision', 'Distance', selectedValueDistanceR);
+            }
           });
         },
       ),
@@ -86,6 +108,15 @@ class _CalculatorFormMonovision extends State<CalculatorFormMonovision> {
         onChanged: (value) {
           setState(() {
             selectedValueCylinderR = value;
+            if (widget.eye == "R") {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataRight(
+                      'Monovision', 'Cylinder', selectedValueCylinderR);
+            } else {
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .changeDataLeft(
+                      'Monovision', 'Cylinder', selectedValueCylinderR);
+            }
           });
         },
       ),

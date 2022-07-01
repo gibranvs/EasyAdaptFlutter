@@ -144,4 +144,69 @@ class Data {
       return {};
     }
   }
+
+  setPrescription(id, producto, fecha, ojo, valores, idProducto, duracion,
+      adiccion, dominante) async {
+    try {
+      final response =
+          await http.post(Uri.parse("$url/api?tipo=set_prescription"), body: {
+        "id_paciente": id.toString(),
+        "producto": producto.toString(),
+        "proxima_fecha": fecha.toString(),
+        "ojo": ojo.toString(),
+        "valores": valores.toString(),
+        "id_producto": idProducto.toString(),
+        "duración": duracion.toString(),
+        "adiccion": adiccion.toString(),
+        "dominante": dominante.toString()
+      });
+      var data = jsonDecode(response.body);
+      print(data);
+      if (data['status'] == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+  getLastPrescription(id, eye) async {
+    try {
+      final response = await http.post(
+          Uri.parse("$url/api?tipo=get_last_prescription"),
+          body: {'id_paciente': id, 'ojo': eye.toString()});
+      var data = jsonDecode(response.body);
+      print(data);
+      if (data['status'] == 1) {
+        return data['response'];
+      } else {
+        return {};
+      }
+    } catch (e) {
+      print(e);
+
+      return {};
+    }
+  }
+
+  getPrescription(id) async {
+    try {
+      final response =
+          await http.post(Uri.parse("$url/api?tipo=get_prescriptions"), body: {
+        'id_paciente': id,
+      });
+      var data = jsonDecode(response.body);
+      // print(data['response']);
+      print(data['response']);
+      if (data['status'] == 1) {
+        return [...data['response']];
+      } else {
+        return {};
+      }
+    } catch (e) {
+      return {};
+    }
+  }
 }

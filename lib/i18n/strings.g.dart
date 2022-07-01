@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 396 (132.0 per locale)
+ * Strings: 453 (151.0 per locale)
  *
- * Built on 2022-05-05 at 03:29 UTC
+ * Built on 2022-06-27 at 15:20 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -406,6 +406,8 @@ class _StringsEn {
 	String get saveModalBottom => 'SAVE';
 	String get saveModalBottomRight => 'Keep just the right eye prescription?';
 	String get saveModalBottomLeft => 'Keep only the left eye prescription?';
+	String get saveModalBottomRight2 => 'Now select the prescription of the right eye';
+	String get saveModalBottomLeft2 => 'Now select the prescription for the left eye';
 	String get savePresTitle => 'Confirm';
 	String get savePresTitle1 => 'Right eye prescription';
 	String get savePresTitle2 => 'Left eye prescription';
@@ -415,6 +417,23 @@ class _StringsEn {
 	String get prescriptionTitle1 => 'Prescription history';
 	String get toricModalTitle => 'Shaft adjustment';
 	String get toricModalSubTitle => 'New adapted result';
+	String get calculatorTotalToast => 'There are no recommended products with these parameters';
+	String get calculatorTotalModalTitle => 'Invalid Parameters';
+	String get calculatorTotalModalSubTitle => 'It is not possible to adapt multifocals with these parameters, try Monovision';
+	String get calculatorConfirmSendCalendar1 => 'The tratment of ';
+	String get calculatorConfirmSendCalendar2 => ' for ';
+	String get calculatorConfirmSendCalendar3 => ' It is about to end, contact him for a new prescription. ';
+	String get calculatorConfirmSendCalendarModal1 => 'This prescription was saved in your diary ';
+	String get calculatorConfirmSendCalendarModal2 => 'A notification will be created';
+	String get calculatorConfirmSendCalendarModal3 => 'to contact  ';
+	String get calculatorConfirmSendCalendarModal4 => 'to deliver your next treatment';
+	String get calculatorConfirmSendCalendarModalButton => 'ACCEPT';
+	String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZE';
+	String get hisotirlaPrescriptionsEye1 => 'Right eye';
+	String get hisotirlaPrescriptionsEye2 => 'Left eye';
+	String get hisotirlaPrescriptionsEyeR => 'Right eye prescription';
+	String get hisotirlaPrescriptionsEyeL => 'Left eye prescription';
+	String get hisotirlaPrescriptionsEyeE => 'Deadline';
 }
 
 // Path: login
@@ -691,6 +710,8 @@ class _StringsEs implements _StringsEn {
 	@override String get saveModalBottom => 'GUARDAR';
 	@override String get saveModalBottomRight => '¿Guardar solo la prescripción del ojo derecho?';
 	@override String get saveModalBottomLeft => '¿Guardar solo la prescripción del ojo izquierdo?';
+	@override String get saveModalBottomRight2 => 'Selecciona ahora la prescripciòn del ojo derecho';
+	@override String get saveModalBottomLeft2 => 'Selecciona ahora la prescripciòn del ojo izquierdo';
 	@override String get savePresTitle => 'Confirmar';
 	@override String get savePresTitle1 => 'Prescripción ojo derecho';
 	@override String get savePresTitle2 => 'Prescripción ojo izquierdo';
@@ -700,6 +721,23 @@ class _StringsEs implements _StringsEn {
 	@override String get prescriptionTitle1 => 'Historial de prescripciones';
 	@override String get toricModalTitle => 'Ajuste del eje';
 	@override String get toricModalSubTitle => 'Nuevo resultado adaptado';
+	@override String get calculatorTotalToast => 'No hay productos recomendados con estos parámetros';
+	@override String get calculatorTotalModalTitle => 'Parámetros no válidos';
+	@override String get calculatorTotalModalSubTitle => 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión';
+	@override String get calculatorConfirmSendCalendar1 => 'El tratamiento de ';
+	@override String get calculatorConfirmSendCalendar2 => ' para ';
+	@override String get calculatorConfirmSendCalendar3 => ' Esta por terminar, contactalo para nueva prescripcion. ';
+	@override String get calculatorConfirmSendCalendarModal1 => 'Esta prescripción se guardó en su agenda ';
+	@override String get calculatorConfirmSendCalendarModal2 => 'Se creará una notificación él ';
+	@override String get calculatorConfirmSendCalendarModal3 => 'para contactar a   ';
+	@override String get calculatorConfirmSendCalendarModal4 => 'para entregarle su siguiente tratamiento';
+	@override String get calculatorConfirmSendCalendarModalButton => 'ACEPTAR';
+	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
+	@override String get hisotirlaPrescriptionsEye1 => 'Ojo derecho';
+	@override String get hisotirlaPrescriptionsEye2 => 'Ojo izquierdo';
+	@override String get hisotirlaPrescriptionsEyeR => 'Prescripción ojo derecho';
+	@override String get hisotirlaPrescriptionsEyeL => 'Prescripción ojo izquierdo';
+	@override String get hisotirlaPrescriptionsEyeE => 'Fecha de entrega';
 }
 
 // Path: login
@@ -976,6 +1014,8 @@ class _StringsPt implements _StringsEn {
 	@override String get saveModalBottom => 'SALVE ';
 	@override String get saveModalBottomRight => 'Manter apenas a prescrição do olho direito?';
 	@override String get saveModalBottomLeft => 'Manter apenas a prescrição do olho esquerdo?';
+	@override String get saveModalBottomRight2 => 'Agora selecione a prescrição do olho direito';
+	@override String get saveModalBottomLeft2 => 'Selecione agora a prescrição do olho esquerdo?';
 	@override String get savePresTitle => 'Confirme';
 	@override String get savePresTitle1 => 'Prescrição do olho direito';
 	@override String get savePresTitle2 => 'Prescrição do olho esquerdo';
@@ -985,6 +1025,23 @@ class _StringsPt implements _StringsEn {
 	@override String get prescriptionTitle1 => 'Histórico de prescrição';
 	@override String get toricModalTitle => 'Ajuste do eixo';
 	@override String get toricModalSubTitle => 'Novo resultado adaptado';
+	@override String get calculatorTotalToast => 'Não há produtos recomendados com esses parâmetros';
+	@override String get calculatorTotalModalTitle => 'Parâmetros inválidos';
+	@override String get calculatorTotalModalSubTitle => 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision';
+	@override String get calculatorConfirmSendCalendar1 => 'O tratamento de ';
+	@override String get calculatorConfirmSendCalendar2 => ' por ';
+	@override String get calculatorConfirmSendCalendar3 => ' Está prestes a acabar, contacte-o para uma nova receita. ';
+	@override String get calculatorConfirmSendCalendarModal1 => 'Esta receita foi salva em seu diário';
+	@override String get calculatorConfirmSendCalendarModal2 => 'Uma notificação será criada ';
+	@override String get calculatorConfirmSendCalendarModal3 => 'contactar ';
+	@override String get calculatorConfirmSendCalendarModal4 => 'para entregar seu próximo tratamento ';
+	@override String get calculatorConfirmSendCalendarModalButton => 'ACEITAR';
+	@override String get calculatorConfirmSendCalendarModalButton2 => 'FINALIZAR';
+	@override String get hisotirlaPrescriptionsEye1 => 'Olho direito';
+	@override String get hisotirlaPrescriptionsEye2 => 'Olho esquerdo';
+	@override String get hisotirlaPrescriptionsEyeR => 'Prescrição do olho direito';
+	@override String get hisotirlaPrescriptionsEyeL => 'Prescrição do olho esquerdo';
+	@override String get hisotirlaPrescriptionsEyeE => 'Data de entrega';
 }
 
 // Path: login
@@ -1285,6 +1342,8 @@ extension on _StringsEn {
 			'saveModalBottom': 'SAVE',
 			'saveModalBottomRight': 'Keep just the right eye prescription?',
 			'saveModalBottomLeft': 'Keep only the left eye prescription?',
+			'saveModalBottomRight2': 'Now select the prescription of the right eye',
+			'saveModalBottomLeft2': 'Now select the prescription for the left eye',
 			'savePresTitle': 'Confirm',
 			'savePresTitle1': 'Right eye prescription',
 			'savePresTitle2': 'Left eye prescription',
@@ -1294,6 +1353,23 @@ extension on _StringsEn {
 			'prescriptionTitle1': 'Prescription history',
 			'toricModalTitle': 'Shaft adjustment',
 			'toricModalSubTitle': 'New adapted result',
+			'calculatorTotalToast': 'There are no recommended products with these parameters',
+			'calculatorTotalModalTitle': 'Invalid Parameters',
+			'calculatorTotalModalSubTitle': 'It is not possible to adapt multifocals with these parameters, try Monovision',
+			'calculatorConfirmSendCalendar1': 'The tratment of ',
+			'calculatorConfirmSendCalendar2': ' for ',
+			'calculatorConfirmSendCalendar3': ' It is about to end, contact him for a new prescription. ',
+			'calculatorConfirmSendCalendarModal1': 'This prescription was saved in your diary ',
+			'calculatorConfirmSendCalendarModal2': 'A notification will be created',
+			'calculatorConfirmSendCalendarModal3': 'to contact  ',
+			'calculatorConfirmSendCalendarModal4': 'to deliver your next treatment',
+			'calculatorConfirmSendCalendarModalButton': 'ACCEPT',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZE',
+			'hisotirlaPrescriptionsEye1': 'Right eye',
+			'hisotirlaPrescriptionsEye2': 'Left eye',
+			'hisotirlaPrescriptionsEyeR': 'Right eye prescription',
+			'hisotirlaPrescriptionsEyeL': 'Left eye prescription',
+			'hisotirlaPrescriptionsEyeE': 'Deadline',
 		};
 	}
 }
@@ -1424,6 +1500,8 @@ extension on _StringsEs {
 			'saveModalBottom': 'GUARDAR',
 			'saveModalBottomRight': '¿Guardar solo la prescripción del ojo derecho?',
 			'saveModalBottomLeft': '¿Guardar solo la prescripción del ojo izquierdo?',
+			'saveModalBottomRight2': 'Selecciona ahora la prescripciòn del ojo derecho',
+			'saveModalBottomLeft2': 'Selecciona ahora la prescripciòn del ojo izquierdo',
 			'savePresTitle': 'Confirmar',
 			'savePresTitle1': 'Prescripción ojo derecho',
 			'savePresTitle2': 'Prescripción ojo izquierdo',
@@ -1433,6 +1511,23 @@ extension on _StringsEs {
 			'prescriptionTitle1': 'Historial de prescripciones',
 			'toricModalTitle': 'Ajuste del eje',
 			'toricModalSubTitle': 'Nuevo resultado adaptado',
+			'calculatorTotalToast': 'No hay productos recomendados con estos parámetros',
+			'calculatorTotalModalTitle': 'Parámetros no válidos',
+			'calculatorTotalModalSubTitle': 'No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión',
+			'calculatorConfirmSendCalendar1': 'El tratamiento de ',
+			'calculatorConfirmSendCalendar2': ' para ',
+			'calculatorConfirmSendCalendar3': ' Esta por terminar, contactalo para nueva prescripcion. ',
+			'calculatorConfirmSendCalendarModal1': 'Esta prescripción se guardó en su agenda ',
+			'calculatorConfirmSendCalendarModal2': 'Se creará una notificación él ',
+			'calculatorConfirmSendCalendarModal3': 'para contactar a   ',
+			'calculatorConfirmSendCalendarModal4': 'para entregarle su siguiente tratamiento',
+			'calculatorConfirmSendCalendarModalButton': 'ACEPTAR',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
+			'hisotirlaPrescriptionsEye1': 'Ojo derecho',
+			'hisotirlaPrescriptionsEye2': 'Ojo izquierdo',
+			'hisotirlaPrescriptionsEyeR': 'Prescripción ojo derecho',
+			'hisotirlaPrescriptionsEyeL': 'Prescripción ojo izquierdo',
+			'hisotirlaPrescriptionsEyeE': 'Fecha de entrega',
 		};
 	}
 }
@@ -1563,6 +1658,8 @@ extension on _StringsPt {
 			'saveModalBottom': 'SALVE ',
 			'saveModalBottomRight': 'Manter apenas a prescrição do olho direito?',
 			'saveModalBottomLeft': 'Manter apenas a prescrição do olho esquerdo?',
+			'saveModalBottomRight2': 'Agora selecione a prescrição do olho direito',
+			'saveModalBottomLeft2': 'Selecione agora a prescrição do olho esquerdo?',
 			'savePresTitle': 'Confirme',
 			'savePresTitle1': 'Prescrição do olho direito',
 			'savePresTitle2': 'Prescrição do olho esquerdo',
@@ -1572,6 +1669,23 @@ extension on _StringsPt {
 			'prescriptionTitle1': 'Histórico de prescrição',
 			'toricModalTitle': 'Ajuste do eixo',
 			'toricModalSubTitle': 'Novo resultado adaptado',
+			'calculatorTotalToast': 'Não há produtos recomendados com esses parâmetros',
+			'calculatorTotalModalTitle': 'Parâmetros inválidos',
+			'calculatorTotalModalSubTitle': 'Não é possível adaptar multifocais com esses parâmetros, tente Monovision',
+			'calculatorConfirmSendCalendar1': 'O tratamento de ',
+			'calculatorConfirmSendCalendar2': ' por ',
+			'calculatorConfirmSendCalendar3': ' Está prestes a acabar, contacte-o para uma nova receita. ',
+			'calculatorConfirmSendCalendarModal1': 'Esta receita foi salva em seu diário',
+			'calculatorConfirmSendCalendarModal2': 'Uma notificação será criada ',
+			'calculatorConfirmSendCalendarModal3': 'contactar ',
+			'calculatorConfirmSendCalendarModal4': 'para entregar seu próximo tratamento ',
+			'calculatorConfirmSendCalendarModalButton': 'ACEITAR',
+			'calculatorConfirmSendCalendarModalButton2': 'FINALIZAR',
+			'hisotirlaPrescriptionsEye1': 'Olho direito',
+			'hisotirlaPrescriptionsEye2': 'Olho esquerdo',
+			'hisotirlaPrescriptionsEyeR': 'Prescrição do olho direito',
+			'hisotirlaPrescriptionsEyeL': 'Prescrição do olho esquerdo',
+			'hisotirlaPrescriptionsEyeE': 'Data de entrega',
 		};
 	}
 }

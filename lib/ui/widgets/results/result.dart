@@ -5,10 +5,12 @@ import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/appbar_calculators.dart';
 import 'package:easy_adapt/ui/pages/calculadora/widgets/product_model.dart';
 import 'package:easy_adapt/ui/widgets/results/load_data_sphere.dart';
+import 'package:easy_adapt/ui/widgets/results/monovision_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/multifocal_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/spherical_result_text.dart';
 import 'package:easy_adapt/ui/widgets/results/toric_result_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
@@ -103,7 +105,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -116,7 +118,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -125,6 +127,63 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           setState(() {
             dataProductsL = finalData;
           });
+        }
+        //MONOVISION PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsR = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'es',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['cylinderRound']);
+            setState(() {
+              dataProductsR = finalData;
+            });
+          }
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'es',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsL = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'es',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['cylinderRound']);
+            setState(() {
+              dataProductsL = finalData;
+            });
+          }
         }
 
         break;
@@ -189,7 +248,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -202,7 +261,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -211,6 +270,64 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           setState(() {
             dataProductsL = finalData;
           });
+        }
+
+        //MONOVISION PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsR = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'en',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['cylinderRound']);
+            setState(() {
+              dataProductsR = finalData;
+            });
+          }
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'en',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsL = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'en',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['cylinderRound']);
+            setState(() {
+              dataProductsL = finalData;
+            });
+          }
         }
 
         break;
@@ -273,7 +390,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -286,7 +403,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
         if (Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['type'] ==
             'Multifocal') {
-          var finalData = loadProductsSphere(
+          var finalData = loadProductsMultifocal(
             context,
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
@@ -296,7 +413,63 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
             dataProductsL = finalData;
           });
         }
-
+        //MONOVISION PRODUCTS
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataRight['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsR = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'pt',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['cylinderRound']);
+            setState(() {
+              dataProductsR = finalData;
+            });
+          }
+        }
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                .dataLeft['type'] ==
+            'Monovision') {
+          if (Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['typeCalc'] ==
+              'Spherical') {
+            var finalData = loadProductsSphere(
+              context,
+              'pt',
+              Provider.of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['response']['esphereRound'],
+            );
+            setState(() {
+              dataProductsL = finalData;
+            });
+          } else {
+            var finalData = loadProductsToric(
+                context,
+                'pt',
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['esphereRound'],
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['cylinderRound']);
+            setState(() {
+              dataProductsL = finalData;
+            });
+          }
+        }
         break;
       default:
     }
@@ -373,6 +546,23 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
                               .dataRight['data']['Add']);
+                    case 'Monovision':
+                      return getMonovisionTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['sphere'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['data']['Distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['cylinder'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataRight['response']['cylinderRound']);
 
                     default:
                       return Container();
@@ -426,6 +616,24 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                                   listen: false)
                               .dataLeft['response']['add']);
 
+                    case 'Monovision':
+                      return getMonovisionTextResult(
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['sphere'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['data']['Distance'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['esphereRound'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['cylinder'],
+                          Provider.of<CalculatorTotalState>(context,
+                                  listen: false)
+                              .dataLeft['response']['cylinderRound']);
+
                     default:
                       return Container();
                   }
@@ -473,13 +681,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                           .calculator_data['left']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
-                      ? double.parse(Provider.of<CalculatorTotalState>(context,
-                                  listen: false)
-                              .dataRight['data']['Distance'])
+                      ? double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Distance'])
                           .toStringAsFixed(2)
-                      : double.parse(
-                              Provider.of<CalculatorState>(context, listen: false)
-                                  .calculator_data['left']['distance'])
+                      : double.parse(Provider.of<CalculatorState>(context,
+                                  listen: false)
+                              .calculator_data['left']['distance'])
                           .toStringAsFixed(2),
                   '',
                   '',
@@ -496,7 +702,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsR.isNotEmpty ? dataProductsR[index] : {}, 'inicial'));
+              },
+                  dataProductsR.isNotEmpty ? dataProductsR[index] : {},
+                  'inicial',
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['response']['add']));
     } else {
       return List.generate(
           dataProductsL.length,
@@ -510,8 +720,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                       ? Provider.of<CalculatorState>(context, listen: false)
                           .calculator_data['right']['esphereRound']
                           .toStringAsFixed(2)
-                      : Provider.of<CalculatorTotalState>(context,
-                              listen: false)
+                      : Provider.of<CalculatorTotalState>(context, listen: false)
                           .dataLeft['response']['esphereRound']
                           .toStringAsFixed(2),
                   right == true
@@ -542,8 +751,11 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                         .changeRightValue(true);
                   }
                 });
-              }, dataProductsL.isNotEmpty ? dataProductsL[index] : {},
-                  'inicial'));
+              },
+                  dataProductsL.isNotEmpty ? dataProductsL[index] : {},
+                  'inicial',
+                  Provider.of<CalculatorTotalState>(context, listen: false)
+                      .dataLeft['response']['add']));
     }
   }
 
@@ -556,6 +768,16 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           GestureDetector(
             onTap: () {
               ontapR();
+              if (dataProductsR.isEmpty) {
+                Fluttertoast.showToast(
+                    msg: t.calculatorTotalToast,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Color.fromARGB(255, 221, 216, 216),
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+              }
             },
             child: Container(
               width: 120,
@@ -576,6 +798,16 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
           GestureDetector(
             onTap: () {
               ontapL();
+              if (dataProductsL.isEmpty) {
+                Fluttertoast.showToast(
+                    msg: t.calculatorTotalToast,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Color.fromARGB(255, 221, 216, 216),
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+              }
             },
             child: Container(
               width: 120,

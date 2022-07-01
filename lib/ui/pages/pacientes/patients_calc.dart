@@ -1,5 +1,7 @@
 import 'package:easy_adapt/data/data.dart';
 import 'package:easy_adapt/state/calculator_state.dart';
+import 'package:easy_adapt/state/calculator_total_state.dart';
+import 'package:easy_adapt/state/patient_state.dart';
 import 'package:easy_adapt/state/result_state.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_logos.dart';
 import 'package:easy_adapt/ui/widgets/appbar_with_widget_and_logos.dart';
@@ -173,25 +175,16 @@ class _PatientsCalcState extends State<PatientsCalc> {
               onTap: () {
                 Provider.of<ResultState>(context, listen: false)
                     .changeData({'user': user, 'presc': []});
-                switch (Provider.of<CalculatorState>(context, listen: false)
-                    .index) {
-                  case 1:
-                    Navigator.pushNamed(context, '/calc/calculator-esfericos');
-                    break;
-                  case 2:
-                    Navigator.pushNamed(context, '/calc/calculator-toricos');
-
-                    break;
-                  case 3:
-                    Navigator.pushNamed(context, '/calc/calculator-multifocal');
-
-                    break;
-                  case 4:
-                    Navigator.pushNamed(context, '/calc/calculator-monovision');
-
-                    break;
-                  default:
-                }
+                Provider.of<PatientState>(context, listen: false)
+                    .changePatient(user);
+                Navigator.pushNamed(
+                  context,
+                  '/calculator-total-into',
+                );
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .deleteDataRight();
+                Provider.of<CalculatorTotalState>(context, listen: false)
+                    .deleteDataLeft();
               },
               title: Text(
                 name.toString(),

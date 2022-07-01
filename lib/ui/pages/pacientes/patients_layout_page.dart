@@ -107,7 +107,6 @@ class _PatientsLayoutPageState extends State<PatientsLayoutPage> {
         Navigator.pushNamed(context, '/prescripcion');
         Provider.of<PatientState>(context, listen: false)
             .changePatient(patient);
-        print(patient);
       },
       child: Container(
           width: double.infinity,

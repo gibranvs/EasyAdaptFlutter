@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_adapt/data/data.dart';
 
 import '../../i18n/strings.g.dart';
@@ -21,6 +22,19 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _country = TextEditingController();
   final TextEditingController _dNI = TextEditingController();
   bool checkTerms = false;
+  String? selectedValue;
+  List countrys = [
+    "Argentina",
+    "Brasil",
+    "Colombia",
+    "México",
+    "Perú",
+    "Venezuela",
+    "Bolivia",
+    "Uruguay",
+    "Paraguay",
+    "Chile"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -95,8 +109,49 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 18,
                 ),
-                getTextFieldModelSquare(
-                    widget.t.hintTextCountryRegisterScreen, _country, false),
+                Container(
+                  width: double.infinity,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      border: Border.all(
+                          color: Color.fromARGB(255, 167, 167, 168))),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton2(
+                      hint: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          widget.t.hintTextCountryRegisterScreen,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Theme.of(context).hintColor,
+                          ),
+                        ),
+                      ),
+                      items: countrys
+                          .map((item) => DropdownMenuItem<String>(
+                                value: item,
+                                child: Text(
+                                  item,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                      value: selectedValue,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedValue = value as String;
+                          _country.text = value as String;
+                        });
+                      },
+                      buttonHeight: 40,
+                      buttonWidth: 140,
+                      itemHeight: 40,
+                    ),
+                  ),
+                ),
                 const SizedBox(
                   height: 18,
                 ),

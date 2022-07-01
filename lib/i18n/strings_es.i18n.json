@@ -154,6 +154,8 @@
 "saveModalBottom":"GUARDAR",
 "saveModalBottomRight":"¿Guardar solo la prescripción del ojo derecho?",
 "saveModalBottomLeft":"¿Guardar solo la prescripción del ojo izquierdo?",
+"saveModalBottomRight2":"Selecciona ahora la prescripciòn del ojo derecho",
+"saveModalBottomLeft2":"Selecciona ahora la prescripciòn del ojo izquierdo",
   "savePresTitle": "Confirmar",
   "savePresTitle1": "Prescripción ojo derecho",
   "savePresTitle2": "Prescripción ojo izquierdo",
@@ -163,8 +165,27 @@
   "prescriptionTitle1": "Historial de prescripciones",
 
 "toricModalTitle":"Ajuste del eje"
-,"toricModalSubTitle":"Nuevo resultado adaptado"
+,"toricModalSubTitle":"Nuevo resultado adaptado",
 
+"calculatorTotalToast":"No hay productos recomendados con estos parámetros",
+"calculatorTotalModalTitle":"Parámetros no válidos",
+"calculatorTotalModalSubTitle":"No se puede hacer adaptación de multifocales con esos parámetros, intente con Monovisión"
+,"calculatorConfirmSendCalendar1":"El tratamiento de ",
+"calculatorConfirmSendCalendar2":" para ",
+"calculatorConfirmSendCalendar3":" Esta por terminar, contactalo para nueva prescripcion. "
+
+
+,"calculatorConfirmSendCalendarModal1":"Esta prescripción se guardó en su agenda ",
+"calculatorConfirmSendCalendarModal2":"Se creará una notificación él ",
+"calculatorConfirmSendCalendarModal3":"para contactar a   ",
+"calculatorConfirmSendCalendarModal4":"para entregarle su siguiente tratamiento",
+"calculatorConfirmSendCalendarModalButton":"ACEPTAR",
+"calculatorConfirmSendCalendarModalButton2":"FINALIZAR",
+"hisotirlaPrescriptionsEye1":"Ojo derecho",
+"hisotirlaPrescriptionsEye2":"Ojo izquierdo",
+"hisotirlaPrescriptionsEyeR":"Prescripción ojo derecho",
+"hisotirlaPrescriptionsEyeL":"Prescripción ojo izquierdo",
+"hisotirlaPrescriptionsEyeE":"Fecha de entrega"
 
 
 

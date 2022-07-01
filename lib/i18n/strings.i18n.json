@@ -153,6 +153,12 @@
 "saveModalBottom":"SAVE",
 "saveModalBottomRight":"Keep just the right eye prescription?",
 "saveModalBottomLeft":"Keep only the left eye prescription?",
+
+
+"saveModalBottomRight2":"Now select the prescription of the right eye",
+"saveModalBottomLeft2":"Now select the prescription for the left eye",
+
+
   "savePresTitle": "Confirm",
   "savePresTitle1": "Right eye prescription",
   "savePresTitle2": "Left eye prescription",
@@ -162,7 +168,22 @@
   "prescriptionTitle1": "Prescription history",
 
   "toricModalTitle":"Shaft adjustment"
-  ,"toricModalSubTitle":"New adapted result"
-
-  
+  ,"toricModalSubTitle":"New adapted result",
+  "calculatorTotalToast":"There are no recommended products with these parameters",
+"calculatorTotalModalTitle":"Invalid Parameters",
+"calculatorTotalModalSubTitle":"It is not possible to adapt multifocals with these parameters, try Monovision"
+,"calculatorConfirmSendCalendar1":"The tratment of ",
+"calculatorConfirmSendCalendar2":" for ",
+"calculatorConfirmSendCalendar3":" It is about to end, contact him for a new prescription. "
+,"calculatorConfirmSendCalendarModal1":"This prescription was saved in your diary ",
+"calculatorConfirmSendCalendarModal2":"A notification will be created",
+"calculatorConfirmSendCalendarModal3":"to contact  ",
+"calculatorConfirmSendCalendarModal4":"to deliver your next treatment",
+"calculatorConfirmSendCalendarModalButton":"ACCEPT",
+"calculatorConfirmSendCalendarModalButton2":"FINALIZE",
+"hisotirlaPrescriptionsEye1":"Right eye",
+"hisotirlaPrescriptionsEye2":"Left eye",
+"hisotirlaPrescriptionsEyeR":"Right eye prescription",
+"hisotirlaPrescriptionsEyeL":"Left eye prescription",
+"hisotirlaPrescriptionsEyeE":"Deadline"
 }

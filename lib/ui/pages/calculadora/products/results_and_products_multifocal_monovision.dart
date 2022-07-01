@@ -192,7 +192,7 @@ class _ResultsAndProductsPageMultifocalMonovision
                 height: 10,
               ),
               productModel(3, context, "", "", '', '', '', '', '', false, () {},
-                  {}, 'calculator')
+                  {}, 'calculator', '')
             ],
           ),
         ),

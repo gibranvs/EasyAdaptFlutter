@@ -1,6 +1,8 @@
+import 'package:easy_adapt/main.dart';
 import 'package:easy_adapt/ui/widgets/appBar_with_logo.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../i18n/strings.g.dart';
 
@@ -158,13 +160,16 @@ class _InitialPage extends State<InitialPage> {
                         setState(() {
                           value = v!;
                           if (value == '1') {
-                            LocaleSettings.setLocaleRaw('en');
+                            var result = LocaleSettings.setLocaleRaw('en');
+                            prefsMain.setString('idioma', '1');
                           }
                           if (value == '2') {
                             LocaleSettings.setLocaleRaw('es');
+                            prefsMain.setString('idioma', '2');
                           }
                           if (value == '3') {
                             LocaleSettings.setLocaleRaw('pt');
+                            prefsMain.setString('idioma', '3');
                           }
                         });
                       },

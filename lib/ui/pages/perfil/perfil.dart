@@ -44,6 +44,19 @@ class _PerfilPageState extends State<PerfilPage> {
     });
   }
 
+  List countrys = [
+    "Argentina",
+    "Brasil",
+    "Colombia",
+    "México",
+    "Perú",
+    "Venezuela",
+    "Bolivia",
+    "Uruguay",
+    "Paraguay",
+    "Chile"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -125,8 +138,8 @@ class _PerfilPageState extends State<PerfilPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      getTextFieldModelSquare(
-                          t.hintTextCountryProfilePage, _country),
+                      getTextFieldModelSquareC(
+                          t.hintTextCountryProfilePage, getTextCountry()),
                       SizedBox(
                         height: 20,
                       ),
@@ -204,5 +217,39 @@ class _PerfilPageState extends State<PerfilPage> {
           errorBorder: const OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.black, width: 5))),
     );
+  }
+
+  getTextFieldModelSquareC(label, text) {
+    return Container(
+      width: double.infinity,
+      height: 60,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          border: Border.all(color: Color.fromARGB(255, 167, 167, 168))),
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                text,
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  getTextCountry() {
+    for (var i = 0; i < countrys.length; i++) {
+      print(countrys[i]);
+      if (i + 1 == int.parse(_country.text)) {
+        return countrys[i];
+      }
+    }
   }
 }
