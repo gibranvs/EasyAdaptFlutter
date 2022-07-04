@@ -377,6 +377,18 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
         case 'Multifocal':
           break;
         case 'Monovision':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(),
+              0,
+              getTextRight(),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
           break;
 
         default:
@@ -420,6 +432,18 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
           case 'Multifocal':
             break;
           case 'Monovision':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(),
+                1,
+                getTextLeft(),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
             break;
 
           default:
@@ -489,14 +513,8 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       case 'Multifocal':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':
-        if (Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataRight['response']['typeCalc'] ==
-            'Spherical') {
-          return '';
-        } else {
-          return '';
-        }
-
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
       default:
         return '';
     }
@@ -521,13 +539,7 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       case 'Multifocal':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':
-        if (Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataLeft['response']['typeCalc'] ==
-            'Spherical') {
-          return '';
-        } else {
-          return '';
-        }
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
 
       default:
         return '';

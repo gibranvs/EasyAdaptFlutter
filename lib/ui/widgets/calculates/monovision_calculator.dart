@@ -159,7 +159,7 @@ monovisionCalculatorLeft(context) {
     var cilindroNoDominante = resNoDominante - esferaNoDom;
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
-          .changeResponseRight('typeCalc', 'Toric');
+          .changeResponseLeft('typeCalc', 'Toric');
       if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
@@ -168,10 +168,10 @@ monovisionCalculatorLeft(context) {
 
       resultRoundCIR = FuncCalculators().roundCI(cilindroNoDominante);
     } else {
-      print('esferaDom');
+      print('ezzzz2');
 
       Provider.of<CalculatorTotalState>(context, listen: false)
-          .changeResponseRight('typeCalc', 'Spherical');
+          .changeResponseLeft('typeCalc', 'Spherical');
       if (esferaNoDom < 6) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
