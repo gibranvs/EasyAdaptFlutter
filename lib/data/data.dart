@@ -163,11 +163,16 @@ class Data {
       var data = jsonDecode(response.body);
       print(data);
       if (data['status'] == 1) {
+        print('hecho');
         return true;
       } else {
+        print('No hecho');
+
         return false;
       }
     } catch (e) {
+      print(e);
+
       return false;
     }
   }

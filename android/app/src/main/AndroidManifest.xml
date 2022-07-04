@@ -8,8 +8,12 @@
     <data android:mimeType="vnd.android.cursor.item/event" />
   </intent>
 </queries>
+    <uses-permission android:name="android.permission.INTERNET" /> 
+
    <application
-        android:label="easy"
+           android:usesCleartextTraffic="true" 
+
+        android:label="Easy Adapt"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -225,7 +225,10 @@ class getBottomShetEsferico {
                                               FlatButton(
                                                 child: Text('OK'),
                                                 onPressed: () async {
+                                                  ///////MODAL MULTIFOCAL
                                                   onNo();
+                                                  Navigator.pop(context);
+                                                  Navigator.pop(context);
                                                 },
                                               ),
                                             ],
@@ -246,9 +249,9 @@ class getBottomShetEsferico {
                                               FlatButton(
                                                 child: Text('No'),
                                                 onPressed: () {
-                                                  Navigator.pop(context);
-                                                  Navigator.pop(context);
                                                   onNo();
+                                                  Navigator.pop(context);
+                                                  Navigator.pop(context);
                                                 },
                                               ),
                                               FlatButton(
@@ -270,6 +273,23 @@ class getBottomShetEsferico {
                                                 listen: false)
                                             .dataLeft['type'] ==
                                         'Multifocal') {
+                                  ///////PETICION MULTIFOCAL
+                                  var tempR = {};
+                                  var tempL = {};
+
+                                  Provider.of<ResultState>(context,
+                                          listen: false)
+                                      .data['presc']
+                                      .forEach((e) {
+                                    if (e['right'] == true) {
+                                      tempR = e;
+                                    } else {
+                                      tempL = e ?? {};
+                                    }
+                                  });
+
+                                  await postPrescription(
+                                      [tempR, tempL], context);
                                   Navigator.pushNamed(context, '/prescripcion');
                                 } else {
                                   Navigator.pushNamed(
@@ -302,5 +322,244 @@ class getBottomShetEsferico {
             },
           );
         });
+  }
+
+  postPrescription(dataF, context) async {
+    if (dataF[0]['right'] == true) {
+      switch (Provider.of<CalculatorTotalState>(context, listen: false)
+          .dataRight['type']) {
+        case 'Spherical':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(dataF),
+              0,
+              getTextRight(context),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          print('spherical');
+          break;
+        case 'Toric':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(context),
+              0,
+              getTextRight(context),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          break;
+        case 'Multifocal':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(dataF),
+              0,
+              getTextRight(context),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          print('spherical');
+          break;
+        case 'Monovision':
+          var response = await Data().setPrescription(
+              Provider.of<ResultState>(context, listen: false).data['user']
+                  ['id'],
+              dataF[0]['product']['namePS'],
+              calcNextDate(dataF),
+              0,
+              getTextRight(context),
+              dataF[0]['product']['idPS'],
+              dataF[0]['product']['daysPS'],
+              '',
+              '');
+          print(response);
+          break;
+
+        default:
+          return '';
+      }
+    }
+
+    ///Izquierdo
+    if (dataF[0]['right'] == false || dataF[1]['right'] == false) {
+      if (dataF[1] != {}) {
+        switch (Provider.of<CalculatorTotalState>(context, listen: false)
+            .dataLeft['type']) {
+          case 'Spherical':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(dataF),
+                1,
+                getTextLeft(context),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+          case 'Toric':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(dataF),
+                1,
+                getTextLeft(context),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+          case 'Multifocal':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(dataF),
+                1,
+                getTextLeft(context),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+          case 'Monovision':
+            var response = await Data().setPrescription(
+                Provider.of<ResultState>(context, listen: false).data['user']
+                    ['id'],
+                dataF[1]['product']['namePS'],
+                calcNextDate(dataF),
+                1,
+                getTextLeft(context),
+                dataF[1]['product']['idPS'],
+                dataF[1]['product']['daysPS'],
+                '',
+                '');
+            print(response);
+            break;
+
+          default:
+            return '';
+        }
+      }
+    }
+  }
+
+  calcNextDate(dataF) {
+    if (dataF[0]['product'] != null && dataF[1]['product'] != null) {
+      if (int.parse(dataF[0]['product']['daysPS']) >
+          int.parse(dataF[1]['product']['daysPS'])) {
+        if (dataF[1]['product'] != null) {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[1]['product'] != null
+                  ? dataF[1]['product']['daysPS']
+                  : "0"))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[1]['product'] != null
+                      ? dataF[1]['product']['daysPS']
+                      : "0")))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        }
+      } else {
+        if (dataF[1]['product'] != null) {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[0]['product'] != null
+                  ? dataF[0]['product']['daysPS']
+                  : "0"))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[0]['product'] != null
+                      ? dataF[0]['product']['daysPS']
+                      : "0")))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        } else {
+          print(DateTime.now().add(Duration(
+              days: int.parse(dataF[0]['product'] != null
+                  ? dataF[0]['product']['daysPS']
+                  : dataF[1]['product']['daysPS']))));
+          return DateTime.now()
+              .add(Duration(
+                  days: int.parse(dataF[0]['product'] != null
+                      ? dataF[0]['product']['daysPS']
+                      : dataF[1]['product']['daysPS'])))
+              .toString()
+              .split(' ')[0]
+              .toString();
+        }
+      }
+    }
+  }
+
+  getTextRight(context) {
+    // Provider.of<CalculatorState>(context).calculator_data['type'] ==
+    //                   'esfericos'
+    //               ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
+    //               : Provider.of<CalculatorState>(context)
+    //                           .calculator_data['type'] ==
+    //                       'torico'
+    //                   ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
+    //                   : ""
+
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataRight['type']) {
+      case 'Spherical':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['distance']} ';
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
+      case 'Multifocal':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
+      case 'Monovision':
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
+      default:
+        return '';
+    }
+  }
+
+  getTextLeft(context) {
+    // Provider.of<CalculatorState>(context).calculator_data['type'] ==
+    //                   'esfericos'
+    //               ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['distance']} '
+    //               : Provider.of<CalculatorState>(context)
+    //                           .calculator_data['type'] ==
+    //                       'torico'
+    //                   ? '${Provider.of<CalculatorState>(context).calculator_data['right']['esphereRound']} / ${Provider.of<CalculatorState>(context).calculator_data['right']['cylinderRound']} * ${Provider.of<CalculatorState>(context).calculator_data['right']['axisF']}  '
+    //                   : ""
+
+    switch (Provider.of<CalculatorTotalState>(context, listen: false)
+        .dataLeft['type']) {
+      case 'Spherical':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['distance']} ';
+      case 'Toric':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
+      case 'Multifocal':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
+      case 'Monovision':
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
+
+      default:
+        return '';
+    }
   }
 }
