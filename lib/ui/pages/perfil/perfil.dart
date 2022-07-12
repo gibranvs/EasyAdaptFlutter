@@ -48,7 +48,6 @@ class _PerfilPageState extends State<PerfilPage> {
     "Argentina",
     "Brasil",
     "Colombia",
-    "Ecuador",
     "México",
     "Perú",
     "Venezuela",

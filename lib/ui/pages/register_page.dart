@@ -27,7 +27,6 @@ class _RegisterPageState extends State<RegisterPage> {
     "Argentina",
     "Brasil",
     "Colombia",
-    "Ecuador",
     "México",
     "Perú",
     "Venezuela",
