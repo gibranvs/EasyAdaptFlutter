@@ -186,7 +186,12 @@
 "hisotirlaPrescriptionsEye2":"Olho esquerdo",
 "hisotirlaPrescriptionsEyeR":"Prescrição do olho direito",
 "hisotirlaPrescriptionsEyeL":"Prescrição do olho esquerdo",
-"hisotirlaPrescriptionsEyeE":"Data de entrega"
+"hisotirlaPrescriptionsEyeE":"Data de entrega",
+"cancelarButtom":"Eliminar conta",
+"cancelarButtomModal":"CANCELAR",
+"modalDeleteAccountText1":"Você está prestes a ",
+"modalDeleteAccountText2":"deletar sua conta, ",
+"modalDeleteAccountText3":"tem certeza?. Esta alteração não pode ser revertida"
 
 
 }

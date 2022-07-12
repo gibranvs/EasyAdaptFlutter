@@ -31,7 +31,7 @@ void main() async {
 
       break;
     default:
-      var result = LocaleSettings.setLocaleRaw('en');
+      var result = LocaleSettings.setLocaleRaw('es');
   }
   runApp(MultiProvider(
     providers: [

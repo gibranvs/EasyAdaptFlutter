@@ -185,5 +185,10 @@
 "hisotirlaPrescriptionsEye2":"Left eye",
 "hisotirlaPrescriptionsEyeR":"Right eye prescription",
 "hisotirlaPrescriptionsEyeL":"Left eye prescription",
-"hisotirlaPrescriptionsEyeE":"Deadline"
+"hisotirlaPrescriptionsEyeE":"Deadline",
+"cancelarButtom":"Delete account",
+"cancelarButtomModal":"CANCEL",
+"modalDeleteAccountText1":"You are about to ",
+"modalDeleteAccountText2":"delete your account, ",
+"modalDeleteAccountText3":"are you sure?. This change cannot be reversed"
 }

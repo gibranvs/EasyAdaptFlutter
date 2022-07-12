@@ -27,6 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
     "Argentina",
     "Brasil",
     "Colombia",
+    "Ecuador",
     "México",
     "Perú",
     "Venezuela",
@@ -143,7 +144,11 @@ class _RegisterPageState extends State<RegisterPage> {
                       onChanged: (value) {
                         setState(() {
                           selectedValue = value as String;
-                          _country.text = value as String;
+                          for (var i = 0; i < countrys.length; i++) {
+                            if (value == countrys[i]) {
+                              _country.text = i.toString();
+                            }
+                          }
                         });
                       },
                       buttonHeight: 40,

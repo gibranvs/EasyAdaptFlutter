@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 453 (151.0 per locale)
+ * Strings: 468 (156.0 per locale)
  *
- * Built on 2022-06-27 at 15:20 UTC
+ * Built on 2022-07-12 at 20:56 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -434,6 +434,11 @@ class _StringsEn {
 	String get hisotirlaPrescriptionsEyeR => 'Right eye prescription';
 	String get hisotirlaPrescriptionsEyeL => 'Left eye prescription';
 	String get hisotirlaPrescriptionsEyeE => 'Deadline';
+	String get cancelarButtom => 'Delete account';
+	String get cancelarButtomModal => 'CANCEL';
+	String get modalDeleteAccountText1 => 'You are about to ';
+	String get modalDeleteAccountText2 => 'delete your account, ';
+	String get modalDeleteAccountText3 => 'are you sure?. This change cannot be reversed';
 }
 
 // Path: login
@@ -738,6 +743,11 @@ class _StringsEs implements _StringsEn {
 	@override String get hisotirlaPrescriptionsEyeR => 'Prescripción ojo derecho';
 	@override String get hisotirlaPrescriptionsEyeL => 'Prescripción ojo izquierdo';
 	@override String get hisotirlaPrescriptionsEyeE => 'Fecha de entrega';
+	@override String get cancelarButtom => 'Eliminar cuenta';
+	@override String get cancelarButtomModal => 'CANCELAR';
+	@override String get modalDeleteAccountText1 => 'Estás a punto de ';
+	@override String get modalDeleteAccountText2 => 'eliminar tu cuenta, ';
+	@override String get modalDeleteAccountText3 => '¿estás seguro?. Este cambio no puede ser revertido';
 }
 
 // Path: login
@@ -1042,6 +1052,11 @@ class _StringsPt implements _StringsEn {
 	@override String get hisotirlaPrescriptionsEyeR => 'Prescrição do olho direito';
 	@override String get hisotirlaPrescriptionsEyeL => 'Prescrição do olho esquerdo';
 	@override String get hisotirlaPrescriptionsEyeE => 'Data de entrega';
+	@override String get cancelarButtom => 'Eliminar conta';
+	@override String get cancelarButtomModal => 'CANCELAR';
+	@override String get modalDeleteAccountText1 => 'Você está prestes a ';
+	@override String get modalDeleteAccountText2 => 'deletar sua conta, ';
+	@override String get modalDeleteAccountText3 => 'tem certeza?. Esta alteração não pode ser revertida';
 }
 
 // Path: login
@@ -1370,6 +1385,11 @@ extension on _StringsEn {
 			'hisotirlaPrescriptionsEyeR': 'Right eye prescription',
 			'hisotirlaPrescriptionsEyeL': 'Left eye prescription',
 			'hisotirlaPrescriptionsEyeE': 'Deadline',
+			'cancelarButtom': 'Delete account',
+			'cancelarButtomModal': 'CANCEL',
+			'modalDeleteAccountText1': 'You are about to ',
+			'modalDeleteAccountText2': 'delete your account, ',
+			'modalDeleteAccountText3': 'are you sure?. This change cannot be reversed',
 		};
 	}
 }
@@ -1528,6 +1548,11 @@ extension on _StringsEs {
 			'hisotirlaPrescriptionsEyeR': 'Prescripción ojo derecho',
 			'hisotirlaPrescriptionsEyeL': 'Prescripción ojo izquierdo',
 			'hisotirlaPrescriptionsEyeE': 'Fecha de entrega',
+			'cancelarButtom': 'Eliminar cuenta',
+			'cancelarButtomModal': 'CANCELAR',
+			'modalDeleteAccountText1': 'Estás a punto de ',
+			'modalDeleteAccountText2': 'eliminar tu cuenta, ',
+			'modalDeleteAccountText3': '¿estás seguro?. Este cambio no puede ser revertido',
 		};
 	}
 }
@@ -1686,6 +1711,11 @@ extension on _StringsPt {
 			'hisotirlaPrescriptionsEyeR': 'Prescrição do olho direito',
 			'hisotirlaPrescriptionsEyeL': 'Prescrição do olho esquerdo',
 			'hisotirlaPrescriptionsEyeE': 'Data de entrega',
+			'cancelarButtom': 'Eliminar conta',
+			'cancelarButtomModal': 'CANCELAR',
+			'modalDeleteAccountText1': 'Você está prestes a ',
+			'modalDeleteAccountText2': 'deletar sua conta, ',
+			'modalDeleteAccountText3': 'tem certeza?. Esta alteração não pode ser revertida',
 		};
 	}
 }
