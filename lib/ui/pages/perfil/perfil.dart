@@ -390,7 +390,7 @@ class _PerfilPageState extends State<PerfilPage> {
   getTextCountry() {
     for (var i = 0; i < countrys.length; i++) {
       print(countrys[i]);
-      if (i == int.parse(_country.text)) {
+      if (i == (int.parse(_country.text) - 1)) {
         return countrys[i];
       }
     }

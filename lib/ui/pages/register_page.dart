@@ -146,7 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           selectedValue = value as String;
                           for (var i = 0; i < countrys.length; i++) {
                             if (value == countrys[i]) {
-                              _country.text = i.toString();
+                              _country.text = (i + 1).toString();
                             }
                           }
                         });
