@@ -19,6 +19,20 @@ class _InitialPage extends State<InitialPage> {
 
   @override
   Widget build(BuildContext context) {
+    getValue() {
+      switch (prefsMain.getString('idioma')) {
+        case '1':
+          return "1";
+
+        case '2':
+          return "2";
+        case '3':
+          return "3";
+        default:
+          return "2";
+      }
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -147,7 +161,7 @@ class _InitialPage extends State<InitialPage> {
                   ),
                   Center(
                     child: DropdownButton<String?>(
-                      value: value,
+                      value: getValue(),
                       items: const [
                         DropdownMenuItem<String>(
                             value: '1', child: Text('English')),

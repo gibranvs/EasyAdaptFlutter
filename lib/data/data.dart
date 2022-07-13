@@ -72,14 +72,15 @@ class Data {
   }
 
   register(name, mail, password, pais, dni) async {
+    print(pais);
     final response =
         await http.post(Uri.parse("$url/api?tipo=set_doctor"), body: {
       "id_doctor": "0",
-      "nombre": "name",
-      "correo": "mail@gmail.com",
-      'pass': 'password',
-      'pais': '4',
-      'dni': 'dni'
+      "nombre": name,
+      "correo": mail,
+      'pass': password,
+      'pais': pais,
+      'dni': dni
     });
     // var data = await jsonDecode(response.body);
     print(response.body);
@@ -90,7 +91,21 @@ class Data {
     // } else {
     //   return false;
     // }
-    return false;
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      var data = await jsonDecode(response.body);
+      print(response.body);
+      print(response.statusCode);
+      print("llego a true");
+
+      if (data['status'] == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      print("llego a false");
+      return false;
+    }
   }
 
   updateDoctor(name, mail, passwordR, passwordN, pais, condition) async {
@@ -163,11 +178,16 @@ class Data {
       var data = jsonDecode(response.body);
       print(data);
       if (data['status'] == 1) {
+        print('hecho');
         return true;
       } else {
+        print('No hecho');
+
         return false;
       }
     } catch (e) {
+      print(e);
+
       return false;
     }
   }
@@ -205,6 +225,22 @@ class Data {
       } else {
         return {};
       }
+    } catch (e) {
+      return {};
+    }
+  }
+
+  deleteAccount() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    try {
+      final response =
+          await http.post(Uri.parse("$url/api?tipo=borrar_cuenta"), body: {
+        'id_doctor': prefs.getString('idUser'),
+      });
+      var data = jsonDecode(response.body);
+      // print(data['response']);
+      print(data['response']);
     } catch (e) {
       return {};
     }

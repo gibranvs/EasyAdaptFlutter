@@ -201,6 +201,148 @@ class _PerfilPageState extends State<PerfilPage> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 25, right: 25),
+                        child: Center(
+                          child: GestureDetector(
+                            onTap: () async {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                        actions: [
+                                          RaisedButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Text(
+                                              t.cancelarButtomModal,
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            ),
+                                            color: Colors.blueAccent,
+                                          ),
+                                          RaisedButton(
+                                            onPressed: () async {
+                                              await Data().deleteAccount();
+                                              Navigator.pushNamedAndRemoveUntil(
+                                                  context,
+                                                  "/initial",
+                                                  (route) => false);
+                                            },
+                                            child: Text(
+                                              t.calculatorConfirmSendCalendarModalButton,
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            ),
+                                            color: Colors.red,
+                                          ),
+                                        ],
+                                        title: RichText(
+                                            text: TextSpan(
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18),
+                                                children: [
+                                              TextSpan(
+                                                  text: t
+                                                      .modalDeleteAccountText1),
+                                              TextSpan(
+                                                  text:
+                                                      t.modalDeleteAccountText2,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              TextSpan(
+                                                  text:
+                                                      t.modalDeleteAccountText3)
+                                            ])));
+                                  });
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: 50,
+                              decoration: const BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(25))),
+                              child: Center(
+                                child: Text(
+                                  t.cancelarButtom,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 17),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Center(
+                      //   child: RaisedButton(
+                      //     color: Colors.red,
+                      //     onPressed: () {
+                      //       showDialog(
+                      //           context: context,
+                      //           builder: (context) {
+                      //             return AlertDialog(
+                      //                 actions: [
+                      //                   RaisedButton(
+                      //                     onPressed: () {},
+                      //                     child: Text(
+                      //                       "CANCELAR",
+                      //                       style: TextStyle(
+                      //                           fontSize: 14,
+                      //                           fontWeight: FontWeight.bold,
+                      //                           color: Colors.white),
+                      //                     ),
+                      //                     color: Colors.blueAccent,
+                      //                   ),
+                      //                   RaisedButton(
+                      //                     onPressed: () {},
+                      //                     child: Text(
+                      //                       "ACEPTAR",
+                      //                       style: TextStyle(
+                      //                           fontSize: 14,
+                      //                           fontWeight: FontWeight.bold,
+                      //                           color: Colors.white),
+                      //                     ),
+                      //                     color: Colors.red,
+                      //                   ),
+                      //                 ],
+                      //                 title: RichText(
+                      //                     text: TextSpan(
+                      //                         style: TextStyle(
+                      //                             color: Colors.black,
+                      //                             fontSize: 18),
+                      //                         children: [
+                      //                       TextSpan(text: "Estás a punto de "),
+                      //                       TextSpan(
+                      //                           text: " eliminar tu cuenta, ",
+                      //                           style: TextStyle(
+                      //                               fontWeight:
+                      //                                   FontWeight.bold)),
+                      //                       TextSpan(
+                      //                           text:
+                      //                               "¿estás seguro?. Este cambio no puede ser revertido")
+                      //                     ])));
+                      //           });
+                      //     },
+                      //     child: Text(
+                      //       "Eliminar cuenta",
+                      //       style: TextStyle(
+                      //           fontSize: 16,
+                      //           fontWeight: FontWeight.bold,
+                      //           color: Colors.white),
+                      //     ),
+                      //   ),
+                      // )
                     ],
                   ),
                 ),
@@ -247,7 +389,7 @@ class _PerfilPageState extends State<PerfilPage> {
   getTextCountry() {
     for (var i = 0; i < countrys.length; i++) {
       print(countrys[i]);
-      if (i + 1 == int.parse(_country.text)) {
+      if (i == (int.parse(_country.text) - 1)) {
         return countrys[i];
       }
     }

@@ -184,6 +184,8 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
               dataProductsL = finalData;
             });
           }
+          print(Provider.of<CalculatorTotalState>(context, listen: false)
+              .dataLeft['response']);
         }
 
         break;
@@ -892,15 +894,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
       case 'Multifocal':
         return 3;
       case 'Monovision':
-        if (Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataRight['response']['typeCalc'] ==
-            'Spherical') {
-          return 1;
-        } else {
-          return 2;
-        }
-
-      default:
+        return 2;
     }
   }
 
@@ -914,15 +908,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
       case 'Multifocal':
         return 3;
       case 'Monovision':
-        if (Provider.of<CalculatorTotalState>(context, listen: false)
-                .dataLeft['response']['typeCalc'] ==
-            'Spherical') {
-          return 1;
-        } else {
-          return 2;
-        }
-
-      default:
+        return 2;
     }
   }
 }
