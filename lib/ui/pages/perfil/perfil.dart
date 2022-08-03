@@ -54,7 +54,15 @@ class _PerfilPageState extends State<PerfilPage> {
     "Bolivia",
     "Uruguay",
     "Paraguay",
-    "Chile"
+    "Chile",
+    "Costa Rica",
+    "Ecuador",
+    "El Salvador",
+    "Guatemala",
+    "Honduras",
+    "Nicaragua",
+    "Panamá",
+    "República Dominicana"
   ];
 
   @override

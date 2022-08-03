@@ -33,7 +33,15 @@ class _RegisterPageState extends State<RegisterPage> {
     "Bolivia",
     "Uruguay",
     "Paraguay",
-    "Chile"
+    "Chile",
+    "Costa Rica",
+    "Ecuador",
+    "El Salvador",
+    "Guatemala",
+    "Honduras",
+    "Nicaragua",
+    "Panamá",
+    "República Dominicana"
   ];
 
   @override
@@ -146,6 +154,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           for (var i = 0; i < countrys.length; i++) {
                             if (value == countrys[i]) {
                               _country.text = (i + 1).toString();
+                              print(i + 1);
                             }
                           }
                         });
