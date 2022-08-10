@@ -192,6 +192,9 @@
 "modalDeleteAccountText1":"Você está prestes a ",
 "modalDeleteAccountText2":"deletar sua conta, ",
 "modalDeleteAccountText3":"tem certeza?. Esta alteração não pode ser revertida"
+,
+"recovery":"Recuperar senha",
 
+"dniWarning":"O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres"
 
 }

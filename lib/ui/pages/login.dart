@@ -3,6 +3,7 @@ import 'package:easy_adapt/ui/widgets/appBar_with_logo.dart';
 import 'package:easy_adapt/ui/widgets/text_field_model-square.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   var t;
@@ -94,10 +95,25 @@ class _LoginPageState extends State<LoginPage> {
                         getTextFieldModelSquareLoginPassword(
                             t.hintTextPasswordRegisterScreen, _password),
                         const SizedBox(
-                          height: 25,
+                          height: 5,
                         ),
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 25),
+                    child: TextButton(
+                        onPressed: () {
+                          launch('${Data().url}/recuperar');
+                        },
+                        child: Text(
+                          t.recovery,
+                          style: TextStyle(
+                              color: Color.fromRGBO(69, 130, 178, 1.0)),
+                        )),
+                  ),
+                  const SizedBox(
+                    height: 25,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 25),
