@@ -168,7 +168,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 18,
                 ),
-                getTextFieldModelSquare('CURP/DNI', _dNI, false),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -207,54 +206,35 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             GestureDetector(
               onTap: () async {
-                if (_dNI.text.length <= 30) {
-                  if (checkTerms) {
-                    if (_password.text == _passwordConfirm.text) {
-                      var resp = await Data().register(_name.text, _mail.text,
-                          _password.text, _country.text, _dNI.text);
-                      if (resp) {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: Text(t.modalText1TitleRegisterScreen),
-                                content: Text(t.modalText1RegisterScreen),
-                                actions: [
-                                  FlatButton(
-                                    child: Text('OK'),
-                                    onPressed: () {
-                                      Navigator.pushReplacementNamed(
-                                          context, '/login');
-                                    },
-                                  )
-                                ],
-                              );
-                            });
-                      } else {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: Text(t.loginModalErrorTitle),
-                                content: Text(t.modalText2RegisterScreen),
-                                actions: [
-                                  FlatButton(
-                                    child: Text('OK'),
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                  )
-                                ],
-                              );
-                            });
-                      }
+                if (checkTerms) {
+                  if (_password.text == _passwordConfirm.text) {
+                    var resp = await Data().register(_name.text, _mail.text,
+                        _password.text, _country.text, _dNI.text);
+                    if (resp) {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text(t.modalText1TitleRegisterScreen),
+                              content: Text(t.modalText1RegisterScreen),
+                              actions: [
+                                FlatButton(
+                                  child: Text('OK'),
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                        context, '/login');
+                                  },
+                                )
+                              ],
+                            );
+                          });
                     } else {
                       showDialog(
                           context: context,
                           builder: (context) {
                             return AlertDialog(
                               title: Text(t.loginModalErrorTitle),
-                              content: Text(t.modalText3RegisterScreen),
+                              content: Text(t.modalText2RegisterScreen),
                               actions: [
                                 FlatButton(
                                   child: Text('OK'),
@@ -272,7 +252,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         builder: (context) {
                           return AlertDialog(
                             title: Text(t.loginModalErrorTitle),
-                            content: Text(t.modalText4RegisterScreen),
+                            content: Text(t.modalText3RegisterScreen),
                             actions: [
                               FlatButton(
                                 child: Text('OK'),
@@ -290,7 +270,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       builder: (context) {
                         return AlertDialog(
                           title: Text(t.loginModalErrorTitle),
-                          content: Text(t.dniWarning),
+                          content: Text(t.modalText4RegisterScreen),
                           actions: [
                             FlatButton(
                               child: Text('OK'),
