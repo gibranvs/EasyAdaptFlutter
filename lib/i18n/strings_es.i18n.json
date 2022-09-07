@@ -190,7 +190,9 @@
 "cancelarButtomModal":"CANCELAR",
 "modalDeleteAccountText1":"Estás a punto de ",
 "modalDeleteAccountText2":"eliminar tu cuenta, ",
-"modalDeleteAccountText3":"¿estás seguro?. Este cambio no puede ser revertido"
+"modalDeleteAccountText3":"¿estás seguro?. Este cambio no puede ser revertido",
+"recovery":"Recuperar contraseña",
+"dniWarning":"El DNI es un dato obligatorio y debe tener como máximo 30 caracteres"
 
 
 

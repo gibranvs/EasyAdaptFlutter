@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 468 (156.0 per locale)
+ * Strings: 474 (158.0 per locale)
  *
- * Built on 2022-07-12 at 20:56 UTC
+ * Built on 2022-08-10 at 20:23 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -439,6 +439,8 @@ class _StringsEn {
 	String get modalDeleteAccountText1 => 'You are about to ';
 	String get modalDeleteAccountText2 => 'delete your account, ';
 	String get modalDeleteAccountText3 => 'are you sure?. This change cannot be reversed';
+	String get recovery => 'Recover password';
+	String get dniWarning => 'The DNI is a mandatory piece of information and must have a maximum of 30 characters';
 }
 
 // Path: login
@@ -748,6 +750,8 @@ class _StringsEs implements _StringsEn {
 	@override String get modalDeleteAccountText1 => 'Estás a punto de ';
 	@override String get modalDeleteAccountText2 => 'eliminar tu cuenta, ';
 	@override String get modalDeleteAccountText3 => '¿estás seguro?. Este cambio no puede ser revertido';
+	@override String get recovery => 'Recuperar contraseña';
+	@override String get dniWarning => 'El DNI es un dato obligatorio y debe tener como máximo 30 caracteres';
 }
 
 // Path: login
@@ -1057,6 +1061,8 @@ class _StringsPt implements _StringsEn {
 	@override String get modalDeleteAccountText1 => 'Você está prestes a ';
 	@override String get modalDeleteAccountText2 => 'deletar sua conta, ';
 	@override String get modalDeleteAccountText3 => 'tem certeza?. Esta alteração não pode ser revertida';
+	@override String get recovery => 'Recuperar senha';
+	@override String get dniWarning => 'O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres';
 }
 
 // Path: login
@@ -1390,6 +1396,8 @@ extension on _StringsEn {
 			'modalDeleteAccountText1': 'You are about to ',
 			'modalDeleteAccountText2': 'delete your account, ',
 			'modalDeleteAccountText3': 'are you sure?. This change cannot be reversed',
+			'recovery': 'Recover password',
+			'dniWarning': 'The DNI is a mandatory piece of information and must have a maximum of 30 characters',
 		};
 	}
 }
@@ -1553,6 +1561,8 @@ extension on _StringsEs {
 			'modalDeleteAccountText1': 'Estás a punto de ',
 			'modalDeleteAccountText2': 'eliminar tu cuenta, ',
 			'modalDeleteAccountText3': '¿estás seguro?. Este cambio no puede ser revertido',
+			'recovery': 'Recuperar contraseña',
+			'dniWarning': 'El DNI es un dato obligatorio y debe tener como máximo 30 caracteres',
 		};
 	}
 }
@@ -1716,6 +1726,8 @@ extension on _StringsPt {
 			'modalDeleteAccountText1': 'Você está prestes a ',
 			'modalDeleteAccountText2': 'deletar sua conta, ',
 			'modalDeleteAccountText3': 'tem certeza?. Esta alteração não pode ser revertida',
+			'recovery': 'Recuperar senha',
+			'dniWarning': 'O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres',
 		};
 	}
 }

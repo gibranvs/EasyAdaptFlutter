@@ -191,4 +191,7 @@
 "modalDeleteAccountText1":"You are about to ",
 "modalDeleteAccountText2":"delete your account, ",
 "modalDeleteAccountText3":"are you sure?. This change cannot be reversed"
+,
+"recovery":"Recover password",
+"dniWarning":"The DNI is a mandatory piece of information and must have a maximum of 30 characters"
 }

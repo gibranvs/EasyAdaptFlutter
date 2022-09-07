@@ -62,7 +62,7 @@ getToricTextResult(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    (double.parse(axis) + 5.0).toString(),
+                    (double.parse(axis) + 5.0).toStringAsFixed(0),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -146,7 +146,7 @@ getToricTextResult(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    axis.toString(),
+                    double.parse(axis).toStringAsFixed(0),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
