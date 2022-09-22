@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 3
- * Strings: 474 (158.0 per locale)
+ * Strings: 480 (160.0 per locale)
  *
- * Built on 2022-08-10 at 20:23 UTC
+ * Built on 2022-09-22 at 21:36 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -441,6 +441,8 @@ class _StringsEn {
 	String get modalDeleteAccountText3 => 'are you sure?. This change cannot be reversed';
 	String get recovery => 'Recover password';
 	String get dniWarning => 'The DNI is a mandatory piece of information and must have a maximum of 30 characters';
+	String get yes => 'Yes';
+	String get no => 'No';
 }
 
 // Path: login
@@ -752,6 +754,8 @@ class _StringsEs implements _StringsEn {
 	@override String get modalDeleteAccountText3 => '¿estás seguro?. Este cambio no puede ser revertido';
 	@override String get recovery => 'Recuperar contraseña';
 	@override String get dniWarning => 'El DNI es un dato obligatorio y debe tener como máximo 30 caracteres';
+	@override String get yes => 'Si';
+	@override String get no => 'No';
 }
 
 // Path: login
@@ -1063,6 +1067,8 @@ class _StringsPt implements _StringsEn {
 	@override String get modalDeleteAccountText3 => 'tem certeza?. Esta alteração não pode ser revertida';
 	@override String get recovery => 'Recuperar senha';
 	@override String get dniWarning => 'O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres';
+	@override String get yes => 'Sim';
+	@override String get no => 'Não';
 }
 
 // Path: login
@@ -1398,6 +1404,8 @@ extension on _StringsEn {
 			'modalDeleteAccountText3': 'are you sure?. This change cannot be reversed',
 			'recovery': 'Recover password',
 			'dniWarning': 'The DNI is a mandatory piece of information and must have a maximum of 30 characters',
+			'yes': 'Yes',
+			'no': 'No',
 		};
 	}
 }
@@ -1563,6 +1571,8 @@ extension on _StringsEs {
 			'modalDeleteAccountText3': '¿estás seguro?. Este cambio no puede ser revertido',
 			'recovery': 'Recuperar contraseña',
 			'dniWarning': 'El DNI es un dato obligatorio y debe tener como máximo 30 caracteres',
+			'yes': 'Si',
+			'no': 'No',
 		};
 	}
 }
@@ -1728,6 +1738,8 @@ extension on _StringsPt {
 			'modalDeleteAccountText3': 'tem certeza?. Esta alteração não pode ser revertida',
 			'recovery': 'Recuperar senha',
 			'dniWarning': 'O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres',
+			'yes': 'Sim',
+			'no': 'Não',
 		};
 	}
 }

@@ -530,7 +530,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                               .dataRight['response']['cylinder'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataRight['response']['cylinderRound']);
+                              .dataRight['response']['cylinderRound'], true);
 
                     case 'Multifocal':
                       return getMultifocalTextResult(
@@ -599,7 +599,7 @@ class _ResultsAndProducts extends State<ResultsAndProducts> {
                               .dataLeft['response']['cylinder'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataLeft['response']['cylinderRound']);
+                              .dataLeft['response']['cylinderRound'],false);
 
                     case 'Multifocal':
                       return getMultifocalTextResult(

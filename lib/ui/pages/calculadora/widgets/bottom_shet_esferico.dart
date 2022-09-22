@@ -222,7 +222,7 @@ class getBottomShetEsferico {
                                                     ? t.saveModalBottomLeft2
                                                     : t.saveModalBottomRight2),
                                             actions: [
-                                              FlatButton(
+                                              TextButton(
                                                 child: Text('OK'),
                                                 onPressed: () async {
                                                   ///////MODAL MULTIFOCAL
@@ -246,7 +246,7 @@ class getBottomShetEsferico {
                                                     ? t.saveModalBottomRight
                                                     : t.saveModalBottomLeft),
                                             actions: [
-                                              FlatButton(
+                                              TextButton(
                                                 child: Text('No'),
                                                 onPressed: () {
                                                   onNo();
@@ -254,7 +254,7 @@ class getBottomShetEsferico {
                                                   Navigator.pop(context);
                                                 },
                                               ),
-                                              FlatButton(
+                                              TextButton(
                                                 child: Text('Si'),
                                                 onPressed: () async {
                                                   Navigator.pushNamed(context,

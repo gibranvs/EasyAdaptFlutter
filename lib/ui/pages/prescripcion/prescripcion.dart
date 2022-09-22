@@ -132,10 +132,11 @@ class _PrescripcionPageState extends State<PrescripcionPage> {
                             height: 15,
                           ),
                           Text(
-                            dataR['fecha_registro'].toString() != 'null'
-                                ? dataR['fecha_registro'].toString()
-                                : dataL['fecha_registro'].toString() != 'null'
-                                    ? dataR['fecha_registro'].toString()
+                            dataR['fecha_prescripcion'].toString() != 'null'
+                                ? dataR['fecha_prescripcion'].toString()
+                                : dataL['fecha_prescripcion'].toString() !=
+                                        'null'
+                                    ? dataR['fecha_prescripcion'].toString()
                                     : "",
                             style: TextStyle(
                               color: Color.fromARGB(255, 147, 144, 144),

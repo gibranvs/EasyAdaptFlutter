@@ -21,6 +21,13 @@ class ResultState extends ChangeNotifier {
     notifyListeners();
   }
 
+  clearPresc() {
+    var temp = [];
+
+    data['presc'] = [];
+    notifyListeners();
+  }
+
   changeRightValue(r) {
     rightValue = r;
     notifyListeners();

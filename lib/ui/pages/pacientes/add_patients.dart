@@ -123,7 +123,7 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                                               content:
                                                   Text(t.setPatientSubtitle),
                                               actions: [
-                                                FlatButton(
+                                                TextButton(
                                                   child: Text('OK'),
                                                   onPressed: () {
                                                     Navigator.pop(context);
@@ -148,7 +148,7 @@ class _AddPatientsPageState extends State<AddPatientsPage> {
                                             content: Text(
                                                 t.setPatientSubtitleProblem),
                                             actions: [
-                                              FlatButton(
+                                              TextButton(
                                                 child: Text('OK'),
                                                 onPressed: () {
                                                   Navigator.pop(context);
