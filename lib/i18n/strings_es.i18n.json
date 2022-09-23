@@ -192,7 +192,9 @@
 "modalDeleteAccountText2":"eliminar tu cuenta, ",
 "modalDeleteAccountText3":"¿estás seguro?. Este cambio no puede ser revertido",
 "recovery":"Recuperar contraseña",
-"dniWarning":"El DNI es un dato obligatorio y debe tener como máximo 30 caracteres"
+"dniWarning":"El DNI es un dato obligatorio y debe tener como máximo 30 caracteres",
+"yes":"Si",
+"no":"No"
 
 
 

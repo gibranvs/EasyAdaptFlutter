@@ -195,6 +195,9 @@
 ,
 "recovery":"Recuperar senha",
 
-"dniWarning":"O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres"
+"dniWarning":"O DNI é uma informação obrigatória e deve ter no máximo 30 caracteres",
+
+"yes":"Sim",
+"no":"Não"
 
 }

@@ -3,7 +3,7 @@ import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 getToricTextResult(
-    sphera, distancia, spheraRound, axis, cylinder, cylinderRound) {
+    sphera, distancia, spheraRound, axis, cylinder, cylinderRound, right) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ getToricTextResult(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    (double.parse(axis) + 5.0).toStringAsFixed(0),
+                    (double.parse(axis)).toStringAsFixed(0),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -146,7 +146,10 @@ getToricTextResult(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    double.parse(axis).toStringAsFixed(0),
+                    // right
+                    //     ? (double.parse(axis) - 5.0).toStringAsFixed(0)
+                    //     : (double.parse(axis) + 5.0).toStringAsFixed(0)
+                    getTextAxis(right, axis),
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -181,4 +184,20 @@ getToricTextResult(
       ),
     ],
   );
+}
+
+getTextAxis(right, axis) {
+  if (right) {
+    if (axis.toString().split("")[1] == "5") {
+      return (double.parse(axis) - 5.0).toStringAsFixed(0);
+    } else {
+      return double.parse(axis).toStringAsFixed(0);
+    }
+  } else {
+    if (axis.toString().split("")[1] == "5") {
+      return (double.parse(axis) + 5.0).toStringAsFixed(0);
+    } else {
+      return double.parse(axis).toStringAsFixed(0);
+    }
+  }
 }

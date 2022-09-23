@@ -218,7 +218,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               title: Text(t.modalText1TitleRegisterScreen),
                               content: Text(t.modalText1RegisterScreen),
                               actions: [
-                                FlatButton(
+                                TextButton(
                                   child: Text('OK'),
                                   onPressed: () {
                                     Navigator.pushReplacementNamed(
@@ -236,7 +236,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               title: Text(t.loginModalErrorTitle),
                               content: Text(t.modalText2RegisterScreen),
                               actions: [
-                                FlatButton(
+                                TextButton(
                                   child: Text('OK'),
                                   onPressed: () {
                                     Navigator.pop(context);
@@ -254,7 +254,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             title: Text(t.loginModalErrorTitle),
                             content: Text(t.modalText3RegisterScreen),
                             actions: [
-                              FlatButton(
+                              TextButton(
                                 child: Text('OK'),
                                 onPressed: () {
                                   Navigator.pop(context);
@@ -272,7 +272,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           title: Text(t.loginModalErrorTitle),
                           content: Text(t.modalText4RegisterScreen),
                           actions: [
-                            FlatButton(
+                            TextButton(
                               child: Text('OK'),
                               onPressed: () {
                                 Navigator.pop(context);

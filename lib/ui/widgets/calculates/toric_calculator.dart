@@ -38,7 +38,7 @@ toricCalculatorRight(context) {
   Provider.of<CalculatorTotalState>(context, listen: false).changeResponseRight(
       'axis',
       dataProvider['Axis'] != null
-          ? (double.parse(dataProvider['Axis']) - 5.0).toString()
+          ? (double.parse(dataProvider['Axis'])).toString()
           : "0");
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('esphereRound', resultRoundR);
@@ -82,7 +82,7 @@ toricCalculatorLeft(context) {
   Provider.of<CalculatorTotalState>(context, listen: false).changeResponseLeft(
       'axis',
       dataProvider['Axis'] != null
-          ? (double.parse(dataProvider['Axis']) - 5.0).toString()
+          ? (double.parse(dataProvider['Axis'])).toString()
           : "0");
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('esphereRound', resultRoundR);

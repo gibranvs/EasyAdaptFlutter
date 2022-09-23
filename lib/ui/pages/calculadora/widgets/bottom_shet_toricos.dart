@@ -57,7 +57,7 @@ class getBottomShetToricos {
                                             fontSize: 15),
                                       ),
                                       Text(
-                                        "$esphere / $cylinder x $axis",
+                                        "$esphere / $cylinder x ${getAxisValue(rightV, axis)} ",
                                         style: TextStyle(
                                             fontWeight: FontWeight.normal,
                                             fontSize: 15),
@@ -124,7 +124,7 @@ class getBottomShetToricos {
                                 height: 5,
                               ),
                               Text(
-                                "$esphere / $cylinder x ${double.parse(axis) + grados}",
+                                "$esphere / $cylinder x ${getAxisValue(rightV, axis) + grados}",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -172,7 +172,7 @@ class getBottomShetToricos {
                               Provider.of<CalculatorState>(context,
                                       listen: false)
                                   .addAxisF(
-                                      double.parse(axis) + grados,
+                                      getAxisValue(rightV, axis) + grados,
                                       Provider.of<ResultState>(context,
                                               listen: false)
                                           .rightValue,
@@ -268,9 +268,6 @@ class getBottomShetToricos {
                                   ]
                                 });
                               }
-                              print(Provider.of<ResultState>(context,
-                                      listen: false)
-                                  .data);
 
                               // Provider.of<ResultState>(context, listen: false)
                               //     .changeData({
@@ -295,16 +292,16 @@ class getBottomShetToricos {
                                             ? t.saveModalBottomRight
                                             : t.saveModalBottomLeft),
                                         actions: [
-                                          FlatButton(
-                                            child: Text('No'),
+                                          TextButton(
+                                            child: Text(t.no),
                                             onPressed: () {
                                               Navigator.pop(context);
                                               Navigator.pop(context);
                                               onNo();
                                             },
                                           ),
-                                          FlatButton(
-                                            child: Text('Si'),
+                                          TextButton(
+                                            child: Text(t.yes),
                                             onPressed: () {
                                               Navigator.pushNamed(context,
                                                   '/calc/results/confirm');
@@ -343,5 +340,21 @@ class getBottomShetToricos {
             },
           );
         });
+  }
+}
+
+getAxisValue(right, axis) {
+  if (right) {
+    if (axis.toString().split("")[1] == "5") {
+      return (double.parse(axis) - 5.0);
+    } else {
+      return double.parse(axis);
+    }
+  } else {
+    if (axis.toString().split("")[1] == "5") {
+      return (double.parse(axis) + 5.0);
+    } else {
+      return double.parse(axis);
+    }
   }
 }

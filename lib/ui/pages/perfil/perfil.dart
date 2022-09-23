@@ -222,7 +222,7 @@ class _PerfilPageState extends State<PerfilPage> {
                                   builder: (context) {
                                     return AlertDialog(
                                         actions: [
-                                          RaisedButton(
+                                          ElevatedButton(
                                             onPressed: () {
                                               Navigator.pop(context);
                                             },
@@ -233,9 +233,11 @@ class _PerfilPageState extends State<PerfilPage> {
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white),
                                             ),
-                                            color: Colors.blueAccent,
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor:
+                                                    Colors.blueAccent),
                                           ),
-                                          RaisedButton(
+                                          ElevatedButton(
                                             onPressed: () async {
                                               await Data().deleteAccount();
                                               Navigator.pushNamedAndRemoveUntil(
@@ -250,7 +252,8 @@ class _PerfilPageState extends State<PerfilPage> {
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white),
                                             ),
-                                            color: Colors.red,
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.red),
                                           ),
                                         ],
                                         title: RichText(

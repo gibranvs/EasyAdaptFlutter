@@ -55,6 +55,11 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // ElevatedButton(
+            //     onPressed: () {
+            //       calcNextDate();
+            //     },
+            //     child: Text("hola")),
             getAppBarWithLogosWidget(Row(
               children: [
                 IconButton(
@@ -129,7 +134,11 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
                         dataF[1]['product']['namePS'],
                         dataF[1]['product']['descriptionPS'],
                         dataF[1]['product']['imagePS'])
-                    : Container()
+                    : Container(
+                        child: Text(
+                        "vacio",
+                        style: TextStyle(fontSize: 50),
+                      ))
                 : Container(),
             const SizedBox(
               height: 20,
@@ -293,13 +302,14 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
 
   calcNextDate() {
     if (dataF[0]['product'] != null && dataF[1]['product'] != null) {
+      print("1");
       if (int.parse(dataF[0]['product']['daysPS']) >
           int.parse(dataF[1]['product']['daysPS'])) {
+        print("2");
+
         if (dataF[1]['product'] != null) {
-          print(DateTime.now().add(Duration(
-              days: int.parse(dataF[1]['product'] != null
-                  ? dataF[1]['product']['daysPS']
-                  : "0"))));
+          print("3");
+
           return DateTime.now()
               .add(Duration(
                   days: int.parse(dataF[1]['product'] != null
@@ -311,10 +321,8 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
         }
       } else {
         if (dataF[1]['product'] != null) {
-          print(DateTime.now().add(Duration(
-              days: int.parse(dataF[0]['product'] != null
-                  ? dataF[0]['product']['daysPS']
-                  : "0"))));
+          print("4");
+
           return DateTime.now()
               .add(Duration(
                   days: int.parse(dataF[0]['product'] != null
@@ -324,10 +332,8 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
               .split(' ')[0]
               .toString();
         } else {
-          print(DateTime.now().add(Duration(
-              days: int.parse(dataF[0]['product'] != null
-                  ? dataF[0]['product']['daysPS']
-                  : dataF[1]['product']['daysPS']))));
+          print(5);
+
           return DateTime.now()
               .add(Duration(
                   days: int.parse(dataF[0]['product'] != null
@@ -337,6 +343,42 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
               .split(' ')[0]
               .toString();
         }
+      }
+    } else {
+      if (dataF[0]['right'] == true) {
+        print(DateTime.now()
+            .add(Duration(
+                days: int.parse(dataF[0]['product'] != null
+                    ? dataF[0]['product']['daysPS']
+                    : "0")))
+            .toString()
+            .split(' ')[0]
+            .toString());
+        return DateTime.now()
+            .add(Duration(
+                days: int.parse(dataF[0]['product'] != null
+                    ? dataF[0]['product']['daysPS']
+                    : "0")))
+            .toString()
+            .split(' ')[0]
+            .toString();
+      } else {
+        print(DateTime.now()
+            .add(Duration(
+                days: int.parse(dataF[1]['product'] != null
+                    ? dataF[1]['product']['daysPS']
+                    : "0")))
+            .toString()
+            .split(' ')[0]
+            .toString());
+        return DateTime.now()
+            .add(Duration(
+                days: int.parse(dataF[1]['product'] != null
+                    ? dataF[1]['product']['daysPS']
+                    : "0")))
+            .toString()
+            .split(' ')[0]
+            .toString();
       }
     }
   }
@@ -398,7 +440,7 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
 
     ///Izquierdo
     if (dataF[0]['right'] == false || dataF[1]['right'] == false) {
-      if (dataF[1] != {}) {
+      if (dataF[1].length != 0) {
         switch (Provider.of<CalculatorTotalState>(context, listen: false)
             .dataLeft['type']) {
           case 'Spherical':
@@ -509,7 +551,17 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       case 'Spherical':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['distance']} ';
       case 'Toric':
-        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['axisF'] !=
+                null &&
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataRight['response']['axisF'] !=
+                "null" &&
+            dataF[0]['right'] == true) {
+          return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
+        } else {
+          return "";
+        }
       case 'Multifocal':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':
@@ -535,7 +587,17 @@ class _ConfirmPacientResultState extends State<ConfirmPacientResult> {
       case 'Spherical':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['distance']} ';
       case 'Toric':
-        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
+        if (Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['axisF'] !=
+                null &&
+            Provider.of<CalculatorTotalState>(context, listen: false)
+                    .dataLeft['response']['axisF'] !=
+                "null" &&
+            dataF[1].length != 0) {
+          return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
+        } else {
+          return "";
+        }
       case 'Multifocal':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':

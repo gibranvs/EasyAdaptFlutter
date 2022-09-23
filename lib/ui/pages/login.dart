@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                                     title: Text(t.loginModalErrorTitle),
                                     content: Text(t.loginModalErrorSubtitle),
                                     actions: [
-                                      FlatButton(
+                                      TextButton(
                                         child: Text('OK'),
                                         onPressed: () {
                                           Navigator.pop(context);
