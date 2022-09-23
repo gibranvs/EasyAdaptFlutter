@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/gibranvs/Desktop/GARTIC/flutter/flutter"
+export "FLUTTER_ROOT=/Users/gibranvs/desktop/GARTIC/flutter/flutter"
 export "FLUTTER_APPLICATION_PATH=/Users/gibranvs/Desktop/GARTIC/Easy Adapt/Flutter"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
