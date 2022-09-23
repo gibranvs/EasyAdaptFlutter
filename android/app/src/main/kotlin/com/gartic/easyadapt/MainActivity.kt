@@ -1,4 +1,4 @@
-package com.example.easy
+package com.gartic.easyadapt
 
 import io.flutter.embedding.android.FlutterActivity
 
