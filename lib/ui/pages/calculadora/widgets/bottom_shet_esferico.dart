@@ -528,7 +528,7 @@ class getBottomShetEsferico {
       case 'Toric':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
       case 'Multifocal':
-        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") > 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':
       case 'Toric':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['axisF']}';
@@ -554,7 +554,7 @@ class getBottomShetEsferico {
       case 'Toric':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
       case 'Multifocal':
-        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['add'] ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW"} ';
+        return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['add'] ?? "0.0") > 1.5 ? "Add HIGH" : "Add LOW"} ';
       case 'Monovision':
         return '${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['esphereRound']} / ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['cylinderRound']} * ${Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['response']['axisF']}';
 

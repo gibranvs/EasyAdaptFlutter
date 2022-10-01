@@ -534,7 +534,8 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                               .dataRight['response']['cylinder'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataRight['response']['cylinderRound'], true);
+                              .dataRight['response']['cylinderRound'],
+                          true);
 
                     case 'Multifocal':
                       return getMultifocalTextResult(
@@ -603,7 +604,8 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
                               .dataLeft['response']['cylinder'],
                           Provider.of<CalculatorTotalState>(context,
                                   listen: false)
-                              .dataLeft['response']['cylinderRound'], false);
+                              .dataLeft['response']['cylinderRound'],
+                          false);
 
                     case 'Multifocal':
                       return getMultifocalTextResult(
@@ -714,7 +716,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
               },
                   dataProductsR.isNotEmpty ? dataProductsR[index] : {},
                   '',
-                  double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5
+                  double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") > 1.5
                       ? "Add HIGH"
                       : "Add LOW"));
     } else {
@@ -767,7 +769,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
               },
                   dataProductsL.isNotEmpty ? dataProductsL[index] : {},
                   '',
-                  double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") >= 1.5
+                  double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['response']['add'] ?? "0.0") > 1.5
                       ? "Add HIGH"
                       : "Add LOW"));
     }

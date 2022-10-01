@@ -46,7 +46,7 @@ getMultifocalTextResult(sphera, distancia, spheraRound, add) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    double.parse(add ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW",
+                    double.parse(add ?? "0.0") > 1.5 ? "Add HIGH" : "Add LOW",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -115,7 +115,7 @@ getMultifocalTextResult(sphera, distancia, spheraRound, add) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    double.parse(add ?? "0.0") >= 1.5 ? "Add HIGH" : "Add LOW",
+                    double.parse(add ?? "0.0") > 1.5 ? "Add HIGH" : "Add LOW",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
