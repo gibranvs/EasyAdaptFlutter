@@ -87,31 +87,7 @@ class _InitialPage extends State<InitialPage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/calculator-total');
-                      },
-                      child: Container(
-                        width: 320,
-                        height: 50,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(129, 181, 178, 1.0),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(25))),
-                        child: Center(
-                          child: Text(
-                            t.calculatorTitleHomeScreen,
-                            style: TextStyle(color: Colors.white, fontSize: 17),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   Center(
                     child: GestureDetector(
@@ -136,7 +112,7 @@ class _InitialPage extends State<InitialPage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 45,
                   ),
                   Center(
                     child: RichText(

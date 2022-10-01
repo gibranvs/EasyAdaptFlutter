@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class Data {
   //String url = 'http://c1571423.ferozo.com';
-  String url = 'http://contactlensacademybausch.com/easy_adapt';
+  String url = 'https://easyadapt.com.mx';
   login(email, password, save) async {
     final prefs = await SharedPreferences.getInstance();
 
