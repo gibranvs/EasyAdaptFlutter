@@ -65,7 +65,7 @@ List productsSphereEs = [
     "idPS": "3",
     "namePS": "Ultra",
     "descriptionPS":
-        "MoistureSeal Technology que ayuda a mantener el 95% de la humectación del lente durante 16 horas completas",
+        "MoistureSeal Technology que ayuda a mantener el 95% de la humectación del lente durante 16 horas completas. R.S INVIMA 2016DM-0015000.",
     "maxPS": "6.25",
     "minPS": "-12.5",
     "daysPS": "180",
@@ -75,7 +75,7 @@ List productsSphereEs = [
     "idPS": "10",
     "namePS": "Biotrue ONEday",
     "descriptionPS":
-        "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas.",
+        "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas. R.S INVIMA 2018DM-0018241",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "daysPS": "180",
@@ -85,7 +85,7 @@ List productsSphereEs = [
     "idPS": "4",
     "namePS": "Pure Vision 2",
     "descriptionPS":
-        "Comfort Moist™ - mejora la comodidad al momento de insertar el lente y durante todo el día, Increíble visión y ayuda a reducir halos y deslumbramientos ya que cuenta con Óptica de Alta Definición.",
+        "Comfort Moist™ - mejora la comodidad al momento de insertar el lente y durante todo el día, Increíble visión y ayuda a reducir halos y deslumbramientos ya que cuenta con Óptica de Alta Definición. R.S INVIMA 2016DM-0015431",
     "maxPS": "6.25",
     "minPS": "-12.5",
     "daysPS": "180",
@@ -95,7 +95,7 @@ List productsSphereEs = [
     "idPS": "1",
     "namePS": "Soflens 59",
     "descriptionPS":
-        "Tecnología Unifit® que brinda una adaptación rápida y simplificada por parámetros únicos de curva base.",
+        "Tecnología Unifit® que brinda una adaptación rápida y simplificada por parámetros únicos de curva base. R.S INVIMA 2019DM-0019193",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "daysPS": "180",
@@ -105,7 +105,7 @@ List productsSphereEs = [
     "idPS": "2",
     "namePS": "Lunare Tri-Color",
     "descriptionPS":
-        "La innovadora tecnología TKI , es la combinación de 3 colores en un mismo lente y ofrece mayor comodidad y naturalidad.",
+        "La innovadora tecnología TKI , es la combinación de 3 colores en un mismo lente y ofrece mayor comodidad y naturalidad. R.S INVIMA 2016DM-0015559",
     "maxPS": "0",
     "minPS": "-6",
     "daysPS": "30",
@@ -190,7 +190,7 @@ List productsToricosEs = [
     "idPS": "13",
     "namePS": "ULTRA For Astigmatism",
     "descriptionPS":
-        "MoistureSeal Technology /Diseño OpticAlign Diseñados para brindar estabilidad y proveer una primera daptación exitosa",
+        "MoistureSeal Technology /Diseño OpticAlign Diseñados para brindar estabilidad y proveer una primera daptación exitosa. R.S INVIMA 2019DM-0019597",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
@@ -202,7 +202,7 @@ List productsToricosEs = [
     "idPS": "5",
     "namePS": "PureVision 2 For Astigmatism",
     "descriptionPS":
-        "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa",
+        "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa. R.S INVIMA 2021DM-0008616-R1",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
@@ -214,7 +214,7 @@ List productsToricosEs = [
     "idPS": "6",
     "namePS": "Soflens For Astigmatism",
     "descriptionPS":
-        "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación.",
+        "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación. R.S INVIMA 2018DM-0002765-R1",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
@@ -330,7 +330,7 @@ List productsMultifocalEs = [
     "idPS": "7",
     "namePS": "ULTRA For Presbyopia",
     "descriptionPS":
-        "MoistureSeal Technology / Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios",
+        "MoistureSeal Technology / Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios. R.S INVIMA 2019DM-0019598",
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
@@ -340,7 +340,7 @@ List productsMultifocalEs = [
     "idPS": "8",
     "namePS": "Pure Vision 2 For Presbyopia",
     "descriptionPS":
-        "Comfort Moist /Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios",
+        "Comfort Moist /Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios. R.S INVIMA 2016DM-0015431",
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
