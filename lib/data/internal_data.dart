@@ -203,9 +203,9 @@ List productsToricosEs = [
     "namePS": "PureVision 2 For Astigmatism",
     "descriptionPS":
         "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa. R.S INVIMA 2021DM-0008616-R1",
-    "maxPS": "6.25",
+    "maxPS": "-0..25",
     "minPS": "-9.25",
-    "cylinderMax": "-0.5",
+    "cylinderMax": "-0.75",
     "cylinderMin": "-2.25",
     "daysPS": "180",
     "imagePS": "./assets/calculators/pv2.png"
@@ -215,13 +215,25 @@ List productsToricosEs = [
     "namePS": "Soflens For Astigmatism",
     "descriptionPS":
         "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación. R.S INVIMA 2018DM-0002765-R1",
-    "maxPS": "6.25",
+    "maxPS": "-0.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
     "cylinderMin": "-3",
     "daysPS": "180",
     "imagePS": "./assets/calculators/softlens_astigmatism.png"
   },
+  {
+    "idPS": "14",
+    "namePS": "Biotrue ONEday for Astigmatism",
+    "descriptionPS":
+    "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas.",
+    "maxPS": "4",
+    "minPS": "-9",
+    "cylinderMax": "-0.75",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/biotrue_one_day_toric.png"
+  }
 ];
 
 List productsToricosEn = [
@@ -261,6 +273,18 @@ List productsToricosEn = [
     "daysPS": "180",
     "imagePS": "./assets/calculators/softlens_astigmatism.png"
   },
+  {
+    "idPS": "14",
+    "namePS": "Biotrue ONEday For Astigmatism",
+    "descriptionPS":
+    "Surface Active Technology™With exclusive HYPERGEL material Maintains 98% of hydration for up to 16 hours.",
+    "maxPS": "4",
+    "minPS": "-9",
+    "cylinderMax": "-0.75",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/biotrue_one_day_toric.png"
+  }
 ];
 
 List productsToricosPt = [
@@ -300,6 +324,18 @@ List productsToricosPt = [
     "daysPS": "180",
     "imagePS": "./assets/calculators/softlens_astigmatism.png"
   },
+  {
+    "idPS": "14",
+    "namePS": "Biotrue ONEday For Astigmatism",
+    "descriptionPS":
+    "Surface Active Technology™Com material exclusivo HYPERGEL Mantém 98% de hidratação por até 16 horas.",
+    "maxPS": "4",
+    "minPS": "-9",
+    "cylinderMax": "-0.75",
+    "cylinderMin": "-2.25",
+    "daysPS": "180",
+    "imagePS": "./assets/calculators/biotrue_one_day_toric.png"
+  }
 ];
 
 List productsMultifocalEn = [
