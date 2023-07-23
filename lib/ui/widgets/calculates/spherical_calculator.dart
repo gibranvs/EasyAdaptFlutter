@@ -10,7 +10,7 @@ sphericalCalculatorRight(context) {
   var tempEsphereR = ((double.parse(dataProvider['Sphere'] ?? "0.0")) /
       (1 -
           (double.parse(dataProvider['Sphere'] ?? "0.0") *
-              (double.parse(dataProvider['Sphere'] ?? "0.0") / 1000))));
+              (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
 
   if (tempEsphereR > 6) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
@@ -35,7 +35,7 @@ sphericalCalculatorLeft(context) {
   var tempEsphereR = ((double.parse(dataProvider['Sphere'] ?? "0.0")) /
       (1 -
           (double.parse(dataProvider['Sphere'] ?? "0.0") *
-              (double.parse(dataProvider['Sphere'] ?? "0.0") / 1000))));
+              (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
 
   if (tempEsphereR > 6) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
