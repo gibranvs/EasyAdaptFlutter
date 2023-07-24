@@ -203,7 +203,7 @@ List productsToricosEs = [
     "namePS": "PureVision 2 For Astigmatism",
     "descriptionPS":
         "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa. R.S INVIMA 2021DM-0008616-R1",
-    "maxPS": "-0..25",
+    "maxPS": "-0.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.75",
     "cylinderMin": "-2.25",
