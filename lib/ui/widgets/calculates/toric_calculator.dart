@@ -20,7 +20,7 @@ toricCalculatorRight(context) {
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
 
-  if (tempEsphereR > 6) {
+  if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
   } else {
     resultRoundR = FuncCalculators().round50(tempEsphereR.toDouble());
@@ -64,7 +64,7 @@ toricCalculatorLeft(context) {
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
 
-  if (tempEsphereR > 6) {
+  if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
   } else {
     resultRoundR = FuncCalculators().round50(tempEsphereR.toDouble());

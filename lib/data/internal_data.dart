@@ -4,8 +4,8 @@ List productsSphereEn = [
     "namePS": "Ultra",
     "descriptionPS":
         "MoistureSeal Technology helps maintain 95% of lens moisture for a full 16 hours",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/ultra.png"
   },
@@ -14,8 +14,8 @@ List productsSphereEn = [
     "namePS": "Biotrue ONEday",
     "descriptionPS":
         "Surface Active Technology™With exclusive HYPERGEL material Maintains 98% of hydration for up to 16 hours.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/biotrue_one_day.png"
   },
@@ -24,8 +24,8 @@ List productsSphereEn = [
     "namePS": "Pure Vision 2",
     "descriptionPS":
         "Comfort Moist™ - improves comfort at lens insertion and throughout the day, Incredible vision and helps reduce halos and glare as it features High Definition Optics.",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/purevision2.png"
   },
@@ -34,8 +34,8 @@ List productsSphereEn = [
     "namePS": "Soflens 59",
     "descriptionPS":
         "Unifit® technology that provides fast and simplified adaptation by unique base curve parameters.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/soflens59.png"
   },
@@ -54,8 +54,8 @@ List productsSphereEn = [
     "namePS": "Optima 38",
     "descriptionPS":
         "Spherical soft contact lens for daily use and annual replacement, Ideal for patients looking for an annual lens with excellent quality.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "-0.25",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/optima38.png"
   }
@@ -66,8 +66,8 @@ List productsSphereEs = [
     "namePS": "Ultra",
     "descriptionPS":
         "MoistureSeal Technology que ayuda a mantener el 95% de la humectación del lente durante 16 horas completas. R.S INVIMA 2016DM-0015000.",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/ultra.png"
   },
@@ -76,8 +76,8 @@ List productsSphereEs = [
     "namePS": "Biotrue ONEday",
     "descriptionPS":
         "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas. R.S INVIMA 2018DM-0018241",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/biotrue_one_day.png"
   },
@@ -86,8 +86,8 @@ List productsSphereEs = [
     "namePS": "Pure Vision 2",
     "descriptionPS":
         "Comfort Moist™ - mejora la comodidad al momento de insertar el lente y durante todo el día, Increíble visión y ayuda a reducir halos y deslumbramientos ya que cuenta con Óptica de Alta Definición. R.S INVIMA 2016DM-0015431",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/purevision2.png"
   },
@@ -96,8 +96,8 @@ List productsSphereEs = [
     "namePS": "Soflens 59",
     "descriptionPS":
         "Tecnología Unifit® que brinda una adaptación rápida y simplificada por parámetros únicos de curva base. R.S INVIMA 2019DM-0019193",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/soflens59.png"
   },
@@ -116,8 +116,8 @@ List productsSphereEs = [
     "namePS": "Optima 38",
     "descriptionPS":
         "Lente de contacto blando esférico de uso diario y reemplazo anual, Ideal para pacientes que buscan un lente anual con excelente calidad.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "-0.25",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/optima38.png"
   }
@@ -128,8 +128,8 @@ List productsSpherePt = [
     "namePS": "Ultra",
     "descriptionPS":
         "A tecnologia MoistureSeal ajuda a manter 95% da umidade da lente por 16 horas completas",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/ultra.png"
   },
@@ -138,8 +138,8 @@ List productsSpherePt = [
     "namePS": "Biotrue ONEday",
     "descriptionPS":
         "Surface Active Technology™Com material exclusivo HYPERGEL Mantém 98% de hidratação por até 16 horas.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/biotrue_one_day.png"
   },
@@ -148,8 +148,8 @@ List productsSpherePt = [
     "namePS": "Pure Vision 2",
     "descriptionPS":
         "Comfort Moist™ - melhora o conforto na inserção da lente e ao longo do dia, visão incrível e ajuda a reduzir halos e brilho, pois possui ótica de alta definição.",
-    "maxPS": "6.25",
-    "minPS": "-12.5",
+    "maxPS": "6.00",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/purevision2.png"
   },
@@ -158,8 +158,8 @@ List productsSpherePt = [
     "namePS": "Soflens 59",
     "descriptionPS":
         "Tecnologia Unifit® que proporciona adaptação rápida e simplificada por parâmetros de curva base exclusivos.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "6.00",
+    "minPS": "-9.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/soflens59.png"
   },
@@ -178,8 +178,8 @@ List productsSpherePt = [
     "namePS": "Optima 38",
     "descriptionPS":
         "Lente de contato gelatinosa esférica para uso diário e substituição anual, Ideal para pacientes que procuram uma lente anual com excelente qualidade.",
-    "maxPS": "6.25",
-    "minPS": "-9.25",
+    "maxPS": "-0.25",
+    "minPS": "-12.00",
     "daysPS": "180",
     "imagePS": "./assets/calculators/optima38.png"
   }

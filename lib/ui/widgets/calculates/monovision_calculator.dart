@@ -21,7 +21,7 @@ monovisionlCalculatorRight(context) {
     if (cilindroDominante != 0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
-      if (esferaDom > 6) {
+      if (esferaDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
@@ -31,7 +31,7 @@ monovisionlCalculatorRight(context) {
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
-      if (esferaDom > 6) {
+      if (esferaDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
@@ -64,7 +64,7 @@ monovisionlCalculatorRight(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Toric');
-      if (esferaNoDom < 6) {
+      if (esferaNoDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -74,7 +74,7 @@ monovisionlCalculatorRight(context) {
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseRight('typeCalc', 'Spherical');
-      if (esferaNoDom < 6) {
+      if (esferaNoDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -117,7 +117,7 @@ monovisionCalculatorLeft(context) {
     if (cilindroDominante != 0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseLeft('typeCalc', 'Toric');
-      if (esferaDom > 6) {
+      if (esferaDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
@@ -127,7 +127,7 @@ monovisionCalculatorLeft(context) {
     } else {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseLeft('typeCalc', 'Spherical');
-      if (esferaDom > 6) {
+      if (esferaDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaDom.toDouble());
@@ -160,7 +160,7 @@ monovisionCalculatorLeft(context) {
     if (cilindroNoDominante != 0.0) {
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseLeft('typeCalc', 'Toric');
-      if (esferaNoDom < 6) {
+      if (esferaNoDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());
@@ -172,7 +172,7 @@ monovisionCalculatorLeft(context) {
 
       Provider.of<CalculatorTotalState>(context, listen: false)
           .changeResponseLeft('typeCalc', 'Spherical');
-      if (esferaNoDom < 6) {
+      if (esferaNoDom > (0-6)) {
         resultRoundR = FuncCalculators().round25(esferaNoDom.toDouble());
       } else {
         resultRoundR = FuncCalculators().round50(esferaNoDom.toDouble());

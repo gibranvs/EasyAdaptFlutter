@@ -28,7 +28,7 @@ multifocalCalculatorRight(context) {
             (sphereEquivalent *
                 (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
     print(tempEsphereR);
-    if (tempEsphereR > 6) {
+    if (tempEsphereR > (0-10)) {
       sphereFinal = FuncCalculators().round25(tempEsphereR.toDouble());
     } else {
       sphereFinal = FuncCalculators().round50(tempEsphereR.toDouble());
@@ -71,7 +71,7 @@ multifocalCalculatorLeft(context) {
         (1 -
             (sphereEquivalent *
                 (double.parse(dataProvider['Distance'] ?? "0.0") / 1000))));
-    if (tempEsphereR > 6) {
+    if (tempEsphereR > (0-10)) {
       resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
       sphereFinal = resultRoundR;
     } else {
