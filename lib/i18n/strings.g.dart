@@ -466,7 +466,7 @@ class _Strings0i0En {
 
 	// Translations
 	String get image => './assets/tutorials/seleccion_pacientes.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4';
 	String get title => 'Patient selection';
 }
 
@@ -479,7 +479,7 @@ class _Strings0i1En {
 
 	// Translations
 	String get image => './assets/tutorials/eleccion_lente.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4';
 	String get title => 'Choice of contact lens';
 }
 
@@ -492,7 +492,7 @@ class _Strings0i2En {
 
 	// Translations
 	String get image => './assets/tutorials/adaptacion_esfericos.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4';
 	String get title => 'Spherical adaptation';
 }
 
@@ -505,7 +505,7 @@ class _Strings0i3En {
 
 	// Translations
 	String get image => './assets/tutorials/adaptacion_toricos.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4';
 	String get title => 'Toric adaptation';
 }
 
@@ -518,7 +518,7 @@ class _Strings0i4En {
 
 	// Translations
 	String get image => './assets/tutorials/adaptacion_multifocal.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4';
 	String get title => 'Multifocal adaptation';
 }
 
@@ -531,7 +531,7 @@ class _Strings0i5En {
 
 	// Translations
 	String get image => './assets/tutorials/adaptacion_monovision.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4';
 	String get title => 'Monovision adaptation';
 }
 
@@ -544,7 +544,7 @@ class _Strings0i6En {
 
 	// Translations
 	String get image => './assets/tutorials/insercion_gabinete.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4';
 	String get title => 'Insertion and removal in the cabinet';
 }
 
@@ -557,7 +557,7 @@ class _Strings0i7En {
 
 	// Translations
 	String get image => './assets/tutorials/insercion_casa.png';
-	String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4';
 	String get title => 'Insertion, removal and maintenance at home';
 }
 
@@ -779,7 +779,7 @@ class _Strings0i0Es implements _Strings0i0En {
 
 	// Translations
 	@override String get image => './assets/tutorials/seleccion_pacientes.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4';
 	@override String get title => 'Selección del paciente';
 }
 
@@ -792,7 +792,7 @@ class _Strings0i1Es implements _Strings0i1En {
 
 	// Translations
 	@override String get image => './assets/tutorials/eleccion_lente.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4';
 	@override String get title => 'Elección del lente de contacto';
 }
 
@@ -805,7 +805,7 @@ class _Strings0i2Es implements _Strings0i2En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_esfericos.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4';
 	@override String get title => 'Adaptación esféricos';
 }
 
@@ -818,7 +818,7 @@ class _Strings0i3Es implements _Strings0i3En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_toricos.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4';
 	@override String get title => 'Adaptación tóricos';
 }
 
@@ -831,7 +831,7 @@ class _Strings0i4Es implements _Strings0i4En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_multifocal.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4';
 	@override String get title => 'Adaptación multifocal';
 }
 
@@ -844,7 +844,7 @@ class _Strings0i5Es implements _Strings0i5En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_monovision.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4';
 	@override String get title => 'Adaptación monovisión';
 }
 
@@ -857,7 +857,7 @@ class _Strings0i6Es implements _Strings0i6En {
 
 	// Translations
 	@override String get image => './assets/tutorials/insercion_gabinete.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4';
 	@override String get title => 'Inserción y remoción en el gabinete';
 }
 
@@ -870,7 +870,7 @@ class _Strings0i7Es implements _Strings0i7En {
 
 	// Translations
 	@override String get image => './assets/tutorials/insercion_casa.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4';
 	@override String get title => 'Inserción, remoción y mantenimiento en casa';
 }
 
@@ -1092,7 +1092,7 @@ class _Strings0i0Pt implements _Strings0i0En {
 
 	// Translations
 	@override String get image => './assets/tutorials/seleccion_pacientes.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4';
 	@override String get title => 'Seleção de pacientes';
 }
 
@@ -1105,7 +1105,7 @@ class _Strings0i1Pt implements _Strings0i1En {
 
 	// Translations
 	@override String get image => './assets/tutorials/eleccion_lente.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4';
 	@override String get title => 'Escolha da lente de contato';
 }
 
@@ -1118,7 +1118,7 @@ class _Strings0i2Pt implements _Strings0i2En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_esfericos.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4';
 	@override String get title => 'Adaptação esférica';
 }
 
@@ -1131,7 +1131,7 @@ class _Strings0i3Pt implements _Strings0i3En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_toricos.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4';
 	@override String get title => 'Adaptação tórica';
 }
 
@@ -1144,7 +1144,7 @@ class _Strings0i4Pt implements _Strings0i4En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_multifocal.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4';
 	@override String get title => 'Adaptação multifocal';
 }
 
@@ -1157,7 +1157,7 @@ class _Strings0i5Pt implements _Strings0i5En {
 
 	// Translations
 	@override String get image => './assets/tutorials/adaptacion_monovision.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4';
 	@override String get title => 'Adaptação à monovisão';
 }
 
@@ -1170,7 +1170,7 @@ class _Strings0i6Pt implements _Strings0i6En {
 
 	// Translations
 	@override String get image => './assets/tutorials/insercion_gabinete.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4';
 	@override String get title => 'Inserção e remoção no gabinete';
 }
 
@@ -1183,7 +1183,7 @@ class _Strings0i7Pt implements _Strings0i7En {
 
 	// Translations
 	@override String get image => './assets/tutorials/insercion_casa.png';
-	@override String get link => 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4';
+	@override String get link => 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4';
 	@override String get title => 'Inserção, remoção e manutenção em casa';
 }
 
@@ -1303,28 +1303,28 @@ extension on _StringsEn {
 			'titleTutorialesPage': 'Tutorials',
 			'titleWelcomeRegisterScreen': 'WELCOME!',
 			'tutoriales.0.image': './assets/tutorials/seleccion_pacientes.png',
-			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4',
 			'tutoriales.0.title': 'Patient selection',
 			'tutoriales.1.image': './assets/tutorials/eleccion_lente.png',
-			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4',
 			'tutoriales.1.title': 'Choice of contact lens',
 			'tutoriales.2.image': './assets/tutorials/adaptacion_esfericos.png',
-			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4',
 			'tutoriales.2.title': 'Spherical adaptation',
 			'tutoriales.3.image': './assets/tutorials/adaptacion_toricos.png',
-			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4',
 			'tutoriales.3.title': 'Toric adaptation',
 			'tutoriales.4.image': './assets/tutorials/adaptacion_multifocal.png',
-			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4',
 			'tutoriales.4.title': 'Multifocal adaptation',
 			'tutoriales.5.image': './assets/tutorials/adaptacion_monovision.png',
-			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4',
 			'tutoriales.5.title': 'Monovision adaptation',
 			'tutoriales.6.image': './assets/tutorials/insercion_gabinete.png',
-			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4',
 			'tutoriales.6.title': 'Insertion and removal in the cabinet',
 			'tutoriales.7.image': './assets/tutorials/insercion_casa.png',
-			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Insertion, removal and maintenance at home',
 			'unselectTextCatalogPage': 'Select a country from the list to see its corresponding catalog',
 			'calc1Title': 'Spherical calculator',
@@ -1470,28 +1470,28 @@ extension on _StringsEs {
 			'titleTutorialesPage': 'Tutoriales',
 			'titleWelcomeRegisterScreen': 'BIENVENIDO!',
 			'tutoriales.0.image': './assets/tutorials/seleccion_pacientes.png',
-			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4',
 			'tutoriales.0.title': 'Selección del paciente',
 			'tutoriales.1.image': './assets/tutorials/eleccion_lente.png',
-			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4',
 			'tutoriales.1.title': 'Elección del lente de contacto',
 			'tutoriales.2.image': './assets/tutorials/adaptacion_esfericos.png',
-			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4',
 			'tutoriales.2.title': 'Adaptación esféricos',
 			'tutoriales.3.image': './assets/tutorials/adaptacion_toricos.png',
-			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4',
 			'tutoriales.3.title': 'Adaptación tóricos',
 			'tutoriales.4.image': './assets/tutorials/adaptacion_multifocal.png',
-			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4',
 			'tutoriales.4.title': 'Adaptación multifocal',
 			'tutoriales.5.image': './assets/tutorials/adaptacion_monovision.png',
-			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4',
 			'tutoriales.5.title': 'Adaptación monovisión',
 			'tutoriales.6.image': './assets/tutorials/insercion_gabinete.png',
-			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4',
 			'tutoriales.6.title': 'Inserción y remoción en el gabinete',
 			'tutoriales.7.image': './assets/tutorials/insercion_casa.png',
-			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Inserción, remoción y mantenimiento en casa',
 			'unselectTextCatalogPage': 'Selecciona de la lista un país para ver su catálogo correspondiente',
 			'calc1Title': 'Calculadora esféricos',
@@ -1637,28 +1637,28 @@ extension on _StringsPt {
 			'titleTutorialesPage': 'Tutoriais',
 			'titleWelcomeRegisterScreen': 'BEM-VINDO!',
 			'tutoriales.0.image': './assets/tutorials/seleccion_pacientes.png',
-			'tutoriales.0.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-1-SP-SD.mp4',
+			'tutoriales.0.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-1-SP-SD.mp4',
 			'tutoriales.0.title': 'Seleção de pacientes',
 			'tutoriales.1.image': './assets/tutorials/eleccion_lente.png',
-			'tutoriales.1.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-2-ELC-SD.mp4',
+			'tutoriales.1.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-2-ELC-SD.mp4',
 			'tutoriales.1.title': 'Escolha da lente de contato',
 			'tutoriales.2.image': './assets/tutorials/adaptacion_esfericos.png',
-			'tutoriales.2.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-3-AE-SD.mp4',
+			'tutoriales.2.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-3-AE-SD.mp4',
 			'tutoriales.2.title': 'Adaptação esférica',
 			'tutoriales.3.image': './assets/tutorials/adaptacion_toricos.png',
-			'tutoriales.3.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-4-AT-SD.mp4',
+			'tutoriales.3.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-4-AT-SD.mp4',
 			'tutoriales.3.title': 'Adaptação tórica',
 			'tutoriales.4.image': './assets/tutorials/adaptacion_multifocal.png',
-			'tutoriales.4.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-5-AMF-SD.mp4',
+			'tutoriales.4.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-5-AMF-SD.mp4',
 			'tutoriales.4.title': 'Adaptação multifocal',
 			'tutoriales.5.image': './assets/tutorials/adaptacion_monovision.png',
-			'tutoriales.5.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-6-AMONO-SD.mp4',
+			'tutoriales.5.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-6-AMONO-SD.mp4',
 			'tutoriales.5.title': 'Adaptação à monovisão',
 			'tutoriales.6.image': './assets/tutorials/insercion_gabinete.png',
-			'tutoriales.6.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-7-IRG-SD.mp4',
+			'tutoriales.6.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-7-IRG-SD.mp4',
 			'tutoriales.6.title': 'Inserção e remoção no gabinete',
 			'tutoriales.7.image': './assets/tutorials/insercion_casa.png',
-			'tutoriales.7.link': 'http://c1571423.ferozo.com/tutoriales/VID-BL-8-IRMC-SD.mp4',
+			'tutoriales.7.link': 'https://easyadapt.com.mx/tutoriales/VID-BL-8-IRMC-SD.mp4',
 			'tutoriales.7.title': 'Inserção, remoção e manutenção em casa',
 			'unselectTextCatalogPage': 'Selecione um país da lista para ver seu catálogo correspondente',
 			'calc1Title': 'Calculadora esférica',
