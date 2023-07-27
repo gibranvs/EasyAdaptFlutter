@@ -19,11 +19,18 @@ toricCalculatorRight(context) {
                   (double.parse(dataProvider['Sphere'] ?? "0") +
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
+  var eje=0;
 
   if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
   } else {
     resultRoundR = FuncCalculators().round50(tempEsphereR.toDouble());
+  }
+  if(dataProvider['Axis'] != null){
+    eje=int.parse(dataProvider['Axis']);
+    if( eje % 10 != 0){
+      eje= eje-5;
+    }
   }
 
   resultRoundCIR = FuncCalculators().roundCI(tempcylinderR);
@@ -37,9 +44,7 @@ toricCalculatorRight(context) {
       .changeResponseRight('cylinder', tempcylinderR);
   Provider.of<CalculatorTotalState>(context, listen: false).changeResponseRight(
       'axis',
-      dataProvider['Axis'] != null
-          ? (double.parse(dataProvider['Axis'])).toString()
-          : "0");
+      eje.toString());
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseRight('esphereRound', resultRoundR);
   Provider.of<CalculatorTotalState>(context, listen: false)
@@ -63,6 +68,7 @@ toricCalculatorLeft(context) {
                   (double.parse(dataProvider['Sphere'] ?? "0") +
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
+  var eje=0;
 
   if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
@@ -71,6 +77,13 @@ toricCalculatorLeft(context) {
   }
 
   resultRoundCIR = FuncCalculators().roundCI(tempcylinderR);
+
+  if(dataProvider['Axis'] != null){
+    eje=int.parse(dataProvider['Axis']);
+    if( eje % 10 != 0){
+      eje= eje+5;
+    }
+  }
 
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('esphere', tempEsphereR);
@@ -81,9 +94,7 @@ toricCalculatorLeft(context) {
       .changeResponseLeft('cylinder', tempcylinderR);
   Provider.of<CalculatorTotalState>(context, listen: false).changeResponseLeft(
       'axis',
-      dataProvider['Axis'] != null
-          ? (double.parse(dataProvider['Axis'])).toString()
-          : "0");
+     eje.toString() );
   Provider.of<CalculatorTotalState>(context, listen: false)
       .changeResponseLeft('esphereRound', resultRoundR);
   Provider.of<CalculatorTotalState>(context, listen: false)
