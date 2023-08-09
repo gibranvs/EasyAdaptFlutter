@@ -173,132 +173,205 @@ class _CalculadoraTotalInto extends State<CalculadoraTotalInto> {
           child: GestureDetector(
             onTap: () async {
               // ignore: unrelated_type_equality_checks
-              //RIGHT
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataRight['type'] ==
-                  'Spherical') {
-                await sphericalCalculatorRight(context);
-              }
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataRight['type'] ==
-                  'Toric') {
-                await toricCalculatorRight(context);
-              }
+              bool calcular=false;
 
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataRight['type'] ==
-                  'Multifocal') {
-                await multifocalCalculatorRight(context);
-              }
+             if(Provider
+                  .of<CalculatorTotalState>(context, listen: false)
+                  .dataLeft['data']['Sphere']==null||Provider
+                  .of<CalculatorTotalState>(context, listen: false)
+                  .dataRight['data']['Sphere']==null){
+                await showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                          actions: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                      calcular=true;
+                                    },
+                                    child: Text(
+                                      "OK",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 241, 118, 118)),
+                                    )),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      "Regresar",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 241, 118, 118)),
+                                    ))
+                              ],
+                            )
+                          ],
+                          title: Text(
+                            "Únicamente se realizará el cálculo para un ojo, deseas continuar?",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          content: Text(""));
+                    });
 
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataRight['type'] ==
-                  'Monovision') {
-                await monovisionlCalculatorRight(context);
+              }else{
+                calcular=true;
               }
+             if(calcular) {
+               //RIGHT
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataRight['type'] ==
+                   'Spherical') {
+                 await sphericalCalculatorRight(context);
+               }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataRight['type'] ==
+                   'Toric') {
+                 await toricCalculatorRight(context);
+               }
 
-              //LEFT
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataRight['type'] ==
+                   'Multifocal') {
+                 await multifocalCalculatorRight(context);
+               }
 
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataLeft['type'] ==
-                  'Spherical') {
-                await sphericalCalculatorLeft(context);
-              }
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataLeft['type'] ==
-                  'Toric') {
-                await toricCalculatorLeft(context);
-              }
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataLeft['type'] ==
-                  'Multifocal') {
-                await multifocalCalculatorLeft(context);
-              }
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                      .dataLeft['type'] ==
-                  'Monovision') {
-                await monovisionCalculatorLeft(context);
-              }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataRight['type'] ==
+                   'Monovision') {
+                 await monovisionlCalculatorRight(context);
+               }
 
-              /////////////////////////////Navigator Multifocal
+               //LEFT
 
-              if (Provider.of<CalculatorTotalState>(context, listen: false)
-                          .dataRight['type'] ==
-                      'Multifocal' &&
-                  Provider.of<CalculatorTotalState>(context, listen: false)
-                          .dataLeft['type'] ==
-                      'Multifocal') {
-                if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                                .dataRight['data']['Cylinder'] ??
-                            "0.0") <=
-                        0 &&
-                    double.parse(
-                            Provider.of<CalculatorTotalState>(context, listen: false)
-                                    .dataRight['data']['Cylinder'] ??
-                                "0.0") >=
-                        -1 &&
-                    double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Cylinder'] ?? "0.0") <=
-                        0 &&
-                    double.parse(
-                            Provider.of<CalculatorTotalState>(context, listen: false)
-                                    .dataLeft['data']['Cylinder'] ??
-                                "0.0") >=
-                        -1) {
-                  //////////////////////////////////////////// revisar validacion
-                  if (double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataRight['data']['Sphere'] ?? "0.0")
-                              .toInt()
-                              .abs() >=
-                          (3 *
-                              (double.parse(Provider.of<CalculatorTotalState>(context, listen: false)
-                                          .dataRight['data']['Cylinder'] ??
-                                      "0.0")
-                                  .toInt()
-                                  .abs())) &&
-                      double.parse(Provider.of<CalculatorTotalState>(context, listen: false).dataLeft['data']['Sphere'] ?? "0.0")
-                              .toInt()
-                              .abs() >=
-                          (3 *
-                              (double.parse(Provider.of<CalculatorTotalState>(context,
-                                              listen: false)
-                                          .dataLeft['data']['Cylinder'] ??
-                                      "0.0")
-                                  .toInt()
-                                  .abs()))) {
-                    Navigator.pushNamed(context, '/results-into');
-                  }
-                  // Navigator.pushNamed(context, '/results');
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                            actions: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "OK",
-                                        style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 241, 118, 118)),
-                                      ))
-                                ],
-                              )
-                            ],
-                            title: Text(
-                              t.calculatorTotalModalTitle,
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            content: Text(t.calculatorTotalModalSubTitle));
-                      });
-                }
-              } else {
-                Navigator.pushNamed(context, '/results-into');
-              }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataLeft['type'] ==
+                   'Spherical') {
+                 await sphericalCalculatorLeft(context);
+               }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataLeft['type'] ==
+                   'Toric') {
+                 await toricCalculatorLeft(context);
+               }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataLeft['type'] ==
+                   'Multifocal') {
+                 await multifocalCalculatorLeft(context);
+               }
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataLeft['type'] ==
+                   'Monovision') {
+                 await monovisionCalculatorLeft(context);
+               }
+
+               /////////////////////////////Navigator Multifocal
+
+               if (Provider
+                   .of<CalculatorTotalState>(context, listen: false)
+                   .dataRight['type'] ==
+                   'Multifocal' &&
+                   Provider
+                       .of<CalculatorTotalState>(context, listen: false)
+                       .dataLeft['type'] ==
+                       'Multifocal') {
+                 if (double.parse(Provider
+                     .of<CalculatorTotalState>(context, listen: false)
+                     .dataRight['data']['Cylinder'] ??
+                     "0.0") <=
+                     0 &&
+                     double.parse(
+                         Provider
+                             .of<CalculatorTotalState>(context, listen: false)
+                             .dataRight['data']['Cylinder'] ??
+                             "0.0") >=
+                         -1 &&
+                     double.parse(Provider
+                         .of<CalculatorTotalState>(context, listen: false)
+                         .dataLeft['data']['Cylinder'] ?? "0.0") <=
+                         0 &&
+                     double.parse(
+                         Provider
+                             .of<CalculatorTotalState>(context, listen: false)
+                             .dataLeft['data']['Cylinder'] ??
+                             "0.0") >=
+                         -1) {
+                   //////////////////////////////////////////// revisar validacion
+                   if (double.parse(Provider
+                       .of<CalculatorTotalState>(context, listen: false)
+                       .dataRight['data']['Sphere'] ?? "0.0")
+                       .toInt()
+                       .abs() >=
+                       (3 *
+                           (double.parse(Provider
+                               .of<CalculatorTotalState>(
+                               context, listen: false)
+                               .dataRight['data']['Cylinder'] ??
+                               "0.0")
+                               .toInt()
+                               .abs())) &&
+                       double.parse(Provider
+                           .of<CalculatorTotalState>(context, listen: false)
+                           .dataLeft['data']['Sphere'] ?? "0.0")
+                           .toInt()
+                           .abs() >=
+                           (3 *
+                               (double.parse(Provider
+                                   .of<CalculatorTotalState>(context,
+                                   listen: false)
+                                   .dataLeft['data']['Cylinder'] ??
+                                   "0.0")
+                                   .toInt()
+                                   .abs()))) {
+                     Navigator.pushNamed(context, '/results-into');
+                   }
+                   // Navigator.pushNamed(context, '/results');
+                 } else {
+                   showDialog(
+                       context: context,
+                       builder: (context) {
+                         return AlertDialog(
+                             actions: [
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.end,
+                                 children: [
+                                   TextButton(
+                                       onPressed: () {
+                                         Navigator.pop(context);
+                                       },
+                                       child: Text(
+                                         "OK",
+                                         style: TextStyle(
+                                             color: Color.fromARGB(
+                                                 255, 241, 118, 118)),
+                                       ))
+                                 ],
+                               )
+                             ],
+                             title: Text(
+                               t.calculatorTotalModalTitle,
+                               style: TextStyle(fontWeight: FontWeight.bold),
+                             ),
+                             content: Text(t.calculatorTotalModalSubTitle));
+                       });
+                 }
+               } else {
+                 Navigator.pushNamed(context, '/results-into');
+               }
+             }
             },
             child: Container(
               width: double.infinity,
