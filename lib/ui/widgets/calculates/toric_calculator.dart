@@ -19,7 +19,7 @@ toricCalculatorRight(context) {
                   (double.parse(dataProvider['Sphere'] ?? "0") +
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
-  var eje=0;
+  int eje=0;
 
   if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
@@ -28,8 +28,8 @@ toricCalculatorRight(context) {
   }
   if(dataProvider['Axis'] != null){
     eje=int.parse(dataProvider['Axis']);
-    if( eje % 10 != 0){
-      eje= eje-5;
+    if( (eje % 10) != 0){
+      eje = eje-5;
     }
   }
 
@@ -68,7 +68,7 @@ toricCalculatorLeft(context) {
                   (double.parse(dataProvider['Sphere'] ?? "0") +
                       double.parse(dataProvider['Cylinder'] ?? "0"))))) -
       tempEsphereR);
-  var eje=0;
+  int eje=0;
 
   if (tempEsphereR > (0-6)) {
     resultRoundR = FuncCalculators().round25(tempEsphereR.toDouble());
@@ -80,8 +80,8 @@ toricCalculatorLeft(context) {
 
   if(dataProvider['Axis'] != null){
     eje=int.parse(dataProvider['Axis']);
-    if( eje % 10 != 0){
-      eje= eje+5;
+    if( (eje % 10) != 0){
+      eje = eje+5;
     }
   }
 

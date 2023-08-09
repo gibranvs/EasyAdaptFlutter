@@ -187,17 +187,5 @@ getToricTextResult(
 }
 
 getTextAxis(right, axis) {
-  if (right) {
-    if (axis.toString().split("")[1] == "5") {
-      return (double.parse(axis) - 5.0).toStringAsFixed(0);
-    } else {
-      return double.parse(axis).toStringAsFixed(0);
-    }
-  } else {
-    if (axis.toString().split("")[1] == "5") {
-      return (double.parse(axis) + 5.0).toStringAsFixed(0);
-    } else {
-      return double.parse(axis).toStringAsFixed(0);
-    }
-  }
+  return double.parse(axis).toStringAsFixed(0);
 }
