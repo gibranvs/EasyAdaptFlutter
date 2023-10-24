@@ -65,51 +65,56 @@ List productsSphereEs = [
     "idPS": "3",
     "namePS": "Ultra",
     "descriptionPS":
-        "MoistureSeal Technology que ayuda a mantener el 95% de la humectación del lente durante 16 horas completas. R.S INVIMA 2016DM-0015000.",
+        "MoistureSeal Technology que ayuda a mantener el 95% de la humectación del lente durante 16 horas completas.",
     "maxPS": "6.00",
     "minPS": "-12.00",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/ultra.png"
+    "imagePS": "./assets/calculators/ultra.png",
+    "num": "R.S INVIMA 2016DM-0015000."
   },
   {
     "idPS": "10",
     "namePS": "Biotrue ONEday",
     "descriptionPS":
-        "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas. R.S INVIMA 2018DM-0018241",
+        "Surface Active Technology™Con exclusivo material HYPERGEL Mantiene el 98% de la hidratación hasta por 16 horas.",
     "maxPS": "6.00",
     "minPS": "-9.00",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/biotrue_one_day.png"
+    "imagePS": "./assets/calculators/biotrue_one_day.png",
+    "num":"R.S INVIMA 2018DM-0018241"
   },
   {
     "idPS": "4",
     "namePS": "Pure Vision 2",
     "descriptionPS":
-        "Comfort Moist™ - mejora la comodidad al momento de insertar el lente y durante todo el día, Increíble visión y ayuda a reducir halos y deslumbramientos ya que cuenta con Óptica de Alta Definición. R.S INVIMA 2016DM-0015431",
+        "Comfort Moist™ - mejora la comodidad al momento de insertar el lente y durante todo el día, Increíble visión y ayuda a reducir halos y deslumbramientos ya que cuenta con Óptica de Alta Definición.",
     "maxPS": "6.00",
     "minPS": "-12.00",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/purevision2.png"
+    "imagePS": "./assets/calculators/purevision2.png",
+    "num":"R.S INVIMA 2016DM-0015431"
   },
   {
     "idPS": "1",
     "namePS": "Soflens 59",
     "descriptionPS":
-        "Tecnología Unifit® que brinda una adaptación rápida y simplificada por parámetros únicos de curva base. R.S INVIMA 2019DM-0019193",
+        "Tecnología Unifit® que brinda una adaptación rápida y simplificada por parámetros únicos de curva base.",
     "maxPS": "6.00",
     "minPS": "-9.00",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/soflens59.png"
+    "imagePS": "./assets/calculators/soflens59.png",
+    "num":"R.S INVIMA 2019DM-0019193"
   },
   {
     "idPS": "2",
     "namePS": "Lunare Tri-Color",
     "descriptionPS":
-        "La innovadora tecnología TKI , es la combinación de 3 colores en un mismo lente y ofrece mayor comodidad y naturalidad. R.S INVIMA 2016DM-0015559",
+        "La innovadora tecnología TKI , es la combinación de 3 colores en un mismo lente y ofrece mayor comodidad y naturalidad. ",
     "maxPS": "0",
     "minPS": "-6",
     "daysPS": "30",
-    "imagePS": "./assets/calculators/lunare.png"
+    "imagePS": "./assets/calculators/lunare.png",
+    "num":"R.S INVIMA 2016DM-0015559"
   },
   {
     "idPS": "12",
@@ -119,7 +124,8 @@ List productsSphereEs = [
     "maxPS": "-0.25",
     "minPS": "-12.00",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/optima38.png"
+    "imagePS": "./assets/calculators/optima38.png",
+    "num":""
   }
 ];
 List productsSpherePt = [
@@ -370,7 +376,8 @@ List productsMultifocalEs = [
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/ultra_multi.png"
+    "imagePS": "./assets/calculators/ultra_multi.png",
+    "exclusivo":"0"
   },
   {
     "idPS": "8",
@@ -380,7 +387,8 @@ List productsMultifocalEs = [
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/purevision_for_presbicie.png"
+    "imagePS": "./assets/calculators/purevision_for_presbicie.png",
+    "exclusivo":"1"
   },
 ];
 

@@ -19,8 +19,10 @@ class Data {
         if (save == true) {
           prefs.setBool('save', true);
           prefs.setString('idUser', data['response'].toString());
+          prefs.setString('pais', data['pais'].toString());
         } else {
           prefs.setString('idUser', data['response'].toString());
+          prefs.setString('pais', data['pais'].toString());
         }
         return true;
       } else {

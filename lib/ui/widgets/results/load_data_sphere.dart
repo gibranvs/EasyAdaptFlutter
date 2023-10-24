@@ -80,7 +80,7 @@ loadProductsToric(context, code, condition, condition2) {
   return dataProducts;
 }
 
-loadProductsMultifocal(context, code, condition) {
+loadProductsMultifocal(context, code, condition,pais) {
   List dataProducts = [];
   switch (code) {
     case 'es':
@@ -88,7 +88,9 @@ loadProductsMultifocal(context, code, condition) {
         productsMultifocalEs.forEach((element) {
           if (double.parse(element['maxPS']) > condition &&
               double.parse(element['minPS']) < condition) {
-            dataProducts.add(element);
+            if((pais=="3"||pais=="5"||pais=="12")||element['exclusivo']=="0") {
+              dataProducts.add(element);
+            }
           }
         });
       }

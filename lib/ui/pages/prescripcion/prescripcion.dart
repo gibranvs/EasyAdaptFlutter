@@ -178,7 +178,15 @@ class _PrescripcionPageState extends State<PrescripcionPage> {
   }
 
   Row _model(dataG, image) {
-    print(image);
+    var presc=dataG['valores'];
+    var presc_sp=presc.split(" ");
+    var val=presc_sp[0];
+    final val_tx=val.split(".");
+    if(val_tx[1].toString().length<2){
+      var nval=val_tx[0].toString()+"."+val_tx[1].toString()+"0";
+      presc_sp[0]=nval;
+      dataG['valores']=presc_sp.join(" ");
+    }
     return Row(
       children: [
         Container(

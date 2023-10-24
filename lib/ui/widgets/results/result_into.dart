@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '/../i18n/strings.g.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ResultsAndProductsInto extends StatefulWidget {
   ResultsAndProductsInto({Key? key}) : super(key: key);
@@ -40,9 +41,10 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
     super.dispose();
   }
 
-  loadData() {
+  loadData() async {
     dataProductsL.clear();
     dataProductsR.clear();
+    final prefs = await SharedPreferences.getInstance();
 
     switch (LocaleSettings.currentLocale.languageTag) {
       case "es":
@@ -110,6 +112,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsR = finalData;
@@ -123,6 +126,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'es',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsL = finalData;
@@ -255,6 +259,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsR = finalData;
@@ -268,6 +273,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'en',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsL = finalData;
@@ -397,6 +403,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataRight['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsR = finalData;
@@ -410,6 +417,7 @@ class _ResultsAndProductsInto extends State<ResultsAndProductsInto> {
             'pt',
             Provider.of<CalculatorTotalState>(context, listen: false)
                 .dataLeft['response']['esphereRound'],
+              prefs.getString("pais")
           );
           setState(() {
             dataProductsL = finalData;

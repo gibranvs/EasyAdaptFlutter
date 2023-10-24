@@ -109,7 +109,7 @@ class _HistorialPageState extends State<HistorialPage> {
                             (index) => model(
                                 data[index]['fecha_prescripcion'],
                                 data[index]['ojo'],
-                                data[index]['valores'],
+                                data[index]['valores'].toString().replaceAll("/ 0.00 x 0", ""),
                                 data[index]['producto']))
                       ],
                     );
