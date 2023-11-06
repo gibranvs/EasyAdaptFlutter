@@ -196,37 +196,40 @@ List productsToricosEs = [
     "idPS": "13",
     "namePS": "ULTRA For Astigmatism",
     "descriptionPS":
-        "MoistureSeal Technology /Diseño OpticAlign Diseñados para brindar estabilidad y proveer una primera daptación exitosa. R.S INVIMA 2019DM-0019597",
+        "MoistureSeal Technology /Diseño OpticAlign Diseñados para brindar estabilidad y proveer una primera daptación exitosa.",
     "maxPS": "6.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
     "cylinderMin": "-3",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/ultra_for_astigmatism.png"
+    "imagePS": "./assets/calculators/ultra_for_astigmatism.png",
+    "num": "R.S INVIMA 2019DM-0019597"
   },
   {
     "idPS": "5",
     "namePS": "PureVision 2 For Astigmatism",
     "descriptionPS":
-        "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa. R.S INVIMA 2021DM-0008616-R1",
+        "Comfort Moist / Diseño OpticAlign Diseñados para brindar estabilidad y proover una primera daptación exitosa.",
     "maxPS": "-0.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.75",
     "cylinderMin": "-2.25",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/pv2.png"
+    "imagePS": "./assets/calculators/pv2.png",
+    "num": "R.S INVIMA 2021DM-0008616-R1"
   },
   {
     "idPS": "6",
     "namePS": "Soflens For Astigmatism",
     "descriptionPS":
-        "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación. R.S INVIMA 2018DM-0002765-R1",
+        "El diseño comprobado Lo-Torque® significa estabilidad, agudeza visual, comodidad y fácil adaptación.",
     "maxPS": "-0.25",
     "minPS": "-9.25",
     "cylinderMax": "-0.5",
     "cylinderMin": "-3",
     "daysPS": "180",
-    "imagePS": "./assets/calculators/softlens_astigmatism.png"
+    "imagePS": "./assets/calculators/softlens_astigmatism.png",
+    "num" : "R.S INVIMA 2018DM-0002765-R1"
   },
   {
     "idPS": "14",
@@ -372,23 +375,26 @@ List productsMultifocalEs = [
     "idPS": "7",
     "namePS": "ULTRA For Presbyopia",
     "descriptionPS":
-        "MoistureSeal Technology / Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios. R.S INVIMA 2019DM-0019598",
+        "MoistureSeal Technology / Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios.",
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
     "imagePS": "./assets/calculators/ultra_multi.png",
-    "exclusivo":"0"
+    "exclusivo":"0",
+    "num" : "R.S INVIMA 2019DM-0019598"
+
   },
   {
     "idPS": "8",
     "namePS": "Pure Vision 2 For Presbyopia",
     "descriptionPS":
-        "Comfort Moist /Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios. R.S INVIMA 2016DM-0015431",
+        "Comfort Moist /Diseño 3-ZONE PROGRESSIVE poder consistente en las zonas cercanas, intermedias y lejanas, ofrece un enfoque y una experiencia visual extraordinarios.",
     "maxPS": "6.25",
     "minPS": "-10.25",
     "daysPS": "180",
     "imagePS": "./assets/calculators/purevision_for_presbicie.png",
-    "exclusivo":"1"
+    "exclusivo":"1",
+    "num" : "R.S INVIMA 2016DM-0015431"
   },
 ];
 

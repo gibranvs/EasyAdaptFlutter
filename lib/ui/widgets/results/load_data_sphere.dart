@@ -2,7 +2,7 @@ import 'package:easy_adapt/data/internal_data.dart';
 import 'package:easy_adapt/state/calculator_total_state.dart';
 import 'package:provider/provider.dart';
 
-loadProductsSphere(context, code, condition) {
+loadProductsSphere(context, code, condition,pais) {
   print('load');
 
   List dataProducts = [];
@@ -12,6 +12,9 @@ loadProductsSphere(context, code, condition) {
         productsSphereEs.forEach((element) {
           if (double.parse(element['maxPS']) > condition &&
               double.parse(element['minPS']) < condition) {
+            if((pais=="3"||pais=="5"||pais=="12")){
+              element["descriptionPS"]=element["descriptionPS"]+element["num"];
+            }
             dataProducts.add(element);
           }
         });
@@ -41,7 +44,7 @@ loadProductsSphere(context, code, condition) {
   return dataProducts;
 }
 
-loadProductsToric(context, code, condition, condition2) {
+loadProductsToric(context, code, condition, condition2,pais) {
   List dataProducts = [];
 
   switch (code) {
@@ -51,6 +54,9 @@ loadProductsToric(context, code, condition, condition2) {
             double.parse(element['minPS']) < condition &&
             double.parse(element['cylinderMax']) > condition2 &&
             double.parse(element['cylinderMin']) < condition2) {
+          if((pais=="3"||pais=="5"||pais=="12")){
+            element["descriptionPS"]=element["descriptionPS"]+element["num"];
+          }
           dataProducts.add(element);
         }
       });
@@ -89,6 +95,9 @@ loadProductsMultifocal(context, code, condition,pais) {
           if (double.parse(element['maxPS']) > condition &&
               double.parse(element['minPS']) < condition) {
             if((pais=="3"||pais=="5"||pais=="12")||element['exclusivo']=="0") {
+              if((pais=="3"||pais=="5"||pais=="12")){
+                element["descriptionPS"]=element["descriptionPS"]+element["num"];
+              }
               dataProducts.add(element);
             }
           }
