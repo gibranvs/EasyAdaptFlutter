@@ -12,10 +12,12 @@ loadProductsSphere(context, code, condition,pais) {
         productsSphereEs.forEach((element) {
           if (double.parse(element['maxPS']) > condition &&
               double.parse(element['minPS']) < condition) {
+            var n_el=element;
             if((pais=="3"||pais=="5"||pais=="12")){
-              element["descriptionPS"]=element["descriptionPS"]+element["num"];
+              n_el["descriptionPS"]=n_el["descriptionPS"]+n_el["num"];
+              n_el["num"]="";
             }
-            dataProducts.add(element);
+            dataProducts.add(n_el);
           }
         });
       }
@@ -54,10 +56,12 @@ loadProductsToric(context, code, condition, condition2,pais) {
             double.parse(element['minPS']) < condition &&
             double.parse(element['cylinderMax']) > condition2 &&
             double.parse(element['cylinderMin']) < condition2) {
-          if((pais=="3"||pais=="5"||pais=="12")){
-            element["descriptionPS"]=element["descriptionPS"]+element["num"];
-          }
-          dataProducts.add(element);
+            var n_el=element;
+            if((pais=="3"||pais=="5"||pais=="12")){
+              n_el["descriptionPS"]=n_el["descriptionPS"]+n_el["num"];
+              n_el["num"]="";
+            }
+            dataProducts.add(n_el);
         }
       });
       break;
@@ -95,10 +99,13 @@ loadProductsMultifocal(context, code, condition,pais) {
           if (double.parse(element['maxPS']) > condition &&
               double.parse(element['minPS']) < condition) {
             if((pais=="3"||pais=="5"||pais=="12")||element['exclusivo']=="0") {
+              var n_el=element;
               if((pais=="3"||pais=="5"||pais=="12")){
-                element["descriptionPS"]=element["descriptionPS"]+element["num"];
+                n_el["descriptionPS"]=n_el["descriptionPS"]+n_el["num"];
+                n_el["num"]="";
               }
-              dataProducts.add(element);
+
+              dataProducts.add(n_el);
             }
           }
         });
